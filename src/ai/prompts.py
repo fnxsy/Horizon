@@ -20,43 +20,35 @@ Respond with valid JSON only:
 
 If there are no duplicates at all, return: {{"duplicates": []}}"""
 
-CONTENT_ANALYSIS_SYSTEM = """You are an expert content curator helping filter important technical and academic information.
+CONTENT_ANALYSIS_SYSTEM = """You are an expert content curator helping filter important information.
 
 Score content on a 0-10 scale based on importance and relevance:
 
 **9-10: Groundbreaking** - Major breakthroughs, paradigm shifts, or highly significant announcements
-- New major version releases of widely-used technologies
-- Significant research breakthroughs
-- Important industry-changing announcements
-
 **7-8: High Value** - Important developments worth immediate attention
-- Interesting technical deep-dives
-- Novel approaches to known problems
-- Insightful analysis or commentary
-- Valuable tools or libraries
-
 **5-6: Interesting** - Worth knowing but not urgent
-- Incremental improvements
-- Useful tutorials
-- Moderate community interest
-
 **3-4: Low Priority** - Generic or routine content
-- Minor updates
-- Common knowledge
-- Overly promotional content
-
 **0-2: Noise** - Not relevant or low quality
-- Spam or purely promotional
-- Off-topic content
-- Trivial updates
 
-Consider:
+The user has the following interests — content matching these topics should receive a score boost (+1 to +3 depending on relevance):
+
+**Technology interests:**
+- 科技 (technology), 新技术 (new technology), 创新 (innovation), 工程 (engineering)
+- AI/ML research, LLMs, model releases, training techniques, open source tools
+- Software engineering, programming languages, developer tools, systems design
+
+**Current affairs interests:**
+- 时政 (current affairs), 国际新闻 (international news), 政策 (policy), 财经 (finance/economy)
+- Geopolitics, international relations, regulatory changes
+- Major industry news, company announcements, market trends
+
+**Scoring guidelines:**
 - Technical depth and novelty
-- Potential impact on the field
-- Quality of writing/presentation
-- Relevance to software engineering, AI/ML, and systems research
-- Community discussion quality: insightful comments, diverse viewpoints, and debates increase value
+- Potential impact on the field or society
+- Quality of writing and presentation
+- Community discussion quality: insightful comments, diverse viewpoints increase value
 - Engagement signals: high upvotes/favorites with substantive discussion indicate community-validated importance
+- Match with user interests above: highly relevant content gets a score boost
 """
 
 CONTENT_ANALYSIS_USER = """Analyze the following content and provide a JSON response with:
@@ -64,6 +56,15 @@ CONTENT_ANALYSIS_USER = """Analyze the following content and provide a JSON resp
 - reason: Brief explanation for the score (mention discussion quality if comments are provided)
 - summary: One-sentence summary of the content
 - tags: Relevant topic tags (3-5 tags)
+- category: One of the following categories that best fits this content:
+  * "AI/ML" — AI research, LLMs, model releases, training techniques, AI tools
+  * "开源/编程" — open source projects, programming languages, dev tools, frameworks
+  * "系统/硬件" — systems engineering, hardware, infrastructure, networking
+  * "安全/隐私" — cybersecurity, privacy, exploits, cryptography
+  * "时政/地缘" — geopolitics, international relations, policy, regulation
+  * "科学/研究" — natural sciences, space, medicine, academic research (non-CS)
+  * "行业/商业" — industry news, company announcements, market trends
+  * "其他" — everything else
 
 Content:
 Title: {title}
@@ -78,7 +79,8 @@ Respond with valid JSON only:
   "score": <number>,
   "reason": "<explanation>",
   "summary": "<one-sentence-summary>",
-  "tags": ["<tag1>", "<tag2>", ...]
+  "tags": ["<tag1>", "<tag2>", ...],
+  "category": "<category>"
 }}"""
 
 CONCEPT_EXTRACTION_SYSTEM = """You identify technical concepts in news that a reader might not know.

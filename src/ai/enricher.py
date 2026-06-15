@@ -79,7 +79,10 @@ class ContentEnricher:
             sys.stderr = open(os.devnull, "w")
             try:
                 ddgs = DDGS()
-                results = await asyncio.to_thread(ddgs.text, query, max_results=max_results)
+                results = await asyncio.wait_for(
+                    asyncio.to_thread(ddgs.text, query, max_results=max_results),
+                    timeout=30.0,
+                )
             finally:
                 sys.stderr.close()
                 sys.stderr = stderr
@@ -117,9 +120,12 @@ class ContentEnricher:
         )
 
         try:
-            response = await self.client.complete(
-                system=CONCEPT_EXTRACTION_SYSTEM,
-                user=user_prompt,
+            response = await asyncio.wait_for(
+                self.client.complete(
+                    system=CONCEPT_EXTRACTION_SYSTEM,
+                    user=user_prompt,
+                ),
+                timeout=60.0,
             )
             result = self._parse_json_response(response)
             if result is None:
@@ -158,15 +164,20 @@ class ContentEnricher:
         # Step 1: AI identifies concepts to explain
         queries = await self._extract_concepts(item, content_text)
 
-        # Step 2: Search web for each concept
+        # Step 2: Search web for each concept in parallel
+        search_results = await asyncio.gather(
+            *[self._web_search(q) for q in queries], return_exceptions=True
+        )
         all_results = []
         web_sections = []
-        for query in queries:
-            results = await self._web_search(query)
+        for query, results in zip(queries, search_results):
+            if isinstance(results, BaseException):
+                continue
+            if not results:
+                continue
             all_results.extend(results)
-            if results:
-                lines = [f"- [{r['title']}]({r['url']}): {r['body']}" for r in results]
-                web_sections.append(f"**{query}:**\n" + "\n".join(lines))
+            lines = [f"- [{r['title']}]({r['url']}): {r['body']}" for r in results]
+            web_sections.append(f"**{query}:**\n" + "\n".join(lines))
         web_context = "\n\n".join(web_sections) if web_sections else ""
 
         # Index of available URLs for citation validation
@@ -185,9 +196,12 @@ class ContentEnricher:
             web_context=web_context or "No web search results available.",
         )
 
-        response = await self.client.complete(
-            system=CONTENT_ENRICHMENT_SYSTEM,
-            user=user_prompt,
+        response = await asyncio.wait_for(
+            self.client.complete(
+                system=CONTENT_ENRICHMENT_SYSTEM,
+                user=user_prompt,
+            ),
+            timeout=120.0,
         )
 
         # Parse JSON response with robust fallback
@@ -240,14 +254,17 @@ class ContentEnricher:
         """Lightweight translation fallback: when full enrichment fails, at least
         translate the title and summary to Chinese so the item is not dropped."""
         try:
-            response = await self.client.complete(
-                system="You are a translator. Translate to Simplified Chinese. Return only valid JSON, no other text.",
-                user=(
-                    f'Title: {item.title}\n'
-                    f'Summary: {item.ai_summary or item.title}\n\n'
-                    'Return JSON:\n'
-                    '{"title_zh": "<中文标题>", "summary_zh": "<用中文写1-2句摘要>"}'
+            response = await asyncio.wait_for(
+                self.client.complete(
+                    system="You are a translator. Translate to Simplified Chinese. Return only valid JSON, no other text.",
+                    user=(
+                        f'Title: {item.title}\n'
+                        f'Summary: {item.ai_summary or item.title}\n\n'
+                        'Return JSON:\n'
+                        '{"title_zh": "<中文标题>", "summary_zh": "<用中文写1-2句摘要>"}'
+                    ),
                 ),
+                timeout=60.0,
             )
             result = self._parse_json_response(response)
             if result:

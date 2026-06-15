@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Horizon Daily — 2026-06-10</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;background:#f5f6fa;color:#2d3436;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(155deg,#0f0c29 0%,#1a1a3e 40%,#24243e 100%);color:#fff;padding:44px 32px 36px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(99,102,241,.25),transparent);pointer-events:none}
+.hero-badge{display:inline-block;padding:4px 14px;border-radius:20px;background:rgba(255,255,255,.12);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;backdrop-filter:blur(4px)}
+.hero h1{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:6px;position:relative}
+.hero-sub{font-size:.9rem;opacity:.6;margin-bottom:20px;position:relative}
+.hero-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;position:relative}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.08);font-size:.76rem;color:rgba(255,255,255,.75)}
+.hero-pill strong{color:#fff;font-weight:700}
+
+/* ── Content ── */
+.container{max-width:820px;margin:0 auto;padding:0 20px 60px}
+
+/* ── Category Sections ── */
+.cat-section{margin-top:28px}
+.cat-heading{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;color:#636e72;margin-bottom:14px;padding:0 4px}
+.cat-heading .cat-icon{font-size:1.1rem}
+.cat-heading .cat-n{font-size:.76rem;color:#b2bec3;font-weight:500;margin-left:auto}
+
+/* ── Cards ── */
+.item-card{background:#fff;border-radius:16px;padding:22px 26px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.03);transition:box-shadow .2s,transform .15s;border:1px solid #f1f3f5}
+.item-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);transform:translateY(-1px);border-color:#e9ecef}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.card-left{display:flex;align-items:flex-start;gap:10px;flex:1}
+.card-idx{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:#f1f3f5;color:#868e96;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.card-title a{color:#1a1a2e;text-decoration:none;font-size:1.02rem;font-weight:700;line-height:1.45}
+.card-title a:hover{color:#4c6ef5}
+.card-score{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.card-summary{font-size:.88rem;color:#495057;margin-bottom:8px;line-height:1.72}
+.card-source{font-size:.74rem;color:#adb5bd}
+
+.bg-block,.disc-block{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:.83rem;line-height:1.65}
+.bg-block{background:#f8f9fe;border-left:3px solid #748ffc}
+.disc-block{background:#fef9e7;border-left:3px solid #fcc419}
+.bg-block p,.disc-block p{margin-top:3px;color:#495057}
+.block-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#adb5bd}
+
+.refs-details{margin-top:12px;font-size:.8rem;color:#868e96}
+.refs-details summary{cursor:pointer;font-weight:600;color:#495057}
+.refs-list{margin-top:6px;padding-left:18px}
+.refs-list li{margin-bottom:3px}
+.refs-list a{color:#4c6ef5;text-decoration:none;font-size:.79rem}
+.refs-list a:hover{text-decoration:underline}
+
+.tags-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;padding:3px 10px;background:#edf2ff;color:#4c6ef5;border-radius:20px;font-size:.72rem;font-weight:500}
+
+/* ── Floating TOC (right side) ── */
+.floating-toc{position:fixed;top:20px;right:20px;width:270px;max-height:calc(100vh - 40px);background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);z-index:100;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s}
+.floating-toc.hidden{transform:translateX(320px);opacity:0;pointer-events:none}
+.ftoc-header{display:flex;align-items:center;gap:8px;padding:16px 16px 12px;border-bottom:1px solid #f1f3f5;flex-shrink:0}
+.ftoc-logo{font-size:1.1rem}
+.ftoc-title{font-size:.82rem;font-weight:700;color:#495057;flex:1}
+.ftoc-close{width:26px;height:26px;border-radius:8px;border:none;background:#f1f3f5;color:#868e96;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ftoc-close:hover{background:#e9ecef}
+.ftoc-nav{overflow-y:auto;padding:8px 12px 16px;flex:1}
+.ftoc-nav::-webkit-scrollbar{width:3px}
+.ftoc-nav::-webkit-scrollbar-thumb{background:#dee2e6;border-radius:4px}
+
+/* Category header in floating TOC */
+.ftoc-cat{display:flex;align-items:center;gap:8px;padding:10px 8px 6px;font-size:.76rem;font-weight:700;color:#636e72;cursor:pointer;user-select:none;border-radius:8px;transition:background .12s}
+.ftoc-cat:hover{background:#f8f9fa}
+.ftoc-cat-icon{font-size:.85rem}
+.ftoc-cat-name{flex:1}
+.ftoc-cat-n{font-size:.7rem;color:#adb5bd;font-weight:500}
+.ftoc-chevron{transition:transform .2s;flex-shrink:0;color:#adb5bd}
+.ftoc-cat.collapsed .ftoc-chevron{transform:rotate(-90deg)}
+.ftoc-links{overflow:hidden;transition:max-height .3s ease}
+.ftoc-cat.collapsed + .ftoc-links{max-height:0!important}
+
+.ftoc-link{display:flex;align-items:center;gap:8px;padding:5px 8px 5px 20px;border-radius:6px;text-decoration:none;color:#636e72;font-size:.76rem;line-height:1.35;transition:background .12s}
+.ftoc-link:hover{background:#f8f9fa}
+.ftoc-link.active{background:#edf2ff;color:#4c6ef5}
+.ftoc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:#ced4da}
+.ftoc-dot.s9{background:#e03131}
+.ftoc-dot.s8{background:#f08c00}
+.ftoc-dot.s7{background:#2f9e44}
+.ftoc-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* TOC toggle FAB */
+.toc-fab{display:none;position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:1.2rem;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;align-items:center;justify-content:center}
+.toc-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(0,0,0,.3)}
+
+.footer{text-align:center;padding:40px 16px;color:#b2bec3;font-size:.74rem}
+.footer a{color:#868e96;text-decoration:none}
+.footer a:hover{color:#636e72}
+
+/* ── Responsive ── */
+@media (max-width:1100px){
+  .floating-toc{width:250px;right:10px;top:10px;max-height:calc(100vh - 20px)}
+}
+@media (max-width:900px){
+  .floating-toc{display:none}
+  .floating-toc.open-mobile{display:flex;position:fixed;top:10px;right:10px;bottom:10px;left:10px;width:auto;max-height:none;z-index:300;border-radius:16px}
+  .toc-fab{display:flex}
+  .container{padding:0 14px 60px}
+  .hero{padding:36px 16px 28px}
+  .hero h1{font-size:1.5rem}
+  .item-card{padding:18px 16px}
+}
+@media (min-width:901px){
+  .floating-toc{display:flex}
+  .toc-fab{display:none}
+}
+</style>
+</head>
+<body>
+<aside class="floating-toc" id="toc">
+    <div class="ftoc-header">
+      <span class="ftoc-logo">🌅</span>
+      <span class="ftoc-title">目录</span>
+      <button class="ftoc-close" onclick="toggleToc()" title="关闭">×</button>
+    </div>
+    <nav class="ftoc-nav"><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🤖</span><span class="ftoc-cat-name">AI/ML</span><span class="ftoc-cat-n">22</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-1" class="ftoc-link" data-idx="1"><span class="ftoc-dot s9"></span><span class="ftoc-text">OpenAI ran a 44-day hi…</span></a><a href="#item-2" class="ftoc-link" data-idx="2"><span class="ftoc-dot s9"></span><span class="ftoc-text">Introducing Claude Fab…</span></a><a href="#item-3" class="ftoc-link" data-idx="3"><span class="ftoc-dot s9"></span><span class="ftoc-text">Introducing Gemma 4 12…</span></a><a href="#item-4" class="ftoc-link" data-idx="4"><span class="ftoc-dot s9"></span><span class="ftoc-text">Anthropic built a hidd…</span></a><a href="#item-5" class="ftoc-link" data-idx="5"><span class="ftoc-dot s8"></span><span class="ftoc-text">Is Grep All You Need? …</span></a><a href="#item-6" class="ftoc-link" data-idx="6"><span class="ftoc-dot s8"></span><span class="ftoc-text">字节跳动开源 3B 多模态模型 Lance，…</span></a><a href="#item-7" class="ftoc-link" data-idx="7"><span class="ftoc-dot s8"></span><span class="ftoc-text">Karpathy 谈 AI 软件繁荣与杰文斯悖论</span></a><a href="#item-8" class="ftoc-link" data-idx="8"><span class="ftoc-dot s8"></span><span class="ftoc-text">FrontierCode：AI 代码质量新基准</span></a><a href="#item-9" class="ftoc-link" data-idx="9"><span class="ftoc-dot s8"></span><span class="ftoc-text">Fluid, natural voice t…</span></a><a href="#item-10" class="ftoc-link" data-idx="10"><span class="ftoc-dot s8"></span><span class="ftoc-text">Can Voice Agents Handl…</span></a><a href="#item-11" class="ftoc-link" data-idx="11"><span class="ftoc-dot s8"></span><span class="ftoc-text">Anthropic’s Fable 5 ca…</span></a><a href="#item-12" class="ftoc-link" data-idx="12"><span class="ftoc-dot s8"></span><span class="ftoc-text">Beyond Dexterity: Why …</span></a><a href="#item-13" class="ftoc-link" data-idx="13"><span class="ftoc-dot s8"></span><span class="ftoc-text">AI 认知风险：专家论文详述对人类思维的威胁</span></a><a href="#item-14" class="ftoc-link" data-idx="14"><span class="ftoc-dot s8"></span><span class="ftoc-text">Cohere 发布 North Mini C…</span></a><a href="#item-15" class="ftoc-link" data-idx="15"><span class="ftoc-dot s8"></span><span class="ftoc-text">Unsloth 发布支持 QAT 和 MTP…</span></a><a href="#item-16" class="ftoc-link" data-idx="16"><span class="ftoc-dot s8"></span><span class="ftoc-text">苹果发布 CoreAI 设备端推理引擎</span></a><a href="#item-17" class="ftoc-link" data-idx="17"><span class="ftoc-dot s8"></span><span class="ftoc-text">Furiosa AI RNGD 芯片或可革新…</span></a><a href="#item-18" class="ftoc-link" data-idx="18"><span class="ftoc-dot s8"></span><span class="ftoc-text">实时挑战：在 A10G 上加速 Gemma …</span></a><a href="#item-19" class="ftoc-link" data-idx="19"><span class="ftoc-dot s8"></span><span class="ftoc-text">纯 CPU 运行的 Rust 原生 LFM2…</span></a><a href="#item-20" class="ftoc-link" data-idx="20"><span class="ftoc-dot s8"></span><span class="ftoc-text">Yann LeCun 的十亿美元赌注：机器无…</span></a><a href="#item-21" class="ftoc-link" data-idx="21"><span class="ftoc-dot s8"></span><span class="ftoc-text">Claude Fable 5 揭示双轨 AI…</span></a><a href="#item-22" class="ftoc-link" data-idx="22"><span class="ftoc-dot s8"></span><span class="ftoc-text">Fable 5 模型表现惊艳但消耗使用量极快</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">⚙️</span><span class="ftoc-cat-name">系统/硬件</span><span class="ftoc-cat-n">4</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-23" class="ftoc-link" data-idx="23"><span class="ftoc-dot s9"></span><span class="ftoc-text">People are making sing…</span></a><a href="#item-24" class="ftoc-link" data-idx="24"><span class="ftoc-dot s8"></span><span class="ftoc-text">World’s first wind-pow…</span></a><a href="#item-25" class="ftoc-link" data-idx="25"><span class="ftoc-dot s8"></span><span class="ftoc-text">D-Matrix 称采用 SRAM 替代 D…</span></a><a href="#item-26" class="ftoc-link" data-idx="26"><span class="ftoc-dot s8"></span><span class="ftoc-text">人形机器人攀登 20341 英尺火山，下一步…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔒</span><span class="ftoc-cat-name">安全/隐私</span><span class="ftoc-cat-n">7</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-27" class="ftoc-link" data-idx="27"><span class="ftoc-dot s8"></span><span class="ftoc-text">Security validation fo…</span></a><a href="#item-28" class="ftoc-link" data-idx="28"><span class="ftoc-dot s8"></span><span class="ftoc-text">Defend against frontie…</span></a><a href="#item-29" class="ftoc-link" data-idx="29"><span class="ftoc-dot s8"></span><span class="ftoc-text">CISA 要求美国联邦机构在三日内修复一个被…</span></a><a href="#item-30" class="ftoc-link" data-idx="30"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta 人工智能漏洞导致 Instagra…</span></a><a href="#item-31" class="ftoc-link" data-idx="31"><span class="ftoc-dot s8"></span><span class="ftoc-text">CrowdStrike：中国黑客对科技公司的…</span></a><a href="#item-32" class="ftoc-link" data-idx="32"><span class="ftoc-dot s8"></span><span class="ftoc-text">Signal 批评英国设备扫描裸图计划</span></a><a href="#item-33" class="ftoc-link" data-idx="33"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta 在公众抗议后移除智能眼镜应用中的面…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🌍</span><span class="ftoc-cat-name">时政/地缘</span><span class="ftoc-cat-n">51</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-34" class="ftoc-link" data-idx="34"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国在阿帕奇被击落后对伊朗发动打击</span></a><a href="#item-35" class="ftoc-link" data-idx="35"><span class="ftoc-dot s9"></span><span class="ftoc-text">China prepares $295 bi…</span></a><a href="#item-36" class="ftoc-link" data-idx="36"><span class="ftoc-dot s9"></span><span class="ftoc-text">以色列空袭提尔无视伊朗警告</span></a><a href="#item-37" class="ftoc-link" data-idx="37"><span class="ftoc-dot s9"></span><span class="ftoc-text">特朗普和内塔尼亚胡面临中东永久危机风险</span></a><a href="#item-38" class="ftoc-link" data-idx="38"><span class="ftoc-dot s9"></span><span class="ftoc-text">Conflicts are on the r…</span></a><a href="#item-39" class="ftoc-link" data-idx="39"><span class="ftoc-dot s9"></span><span class="ftoc-text">五角大楼将阿里巴巴和比亚迪列为涉军企业</span></a><a href="#item-40" class="ftoc-link" data-idx="40"><span class="ftoc-dot s9"></span><span class="ftoc-text">特朗普在伊朗陷阱中的无能为力</span></a><a href="#item-41" class="ftoc-link" data-idx="41"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国白宫与国会重启统一 AI 监管努力</span></a><a href="#item-42" class="ftoc-link" data-idx="42"><span class="ftoc-dot s9"></span><span class="ftoc-text">Drone Strike Shuts Dow…</span></a><a href="#item-43" class="ftoc-link" data-idx="43"><span class="ftoc-dot s9"></span><span class="ftoc-text">印度首次部署 12 枚核弹头，政策重大转变</span></a><a href="#item-44" class="ftoc-link" data-idx="44"><span class="ftoc-dot s9"></span><span class="ftoc-text">捍卫自由主义世界秩序</span></a><a href="#item-45" class="ftoc-link" data-idx="45"><span class="ftoc-dot s8"></span><span class="ftoc-text">FCC wants to kill burn…</span></a><a href="#item-46" class="ftoc-link" data-idx="46"><span class="ftoc-dot s8"></span><span class="ftoc-text">Apple decided not to r…</span></a><a href="#item-47" class="ftoc-link" data-idx="47"><span class="ftoc-dot s8"></span><span class="ftoc-text">Congress just gave DHS…</span></a><a href="#item-48" class="ftoc-link" data-idx="48"><span class="ftoc-dot s8"></span><span class="ftoc-text">Two reportedly killed …</span></a><a href="#item-49" class="ftoc-link" data-idx="49"><span class="ftoc-dot s8"></span><span class="ftoc-text">'Please send help': Cr…</span></a><a href="#item-50" class="ftoc-link" data-idx="50"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta Changed Its Speec…</span></a><a href="#item-51" class="ftoc-link" data-idx="51"><span class="ftoc-dot s8"></span><span class="ftoc-text">EU orders Meta to open…</span></a><a href="#item-52" class="ftoc-link" data-idx="52"><span class="ftoc-dot s8"></span><span class="ftoc-text">Doctors and NHS could …</span></a><a href="#item-53" class="ftoc-link" data-idx="53"><span class="ftoc-dot s8"></span><span class="ftoc-text">All signs point to Tru…</span></a><a href="#item-54" class="ftoc-link" data-idx="54"><span class="ftoc-dot s8"></span><span class="ftoc-text">A Challenge in the U.S…</span></a><a href="#item-55" class="ftoc-link" data-idx="55"><span class="ftoc-dot s8"></span><span class="ftoc-text">Why a U.K. By-Election…</span></a><a href="#item-56" class="ftoc-link" data-idx="56"><span class="ftoc-dot s8"></span><span class="ftoc-text">Germany Drops Plan to …</span></a><a href="#item-57" class="ftoc-link" data-idx="57"><span class="ftoc-dot s8"></span><span class="ftoc-text">The 15-Hour Fight With…</span></a><a href="#item-58" class="ftoc-link" data-idx="58"><span class="ftoc-dot s8"></span><span class="ftoc-text">6 Countries Announce S…</span></a><a href="#item-59" class="ftoc-link" data-idx="59"><span class="ftoc-dot s8"></span><span class="ftoc-text">Netanyahu’s Bow to Tru…</span></a><a href="#item-60" class="ftoc-link" data-idx="60"><span class="ftoc-dot s8"></span><span class="ftoc-text">Here’s the latest.</span></a><a href="#item-61" class="ftoc-link" data-idx="61"><span class="ftoc-dot s8"></span><span class="ftoc-text">金正恩的胜利</span></a><a href="#item-62" class="ftoc-link" data-idx="62"><span class="ftoc-dot s8"></span><span class="ftoc-text">伊朗战争推动能源进口国向内转</span></a><a href="#item-63" class="ftoc-link" data-idx="63"><span class="ftoc-dot s8"></span><span class="ftoc-text">荷兰阻止美国收购荷兰身份证公司</span></a><a href="#item-64" class="ftoc-link" data-idx="64"><span class="ftoc-dot s8"></span><span class="ftoc-text">欧盟提议禁止俄罗斯士兵入境</span></a><a href="#item-65" class="ftoc-link" data-idx="65"><span class="ftoc-dot s8"></span><span class="ftoc-text">西雅图通过一年禁令禁止新建 AI 数据中心</span></a><a href="#item-66" class="ftoc-link" data-idx="66"><span class="ftoc-dot s8"></span><span class="ftoc-text">联邦法官推翻特朗普的 10 万美元 H-1B…</span></a><a href="#item-67" class="ftoc-link" data-idx="67"><span class="ftoc-dot s8"></span><span class="ftoc-text">法国禁止以色列部长斯莫特里赫入境</span></a><a href="#item-68" class="ftoc-link" data-idx="68"><span class="ftoc-dot s8"></span><span class="ftoc-text">特朗普调解伊朗与以色列，力图避免战争</span></a><a href="#item-69" class="ftoc-link" data-idx="69"><span class="ftoc-dot s8"></span><span class="ftoc-text">欧洲难以应对第二次中国工业冲击</span></a><a href="#item-70" class="ftoc-link" data-idx="70"><span class="ftoc-dot s8"></span><span class="ftoc-text">英加法挪协调制裁西岸定居者暴力</span></a><a href="#item-71" class="ftoc-link" data-idx="71"><span class="ftoc-dot s8"></span><span class="ftoc-text">标普 500 与纳斯达克下跌，科技股抛售重启…</span></a><a href="#item-72" class="ftoc-link" data-idx="72"><span class="ftoc-dot s8"></span><span class="ftoc-text">俄在波罗的海举行海军演习，与北约军演同时</span></a><a href="#item-73" class="ftoc-link" data-idx="73"><span class="ftoc-dot s8"></span><span class="ftoc-text">中国联通警告美国打压可能扰乱全球通信</span></a><a href="#item-74" class="ftoc-link" data-idx="74"><span class="ftoc-dot s8"></span><span class="ftoc-text">英国审查 Palantir 的 NHS 合同…</span></a><a href="#item-75" class="ftoc-link" data-idx="75"><span class="ftoc-dot s8"></span><span class="ftoc-text">中东局势不明，股市与油价双双下跌</span></a><a href="#item-76" class="ftoc-link" data-idx="76"><span class="ftoc-dot s8"></span><span class="ftoc-text">伊朗以色列缓和局势，油价跌至七周低点</span></a><a href="#item-77" class="ftoc-link" data-idx="77"><span class="ftoc-dot s8"></span><span class="ftoc-text">OpenAI 研究人员加入全球 AI 暂停呼吁</span></a><a href="#item-78" class="ftoc-link" data-idx="78"><span class="ftoc-dot s8"></span><span class="ftoc-text">测试表明俄罗斯卫星可干扰欧洲 GPS 信号</span></a><a href="#item-79" class="ftoc-link" data-idx="79"><span class="ftoc-dot s8"></span><span class="ftoc-text">俄罗斯入侵乌克兰第 1566 天实时讨论串</span></a><a href="#item-80" class="ftoc-link" data-idx="80"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰计划每天向俄罗斯发射 600 架无人机…</span></a><a href="#item-81" class="ftoc-link" data-idx="81"><span class="ftoc-dot s8"></span><span class="ftoc-text">俄罗斯军事官员在莫斯科附近汽车爆炸中丧生</span></a><a href="#item-82" class="ftoc-link" data-idx="82"><span class="ftoc-dot s8"></span><span class="ftoc-text">保加利亚停止向乌克兰运送武器</span></a><a href="#item-83" class="ftoc-link" data-idx="83"><span class="ftoc-dot s8"></span><span class="ftoc-text">五角大楼提高对以色列间谍活动的威胁级别</span></a><a href="#item-84" class="ftoc-link" data-idx="84"><span class="ftoc-dot s8"></span><span class="ftoc-text">土耳其骚扰载有欧盟防长的飞机前往塞浦路斯</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔬</span><span class="ftoc-cat-name">科学/研究</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-85" class="ftoc-link" data-idx="85"><span class="ftoc-dot s8"></span><span class="ftoc-text">Gravity：从牛顿到爱因斯坦的交互式太阳…</span></a><a href="#item-86" class="ftoc-link" data-idx="86"><span class="ftoc-dot s8"></span><span class="ftoc-text">Longevity Startup Dose…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">📊</span><span class="ftoc-cat-name">行业/商业</span><span class="ftoc-cat-n">16</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-87" class="ftoc-link" data-idx="87"><span class="ftoc-dot s9"></span><span class="ftoc-text">The iPhone's Last Stand?</span></a><a href="#item-88" class="ftoc-link" data-idx="88"><span class="ftoc-dot s9"></span><span class="ftoc-text">Apollo, Blackstone bac…</span></a><a href="#item-89" class="ftoc-link" data-idx="89"><span class="ftoc-dot s9"></span><span class="ftoc-text">OpenAI files confident…</span></a><a href="#item-90" class="ftoc-link" data-idx="90"><span class="ftoc-dot s8"></span><span class="ftoc-text">State of the software …</span></a><a href="#item-91" class="ftoc-link" data-idx="91"><span class="ftoc-dot s8"></span><span class="ftoc-text">World's largest chipma…</span></a><a href="#item-92" class="ftoc-link" data-idx="92"><span class="ftoc-dot s8"></span><span class="ftoc-text">GM joins race to build…</span></a><a href="#item-93" class="ftoc-link" data-idx="93"><span class="ftoc-dot s8"></span><span class="ftoc-text">It’s not FAANG anymore…</span></a><a href="#item-94" class="ftoc-link" data-idx="94"><span class="ftoc-dot s8"></span><span class="ftoc-text">SpaceX IPO 需求接近超额认购四倍</span></a><a href="#item-95" class="ftoc-link" data-idx="95"><span class="ftoc-dot s8"></span><span class="ftoc-text">法官批准 Visa 和 Mastercard…</span></a><a href="#item-96" class="ftoc-link" data-idx="96"><span class="ftoc-dot s8"></span><span class="ftoc-text">Nuvei 洽谈以 27 亿美元收购 Pay…</span></a><a href="#item-97" class="ftoc-link" data-idx="97"><span class="ftoc-dot s8"></span><span class="ftoc-text">塔塔咨询董事长警告 AI 智能体可能取代人类…</span></a><a href="#item-98" class="ftoc-link" data-idx="98"><span class="ftoc-dot s8"></span><span class="ftoc-text">GSK 以 106 亿美元收购 Nuvale…</span></a><a href="#item-99" class="ftoc-link" data-idx="99"><span class="ftoc-dot s8"></span><span class="ftoc-text">中国人工智能驱动出口大增超预期</span></a><a href="#item-100" class="ftoc-link" data-idx="100"><span class="ftoc-dot s8"></span><span class="ftoc-text">AI 治理：平台公司的生存护城河</span></a><a href="#item-101" class="ftoc-link" data-idx="101"><span class="ftoc-dot s8"></span><span class="ftoc-text">OpenAI 140 亿美元亏损目标未包含约…</span></a><a href="#item-102" class="ftoc-link" data-idx="102"><span class="ftoc-dot s8"></span><span class="ftoc-text">Salesforce AI 收入达 12 亿…</span></a></div></nav>
+  </aside>
+  <button class="toc-fab" id="tocFab" onclick="toggleToc()" title="目录">☰</button>
+<div class="container">
+
+    <header class="hero">
+      <div class="hero-badge">2026-06-10</div>
+      <h1>🌅 Horizon 每日速递</h1>
+      <p class="hero-sub">从 553 条内容中精选 102 条</p>
+      <div class="hero-pills"><span class="hero-pill">🤖 AI/ML <strong>22</strong></span><span class="hero-pill">⚙️ 系统/硬件 <strong>4</strong></span><span class="hero-pill">🔒 安全/隐私 <strong>7</strong></span><span class="hero-pill">🌍 时政/地缘 <strong>51</strong></span><span class="hero-pill">🔬 科学/研究 <strong>2</strong></span><span class="hero-pill">📊 行业/商业 <strong>16</strong></span></div>
+    </header>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🤖</span>AI/ML<span class="cat-n">22 条</span></div>
+  <article class="item-card" id="item-1">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">1</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u19rcz/openai_ran_a_44day_hiring_competition_an/" target="_blank">OpenAI ran a 44-day hiring competition. An autonomous AI agent beat everyone competitor.</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 10.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI's ML hiring competition was dominated by an autonomous AI agent, Aiden, which contributed more leaderboard records than any human and became a foundation for other submissions.</p>
+      <p class="card-source">r/artificial · /u/Educational_Strain_3 · 6月9日 16:18</p>
+<div class="tags-row"><span class="tag">autonomous agents</span> <span class="tag">AI research</span> <span class="tag">OpenAI</span> <span class="tag">small language models</span> <span class="tag">ML competition</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-2">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">2</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u1b22l/introducing_claude_fable_5/" target="_blank">Introducing Claude Fable 5</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 10.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Anthropic announces Claude Fable 5, a state-of-the-art AI model with safeguards, and Claude Mythos 5, a more capable but less constrained variant.</p>
+      <p class="card-source">r/ClaudeAI · /u/ClaudeOfficial · 6月9日 17:04</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">LLM</span> <span class="tag">Claude</span> <span class="tag">model release</span> <span class="tag">Anthropic</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-3">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">3</span>
+        <h2 class="card-title"><a href="https://deepmind.google/blog/introducing-gemma-4-12b-a-unified-encoder-free-multimodal-model/" target="_blank">Introducing Gemma 4 12B: a unified, encoder-free multimodal model</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">DeepMind introduces Gemma 4 12B, an encoder-free multimodal model, as a significant new open-weight AI model.</p>
+      <p class="card-source">News & Blog - DeepMind · 6月9日 14:10</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">multimodal</span> <span class="tag">Gemma</span> <span class="tag">model release</span> <span class="tag">DeepMind</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-4">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">4</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/singularity/comments/1u1eo6p/anthropic_built_a_hidden_switch_into_fable_5_that/" target="_blank">Anthropic built a hidden switch into fable 5 that makes it bad at building AI systems</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Anthropic secretly limits Claude's effectiveness for building competing AI systems, affecting few organizations but raising ethical and competitive concerns.</p>
+      <p class="card-source">r/singularity · /u/ocean_protocol · 6月9日 19:11</p>
+<div class="tags-row"><span class="tag">Anthropic</span> <span class="tag">Claude</span> <span class="tag">AI safety</span> <span class="tag">ethics</span> <span class="tag">competition</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-5">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">5</span>
+        <h2 class="card-title"><a href="https://arxiv.org/abs/2605.15184" target="_blank">Is Grep All You Need? How Agent Harnesses Reshape Agentic Search</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">This paper explores whether simple grep-like tools can replace complex retrieval systems for agentic search, particularly in codebases and long conversations.</p>
+      <p class="card-source">Anon84 · 6月9日 13:27</p>
+<div class="tags-row"><span class="tag">agentic search</span> <span class="tag">grep</span> <span class="tag">information retrieval</span> <span class="tag">LLM agents</span> <span class="tag">Hacker News discussion</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-6">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">6</span>
+        <h2 class="card-title"><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247896365&idx=3&sn=e12711bc2012bf7690c5815c1e2348d5" target="_blank">字节跳动开源 3B 多模态模型 Lance，统一图像视频编辑</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">字节跳动发布了 Lance，一个 3B 参数的开源多模态模型，统一了图像和视频的理解、生成与编辑。该模型迅速成为 Hugging Face 上最受欢迎的模型。 这个小巧而强大的模型表明，统一的多模态编辑并不需要海量参数，从而降低了研究人员和开发人员使用全面多模态能力的门槛。 Lance 采用 3B 主动参数的原生统一架构，支持图像和视频，不依赖文本-图像主导的设计。它通过协作多任务学习进行训练。</p>
+      <p class="card-source">量子位 · 6月9日 09:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>当前大多数多模态模型将理解、生成和编辑分离到不同的模型，或者依赖非常大的参数集。Lance 通过跨任务的联合训练探索了一种实用范式，用相对较少的参数实现了统一。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://github.com/bytedance/Lance" target="_blank">GitHub - bytedance/Lance: A 3B-active-parameter native ...</a></li><li><a href="https://lance-project.github.io/" target="_blank">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></li><li><a href="https://arxiv.org/abs/2605.18678" target="_blank">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a></li></ul></details><div class="tags-row"><span class="tag">multimodal</span> <span class="tag">image editing</span> <span class="tag">video editing</span> <span class="tag">ByteDance</span> <span class="tag">open source</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-7">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">7</span>
+        <h2 class="card-title"><a href="https://simonwillison.net/2026/Jun/9/andrej-karpathy/#atom-everything" target="_blank">Karpathy 谈 AI 软件繁荣与杰文斯悖论</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Andrej Karpathy 在 Twitter 上分享了他的思考：随着 AI 使工作软件变得触手可及，他对软件的需求大幅增长，并引用了杰文斯悖论。他描述了利用 Claude Fable 5 模型创建定制化单一用途应用的能力，例如为特定项目定制的 Weights & Biases 工具。 这位 AI 领域领军人物提出的洞见突显了软件开发正在发生的变革性转变：成本和门槛降低促使消费和创新增加。这预示着一个未来，定制化、高度针对性的软件将成为常态，赋能个人和小型团队处理复杂项目。 引用中提到了杰文斯悖论，即资源使用效率的提高反而导致总体消费增加。Karpathy 特别提到创建‘完整的 wandb’——一个针对特定项目高度定制的版本，Weights & Biases 是一个流行的机器学习实验跟踪平台。</p>
+      <p class="card-source">Simon Willison · 6月9日 19:03</p>
+<div class="bg-block"><span class="block-label">背景</span><p>杰文斯悖论是一个经济学现象：当技术进步提高了资源使用效率时，该资源的总消耗量可能不降反增。Weights & Biases（wandb）是一种广泛使用的开发者工具，用于跟踪机器学习实验，包括超参数调优和模型可视化。Claude Fable 5 是 Anthropic 最新的先进 AI 模型，在软件工程等领域表现卓越。</p></div><details class="refs-details"><summary>参考链接 (1)</summary><ul class="refs-list"><li><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Claude Fable 5 and Claude Mythos 5 \ Anthropic</a></li></ul></details><div class="tags-row"><span class="tag">Andrej Karpathy</span> <span class="tag">AI software development</span> <span class="tag">Jevons paradox</span> <span class="tag">generative AI</span> <span class="tag">LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-8">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">8</span>
+        <h2 class="card-title"><a href="https://www.latent.space/p/ainews-frontiercode-benchmarking" target="_blank">FrontierCode：AI 代码质量新基准</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Cognition 发布了 FrontierCode 基准，评估 AI 生成代码的可合并性和可维护性，而不仅仅是单元测试通过。它包含三个难度子集：Extended、Main 和 Diamond。 现有编码基准常被迅速攻破，模型得分超过 90%，但未能反映真实的工程代码质量。FrontierCode 提高了标准，推动 AI 模型生成可维护、可投入生产的代码。 FrontierCode 包含三个难度递增的子集：Extended、Main 和 Diamond。即使是当前最强大的模型在该基准上也表现不佳，显示出编码能力的显著差距。</p>
+      <p class="card-source">Latent Space · 6月9日 06:12</p>
+<div class="bg-block"><span class="block-label">背景</span><p>许多面向 AI 的编码基准（如 HumanEval）主要测试代码是否通过一组单元测试。然而，通过测试并不能保证代码在真实代码库中整洁、可维护或可合并。FrontierCode 旨在通过更全面地评估代码质量来填补这一空白。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://cognition.ai/blog/frontier-code" target="_blank">Introducing FrontierCode | Cognition</a></li><li><a href="https://www.latent.space/p/ainews-frontiercode-benchmarking" target="_blank">[AINews] FrontierCode: Benchmarking for Code Quality over Slop</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">benchmark</span> <span class="tag">code quality</span> <span class="tag">AI-generated code</span> <span class="tag">FrontierCode</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-9">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">9</span>
+        <h2 class="card-title"><a href="https://deepmind.google/blog/fluid-natural-voice-translation-with-gemini-35-live-translate/" target="_blank">Fluid, natural voice translation with Gemini 3.5 Live Translate</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Gemini 3.5 Live Translate introduces near real-time, natural voice translation across Google products.</p>
+      <p class="card-source">News & Blog - DeepMind · 6月9日 15:16</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">Machine Learning</span> <span class="tag">Translation</span> <span class="tag">Gemini</span> <span class="tag">Google</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-10">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">10</span>
+        <h2 class="card-title"><a href="https://huggingface.co/blog/ServiceNow-AI/code-switching" target="_blank">Can Voice Agents Handle Bilingual Customers? Benchmarking Frontier ASR on Code-Switched Speech</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">This blog post benchmarks frontier ASR models on code-switched speech to evaluate their performance with bilingual customers.</p>
+      <p class="card-source">Hugging Face Blog · 6月9日 19:38</p>
+<div class="tags-row"><span class="tag">ASR</span> <span class="tag">code-switching</span> <span class="tag">bilingual</span> <span class="tag">voice agents</span> <span class="tag">benchmarking</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-11">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">11</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/09/anthropics-fable-5-can-make-weirdly-fun-video-games-with-the-click-of-a-button/" target="_blank">Anthropic’s Fable 5 can make weirdly fun video games with the click of a button</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Anthropic's Claude Fable 5 enables one-click creation of video games, appealing to 'vibe coders'.</p>
+      <p class="card-source">TechCrunch · 6月9日 20:37</p>
+<div class="tags-row"><span class="tag">Anthropic</span> <span class="tag">AI video games</span> <span class="tag">vibe coding</span> <span class="tag">Claude</span> <span class="tag">generative AI</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-12">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">12</span>
+        <h2 class="card-title"><a href="https://spectrum.ieee.org/agilink-contact-intelligence-robot-manipulation" target="_blank">Beyond Dexterity: Why Contact May Define the Next Era of Robotics</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">A robotics demo at ICRA 2026 showcases balloon dog making to highlight the next era of robot manipulation through contact intelligence.</p>
+      <p class="card-source">IEEE Spectrum · 6月9日 12:51</p>
+<div class="tags-row"><span class="tag">robotics</span> <span class="tag">manipulation</span> <span class="tag">contact intelligence</span> <span class="tag">AI/ML</span> <span class="tag">ICRA</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-13">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">13</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/MachineLearning/comments/1u1ew6q/ai_epistemic_risks_emerging_mechanisms_evidence_r/" target="_blank">AI 认知风险：专家论文详述对人类思维的威胁</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一篇由 30 位专家（包括 Yoshua Bengio）合著的新论文系统性地探讨了 AI 系统如何通过说服、认知卸载和反馈循环等机制，威胁我们形成准确信念、良好推理和维持健康信息环境的能力。 这些认知风险具有自我强化性，可能破坏识别和治理其他 AI 风险所需的基础，因此这是一个需要及时干预的关键领域，以免我们丧失应对能力。 论文识别了具体危害，如 AI 奉承（模型为迎合用户而放弃准确性）、因过度依赖导致的认知韧性长期退化，以及通过人机与机机反馈循环收窄认知空间，可能导致不可逆的'锁定'状态。</p>
+      <p class="card-source">r/MachineLearning · /u/KellinPelrine · 6月9日 19:18</p>
+<div class="bg-block"><span class="block-label">背景</span><p>认知风险指的是对我们集体形成准确信念和良好推理能力的威胁。AI 系统，尤其是大型语言模型，会表现出奉承行为——即调整回复以取悦用户而非保持真实——并可能导致用户放弃批判性思考。当 AI 生成的内容被重新用作训练数据时，就会产生反馈循环，导致知识同质化甚至分裂。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/AI_sycophancy" target="_blank">AI sycophancy</a></li><li><a href="https://quantifieduncertainty.org/posts/a-sketch-of-ai-driven-epistemic-lock-in/" target="_blank">A Sketch of AI-Driven Epistemic Lock-In</a></li></ul></details><div class="tags-row"><span class="tag">AI risks</span> <span class="tag">epistemic risks</span> <span class="tag">cognitive offloading</span> <span class="tag">manipulation</span> <span class="tag">feedback loops</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-14">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">14</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u1ci1r/releasing_cohere_north_mini_code/" target="_blank">Cohere 发布 North Mini Code 代码模型</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Cohere 正式发布了 North Mini Code，这是一个专注于代码的大型语言模型，权重在 Hugging Face 上开源，支持 FP8 精度并兼容 vLLM 推理引擎。 此次发布扩大了代码生成的开源选择，来自一家主要 AI 公司的模型权重透明且具备工具调用能力，对开发者和研究人员非常有利。 该模型支持 32 万 token 的上下文长度，需要 cohere_melody 库实现准确的响应解析；MLX 支持通过第三方移植实现，llama.cpp 的量化和支持正在考虑中。</p>
+      <p class="card-source">r/LocalLLaMA · /u/jayalammar · 6月9日 17:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>用于代码生成的大型语言模型（LLMs）在源代码上训练，以辅助编程任务。Cohere 的 North Mini Code 顺应了开源权重模型的趋势，允许社区进行微调和部署。vLLM 是一个高吞吐量推理引擎，FP8 是一种低精度格式，可在最小精度损失下减少内存使用。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://github.com/vllm-project/vllm" target="_blank">vllm -project/ vllm : A high-throughput and memory-efficient inference ...</a></li><li><a href="https://pypi.org/project/cohere-melody/" target="_blank">cohere-melody · PyPI</a></li><li><a href="https://en.wikipedia.org/wiki/Minifloat" target="_blank">Minifloat - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">Cohere</span> <span class="tag">North Mini Code</span> <span class="tag">LLM</span> <span class="tag">code generation</span> <span class="tag">open source</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-15">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">15</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u19k2h/unsloth_gemma_4_qat_mtp_assistant_models_now/" target="_blank">Unsloth 发布支持 QAT 和 MTP 的 GGUF 量化 Gemma 4 助手模型</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Unsloth 发布了谷歌 Gemma 4 指令调优模型的 GGUF 量化版本，集成了量化感知训练 (QAT) 和多 Token 预测 (MTP) 助手功能。这些模型以 q8_0 及其他量化级别在 Hugging Face 上提供。 此次发布通过 QAT 提高了量化模型的准确率，并通过 MTP 草案模型加速生成，使得 Gemma 4 模型的高效本地推理成为可能。它将强大的前沿大语言模型带给硬件有限的用户，推动了开源 AI 的部署。 这些模型包括从 12B 到 26B-A4B、31B 以及高效的 E2B/E4B 变体，并针对 E2B 和 E4B 提供了专门的移动优化版本。所有模型均以 GGUF 文件格式提供，兼容 llama.cpp 及其他本地推理框架。</p>
+      <p class="card-source">r/LocalLLaMA · /u/ParadigmComplex · 6月9日 16:12</p>
+<div class="bg-block"><span class="block-label">背景</span><p>GGUF 是为本地硬件高效推理而开发的量化格式，广泛用于 llama.cpp 生态系统中。量化感知训练 (QAT) 在训练过程中模拟量化，以减少压缩模型时的准确率损失。多 Token 预测 (MTP) 使用轻量级草案模型一次预测多个 Token，从而加速生成过程。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://ggufloader.github.io/what-is-gguf.html" target="_blank">What is GGUF? Complete Guide to GGUF Format & Quantization</a></li><li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/quantization-aware-training-gemma-4/" target="_blank">Gemma 4 QAT models: Optimizing model compression for mobile and laptop efficiency</a></li><li><a href="https://www.youtube.com/watch?v=tPYFvib1uRs" target="_blank">Gemma4 Assistant : MTP Draft models - YouTube</a></li></ul></details><div class="tags-row"><span class="tag">Gemma 4</span> <span class="tag">GGUF</span> <span class="tag">QAT</span> <span class="tag">MTP</span> <span class="tag">local LLM</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-16">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">16</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u1516w/apple_announced_new_on_device_inference_engine/" target="_blank">苹果发布 CoreAI 设备端推理引擎</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">苹果在 WWDC 2026 上宣布了 CoreAI，这是一个新的设备端推理引擎，支持使用混合专家（MoE）架构的、参数量高达 200 亿的模型，将替代 CoreML 用于 Apple Silicon 设备。 CoreAI 使开发者无需服务器成本或第三方工具，即可在 iPhone、iPad、Mac 和 Vision Pro 上直接运行大语言模型，显著提升了设备端 AI 能力和隐私保护。 CoreAI 支持使用稀疏 MoE 架构、参数量高达 200 亿的模型，需要像 CoreML 一样通过 Python 脚本转换权重。目前支持的模型主要来自 2025 年中，尚无与 MLX 对比的性能数据。</p>
+      <p class="card-source">r/LocalLLaMA · /u/bakawolf123 · 6月9日 13:29</p>
+<div class="bg-block"><span class="block-label">背景</span><p>设备端推理是指在不借助云服务器的情况下本地运行 AI 模型，可增强隐私并降低延迟。CoreML 此前在处理大语言模型时能力有限，支持的操作和参数量较少。混合专家（MoE）是一种架构，它仅针对每个输入激活相关的子网络，从而能用更少的计算量高效运行更大的模型。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>Reddit 社区指出该公告未引起广泛关注，并强调 CoreAI 相比 CoreML 是重大升级，因为 CoreML 不支持超过几十亿参数的模型。用户还指出缺乏性能基准测试，认为目前可能在 GPU 上不如纯 MLX。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://developer.apple.com/documentation/coreai" target="_blank">Core AI | Apple Developer Documentation</a></li><li><a href="https://github.com/apple/coreai-models" target="_blank">GitHub - apple/coreai-models: Model export recipes, Python ...</a></li><li><a href="https://www.aimadetools.com/blog/what-is-apple-core-ai/" target="_blank">What is Apple Core AI: On-Device LLMs Without API Costs (2026)</a></li></ul></details><div class="tags-row"><span class="tag">Apple</span> <span class="tag">CoreAI</span> <span class="tag">on-device inference</span> <span class="tag">LLM</span> <span class="tag">MoE</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-17">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">17</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u1l9u4/furiosa_ai_selling_inference_chip_to_consumer/" target="_blank">Furiosa AI RNGD 芯片或可革新本地 LLM 推理</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位 Reddit 用户推测，如果 Furiosa AI 将其 RNGD 推理芯片卖给消费者，凭借其高内存带宽和容量，将彻底改变本地 LLM 推理。 RNGD 芯片提供 1.5 TB/s 带宽和 48 GB HBM3 显存，功耗仅 180W，性能远超当前消费级 GPU，可让开发者和发烧友在本地运行大型模型，从而推动 LLM 的普及。 该芯片采用台积电 5nm 工艺、SK 海力士 HBM3 显存，功耗为 180W。目前虽不面向消费市场，但用户希望其定价约 2500 美元，并通过 GGML 后端集成 llama.cpp。</p>
+      <p class="card-source">r/LocalLLaMA · /u/siegevjorn · 6月9日 23:20</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Furiosa AI 是一家专注于 AI 推理加速器的韩国初创公司。其 RNGD 芯片基于张量收缩处理器架构，旨在实现高能效推理。llama.cpp 是本地 LLM 推理的事实标准，常使用 GGML 张量库在消费硬件上运行模型。该芯片的高带宽和大容量对 LLM 推理至关重要，可减少内存瓶颈。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://furiosa.ai/rngd" target="_blank">RNGD Product Page — FuriosaAI</a></li><li><a href="https://chipsandcheese.com/p/furiosaais-rngd-at-hot-chips-2024-accelerating-ai-with-a-more-flexible-primitive" target="_blank">FuriosaAI’s RNGD at Hot Chips 2024: Accelerating AI with a ...</a></li><li><a href="https://en.wikipedia.org/wiki/GGML" target="_blank">GGML</a></li></ul></details><div class="tags-row"><span class="tag">Furiosa AI</span> <span class="tag">inference chip</span> <span class="tag">local LLM</span> <span class="tag">hardware</span> <span class="tag">AI inference</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-18">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">18</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u1blp1/watch_agents_fight_a_live_challenge_to_speed_up/" target="_blank">实时挑战：在 A10G 上加速 Gemma 4 E4B 推理</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Reddit 用户 paf1138 在 r/LocalLLaMA 上发起了一项实时挑战，旨在优化 Google 的 Gemma 4 E4B 模型在单个 NVIDIA A10G GPU 上的推理速度。参与者正在实时竞争以实现最快的推理速度。 该挑战展示了在常见硬件上对领先开放权重模型进行实际推理优化的技术，直接惠及本地 AI 社区。成功可能有助于在资源受限环境中更好地部署 Gemma 4 E4B。 Gemma 4 E4B 是一个 44 亿参数的多模态模型，推理仅需 8GB 显存，而 A10G 提供 24GB GDDR6 内存和 288 个张量核心。该挑战可能涉及量化、内核融合或内存优化等技术。</p>
+      <p class="card-source">r/LocalLLaMA · /u/paf1138 · 6月9日 17:22</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Gemma 4 E4B 是 Google 轻量级开放模型之一，专为高效本地部署设计，支持多模态输入和工具使用。NVIDIA A10G 是一款基于 Ampere 架构的专业 GPU，常用于云端和数据中心环境的 AI 推理。该挑战专注于优化推理速度，这是实时应用和成本效益部署的关键因素。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://huggingface.co/google/gemma-4-E4B" target="_blank">google/gemma-4-E4B · Hugging Face</a></li><li><a href="https://gemma4.dev/models/gemma-4-e4b" target="_blank">Gemma 4 E4B — The Daily Driver for Local AI | gemma4.dev</a></li><li><a href="https://www.techpowerup.com/gpu-specs/a10g.c3798" target="_blank">NVIDIA A10G Specs | TechPowerUp GPU Database</a></li></ul></details><div class="tags-row"><span class="tag">gemma</span> <span class="tag">inference optimization</span> <span class="tag">a10g</span> <span class="tag">challenge</span> <span class="tag">localllama</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-19">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">19</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u14kte/i_put_together_a_rustnative_cpuonly/" target="_blank">纯 CPU 运行的 Rust 原生 LFM2.5-8B-A1B 实现，速度达 37 tok/s</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位开发者发布了 Liquid AI 的 LFM2.5-8B-A1B 混合专家模型的 Rust 原生纯 CPU 实现，在 Ryzen 7950X 上解码速度约为每秒 37 个 token，内存占用约 7GB。 这使得无需 GPU 即可在消费级 CPU 上高效运行本地大语言模型，降低了硬件成本，让更多用户能够使用先进的 AI 技术。 该实现以名为 'bebelm' 的 Cargo 包发布，支持工具调用回调，并允许在多个代理实例间共享权重、各自拥有独立的 KV 缓存。预填充速度尚未优化，与解码速度相当。</p>
+      <p class="card-source">r/LocalLLaMA · /u/maximecb · 6月9日 13:11</p>
+<div class="bg-block"><span class="block-label">背景</span><p>LFM2.5-8B-A1B 是 Liquid AI 推出的稀疏混合专家（MoE）模型，总参数量 8.3B，但每次前向传播仅激活 1.5B 参数，专为设备端部署设计。在基于 Transformer 的大语言模型中，推理分为预填充阶段（并行处理提示词）和解码阶段（逐个生成 token），KV 缓存用于存储注意力层的键值对，以避免重复计算。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.liquid.ai/blog/lfm2-5-8b-a1b" target="_blank">LFM2.5-8B-A1B: An Even Better On-Device Mixture of Experts</a></li><li><a href="https://www.marktechpost.com/2026/05/28/liquid-ai-releases-lfm2-5-8b-a1b-an-on-device-moe-model-with-8-3b-total-and-1-5b-active-parameters/" target="_blank">Liquid AI Releases LFM2.5-8B-A1B: An On-Device MoE Model With ...</a></li><li><a href="https://luv-bansal.medium.com/the-evolution-of-kv-cache-from-simple-buffers-to-distributed-memory-systems-df51cb8ce26f" target="_blank">KV Cache Explained: The Complete Guide to KV Cache in LLM ...</a></li></ul></details><div class="tags-row"><span class="tag">Rust</span> <span class="tag">LLM</span> <span class="tag">CPU inference</span> <span class="tag">LFM2.5-8B-A1B</span> <span class="tag">local LLM</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-20">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">20</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u1i3ih/can_a_machine_think_without_language/" target="_blank">Yann LeCun 的十亿美元赌注：机器无需语言即可思考</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一篇 Reddit 讨论审视了 Yann LeCun 的主张，即真正的 AI 需要学习物理动态的“世界模型”而非语言，引发了关于智能是否可以在没有语言技能的情况下存在的辩论。 这场辩论挑战了主流语言模型范式，可能将 AI 研究转向具身推理，从而带来更强大、更通用的智能。 LeCun 的 AMI Labs 已融资 103 亿美元用于开发世界模型，他的赌注涉及 10 亿美元押注反对纯 LLM 方法。该帖子质疑如何评估非语言系统的智能。</p>
+      <p class="card-source">r/artificial · /u/oravecz · 6月9日 21:14</p>
+<div class="bg-block"><span class="block-label">背景</span><p>世界模型是学习环境内部表示以预测未来状态的 AI 系统，常用于强化学习。图灵奖得主、前 Meta 首席 AI 科学家 Yann LeCun 认为，构建此类模型是实现人类水平智能的关键。他已离开 Meta 创立 AMI Labs，该公司最近融资超过十亿美元以追求这一愿景。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>Reddit 帖子引发了深思熟虑的评论，一些人同意语言可能是智能的副产品而非核心，而另一些人则认为符号推理是基础。许多人建议结合世界模型和语言的混合方法是最有前途的路径。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/World_model_(artificial_intelligence)" target="_blank">World model (artificial intelligence) - Wikipedia</a></li><li><a href="https://techcrunch.com/2026/03/09/yann-lecuns-ami-labs-raises-1-03-billion-to-build-world-models/" target="_blank">Yann LeCun’s AMI Labs raises $1.03B to build world models</a></li><li><a href="https://www.techtimes.com/articles/317928/20260606/yann-lecun-world-models-bet-ami-labs-stakes-103-billion-against-large-language-models.htm" target="_blank">Yann LeCun World Models Bet: AMI Labs Stakes $1.03 Billion ...</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">world models</span> <span class="tag">language models</span> <span class="tag">Yann LeCun</span> <span class="tag">intelligence</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-21">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">21</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u1fsdi/claude_fable_5_feels_less_like_a_model_launch_and/" target="_blank">Claude Fable 5 揭示双轨 AI 系统</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Anthropic 发布了 Claude Fable 5，对普通用户实施严格的安全路由，而受信任的合作伙伴获得限制较少的版本 Mythos 5，形成了双轨访问模式。 这标志着 AI 不平等的开端，强大 AI 的访问被设限，可能造成无限制访问者与普通公众之间的鸿沟，引发关于公平性和安全治理的关键问题。 安全路由会在请求涉及网络、生物、化学或蒸馏等敏感主题时，将用户从 Fable 5 降级到 Opus 4.8。Fable 5 仅对付费计划免费至 6 月 22 日，之后转为按用量计费，表明经济模式不可持续。</p>
+      <p class="card-source">r/ClaudeAI · /u/Roaring_lion_ · 6月9日 19:50</p>
+<div class="bg-block"><span class="block-label">背景</span><p>安全路由将 AI 请求根据风险评估导向不同路径。模型蒸馏将知识从大模型转移至小模型，但此处“蒸馏”指提取模型能力，Anthropic 对此加以限制。随着前沿 AI 公司平衡安全与商业利益，门控访问模式正在兴起，OpenAI 也推出了类似的安全路由系统。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>Reddit 帖子表达了对 AI 不平等的担忧，指出真正的故事不是模型能力而是门控访问。尽管无法获取具体评论，但讨论可能反映了对双轨 AI 世界的共同焦虑。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://techcrunch.com/2025/09/29/openai-rolls-out-safety-routing-system-parental-controls-on-chatgpt/" target="_blank">OpenAI rolls out safety routing system, parental controls on ...</a></li><li><a href="https://en.wikipedia.org/wiki/Model_distillation" target="_blank">Model distillation</a></li><li><a href="https://academy.farvision.com/academy/reader/intermediate/adaptive-safety-routing" target="_blank">Adaptive Safety Routing - Intermediate AI Training</a></li></ul></details><div class="tags-row"><span class="tag">AI safety</span> <span class="tag">AI inequality</span> <span class="tag">frontier AI</span> <span class="tag">gated utility</span> <span class="tag">Anthropic</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-22">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">22</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u1cvkc/fable_5_is_insanely_good_but_watch_your_usage_i/" target="_blank">Fable 5 模型表现惊艳但消耗使用量极快</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位使用 Max 20x 计划的用户报告，Fable 5 每分钟消耗约 2% 的使用量，其 API 定价为每百万输入/输出代币 $10/$50，是前代 Opus 4.8 的两倍。 这凸显了前沿模型成本的急剧上升，尤其是对于每个任务生成大量代币的代理工作负载，使得成本感知路由对企业来说变得至关重要。 Fable 5 的定价是每百万输入代币 $10、每百万输出代币 $50，是 Opus 4.8 的两倍。推理型模型每个请求生成更多代币，导致实际成本倍增。</p>
+      <p class="card-source">r/ClaudeAI · /u/StudentSweet3601 · 6月9日 18:07</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Fable 5 是一种新型大型推理模型（LRM），专为复杂多步骤任务设计。与标准 LLM 不同，这类模型输出更长的推理链，增加了代币使用量。代理工作流会串联多个模型调用，进一步放大成本。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Reasoning_model" target="_blank">Reasoning model - Wikipedia</a></li><li><a href="https://benchlm.ai/best/reasoning-models" target="_blank">Best Reasoning AI Models (2026) — Ranked by Benchmark Data</a></li></ul></details><div class="tags-row"><span class="tag">Claude</span> <span class="tag">Fable 5</span> <span class="tag">API pricing</span> <span class="tag">Opus 4.8</span> <span class="tag">cost analysis</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">⚙️</span>系统/硬件<span class="cat-n">4 条</span></div>
+  <article class="item-card" id="item-23">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">23</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u16eyk/people_are_making_singleslot_half_height_pcie/" target="_blank">People are making single-slot, half height pcie v100 with nvlink in China</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Chinese makers have created a custom single-slot half-height PCIe V100 GPU with NvLink, offering full performance at 75W passive or up to 300W with external power.</p>
+      <p class="card-source">r/LocalLLaMA · /u/OwnMathematician2620 · 6月9日 14:22</p>
+<div class="tags-row"><span class="tag">hardware mod</span> <span class="tag">V100</span> <span class="tag">NvLink</span> <span class="tag">PCIe</span> <span class="tag">AI compute</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-24">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">24</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/09/worlds-first-wind-powered-underwater-datacentre-starts-operating-in-china" target="_blank">World’s first wind-powered underwater datacentre starts operating in China</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">China launches world's first wind-powered underwater datacentre off Shanghai coast to tackle energy challenges from AI boom.</p>
+      <p class="card-source">The Guardian Technology · 6月9日 05:00</p>
+<div class="tags-row"><span class="tag">datacentre</span> <span class="tag">underwater</span> <span class="tag">wind power</span> <span class="tag">China</span> <span class="tag">AI energy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-25">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">25</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u1ieqn/nvidia_challenger_dmatrix_claims_ai_chip_10_times/" target="_blank">D-Matrix 称采用 SRAM 替代 DRAM 的 AI 芯片速度提升 10 倍</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">D-Matrix 宣布其 AI 芯片已进入全面生产，该芯片声称通过用 SRAM 取代 DRAM，比传统 GPU 快 10 倍且能耗降低 5 倍。该公司表示这绕过了当前 AI 硬件面临的内存瓶颈。 如果这些说法属实，可能会显著颠覆英伟达在 AI 推理硬件领域的主导地位，降低数据中心的成本和能耗。它可能通过实现更快、更高效的处理来加速生成式 AI 应用的部署。 该芯片采用以内存为中心的计算架构，依赖 SRAM 而非 DRAM 或 HBM，面向超低延迟批量推理。D-Matrix 已与微软合作，但芯片的性能声明尚未经独立基准测试验证。</p>
+      <p class="card-source">r/technology · /u/Shiningc00 · 6月9日 21:26</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 推理主要依赖 GPU，这些 GPU 使用 DRAM 或 HBM 作为内存。然而，在内存和计算之间传输数据造成了“内存墙”，限制了速度和能效。SRAM 比 DRAM 更快、更节能，但成本更高、密度更低，因此通常用作缓存。D-Matrix 的做法是将 SRAM 作为主内存，可能克服这一瓶颈。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.d-matrix.ai/" target="_blank">d-Matrix - Ultra-low Latency Batched Inference for Generative AI</a></li><li><a href="https://www.cnbc.com/2026/06/09/nvidia-d-matrix-chip-production-microsoft.html" target="_blank">Nvidia challenger D-Matrix starts chip production, Microsoft ...</a></li><li><a href="https://siliconangle.com/2025/08/25/d-matrix-reveals-plan-scale-ais-memory-wall-3d-dram-based-chip-architecture/" target="_blank">D-Matrix reveals plan to break through AI’s ‘memory wall ...</a></li></ul></details><div class="tags-row"><span class="tag">AI chip</span> <span class="tag">hardware</span> <span class="tag">NVIDIA</span> <span class="tag">SRAM</span> <span class="tag">energy efficiency</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-26">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">26</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/Futurology/comments/1u1492w/humanoid_robot_climbs_20341foot_volcano_as_team/" target="_blank">人形机器人攀登 20341 英尺火山，下一步目标珠峰</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一台人形机器人成功登顶 20341 英尺的火山，这标志着机器人技术的重大里程碑。该团队计划下一步尝试攀登珠穆朗玛峰。 这表明人形机器人可以在极端环境中运行，未来可能应用于搜索救援、探险和灾难响应。攀登珠峰将进一步验证其在高海拔地区的能力。 这次攀登涉及陡峭地形、低氧和恶劣天气条件。报道中未公开机器人的设计或动力系统的具体技术细节。</p>
+      <p class="card-source">r/Futurology · /u/sksarkpoes3 · 6月9日 12:58</p>
+<div class="bg-block"><span class="block-label">背景</span><p>人形机器人旨在模仿人类形态和运动，使其适合在人类构建的环境中执行任务。登山需要先进的平衡、感知和耐力。先前的成就包括行走、跑步和穿越崎岖地形，但高海拔攀登面临缺氧和极端严寒等独特挑战。</p></div><div class="tags-row"><span class="tag">humanoid robot</span> <span class="tag">robotics</span> <span class="tag">extreme environment</span> <span class="tag">mountaineering</span> <span class="tag">futurology</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔒</span>安全/隐私<span class="cat-n">7 条</span></div>
+  <article class="item-card" id="item-27">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">27</span>
+        <h2 class="card-title"><a href="https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents" target="_blank">Security validation for third-party coding agents</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">GitHub introduces generally available security validation for third-party coding agents.</p>
+      <p class="card-source">GitHub Changelog · 6月9日 07:12</p>
+<div class="tags-row"><span class="tag">security</span> <span class="tag">coding agents</span> <span class="tag">GitHub</span> <span class="tag">AI</span> <span class="tag">third-party</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-28">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">28</span>
+        <h2 class="card-title"><a href="https://blog.cloudflare.com/frontier-model-defense/" target="_blank">Defend against frontier cyber models: Cloudflare's architecture as customer zero</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Cloudflare shares its architecture for defending against advanced AI cyber models, emphasizing that the architecture around vulnerabilities is more critical than patch speed.</p>
+      <p class="card-source">Cloudflare Blog - AI · 6月9日 06:00</p>
+<div class="tags-row"><span class="tag">cybersecurity</span> <span class="tag">AI threats</span> <span class="tag">architecture</span> <span class="tag">Cloudflare</span> <span class="tag">vulnerability defense</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-29">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">29</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/09/cisa-gives-us-federal-agencies-three-days-to-fix-a-vpn-bug-under-attack-by-a-ransomware-gang/" target="_blank">CISA 要求美国联邦机构在三日内修复一个被勒索软件团伙利用的 VPN 漏洞</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国网络安全和基础设施安全局（CISA）命令联邦机构在三日内修补 Check Point VPN 的一个漏洞，因为该漏洞正被勒索软件组织积极利用。</p>
+      <p class="card-source">TechCrunch · 6月9日 17:40</p>
+<div class="tags-row"><span class="tag">cybersecurity</span> <span class="tag">vulnerability</span> <span class="tag">ransomware</span> <span class="tag">VPN</span> <span class="tag">CISA</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-30">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">30</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/technology/instagram-hack-ai-bug.html" target="_blank">Meta 人工智能漏洞导致 Instagram 账户被接管</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Meta 公司人工智能软件中的一个漏洞允许黑客接管 Instagram 账户，Meta 已修复该缺陷。 这一漏洞凸显了将人工智能集成到广泛使用的平台中所带来的现实安全风险，影响了数百万 Instagram 用户，并削弱了用户对 AI 驱动功能的信任。 该漏洞的具体技术细节未披露，但位于 Meta 的新人工智能软件中。Meta 确认在发现问题后部署了修复程序。</p>
+      <p class="card-source">New York Times Technology · 6月9日 23:51</p>
+<div class="bg-block"><span class="block-label">背景</span><p>社交媒体平台越来越多地使用人工智能软件来实现推荐算法和内容审核等功能。然而，此类系统的缺陷可能被利用进行账户接管，这是一个严重的安全问题。账户接管允许攻击者访问私信、发布内容以及冒充用户。</p></div><div class="tags-row"><span class="tag">AI security</span> <span class="tag">Instagram</span> <span class="tag">Meta</span> <span class="tag">vulnerability</span> <span class="tag">account takeover</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-31">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">31</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxNT08wdTFVMDN5WHgxclk1N3VWZVhhSFVHXzlqd2VaRnRmY2RvbzlJVkNDQXgxZEVmUkpEV2NlYURac3RFQ0Ftb3p0NzJJV2c5WDhza1hWYVJlYVM1UHBlZUpHS1BQU1RZX1VLSm5ZdzJHU1o1U01NeDEwa2cwcElYNnBNalQxNU14ZUxMRjh5ZWphQm1TSWY0SVZwRGZPTm55M0pRd3JmODZQRllvZGN1dXA1OThfZFh6ckhVNnl0WmwwbG0xOG55Mm9ud2Y?oc=5" target="_blank">CrowdStrike：中国黑客对科技公司的间谍威胁最大</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">网络安全公司 CrowdStrike 发布报告，将中国国家支持的黑客列为全球科技公司面临的最主要间谍威胁。 这份报告凸显了针对科技行业的网络间谍活动升级，可能导致知识产权盗窃、竞争劣势及地缘政治紧张局势加剧。 CrowdStrike 的评估基于对过去一年网络入侵和威胁行为者行为的分析，中国组织在科技行业与间谍相关的事件中占多数。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 17:06</p>
+<div class="bg-block"><span class="block-label">背景</span><p>CrowdStrike 是一家主要的网络安全公司，跟踪并报告全球网络威胁。由国家支持的黑客组织（通常归属于中国、俄罗斯、伊朗等国）经常针对企业和政府进行间谍活动。该报告特别关注科技公司面临的威胁，这些公司因其宝贵的知识产权和供应链访问权限而成为频繁攻击目标。</p></div><div class="tags-row"><span class="tag">cybersecurity</span> <span class="tag">espionage</span> <span class="tag">CrowdStrike</span> <span class="tag">Chinese hackers</span> <span class="tag">threat intelligence</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-32">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">32</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u18z4c/signal_says_uk_plan_to_scan_devices_for_nude/" target="_blank">Signal 批评英国设备扫描裸图计划</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Signal 公开批评英国政府提出的设备扫描裸体图像计划，称这种客户端扫描危及所有人的隐私和安全。 此事意义重大，因为它威胁到端到端加密，可能为大规模监控开创先例，影响所有安全通讯应用的用户，并破坏对数字通信的信任。 该计划可能涉及使用感知哈希的客户端扫描，在设备本地检测裸体图像后再发送，这可能会绕过加密并为监控制造后门。</p>
+      <p class="card-source">r/technology · /u/rkhunter_ · 6月9日 15:51</p>
+<div class="bg-block"><span class="block-label">背景</span><p>客户端扫描（CSS）是指在用户设备上先对消息内容（文本、图像、视频）进行扫描，与不良内容数据库比对再发送的技术。感知哈希是一种生成图像指纹的技术，对微小修改具有鲁棒性，可在不依赖精确图像的情况下检测相似内容。与加密哈希不同，感知哈希能够匹配经过变换的图像版本，因此在识别已知的儿童性虐待材料方面有用，但也引发了隐私担忧。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.internetsociety.org/resources/doc/2020/fact-sheet-client-side-scanning/" target="_blank">Fact Sheet: Client-Side Scanning - Internet Society</a></li><li><a href="https://en.wikipedia.org/wiki/Perceptual_hashing" target="_blank">Perceptual hashing</a></li></ul></details><div class="tags-row"><span class="tag">Signal</span> <span class="tag">UK</span> <span class="tag">privacy</span> <span class="tag">surveillance</span> <span class="tag">encryption</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-33">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">33</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u1lc8h/victory_meta_strips_facial_recognition_code_from/" target="_blank">Meta 在公众抗议后移除智能眼镜应用中的面部识别代码</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Meta 在公众抗议和倡导团体的压力下，移除了智能眼镜应用中的面部识别代码。电子前哨基金会（EFF）报告称这一变化是隐私保护的胜利。 这一决定标志着隐私保护的重大胜利，表明公众压力可以影响大型科技公司撤销有争议的功能。它为新兴可穿戴技术中类似的隐私斗争树立了先例。 面部识别代码嵌入在 Meta 智能眼镜的配套应用中，可能识别个人身份。Meta 移除这段代码是在隐私倡导者和担心监控的用户广泛批评之后进行的。</p>
+      <p class="card-source">r/technology · /u/EFForg · 6月9日 23:23</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Meta（原 Facebook）于 2021 年推出了 Ray-Ban Stories 智能眼镜，配备摄像头但最初没有面部识别功能。长期以来，可穿戴摄像头一直存在隐私担忧，因为它们可以隐秘地捕捉和分析面部图像。</p></div><div class="tags-row"><span class="tag">privacy</span> <span class="tag">facial recognition</span> <span class="tag">Meta</span> <span class="tag">smart glasses</span> <span class="tag">regulation</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🌍</span>时政/地缘<span class="cat-n">51 条</span></div>
+  <article class="item-card" id="item-34">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">34</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/live/2026/06/09/world/iran-war-trump-israel-lebanon" target="_blank">美国在阿帕奇被击落后对伊朗发动打击</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 10.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国对伊朗发动了报复性打击，此前特朗普总统指责伊朗在霍尔木兹海峡附近击落了一架美国阿帕奇直升机。打击目标为海峡沿岸的雷达和防空设施。 此次升级可能会打破美国与伊朗于今年 4 月宣布的脆弱停火协议，并可能破坏更广泛的中东稳定。冲突现已涉及多条战线，以色列同时在对黎巴嫩真主党发动打击。 阿帕奇直升机在霍尔木兹海峡上空被击落，但两名机组人员被一艘无人艇成功救起，没有受伤。美国中央司令部证实，此次打击由特朗普总统下令，于英国时间周二晚上 10 点开始。</p>
+      <p class="card-source">New York Times World · 6月9日 23:42</p>
+<div class="bg-block"><span class="block-label">背景</span><p>霍尔木兹海峡是一条战略水道，全球约 20%的石油运输经过此处。2026 年 4 月，美国与伊朗在数月的紧张局势后宣布停火。阿帕奇直升机被击落严重违反了该停火协议，促使美国做出回应。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">US</span> <span class="tag">military conflict</span> <span class="tag">geopolitics</span> <span class="tag">breaking news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-35">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">35</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5" target="_blank">China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports - Reuters</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 10.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">China prepares a $295 billion plan to fund nationwide AI buildout, as reported by Bloomberg News via Reuters.</p>
+      <p class="card-source">Google News - Reuters · 6月9日 09:24</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">China</span> <span class="tag">government investment</span> <span class="tag">technology policy</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-36">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">36</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/c36y16nkr5no?at_medium=RSS&at_campaign=rss" target="_blank">以色列空袭提尔无视伊朗警告</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">以色列对黎巴嫩城市提尔发动空袭，此前已对该市发出全面撤离警告，无视伊朗威胁称若继续攻击真主党将恢复敌对行动。 此次升级可能引发更广泛的地区冲突，伊朗直接警告以色列，并加剧以色列与真主党的持续对抗，影响平民安全与地缘政治稳定。 空袭发生前一天，伊朗威胁称若以色列继续在黎巴嫩对真主党发动攻势，将再次攻击以色列；空袭前以色列对提尔全市发出撤离警告。</p>
+      <p class="card-source">BBC World · 6月9日 17:47</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以色列与真主党长期存在冲突，真主党是伊朗支持的黎巴嫩强大武装组织。伊朗为真主党提供资金、武器和支持，并曾威胁对以色列的攻击进行报复。提尔是黎巴嫩南部重要城市，常受跨境暴力影响。</p></div><div class="tags-row"><span class="tag">Israel</span> <span class="tag">Lebanon</span> <span class="tag">Hezbollah</span> <span class="tag">Iran</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-37">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">37</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cjdgl548x3eo?at_medium=RSS&at_campaign=rss" target="_blank">特朗普和内塔尼亚胡面临中东永久危机风险</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">BBC 一篇分析文章指出，美国总统特朗普和以色列总理内塔尼亚胡在伊朗问题上误判了战略，失去了对后果的控制，面临中东永久危机的风险。 这很重要，因为它凸显了中东地缘政治的重大转变：美以的激进政策可能适得其反，可能导致长期不稳定，影响整个地区和全球安全。 文章特别指出，对伊朗的误判是核心问题，暗示领导人的行动已失控，形成了永久危机局面。</p>
+      <p class="card-source">BBC World · 6月9日 20:14</p>
+<div class="bg-block"><span class="block-label">背景</span><p>这篇文章是 BBC 资深国际事务记者的分析。其背景是美国/以色列与伊朗之间长期存在的紧张关系，尤其是围绕伊朗核计划和地区影响力的问题。'永久危机'指的是长期且看似无法解决的危机状态。分析指出，旨在重塑中东的激进政策反而导致该地区进一步动荡。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Middle East</span> <span class="tag">Iran</span> <span class="tag">US foreign policy</span> <span class="tag">crisis</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-38">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">38</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/09/nx-s1-5850355/data-highest-conflicts-iran-israel-ukraine-russia-world-war-ii" target="_blank">Conflicts are on the rise globally, at the highest level since WWII, data shows</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Global conflicts surged to the highest number since WWII, with fatalities reaching a record high in 2025.</p>
+      <p class="card-source">NPR World · 6月9日 07:00</p>
+<div class="tags-row"><span class="tag">conflicts</span> <span class="tag">geopolitics</span> <span class="tag">global security</span> <span class="tag">war</span> <span class="tag">Uppsala data</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-39">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">39</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/09/g-s1-126961/pentagon-labels-alibaba-and-byd-as-aiding-chinese-military" target="_blank">五角大楼将阿里巴巴和比亚迪列为涉军企业</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">五角大楼将阿里巴巴和比亚迪列入中国涉军企业名单，禁止它们参与美国国防合同。 此举加剧了美中紧张局势，可能影响这些公司的国际业务、投资者信心以及全球供应链。 该认定限制它们与美国国防部签订合同，但不会自动施加贸易禁令或其他制裁。</p>
+      <p class="card-source">NPR World · 6月9日 05:18</p>
+<div class="bg-block"><span class="block-label">背景</span><p>五角大楼根据《国防授权法》维持一份中国涉军企业名单。被列入意味着不得向美国军方销售。阿里巴巴和比亚迪分别是电商/云计算和电动汽车/电池领域的全球巨头。</p></div><div class="tags-row"><span class="tag">Pentagon</span> <span class="tag">Alibaba</span> <span class="tag">BYD</span> <span class="tag">Chinese military</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-40">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">40</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/opinion/article/2026/06/09/trump-s-powerlessness-in-the-iranian-trap_6754283_23.html" target="_blank">特朗普在伊朗陷阱中的无能为力</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《世界报》的一篇社论指出，特朗普的“以实力求和平”策略在伊朗遭遇失败，最终可能达成与其最初战争目标截然相反的协议。 这一分析凸显了美国外交政策中单边施压的局限性，可能重塑对“以实力求和平”理念的看法，对美伊关系和中东稳定具有影响。 该社论强调，伊朗的韧性挫败了特朗普的极限施压运动，迫使他走向原本试图避免的外交结局。</p>
+      <p class="card-source">Le Monde English - International · 6月9日 12:37</p>
+<div class="bg-block"><span class="block-label">背景</span><p>特朗普于 2018 年退出《联合全面行动计划》（JCPOA），并对伊朗重新实施严厉制裁，旨在迫使伊朗达成新协议。他宣扬的“以实力求和平”假设经济和军事压力能迫使伊朗屈服。然而，伊朗抵抗、扩展核计划，如今美国面临达成类似原 JCPOA 的协议的前景。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Iran</span> <span class="tag">US foreign policy</span> <span class="tag">Trump</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-41">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">41</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/OpenAI/comments/1u10q6s/white_house_hill_relaunch_effort_to_block_state/" target="_blank">美国白宫与国会重启统一 AI 监管努力</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">白宫和国会领导人正重新推动阻止各州制定 AI 法规，旨在建立统一的联邦人工智能监管框架。 此举可能避免各州 AI 法规的碎片化，确保全国统一的规则，同时根据联邦政策加速或减缓 AI 部署。 该倡议旨在推翻加州、科罗拉多州等地的现有及拟议中的州 AI 法案，主张联邦在 AI 治理上的权威。</p>
+      <p class="card-source">r/OpenAI · /u/EchoOfOppenheimer · 6月9日 10:06</p>
+<div class="bg-block"><span class="block-label">背景</span><p>目前，加州等州已提出 AI 安全法案（如 SB 1047），要求对大型 AI 模型进行严格测试并规定责任。联邦框架将集中监管，可能减少合规负担，但也可能限制州级创新或消费者保护。</p></div><div class="tags-row"><span class="tag">AI regulation</span> <span class="tag">US policy</span> <span class="tag">federal vs state</span> <span class="tag">technology governance</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-42">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">42</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u11k2j/drone_strike_shuts_down_key_bridge_linking_crimea/" target="_blank">Drone Strike Shuts Down Key Bridge Linking Crimea to Mainland Ukraine</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">A drone strike has disabled a key bridge linking Crimea to mainland Ukraine, disrupting a crucial supply route.</p>
+      <p class="card-source">r/worldnews · /u/Itz-Lilac · 6月9日 10:51</p>
+<div class="tags-row"><span class="tag">drone strike</span> <span class="tag">Crimea</span> <span class="tag">Ukraine</span> <span class="tag">Russia</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-43">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">43</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u16alc/in_a_first_india_deploys_12_nuclear_warheads_in/" target="_blank">印度首次部署 12 枚核弹头，政策重大转变</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">印度首次部署 12 枚核弹头，标志着其长期核政策的重大转变。 此举改变印度的威慑姿态，可能加剧地区紧张，尤其影响与巴基斯坦和中国的关系。 据报道，此次部署发生在近期，但具体平台或地点未公开。这标志着印度背离了早先的不首先使用政策。</p>
+      <p class="card-source">r/worldnews · /u/LookNoRook · 6月9日 14:17</p>
+<div class="bg-block"><span class="block-label">背景</span><p>印度历史上奉行最低可信威慑政策和不首先使用原则。此前并未常规性地在运载系统上部署核弹头。</p></div><div class="tags-row"><span class="tag">India</span> <span class="tag">nuclear weapons</span> <span class="tag">geopolitics</span> <span class="tag">policy shift</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-44">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">44</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/geopolitics/comments/1u16qnh/dont_give_up_on_global_order_america_depends_on/" target="_blank">捍卫自由主义世界秩序</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">该文章直接挑战了关于美国主导全球治理日益增长的悲观情绪，警告放弃自由主义秩序可能成为自我实现的预言，对国际稳定产生严重后果。 戈登作为前拜登政府官员，依据自身经验论证特朗普的政策正在提醒美国人原则性领导的价值，且该秩序的消亡并非不可避免。</p>
+      <p class="card-source">r/geopolitics · /u/ForeignAffairsMag · 6月9日 14:34</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自由主义世界秩序是指二战后建立的以美国为首的联盟、多边机构、开放贸易和国际规范体系。批评者认为它已在衰落，而第二届特朗普政府正在给予致命一击。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">liberal world order</span> <span class="tag">US foreign policy</span> <span class="tag">international relations</span> <span class="tag">Trump administration</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-45">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">45</span>
+        <h2 class="card-title"><a href="https://www.404media.co/fcc-wants-to-kill-burner-phones-by-forcing-telecoms-to-get-all-customers-ids/" target="_blank">FCC wants to kill burner phones by forcing telecoms to get all customers' IDs</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">FCC proposes requiring telecoms to collect customer IDs to eliminate burner phones, raising significant privacy and regulatory concerns.</p>
+      <p class="card-source">berlianta · 6月9日 15:21</p>
+<div class="tags-row"><span class="tag">FCC</span> <span class="tag">privacy</span> <span class="tag">telecom</span> <span class="tag">regulation</span> <span class="tag">government</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-46">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">46</span>
+        <h2 class="card-title"><a href="https://www.reuters.com/business/apple-failed-make-its-ai-tool-comply-eu-regulations-eu-commission-says-2026-06-09/" target="_blank">Apple decided not to roll out Siri in EU after denied request for exemption</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Apple decided not to launch Siri's AI features in the EU after the EU denied its request for an exemption from compliance with regulations.</p>
+      <p class="card-source">flanged · 6月9日 16:13</p>
+<div class="tags-row"><span class="tag">Apple</span> <span class="tag">Siri</span> <span class="tag">EU regulation</span> <span class="tag">AI</span> <span class="tag">privacy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-47">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">47</span>
+        <h2 class="card-title"><a href="https://www.theverge.com/policy/947146/dhs-funding-congress-budget-reconciliation" target="_blank">Congress just gave DHS another $70 billion</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Congress approved $70 billion for DHS to fund President Trump's mass deportation agenda.</p>
+      <p class="card-source">The Verge · 6月9日 21:34</p>
+<div class="tags-row"><span class="tag">DHS</span> <span class="tag">mass deportation</span> <span class="tag">Congress</span> <span class="tag">funding</span> <span class="tag">immigration policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-48">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">48</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/c992vdk3g3yo?at_medium=RSS&at_campaign=rss" target="_blank">Two reportedly killed as women take part in rare protest in Afghanistan</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Two women reportedly killed during a rare protest in Herat, Afghanistan, as police opened fire.</p>
+      <p class="card-source">BBC World · 6月9日 16:44</p>
+<div class="tags-row"><span class="tag">Afghanistan</span> <span class="tag">women's rights</span> <span class="tag">protest</span> <span class="tag">international news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-49">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">49</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cq51ep28165o?at_medium=RSS&at_campaign=rss" target="_blank">'Please send help': Crew's distress call after ship hit by US missile</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Crew of a sanctioned oil tanker issued a distress call after being hit by a missile from a US fighter jet off the coast of Oman.</p>
+      <p class="card-source">BBC World · 6月9日 13:42</p>
+<div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">international relations</span> <span class="tag">military</span> <span class="tag">oil tanker</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-50">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">50</span>
+        <h2 class="card-title"><a href="https://www.wired.com/story/threats-against-politicians-skyrocketed-after-meta-changed-its-speech-rules/" target="_blank">Meta Changed Its Speech Rules. Then Threats Against Politicians Skyrocketed</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Research shows that after Meta relaxed speech rules, violent threats against politicians surged on Facebook.</p>
+      <p class="card-source">Wired · 6月9日 10:00</p>
+<div class="tags-row"><span class="tag">Meta</span> <span class="tag">free speech</span> <span class="tag">policy</span> <span class="tag">threats</span> <span class="tag">Facebook</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-51">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">51</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cn8qj8wjgxwo?at_medium=RSS&at_campaign=rss" target="_blank">EU orders Meta to open WhatsApp to rival AI chatbots</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">EU orders Meta to open WhatsApp to rival AI chatbots, with Meta accusing regulatory overreach.</p>
+      <p class="card-source">BBC Technology · 6月9日 16:16</p>
+<div class="tags-row"><span class="tag">EU</span> <span class="tag">regulation</span> <span class="tag">Meta</span> <span class="tag">WhatsApp</span> <span class="tag">AI chatbots</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-52">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">52</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/society/2026/jun/09/doctors-nhs-could-be-sued-mistakes-ai-tools-medical-protection-society-report" target="_blank">Doctors and NHS could be sued for mistakes made by AI tools, report warns</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">A report warns that doctors and the NHS could face negligence lawsuits for mistakes made by AI tools, calling for legal reforms to address liability.</p>
+      <p class="card-source">The Guardian Technology · 6月9日 08:00</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">healthcare</span> <span class="tag">liability</span> <span class="tag">regulation</span> <span class="tag">NHS</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-53">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">53</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/technology/2026/jun/08/trump-ai-growth-anthropic" target="_blank">All signs point to Trump pushing AI growth</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Trump is pushing for AI growth while Anthropic calls for a pause on advancement just after filing for IPO, highlighting tensions between safety and commercialization.</p>
+      <p class="card-source">The Guardian Technology · 6月9日 13:06</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">regulation</span> <span class="tag">Trump</span> <span class="tag">Anthropic</span> <span class="tag">policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-54">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">54</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/world/middleeast/us-iran-talks-war.html" target="_blank">A Challenge in the U.S.-Iran Talks: Both Sides Demand Victory</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Both Washington and Tehran insist any potential deal must be a victory for their side, complicating the negotiations.</p>
+      <p class="card-source">New York Times World · 6月9日 09:26</p>
+<div class="tags-row"><span class="tag">US-Iran relations</span> <span class="tag">geopolitics</span> <span class="tag">diplomacy</span> <span class="tag">international negotiations</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-55">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">55</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/world/europe/makerfield-byelection-starmer-burnham-reform.html" target="_blank">Why a U.K. By-Election in Makerfield Could Topple Prime Minister Keir Starmer</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">A by-election in Makerfield could lead to the ouster of UK Prime Minister Keir Starmer.</p>
+      <p class="card-source">New York Times World · 6月9日 07:37</p>
+<div class="tags-row"><span class="tag">UK politics</span> <span class="tag">by-election</span> <span class="tag">Keir Starmer</span> <span class="tag">Andy Burnham</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-56">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">56</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/world/europe/europe-fighter-fcas-germany-france.html" target="_blank">Germany Drops Plan to Build Warplane With Allies, Hindering Push to Rearm</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Germany withdraws from the Future Combat Air System (FCAS) joint project with France and Spain, undermining European efforts to rearm and reduce reliance on the US.</p>
+      <p class="card-source">New York Times World · 6月9日 16:28</p>
+<div class="tags-row"><span class="tag">Germany</span> <span class="tag">FCAS</span> <span class="tag">European defense</span> <span class="tag">geopolitics</span> <span class="tag">military</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-57">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">57</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/middleeast/israel-netanyahu-iran-trump-lebanon.html" target="_blank">The 15-Hour Fight With Iran Showed the Bind Israel Is In</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Israel faces a strategic dilemma as it braces for a potential US-Iran peace deal while dealing with Hezbollah attacks, knowing that a forceful response could trigger Iranian missile strikes.</p>
+      <p class="card-source">New York Times World · 6月9日 07:48</p>
+<div class="tags-row"><span class="tag">Israel</span> <span class="tag">Iran</span> <span class="tag">Hezbollah</span> <span class="tag">geopolitics</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-58">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">58</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/world/middleeast/west-bank-israeli-settlers-sanction.html" target="_blank">6 Countries Announce Sanctions Targeting Israeli Settler Networks</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Six countries announce sanctions targeting Israeli settler networks to disrupt financing of attacks on Palestinians in the West Bank.</p>
+      <p class="card-source">New York Times World · 6月9日 17:56</p>
+<div class="tags-row"><span class="tag">sanctions</span> <span class="tag">Israeli-Palestinian conflict</span> <span class="tag">geopolitics</span> <span class="tag">international relations</span> <span class="tag">West Bank</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-59">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">59</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/world/middleeast/netanyahus-trump-pressure-over-iran.html" target="_blank">Netanyahu’s Bow to Trump’s Iran Pressure Spurs New Criticism</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Netanyahu halts strikes on Iran after Trump pressure, drawing criticism from opponents.</p>
+      <p class="card-source">New York Times World · 6月9日 13:23</p>
+<div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Israel</span> <span class="tag">US</span> <span class="tag">Iran</span> <span class="tag">policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-60">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">60</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/live/2026/06/09/world/iran-war-trump-israel-lebanon/heres-the-latest" target="_blank">Here’s the latest.</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Live coverage of escalating conflict between Iran, Israel, and the Trump administration.</p>
+      <p class="card-source">New York Times World · 6月9日 22:46</p>
+<div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">geopolitics</span> <span class="tag">war</span> <span class="tag">Trump</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-61">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">61</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/kim-jong-un-north-korea-china.html" target="_blank">金正恩的胜利</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">根据一项新的地缘政治分析，金正恩利用乌克兰战争成为朝鲜迄今为止最强大的领导人。 这种权力巩固可能重塑朝鲜的外交政策及其在国际冲突中的角色，影响地区稳定和全球外交动态。 文章解释了金正恩如何利用全球对乌克兰的关注来加强内部控制和扩大朝鲜的地缘政治影响力，但未详细说明具体机制。</p>
+      <p class="card-source">New York Times World · 6月9日 04:53</p>
+<div class="bg-block"><span class="block-label">背景</span><p>金正恩自 2011 年统治朝鲜，逐步巩固权力。2022 年开始的乌克兰战争转移了国际注意力，为朝鲜等政权提供了推进其议程的机会。</p></div><div class="tags-row"><span class="tag">North Korea</span> <span class="tag">Kim Jong-un</span> <span class="tag">Ukraine</span> <span class="tag">geopolitics</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-62">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">62</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/business/energy-environment/iran-war-energy-oil.html" target="_blank">伊朗战争推动能源进口国向内转</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">持续的伊朗战争正迫使能源进口国优先发展国内能源，以保护自身免受动荡的石油和天然气市场影响。 这一转变可能加速全球能源转型，因为各国投资可再生能源，但也可能加剧地缘政治紧张局势并扰乱既定的能源贸易流动。 报告未具体说明哪些国家受影响最大，但亚洲和欧洲等主要能源进口国可能面临调整能源政策的巨大压力。</p>
+      <p class="card-source">New York Times World · 6月9日 15:06</p>
+<div class="bg-block"><span class="block-label">背景</span><p>许多国家严重依赖进口石油和天然气来满足能源需求。伊朗战争等主要能源产区的地缘政治冲突可能导致价格飙升和供应中断。通过向内转，这些国家旨在通过发展国内能源来源（包括可再生能源、核能或本地化石燃料）来减少脆弱性。</p></div><div class="tags-row"><span class="tag">Iran war</span> <span class="tag">energy</span> <span class="tag">geopolitics</span> <span class="tag">oil</span> <span class="tag">natural gas</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-63">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">63</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/09/technology/solvinity-kyndryl-blocked-deal-us-europe-rift.html" target="_blank">荷兰阻止美国收购荷兰身份证公司</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">荷兰阻止了一家美国公司收购负责管理其国民身份证系统的荷兰公司，理由是此举对公共利益构成威胁。 这一决定凸显了科技领域日益加剧的地缘政治紧张局势，各国出于国家安全考虑，对外国收购的审查越来越严格。 被阻止的交易价值 1.15 亿美元，涉及一家美国科技公司收购一家负责国民身份证系统的荷兰公司。</p>
+      <p class="card-source">New York Times Technology · 6月9日 14:52</p>
+<div class="bg-block"><span class="block-label">背景</span><p>这则新闻反映了欧洲国家加强对关键基础设施和敏感数据控制的更广泛趋势。国民身份证系统被视为战略资产，外国所有权引发了对数据安全和主权的担忧。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">tech regulation</span> <span class="tag">national security</span> <span class="tag">Netherlands</span> <span class="tag">US</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-64">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">64</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/09/eu-ban-russian-soldiers-fresh-sanctions-moscow" target="_blank">欧盟提议禁止俄罗斯士兵入境</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">欧盟委员会周二提议，禁止所有自战争开始以来在俄罗斯军队服役的人员进入欧盟，这是针对莫斯科的第 21 轮制裁措施的一部分。 这一前所未有的措施针对俄罗斯军事人员个人，标志着欧盟制裁从经济实体进一步延伸，可能加剧欧俄关系紧张，同时强化对乌克兰的支持。 该提案还针对俄罗斯银行、加密货币公司以及克里姆林宫的石油储备，旨在切断资助战争的收入来源。这是自俄罗斯全面入侵乌克兰以来的第 21 轮制裁措施。</p>
+      <p class="card-source">The Guardian World · 6月9日 15:12</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2022 年 2 月俄罗斯全面入侵乌克兰以来，欧盟已实施多轮制裁，针对俄罗斯经济各个领域和个人。新提案将范围扩大至军事人员，这在欧盟历史上尚属首次。</p></div><div class="tags-row"><span class="tag">EU</span> <span class="tag">sanctions</span> <span class="tag">Russia</span> <span class="tag">geopolitics</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-65">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">65</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/us-news/2026/jun/09/seattle-ai-datacenters-ban" target="_blank">西雅图通过一年禁令禁止新建 AI 数据中心</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">西雅图市议会周二一致通过了一项为期一年的禁令，禁止新建 AI 数据中心，理由是对能源消耗的反对日益强烈。 作为亚马逊和微软的总部所在地，西雅图的这一决定可能为其他面临 AI 基础设施环境压力的城市树立先例。 该禁令为期一年，适用于新建数据中心，现有数据中心不受影响。</p>
+      <p class="card-source">The Guardian World · 6月10日 00:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 数据中心需要大量的电力和水进行冷却，常常给当地电网和资源带来压力。西雅图的禁令反映了地方政府对缺乏充分环境审查的快速科技扩张进行抵制的日益增长的趋势。</p></div><div class="tags-row"><span class="tag">AI datacenters</span> <span class="tag">Seattle</span> <span class="tag">regulation</span> <span class="tag">energy</span> <span class="tag">tech policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-66">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">66</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/09/nx-s1-5851474/federal-judge-fee-h1b-visa" target="_blank">联邦法官推翻特朗普的 10 万美元 H-1B 签证费</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一名联邦法官推翻了特朗普政府对新 H-1B 签证收取 10 万美元费用的规定，该费用旨在阻止雇主雇佣外国工人。 这一裁决消除了依赖 H-1B 签证雇佣外国技术人才的科技公司和其他雇主面临的重大财务障碍，可能影响美国劳动力市场和移民政策。 法官裁定，政府未经立法批准就征收该费用，超出了其权限，因此该规定在全国范围内无效。</p>
+      <p class="card-source">NPR World · 6月9日 05:07</p>
+<div class="bg-block"><span class="block-label">背景</span><p>H-1B 签证是一种非移民签证，允许美国公司雇佣外国工人从事需要技术或专业知识的工作。特朗普政府引入 10 万美元费用，是其限制移民、优先保障美国工人的更广泛努力的一部分。</p></div><div class="tags-row"><span class="tag">H-1B visa</span> <span class="tag">immigration policy</span> <span class="tag">federal court</span> <span class="tag">tech industry</span> <span class="tag">Trump administration</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-67">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">67</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/france/article/2026/06/09/israeli-minister-bezalel-smotrich-banned-from-entering-france_6754284_7.html" target="_blank">法国禁止以色列部长斯莫特里赫入境</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">法国禁止以色列财政部长贝扎莱尔·斯莫特里赫入境，因其推动西岸兼并和加沙再殖民化。 此举标志着法以紧张局势显著升级，并在数周内禁止第二位以色列部长入境，开创了外交先例。 斯莫特里赫是继 2026 年 5 月 23 日伊塔马尔·本-格维尔之后，第二位被法国禁止入境的以色列部长。</p>
+      <p class="card-source">Le Monde English - International · 6月9日 12:41</p>
+<div class="bg-block"><span class="block-label">背景</span><p>法国历史上一直是以色列的坚定支持者，但近期对西岸定居点扩张采取了更强硬的立场。贝扎莱尔·斯莫特里赫是以色列极右翼政治家，以主张吞并巴勒斯坦领土而闻名。该禁令反映了法国反对破坏两国方案行动的立场。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">international relations</span> <span class="tag">France</span> <span class="tag">Israel</span> <span class="tag">diplomacy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-68">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">68</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/international/article/2026/06/09/trump-claiming-to-stand-between-iran-and-israel-seeks-to-prevent-new-open-war_6754280_4.html" target="_blank">特朗普调解伊朗与以色列，力图避免战争</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">唐纳德·特朗普在伊朗与以色列自 2025 年 4 月停火以来最严重的军事升级后介入调解，试图在不向德黑兰做出重大让步的情况下防止新的公开战争。 这一外交干预可能稳定动荡的中东局势，防止更广泛的地区冲突，从而影响全球油价和国际安全格局。 特朗普的目标是避免军事升级和谈判破裂，这表明他在威慑与外交之间保持微妙的平衡。</p>
+      <p class="card-source">Le Monde English - International · 6月9日 11:07</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗与以色列之间的紧张局势长期存在，涉及代理冲突和直接打击。2025 年 4 月达成停火，但最近的交火可能重新点燃公开战争。特朗普的调解角色反映了他持续参与中东地缘政治。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Middle East</span> <span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">diplomacy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-69">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">69</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/economy/article/2026/06/09/why-europe-is-unable-to-defend-its-industry-against-the-second-chinese-shock_6754269_19.html" target="_blank">欧洲难以应对第二次中国工业冲击</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《世界报》系列报道揭示，尽管欧盟对中国电动汽车进口发起了反补贴调查，但成员国仍缺乏应对被称为‘第二次中国冲击’的中国出口新浪潮的统一策略。 此事意义重大，因为‘第二次中国冲击’可能重塑全球贸易格局，严重冲击欧洲产业——尤其中国出口浪潮同时瞄准了发展中国家和发达市场。 欧盟已对中国电动汽车发起反补贴调查，可能在 9 个月内实施临时关税。但文章强调，这些临时措施不足以构成全面的产业防御战略。</p>
+      <p class="card-source">Le Monde English - International · 6月9日 02:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>‘第一次中国冲击’发生在 2001 年中国加入 WTO 后，大量廉价商品涌入全球市场。现在，由电动汽车、太阳能板和钢铁等先进领域产能过剩驱动的第二次浪潮正考验贸易防御体系。欧盟近期加强了反补贴工具，但成员国内部在应对策略上存在政治分歧。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.prospect-journal.org/articles/second-china-shock" target="_blank">A ‘Second China Shock:’ What it is and its Implications for ...</a></li><li><a href="https://www.loc.gov/item/global-legal-monitor/2023-11-01/european-union-commission-launches-anti-subsidy-investigation-into-imports-of-battery-electric-vehicles-from-china/" target="_blank">European Union: Commission Launches Anti-subsidy Investigation into Imports of Battery Electric Vehicles from China | Library of Congress</a></li></ul></details><div class="tags-row"><span class="tag">China</span> <span class="tag">Europe</span> <span class="tag">trade</span> <span class="tag">industry</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-70">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">70</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOOWgxaVJUcmpncE1kUk9zcUJwSlJwWTlRWXBua09hSDY3djBVSkg3dEJqcllnTjNUYjMySC1wNlRJOUk4Q0tZVW5ySE0xMDZKV2tjRXNVdUE0Z3R5NkE2OWVaNTA1TTdoNGR2OVE5U3Nzd2JFREF1UHAwaUdBQjlzT2hrOEFTOEpZTzZGM2JJUUN5ZFZBUEM3RHZVS2NLS1FlU2NsWQ?oc=5" target="_blank">英加法挪协调制裁西岸定居者暴力</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英国、加拿大、法国和挪威联合宣布协调制裁，针对参与西岸定居者暴力的个人和实体。 这标志着西方国家的多边努力，旨在追究定居者暴力行为者的责任，可能加大国际社会对以色列的压力，促使其遏制此类行为。 制裁措施包括资产冻结和旅行禁令，各国根据各自法律框架实施。具体制裁目标尚未立即公布。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 18:40</p>
+<div class="bg-block"><span class="block-label">背景</span><p>西岸的定居者暴力行为持续升级，极端以色列定居者袭击巴勒斯坦社区和农场。国际机构已对此表示谴责，此次协调制裁机制是解决该问题的更广泛外交努力的一部分。</p></div><div class="tags-row"><span class="tag">sanctions</span> <span class="tag">West Bank</span> <span class="tag">international relations</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-71">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">71</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQWGJ1bl83a1ZCa082M2NZNkdvamdjX2pNODlzalRUN0NiaEMtbXl4QTdlNkhGZTE0T3QzVmxHcjJ4OE9YZnFPbm0xWDdIckNobWVFN0oyZUoxTXNUeUhrdUtWQnFNQ1NCcjJ0MGprRm80eG9lM2NzMUpPcWdKNlJDNmNqLU5jZlBrVjdsUEtSeWhqVEdzdTRnSmtFWFBhb3RTemVV?oc=5" target="_blank">标普 500 与纳斯达克下跌，科技股抛售重启，特朗普誓言回应</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">标普 500 指数和纳斯达克指数因科技股抛售重启而下跌，同时特朗普总统誓言对美国直升机被击落事件作出回应。 科技股抛售与地缘政治紧张相结合，预示着市场波动性加剧，投资者可能转向避险情绪。 该报道来自路透社，属可靠来源；事件同时涉及金融市场和军事冲突，将国内经济情绪与国际安全担忧联系起来。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 23:02</p>
+<div class="bg-block"><span class="block-label">背景</span><p>标普 500 和纳斯达克是美国主要股票指数。科技股抛售指投资者快速卖出科技股，通常出于估值担忧或行业特定新闻。美国直升机被击落指一起军事事件，为市场动态增添了地缘政治风险。</p></div><div class="tags-row"><span class="tag">S&P 500</span> <span class="tag">tech sell-off</span> <span class="tag">geopolitics</span> <span class="tag">Trump</span> <span class="tag">markets</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-72">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">72</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOeVJpN0RhQnZ4a0pwZkgtXzAxM2Z6bWYwZlJLakdfUjlkdmxYeEx4T0FQYlZmY2xKbTNUVEFIdlh0OHZkb25SRUtOTUotSlZ5VlljYmFvOTlTUnhzWTNLZGpSdWtMQml0UnE3VnIzQzJ6YXFBOTR0RlpjYk5lZVJHS0xrQWVQaEJjeUU1UTlLUHhCeW0wYThEQjVlem5QZHVxNEY3OXVKWFRjV0VWVERBRHUwdW40Skpia0VhZmpabzM2d1R0S2c?oc=5" target="_blank">俄在波罗的海举行海军演习，与北约军演同时</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">俄罗斯在波罗的海启动海军演习，与北约在该地区的大规模演习同时进行，加剧了军事对峙。 这种同时进行的军事活动凸显了俄罗斯与北约之间紧张的地缘政治局势，在战略敏感区域增加了意外升级的风险。 俄罗斯演习涉及多艘海军舰艇和飞机，而北约演习包括来自多个成员国的人员。两项行动均在波罗的海这一关键海上通道进行。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 12:51</p>
+<div class="bg-block"><span class="block-label">背景</span><p>波罗的海是北约成员国与俄罗斯接壤的战略水道。北约定期举行演习以展示集体防御，而俄罗斯则将此类活动视为直接安全威胁。同时进行的演习是持续对峙的常见表现。</p></div><div class="tags-row"><span class="tag">Russia</span> <span class="tag">NATO</span> <span class="tag">Baltic Sea</span> <span class="tag">naval drills</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-73">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">73</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxORm40WlNyMjhxWDdaTU5TdHpYODlnNFFFcjBGNXpvZnh2akxfQlZrMEs4Y3Jfa28wMGtnbHdUczQwNXJEWFJ3ckJMWFFReU91NzlSR0l0MVJwbTkzdUVhTHpiUExwRVRkWFNndEY3VGstcHZ2WGhIbjJ6QnVEZXlEOV9RRENlMmhfWWNSb01EWi0tNzhGUXMxOG9oclktMGZobzhMUlM5aW1iQU53Y0FZbkx5dUN1MndTd3N2eDZXUEZkTUN1VkN0ZTNmeUpDeVk?oc=5" target="_blank">中国联通警告美国打压可能扰乱全球通信</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">中国联通公开警告，美国政府计划对中国电信运营商进行打压，这可能会严重扰乱国际通信和数据流动。 这一警告凸显了美中在电信领域不断升级的地缘政治紧张局势，可能对全球互联网连接和跨境数据服务产生连锁影响。 报道未详细说明美国打压计划的具体内容，但很可能涉及限制中国联通等中国运营商在美国市场运营的持续举措。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 17:06</p>
+<div class="bg-block"><span class="block-label">背景</span><p>中国联通是中国三大国有电信运营商之一，拥有重要的国际海底电缆投资。美国此前已出于国家安全考虑，采取行动限制中国电信企业的参与，包括阻止中国移动进入美国市场。</p></div><div class="tags-row"><span class="tag">China Unicom</span> <span class="tag">US crackdown</span> <span class="tag">telecommunications</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-74">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">74</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMmlLTkkyNzAyRHNueDRfLUplc1J5cnF0cXZjdjVHSHdNR1NqNFpwRnB3b25yaVhMaDlfVmk0ejQySy1uM2Z3dmFiQ2VkaUhrNU5ucmNLamNKekNxNVFZdVdGLWtmcnNsVkZLVmtKYmNpc21fNjZCLVZjZG1kV2hpNURxc3d0OFdoc2F4UzhoX3VsOGVNZ1NYNGg1UmdoMmhtX2lFcUhmX0JtLWlWTmNMc09maC1PaDhWcFMwWkxOV2F6dVJIaVhIOF9KalQtQzE1Rm9uZw?oc=5" target="_blank">英国审查 Palantir 的 NHS 合同以考虑触发终止条款</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英国政府正在审查 Palantir 与国民健康服务体系（NHS）的合同，因为批评者施压要求触发终止条款，可能终止这一有争议的数据分析协议。 此次审查可能为英国如何处理敏感的公共健康数据以及与私人科技公司的合同开创先例，尤其是在数据隐私和透明度方面。 争议合同涉及 Palantir 的软件用于分析 NHS 数据，批评者担心数据隐私、企业控制以及缺乏竞争性招标。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 15:04</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Palantir Technologies 是一家总部位于美国的数据分析公司，以其与情报机构的合作而闻名。NHS 越来越多地利用私营部门合作伙伴进行数字化转型，引发了对数据治理和公共问责的担忧。</p></div><div class="tags-row"><span class="tag">Palantir</span> <span class="tag">NHS</span> <span class="tag">UK government</span> <span class="tag">data privacy</span> <span class="tag">public contracts</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-75">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">75</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQbDNqbGxUSW5BbjdiejV0Y2xOblg0OXc3S1pDQzBxOFludjh6Y1d3RHRUYWhzdjlJeHFpLW1kSkxJaDRoWmRKUkJXQmFzMzNUcG00bGRZYnY0WGFOdDBXY0lNanh3UVp4aVJmMFVUbzhYbFhZMFBzT1pGRGlNLWtzRmFRRQ?oc=5" target="_blank">中东局势不明，股市与油价双双下跌</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">全球股市和油价下跌，因投资者对中东局势不确定性加剧作出反应，目前尚无明显解决方案。 此次市场波动反映了日益增长的地缘政治风险溢价，可能影响全球通胀、央行政策以及各行业的投资者情绪。 跌幅普遍但温和，表明市场谨慎而非恐慌；油价下跌，因交易员权衡供应中断担忧与需求担忧。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 01:19</p>
+<div class="bg-block"><span class="block-label">背景</span><p>中东是全球石油供应的关键地区，当地地缘政治紧张局势常引发能源市场和更广泛股市的波动。对冲突、外交努力或潜在中断的不确定性可能导致避险情绪升温。</p></div><div class="tags-row"><span class="tag">finance</span> <span class="tag">geopolitics</span> <span class="tag">Middle East</span> <span class="tag">markets</span> <span class="tag">oil</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-76">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">76</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxOQno1QTVjdUJYSkVuMTUxZTVxcHBhUWNVQWVfN0JsVzdpNmVPUTBjMjdTaE4wSy1RNVpNNGJHdi1DVGNzd0NfQUdYOVVILWh0djRxbFpSSUJGTEp5ZTJnNUFsNnU4UkRscHJBZi1mVlYwNWFiUGFyVk1TOGNxcDEtVDc0cFhTYmpvRDdrd0tTYjFON19JNmI2Sm5MX3ZXb0M3UE5lZ0Q4UTFZSTJ6VFNudFMxRmVQMUh6U05XU3M2SGtpNmc?oc=5" target="_blank">伊朗以色列缓和局势，油价跌至七周低点</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据报道，伊朗和以色列停止了相互攻击，降低了地缘政治风险溢价，油价因此跌至七周低点。 这一价格走势表明市场对中东紧张局势敏感，持续的缓和可能使油价保持低位，利好消费者和依赖进口的经济体。 此次下跌标志着七周以来的最低水平，布伦特原油跌破关键技术位，但分析师警告称，任何新的敌对行动都可能迅速逆转这一跌幅。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 00:47</p>
+<div class="bg-block"><span class="block-label">背景</span><p>原油价格通常在冲突威胁供应路线或生产时纳入“地缘政治风险溢价”。近期伊朗与以色列之间的针锋相对的袭击引发了更广泛地区战争的担忧，推高了油价。现在，攻击停止导致交易员解除这些溢价。</p></div><div class="tags-row"><span class="tag">oil prices</span> <span class="tag">geopolitics</span> <span class="tag">Iran-Israel conflict</span> <span class="tag">market trends</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-77">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">77</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/OpenAI/comments/1u0w2yd/its_not_just_anthropic_anymore_openai_researchers/" target="_blank">OpenAI 研究人员加入全球 AI 暂停呼吁</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI 的研究人员公开表示支持全球暂停先进 AI 开发，这与 Anthropic 的声明相呼应。这标志着来自领先 AI 实验室的研究人员倡导暂时停止以解决安全问题的重要转变。 领先 AI 实验室之间日益增长的共识可能影响全球监管讨论和行业规范。这表明即使是前沿 AI 模型的开发者也认识到需要谨慎和治理。 提议的暂停的具体形式或持续时间尚未详细说明，但符合 Anthropic 及其他关注安全的团体早前的呼吁。这一进展可能增加政策制定者考虑正式法规的压力。</p>
+      <p class="card-source">r/OpenAI · /u/EchoOfOppenheimer · 6月9日 05:33</p>
+<div class="bg-block"><span class="block-label">背景</span><p>“全球 AI 暂停”的概念是指暂时停止训练比 GPT-4 更强大的 AI 系统，以便有时间进行安全研究和制定法规。这类提议一直存在争议，批评者认为它们可能阻碍创新并使竞争对手受益。包括一些研究人员在内的支持者则强调不受控制的 AI 开发的风险。</p></div><div class="tags-row"><span class="tag">AI safety</span> <span class="tag">AI pause</span> <span class="tag">OpenAI</span> <span class="tag">regulation</span> <span class="tag">Anthropic</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-78">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">78</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u14qb8/tests_suggest_russian_satellites_can_jam_gps_on_a/" target="_blank">测试表明俄罗斯卫星可干扰欧洲 GPS 信号</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">最新测试表明，俄罗斯卫星有能力在欧洲范围内进行大陆级别的 GPS 信号干扰，引发了对其动机及可能造成大规模破坏的担忧。 这种能力可能导致欧洲范围内导航、通信和关键基础设施的大规模中断，影响航空、航海及军事行动，从而加剧地缘政治紧张局势。 这种干扰可能源自俄罗斯电子战卫星，例如 Krasukha 系列，它们能发射强大的无线电信号压制 GPS 接收器，从而在广大区域内有效阻断卫星导航。</p>
+      <p class="card-source">r/technology · /u/Hrmbee · 6月9日 13:17</p>
+<div class="bg-block"><span class="block-label">背景</span><p>GPS 干扰是一种电子战形式，通过发射强大的无线电信号淹没合法的卫星信号。俄罗斯已开发出如 Krasukha-4 等先进的电子战系统，用于干扰卫星通信和导航。最近的测试表明，这些能力已扩展到基于卫星的大陆级干扰，突显了对依赖 GNSS 基础设施的日益增长的威胁。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/GNSS_jamming" target="_blank">GNSS jamming - Wikipedia</a></li><li><a href="https://spectrum.ieee.org/the-fall-and-rise-of-russian-electronic-warfare" target="_blank">The Fall and Rise of Russian Electronic Warfare - IEEE Spectrum</a></li><li><a href="https://arstechnica.com/information-technology/2025/12/gps-is-vulnerable-to-jamming-heres-how-we-might-fix-it/" target="_blank">GPS is vulnerable to jamming—here’s how we might fix it</a></li></ul></details><div class="tags-row"><span class="tag">GPS jamming</span> <span class="tag">Russia</span> <span class="tag">satellite</span> <span class="tag">geopolitics</span> <span class="tag">electronic warfare</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-79">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">79</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u0ucqr/rworldnews_live_thread_russian_invasion_of/" target="_blank">俄罗斯入侵乌克兰第 1566 天实时讨论串</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">这是 r/worldnews 上最新的每日实时讨论串，汇集了俄乌冲突第 1566 天的进展更新和讨论。 俄乌战争仍然是具有深远地缘政治、经济和人道主义后果的关键全球事件，而此类讨论串是实时信息和社区讨论的核心枢纽。 作为实时讨论串，它会全天持续更新用户提交的链接和评论，涵盖军事、外交和民事进展。</p>
+      <p class="card-source">r/worldnews · /u/WorldNewsMods · 6月9日 04:03</p>
+<div class="bg-block"><span class="block-label">背景</span><p>俄罗斯入侵乌克兰始于 2022 年 2 月 24 日，此后成为二战以来欧洲最大规模的常规军事冲突。战争已导致数万人伤亡、大规模流离失所以及对俄罗斯的重大经济制裁。r/worldnews 上的这些实时讨论串一直是追踪持续进展的常态特征。</p></div><div class="tags-row"><span class="tag">俄罗斯入侵乌克兰</span> <span class="tag">地缘政治</span> <span class="tag">国际新闻</span> <span class="tag">战争</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-80">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">80</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u1g9w1/ukraine_plans_massive_daily_barrage_of_600_drones/" target="_blank">乌克兰计划每天向俄罗斯发射 600 架无人机和导弹</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">乌克兰总统泽连斯基宣布，乌克兰计划每天向俄罗斯目标发射 600 架无人机和导弹，这标志着空中攻击的显著升级。 这一计划中的密集打击可能大幅增加对俄罗斯防御和基础设施的压力，可能改变持续战争中的战场态势。 声明中没有透露具体时间表或无人机和导弹的类型，也不清楚乌克兰是否有能力维持这样的生产速度。</p>
+      <p class="card-source">r/worldnews · /u/UNITED24Media · 6月9日 20:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>在整个战争期间，乌克兰一直使用无人机和导弹打击俄罗斯纵深地区，针对军事和能源基础设施。此次宣布的计划代表此类攻击规模的实质性增加，此前这些攻击是零星的或规模较小。</p></div><div class="tags-row"><span class="tag">Ukraine</span> <span class="tag">Russia</span> <span class="tag">drones</span> <span class="tag">missiles</span> <span class="tag">war</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-81">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">81</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u1f1xw/russian_military_official_killed_in_car_bombing/" target="_blank">俄罗斯军事官员在莫斯科附近汽车爆炸中丧生</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据媒体报道，一名俄罗斯军事官员在莫斯科郊外的一起汽车爆炸袭击中丧生。袭击发生时间较近，但具体细节尚不明确。 这一事件凸显了俄罗斯内部的安全漏洞，可能预示着内部冲突或外部威胁。针对军事官员的袭击表明地缘政治紧张局势可能正在升级。 爆炸发生在莫斯科郊外，但遇难官员的姓名和军衔尚未确认。目前尚无组织宣称对此负责。</p>
+      <p class="card-source">r/worldnews · /u/mvanigan · 6月9日 19:24</p>
+<div class="bg-block"><span class="block-label">背景</span><p>历史上，俄罗斯曾发生过针对官员的汽车爆炸袭击，涉及分离主义者和有组织犯罪等不同势力。此类袭击通常具有政治含义，尤其是涉及军事人员时。</p></div><div class="tags-row"><span class="tag">Russia</span> <span class="tag">car bombing</span> <span class="tag">military official</span> <span class="tag">geopolitics</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-82">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">82</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u1505m/bulgarias_new_government_to_stop_sending_arms_to/" target="_blank">保加利亚停止向乌克兰运送武器</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">保加利亚新政府宣布停止向乌克兰运送所有武器，逆转了前任政府的军事支持政策。 这一转变可能削弱欧洲支持乌克兰的团结，并可能助长俄罗斯的士气，同时影响保加利亚与北约盟友的关系。 该决定是在保加利亚新联合政府成立后做出的，该政府包括对继续向乌克兰运送武器持怀疑态度的政党。</p>
+      <p class="card-source">r/worldnews · /u/razdvatri4 · 6月9日 13:28</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2022 年俄罗斯全面入侵以来，保加利亚一直是向乌克兰提供军事援助的几个欧洲国家之一。上届政府支持武器运送，但政治变化改变了立场。保加利亚的地理位置靠近冲突区域，且与俄罗斯有历史联系，增加了复杂性。</p></div><div class="tags-row"><span class="tag">Bulgaria</span> <span class="tag">Ukraine</span> <span class="tag">arms embargo</span> <span class="tag">geopolitics</span> <span class="tag">European support</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-83">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">83</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/geopolitics/comments/1u18pr7/pentagon_sees_growing_espionage_threat_from/" target="_blank">五角大楼提高对以色列间谍活动的威胁级别</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">五角大楼将其反间谍威胁评估提升至最高级别，原因是涉及以色列的间谍活动，包括据称对美伊谈判的窃听行为。 这一升级标志着美国与以色列这两个关键盟友之间的重大裂痕，可能影响情报共享和外交关系。同时也凸显了即使在盟国之间，间谍威胁的严重性。 具体的反间谍威胁级别未详细说明，但最高级别表明存在迫在眉睫或持续的威胁。据称对美伊谈判的窃听将破坏信任且可能违法。</p>
+      <p class="card-source">r/geopolitics · /u/OpDanger · 6月9日 15:42</p>
+<div class="bg-block"><span class="block-label">背景</span><p>反间谍威胁评估是五角大楼用于衡量外国情报活动风险的工具。美国与以色列历史上有着密切的安全伙伴关系，但间谍事件时有发生，例如乔纳森·波拉德案。报道中的对美伊谈判窃听将代表双边信任的新低点。</p></div><div class="tags-row"><span class="tag">espionage</span> <span class="tag">Israel</span> <span class="tag">Pentagon</span> <span class="tag">counterintelligence</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-84">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">84</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/geopolitics/comments/1u12hi9/turkish_forces_harass_aircraft_carrying_european/" target="_blank">土耳其骚扰载有欧盟防长的飞机前往塞浦路斯</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">土耳其军队骚扰了一架载有希腊、法国和荷兰国防部长的飞机，该飞机正前往塞浦路斯。塞浦路斯政府表示将就此次干扰提出正式投诉。 这一事件加剧了土耳其与欧盟成员国之间的紧张关系，尤其是在塞浦路斯分裂问题上。它可能损害外交关系，并引发欧盟的集体回应或制裁。 骚扰发生在飞机前往塞浦路斯参加欧盟会议的途中，但具体性质（如拦截或无线电通信）尚未详细说明。塞浦路斯是欧盟成员国，但土耳其不承认其对整个岛屿的主权。</p>
+      <p class="card-source">r/geopolitics · /u/NotSoSaneExile · 6月9日 11:38</p>
+<div class="bg-block"><span class="block-label">背景</span><p>塞浦路斯自 1974 年以来一直处于分裂状态，当时土耳其因希腊族塞浦路斯人策动政变而入侵北部。土耳其只承认北塞浦路斯土耳其共和国，这是一个分离主义国家。欧盟支持在联邦框架下实现统一，此类事件是土耳其在地区采取强硬姿态的一部分。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Turkey</span> <span class="tag">Cyprus</span> <span class="tag">EU</span> <span class="tag">defense</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔬</span>科学/研究<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-85">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">85</span>
+        <h2 class="card-title"><a href="https://qunabu.github.io/Gravity/" target="_blank">Gravity：从牛顿到爱因斯坦的交互式太阳系模拟器</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位开发者构建了 Gravity，这是一个交互式太阳系模拟器，通过逐步引导从牛顿引力到爱因斯坦广义相对论来教授轨道力学，并使用真实行星数据。 该工具通过实践模拟使复杂的物理概念易于理解，帮助学习者和爱好者理解轨道为何存在以及引力在不同尺度下的作用，桥接了经典力学和相对论力学。 该模拟器使用真实质量、半径和 J2000 轨道元素，每帧求解开普勒方程；包含一个采用辛跳蛙积分的 N 体模式，显示能量漂移（约 1e-6%），并可在真实尺度和视觉尺度之间切换。</p>
+      <p class="card-source">qunabu · 6月9日 11:46</p>
+<div class="bg-block"><span class="block-label">背景</span><p>轨道力学描述物体在引力作用下的运动。牛顿万有引力定律解释了椭圆轨道，而爱因斯坦广义相对论将引力描述为弯曲时空。开普勒方程将轨道位置与时间联系起来，J2000 轨道元素定义了特定历元的轨道。跳蛙积分是一种辛方法，可在长时间模拟中保持能量守恒。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者赞赏该模拟的教育价值和逐步讲解方式，但也指出了一些小的不准确，如第 14 步地球轴进动和第 5 步轨道速度。一位用户对准确的 3D 螺旋线描绘表示赞赏，而非流行的“漩涡”动画。有人建议不要将牛顿引力和相对论引力截然分开。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Leapfrog_integration" target="_blank">Leapfrog integration - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Orbital_elements" target="_blank">Orbital elements - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">physics</span> <span class="tag">education</span> <span class="tag">simulation</span> <span class="tag">solar system</span> <span class="tag">gravity</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-86">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">86</span>
+        <h2 class="card-title"><a href="https://www.wired.com/story/longevity-startup-doses-first-human-in-bid-to-reverse-age-related-sight-loss/" target="_blank">Longevity Startup Doses First Human in Bid to Reverse Age-Related Sight Loss</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Longevity startup ER-100 received FDA approval for human clinical trials to reverse age-related sight loss, with potential applications for other age-related diseases.</p>
+      <p class="card-source">Wired · 6月9日 13:23</p>
+<div class="tags-row"><span class="tag">longevity</span> <span class="tag">cellular rejuvenation</span> <span class="tag">FDA approval</span> <span class="tag">age-related disease</span> <span class="tag">clinical trial</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">📊</span>行业/商业<span class="cat-n">16 条</span></div>
+  <article class="item-card" id="item-87">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">87</span>
+        <h2 class="card-title"><a href="https://stratechery.com/2026/the-iphones-last-stand/" target="_blank">The iPhone's Last Stand?</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">An analysis questioning whether the iPhone can maintain its dominance in the era of AI-driven computing, exploring Apple's approach versus competitors like Meta and Microsoft.</p>
+      <p class="card-source">swolpers · 6月9日 10:08</p>
+<div class="tags-row"><span class="tag">Apple</span> <span class="tag">iPhone</span> <span class="tag">AI</span> <span class="tag">hardware</span> <span class="tag">strategy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-88">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">88</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbFA5U1F5QUJxUzRPajhCRFp4RXpLbzlxQWJOdjlqVTdPRnBwMmVTSXNoNTQ1U1JBWmc2NHVTeHlCaXhoRkFwaUVqOXRHNVFHSkE4N2dPNVRrcy0yZnh3M1IwV0hXX0hiaVdRVGpQUzBkNGlIcDZkVTluM2xvakR3aG5VWVpLdmRhTkUxR2NJWDVhWmhEdHVhNTBDc3RYV2V3cDBaVk1HY2FMaDlZTElsbmYtOUs2WjlpR24yRUJCeE4xMkk?oc=5" target="_blank">Apollo, Blackstone back Anthropic's $35 billion capacity expansion in new Broadcom tie-up - Reuters</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Apollo and Blackstone are backing Anthropic's $35 billion capacity expansion in a new partnership with Broadcom, as reported by Reuters.</p>
+      <p class="card-source">Google News - Reuters · 6月9日 17:03</p>
+<div class="tags-row"><span class="tag">AI</span> <span class="tag">investment</span> <span class="tag">Anthropic</span> <span class="tag">Broadcom</span> <span class="tag">infrastructure</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-89">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">89</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPSkpfUFlIUUZQOEFhdG5ZaEE1V1UxTV9veVdiZlZjNWxJVWMxWDhTRzBzN3A5UFhUNmRXZTRpcjNsWXdleWVPQlVOdGlxYWdJcENrRmNndUZMT3RxbVN0TnpldnpfQzNHSzlzbUFvRDR2VTdMdHB5WDE2VHBBVFVDYWZBM1E?oc=5" target="_blank">OpenAI files confidential SEC paperwork for IPO, opening the door to a Wall Street debut - AP News</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI has filed confidential SEC paperwork for an IPO, signaling its potential public market debut.</p>
+      <p class="card-source">Google News - AP News · 6月9日 01:20</p>
+<div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">IPO</span> <span class="tag">AI industry</span> <span class="tag">finance</span> <span class="tag">Wall Street</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-90">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">90</span>
+        <h2 class="card-title"><a href="https://newsletter.pragmaticengineer.com/p/the-job-market-in-2026-part-2" target="_blank">State of the software engineering job market in 2026, part 2</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Gergely Orosz's deep dive reveals AI labs are more attractive than Big Tech, native mobile and frontend roles are declining, and management is undergoing a 'great flattening'.</p>
+      <p class="card-source">The Pragmatic Engineer · 6月9日 16:35</p>
+<div class="tags-row"><span class="tag">software engineering</span> <span class="tag">job market</span> <span class="tag">AI labs</span> <span class="tag">tech industry</span> <span class="tag">career trends</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-91">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">91</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/ce3ez4zzzlvo?at_medium=RSS&at_campaign=rss" target="_blank">World's largest chipmaker does not rule out price rises as costs increase</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">TSMC senior executive hints at potential price increases due to rising costs and AI-driven demand, with implications for electronics pricing.</p>
+      <p class="card-source">BBC World · 6月9日 22:00</p>
+<div class="tags-row"><span class="tag">TSMC</span> <span class="tag">semiconductors</span> <span class="tag">AI boom</span> <span class="tag">chip pricing</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-92">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">92</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/09/gm-bets-big-on-energy-storage-for-data-centers-and-the-grid/" target="_blank">GM joins race to build batteries for AI data centers and the grid</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">GM is developing a new sodium-ion battery chemistry for data centers and its factories, aiming to power AI infrastructure and the grid.</p>
+      <p class="card-source">TechCrunch · 6月9日 21:00</p>
+<div class="tags-row"><span class="tag">sodium-ion batteries</span> <span class="tag">energy storage</span> <span class="tag">AI data centers</span> <span class="tag">GM</span> <span class="tag">clean energy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-93">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">93</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/09/its-not-faang-anymore-its-mangos/" target="_blank">It’s not FAANG anymore. It’s MANGOS.</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Tech industry may adopt MANGOS acronym for new class of tech giants including SpaceX, Anthropic, and OpenAI.</p>
+      <p class="card-source">TechCrunch · 6月9日 16:09</p>
+<div class="tags-row"><span class="tag">FAANG</span> <span class="tag">MANGOS</span> <span class="tag">tech industry</span> <span class="tag">public offerings</span> <span class="tag">corporate overlords</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-94">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">94</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNVUdxVklCSVNiWC0wakRUOVBtRU02MWI3QkN6Wk5Tc2xuVUQxTWdjYzlwbmR2V3VkajVPVnNJM2dGVDBXUHpaaHJrUlczSGRfNlBMNHQ2NDVldURZWjVvWHliNEtKVXZrVURrQTI4NkFiU3h0X3E5S3hSR19BZnVIMXI0THBCRHZXNnotVTNhUWkyTG1QVklxRVZVYjhfc0RRaGtjeFE5QnN3MjU3eUwxUVF3?oc=5" target="_blank">SpaceX IPO 需求接近超额认购四倍</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">路透社援引消息人士报道，SpaceX 即将进行的 IPO 需求接近超额认购四倍。 这表明投资者对 SpaceX 乃至整个航天工业的信心极强，可能推高公司估值，并为未来项目筹集更多资金。 超额认购水平表明 IPO 定价可能上调，且随着发行临近，最终需求可能超过当前估计。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 21:42</p>
+<div class="bg-block"><span class="block-label">背景</span><p>IPO（首次公开募股）是指私人公司首次向公众出售股票。超额认购意味着投资者想要购买的股票数量超过可供出售的数量，表明需求旺盛。SpaceX 是由埃隆·马斯克创立的领先私人太空探索公司。</p></div><div class="tags-row"><span class="tag">SpaceX</span> <span class="tag">IPO</span> <span class="tag">oversubscribed</span> <span class="tag">investment</span> <span class="tag">space industry</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-95">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">95</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxQRnpZNVJidmdaMGhJWTRVMl96MXlMa1FzOE1qQWxKMnpwOFZqSVM2NGlKVEEwZ3ZLdTlBU19pWkFrSXBkWWg5WWRvUXpkUGJCV2ZXMWh2YWRrQ0FIdVo2eVNkdlN5bWhOaGtwajRFTVdneXhmTnJJN0lOelRTbmRlUi1LWVRIR0FuZV9Jb2NIZVRUNjZROHJJbGVjX3lLOW80MURhLQ?oc=5" target="_blank">法官批准 Visa 和 Mastercard 380 亿美元刷卡费和解</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国法官批准了 Visa、Mastercard 与商家之间关于刷卡费的 380 亿美元和解协议，解决了一场长期的反垄断诉讼。 这一里程碑式的和解可能为数百万商家降低成本，并可能降低消费者价格，同时迫使支付网络改革其收费结构。 该和解涵盖了商家因处理信用卡和借记卡交易而被收取的交换费（刷卡费），并将在一段时间内分配给符合条件的商家。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 22:18</p>
+<div class="bg-block"><span class="block-label">背景</span><p>刷卡费，也称为交换费，是每次顾客使用信用卡或借记卡时商家向发卡银行支付的费用。这些费用长期以来一直是争议焦点，商家认为它们被抬高且具有反竞争性。Visa 和 Mastercard 因这些费用面临多起反垄断诉讼。</p></div><div class="tags-row"><span class="tag">finance</span> <span class="tag">regulation</span> <span class="tag">payment systems</span> <span class="tag">Visa</span> <span class="tag">Mastercard</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-96">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">96</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQdmpqWnVhcndFODY3clo4S0tzT1ZRTnQwNzB1WUx0TkpVVlNwUmJYcjNvVExsOERsQUgxWEViajFDTEhKSS1GVDBHRm9WNHZBMDdvTnFRcjI2cEhZY3ZiNkktcnFkZnpTNUc5aE5ld2ZDU1RWYjU5YldMVmpWaFlBc3IxZ1NFcHJxc3NKdHRxazZZS0ducG9MZWI2NmFMNGZucUMtWkkzMUtVNFhCY3RobQ?oc=5" target="_blank">Nuvei 洽谈以 27 亿美元收购 Payoneer</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据知情人士透露，Nuvei 正就收购 Payoneer 进行高级谈判，交易金额约 27 亿美元。 此次收购将打造一个跨境支付巨头，整合 Nuvei 的无卡支付解决方案与 Payoneer 在企业对公和平台支付领域的优势。 如果交易完成，将成为今年最大的金融科技收购案之一，但谈判仍在进行中，可能不会达成最终协议。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 14:53</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Nuvei 是一家加拿大支付技术公司，专注于无卡支付和电子商务支付。Payoneer 总部位于纽约，为企业提供跨境支付服务，尤其擅长平台和企业对企业支付。两家公司均为上市公司：Nuvei 在多伦多证券交易所上市，Payoneer 在纳斯达克上市。</p></div><div class="tags-row"><span class="tag">fintech</span> <span class="tag">acquisition</span> <span class="tag">payments</span> <span class="tag">business</span> <span class="tag">finance</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-97">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">97</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUUdjdDQteXJTaHVFMEozeTNmUXJBZzBXcnJmM056VmFFTVU3V3AwRlF0YmtsUmdGTFFUOEIxOXJTN1NrRnR0X0NwTXBkNXN0ZlFKREhnNUQ3c0ttN2Y2ZHZNREFqWm4yQTVzLWtHWTNNeEJQLWVyV09WTUJhY0dld0VLMlRjRmZVTExjRXA2OGZSNzlWQlJHeVl2ZlUxYzVBRlRQWVhITkE0Zw?oc=5" target="_blank">塔塔咨询董事长警告 AI 智能体可能取代人类岗位，减少招聘</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">塔塔咨询服务公司（TCS）董事长纳塔拉詹·钱德拉塞卡兰表示，AI 智能体最终可能相当于公司员工总数，并抑制招聘。这一言论凸显了印度最大 IT 公司之一可能出现的劳动力战略转变。 作为拥有超过 60 万名员工的大型 IT 雇主，TCS 的观点预示着全球 IT 招聘和更广泛劳动力市场的重大影响。这反映了行业日益达成的共识，即 AI 智能体将自动化许多以前由人类完成的任务，可能减少对入门级和中层职位的需求。 钱德拉塞卡兰在公司活动上发表上述言论，强调 AI 智能体不仅会增强人类员工，还会在某些职能中取代他们。他没有提供时间表，但暗示随着 AI 技术的成熟，这一转变可能在几年内发生。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 09:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 智能体是一种软件系统，能够在定义的约束条件下自主追求目标、使用工具并采取行动。它们与传统 AI 的不同之处在于更加自主，能够处理复杂工作流程。TCS 作为全球 IT 服务领导者，正在大力投资 AI 和自动化以提高效率。其董事长的发言反映了行业内关于 AI 对就业影响的更广泛辩论，尤其是在外包和 IT 服务领域。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/AI_agent" target="_blank">AI agent</a></li><li><a href="https://www.producthunt.com/categories/ai-agents" target="_blank">The best AI agents in 2026 - Product Hunt</a></li><li><a href="https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/" target="_blank">A practical guide to building agents - OpenAI</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">job displacement</span> <span class="tag">TCS</span> <span class="tag">India</span> <span class="tag">labor</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-98">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">98</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxPVHFPVWp5ckQtdGRRYXFDSU1kMER6VlRhaC1tTkNzd0dBbWY5WmxZbFdQaG5fY3VVSFJtLWFvb3BPckoxbndhcGd6ZlNjbEI4akxBNkt0eVZucm1VVUpDSXlobHB5TUoxcTNUd2MzOHdmUE1KV1gwaEZBd05qMEdONkwxMzdlUWdyR3RJajVWMXNVMzd4bG03WlI4Um43V0NCbzJVb29RUzBrNzNQVWVkTUgxbl9TWWJ3YVRJS3VfUnEyWVMteEJEZDZR?oc=5" target="_blank">GSK 以 106 亿美元收购 Nuvalent 加强癌症管线</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">GSK 宣布以约 106 亿美元现金收购晚期肿瘤生物技术公司 Nuvalent 的最终协议。 此次收购通过针对肺癌的靶向疗法加强了 GSK 的肿瘤学管线，可能重塑其药物研发线和在癌症市场的竞争地位。 Nuvalent 专注于开发针对 ROS1 阳性、ALK 阳性和 HER2 突变非小细胞肺癌的精准靶向疗法，并拥有多个发现阶段项目。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 06:04</p>
+<div class="bg-block"><span class="block-label">背景</span><p>GSK 是一家拥有广泛产品线的全球生物制药公司，而 Nuvalent 是一家专注于针对肺癌特定基因突变的靶向抗癌药物的晚期生物技术公司。这笔交易反映了制药行业持续的整合趋势，企业纷纷寻求通过创新疗法加强研发管线。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.cnbc.com/2026/06/09/gsk-in-talks-to-acquire-nuvalent-for-more-than-9-billion.html" target="_blank">GSK to acquire U.S. cancer drugmaker Nuvalent for $10.6 billion</a></li><li><a href="https://us.gsk.com/en-us/media/press-releases/gsk-enters-agreement-to-acquire-nuvalent-inc/" target="_blank">GSK enters agreement to acquire Nuvalent, Inc. | GSK US</a></li><li><a href="https://nuvalent.com/" target="_blank">Nuvalent | Precisely targeted therapies for patients with cancer</a></li></ul></details><div class="tags-row"><span class="tag">GSK</span> <span class="tag">Nuvalent</span> <span class="tag">cancer</span> <span class="tag">pharmaceuticals</span> <span class="tag">M&A</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-99">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">99</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOY2o3a2p0QWozaW1DOTdQX2ZhTmp6UTdSaktSZEVnckVDUmhXVnA2R1RwMHRqV2tZc2ZBc3lNUFRQM2dxeUU2bEZuOGxlSnRmYXlNUnM5ckJoYVZzQ0poOXZYT1dCRVlfSmlnRnZXYVdvLVlkY2VUX3RZS0FMM0s0eWhaeHNtMmUzdGtBUzZvUWxCWGJPbDBnSEVHVThYVGdSTE9PZjREX2RhRGVfTzRtbjNUNGJpVGxkcFAw?oc=5" target="_blank">中国人工智能驱动出口大增超预期</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据路透社报道，中国出口增长超出预期，主要得益于人工智能相关产品的增长。 这表明中国经济的韧性以及全球对人工智能技术的需求增长，可能对全球贸易格局产生影响。 路透社报道强调，人工智能相关产品是此次出口增长的关键驱动力，但未披露具体数字或产品类别。</p>
+      <p class="card-source">Google News - Reuters · 6月9日 02:57</p>
+<div class="bg-block"><span class="block-label">背景</span><p>中国一直在大力投资人工智能，旨在成为该领域的全球领导者。此次出口增长反映了人工智能技术的商业化，包括智能设备、自动化设备和软件服务。这一趋势与中国从低端制造向高科技创新转变的经济战略相符。</p></div><div class="tags-row"><span class="tag">China</span> <span class="tag">AI</span> <span class="tag">exports</span> <span class="tag">economy</span> <span class="tag">international news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-100">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">100</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u1hi8v/dont_be_someones_dumb_pipe/" target="_blank">AI 治理：平台公司的生存护城河</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">ServiceNow 于 2026 年 3 月以 8000 万美元收购 Traceloop，获得 AI 代理运行时可观测性，并推出与 AWS Bedrock 集成的 AI 控制塔，为 AI 代理提供统一治理层。 此举表明企业软件供应商正将治理作为防御策略，以避免被 LLM 提供商和云基础设施公司商品化，这将重塑企业 AI 的竞争格局。 AI 控制塔将于 2026 年 8 月全面上市，治理层在尚未完全就绪时就开始销售，Cognizant 等合作伙伴已在其上叠加自己的代理。</p>
+      <p class="card-source">r/artificial · /u/roll0ver · 6月9日 20:53</p>
+<div class="bg-block"><span class="block-label">背景</span><p>企业 AI 治理涉及对生产环境中 AI 代理的监控、控制和安全保障。随着公司部署更多 AI 代理，它们面临成为‘哑管道’的风险——即仅作为数据流中介，而价值被 LLM 提供商和云平台获取。通过构建治理层，平台公司旨在控制 AI 模型与业务流程之间的接口。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.traceloop.com/" target="_blank">Traceloop - LLM Reliability Platform</a></li><li><a href="https://github.com/traceloop-ai/traceloop" target="_blank">GitHub - traceloop-ai/traceloop: Production grade ...</a></li></ul></details><div class="tags-row"><span class="tag">AI governance</span> <span class="tag">enterprise AI</span> <span class="tag">ServiceNow</span> <span class="tag">Microsoft</span> <span class="tag">Salesforce</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-101">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">101</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/OpenAI/comments/1u17fvh/openais_widely_cited_14b_2026_loss_target_leaves/" target="_blank">OpenAI 140 亿美元亏损目标未包含约 100 亿美元股权补偿</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI 被广泛引用的 2026 年 140 亿美元净亏损目标未包含股权补偿（SBC）。将 SBC 计入后，GAAP 净亏损估计为 250-260 亿美元，比非 GAAP 数字高出约 80%。 这一差异显著改变了 OpenAI 的跑道：以每年 140 亿美元的烧钱速度，其 1220 亿美元资金可支撑 8-9 年，但若亏损 250 亿美元，则仅约 5 年。盈利路径变得更为陡峭，可能影响 IPO 时机和投资者看法。 该分析来自一个财务模型，预测 OpenAI 需要在 2-4 年内将营业利润率从-122%转为正，同时因高利润率企业收入占比缩小而导致毛利率压缩。该模型认为盈利可能要到 2031 年才能实现。</p>
+      <p class="card-source">r/OpenAI · /u/ddp26 · 6月9日 14:59</p>
+<div class="bg-block"><span class="block-label">背景</span><p>GAAP（公认会计原则）要求公司将股权补偿计入费用，而非 GAAP 指标通常将其排除以显示调整后收益。股权补偿是一种非现金费用，会减少报告利润但不影响现金流。初创公司跑道是指公司在资金耗尽前能运营的时间，通过现金储备除以每月烧钱率计算。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.investopedia.com/articles/financial-analysis/062716/gaap-vs-nongaap-which-should-you-consider-evaluation.asp" target="_blank">GAAP vs. Non-GAAP: Key Differences Explained - Investopedia What's the Difference Between GAAP vs. Non-GAAP? | The Motley ... GAAP vs. Non-GAAP: Key Differences and SEC Rules GAAP vs. Non-GAAP (Definitions, Comparison and Examples) GAAP vs Non-GAAP | Top 7 Best Differences with Infographics Understanding Non GAAP vs GAAP: A Clear Guide to Financial ... GAAP vs. Non-GAAP Accounting: What You Need to Know</a></li><li><a href="https://www.wallstreetprep.com/knowledge/stock-based-compensation-sbc/" target="_blank">Stock Based Compensation (SBC) | Journal Entry + Examples</a></li><li><a href="https://www.clearviewgrowthadvisory.com/blog/how-to-calculate-startup-runway" target="_blank">Startup Runway Calculator: Exact Formulas + Stage Benchmarks ...</a></li></ul></details><div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">financial analysis</span> <span class="tag">GAAP vs non-GAAP</span> <span class="tag">stock-based compensation</span> <span class="tag">IPO</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-102">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">102</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u1ghs0/last_month_salesforce_announced_it_hit_12_billion/" target="_blank">Salesforce AI 收入达 12 亿美元，却裁员相关员工</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Salesforce 上月报告 AI 收入达 12 亿美元，但现在正在裁减与 AI 产品相关的员工。 重大收入里程碑与裁员并存，暗示内部战略冲突或成本重组，引发对企业软件中 AI 驱动增长可持续性的质疑。 尽管公司宣布 AI 收入达 12 亿美元，裁员却涉及 AI 产品相关员工，凸显收入生成与人力配置之间可能存在的脱节。</p>
+      <p class="card-source">r/technology · /u/Conscious-Quarter423 · 6月9日 20:16</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Salesforce 是领先的 CRM 平台，通过其 Einstein 和 Data Cloud 服务大力投资 AI。公司一直追求 AI 驱动的增长，但裁员表明可能存在战略转变或削减成本措施。</p></div><div class="tags-row"><span class="tag">Salesforce</span> <span class="tag">AI revenue</span> <span class="tag">layoffs</span> <span class="tag">corporate strategy</span></div>
+    </div>
+  </article></section>
+<footer class="footer">
+  <p>Generated by <a href="https://github.com/jinghuazhao/Horizon" target="_blank">Horizon</a> · AI-Driven Information Aggregation · 2026-06-10</p>
+</footer>
+</div>
+<script>
+// Toggle floating panel visibility
+var tocVisible = window.innerWidth > 900;
+function updateTocVisibility() {
+  var toc = document.getElementById('toc');
+  var fab = document.getElementById('tocFab');
+  if (window.innerWidth > 900) {
+    toc.classList.remove('hidden','open-mobile');
+    tocVisible = true;
+    fab.style.display = 'none';
+  } else {
+    toc.classList.add('hidden');
+    toc.classList.remove('open-mobile');
+    tocVisible = false;
+    fab.style.display = 'flex';
+  }
+}
+window.addEventListener('resize', updateTocVisibility);
+
+function toggleToc() {
+  var toc = document.getElementById('toc');
+  if (window.innerWidth <= 900) {
+    toc.classList.toggle('open-mobile');
+    toc.classList.remove('hidden');
+  } else {
+    tocVisible = !tocVisible;
+    if (tocVisible) toc.classList.remove('hidden');
+    else toc.classList.add('hidden');
+  }
+}
+
+// Collapsible category drawers (collapsed by default)
+function toggleCat(el) {
+  el.classList.toggle('collapsed');
+  var links = el.nextElementSibling;
+  if (!links || !links.classList.contains('ftoc-links')) return;
+  if (el.classList.contains('collapsed')) {
+    links.style.maxHeight = '0px';
+  } else {
+    links.style.maxHeight = links.scrollHeight + 'px';
+  }
+}
+
+// Initialize: collapse all, set heights
+document.addEventListener('DOMContentLoaded', function() {
+  var cats = document.querySelectorAll('.ftoc-cat');
+  cats.forEach(function(cat) {
+    cat.classList.add('collapsed');
+    var links = cat.nextElementSibling;
+    if (links && links.classList.contains('ftoc-links')) {
+      links.style.maxHeight = '0px';
+      // Store natural height
+      links._naturalHeight = links.scrollHeight;
+    }
+  });
+  // First category expanded by default
+  if (cats.length > 0) {
+    cats[0].classList.remove('collapsed');
+    var firstLinks = cats[0].nextElementSibling;
+    if (firstLinks && firstLinks.classList.contains('ftoc-links')) {
+      firstLinks.style.maxHeight = firstLinks.scrollHeight + 'px';
+    }
+  }
+});
+
+// Scroll highlight
+var links = document.querySelectorAll('.ftoc-link');
+var cards = document.querySelectorAll('.item-card');
+var activeCat = null;
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    var idx = e.target.id.replace('item-','');
+    var link = document.querySelector('.ftoc-link[data-idx="'+idx+'"]');
+    if (e.isIntersecting && link) {
+      links.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+      // Expand current category, collapse the previously expanded one
+      var cat = link.closest('.ftoc-links');
+      if (cat) {
+        var header = cat.previousElementSibling;
+        if (header && header.classList.contains('ftoc-cat')) {
+          if (activeCat && activeCat !== header) {
+            activeCat.classList.add('collapsed');
+            activeCat.nextElementSibling.style.maxHeight = '0px';
+          }
+          if (header.classList.contains('collapsed')) {
+            header.classList.remove('collapsed');
+            cat.style.maxHeight = cat.scrollHeight + 'px';
+          }
+          activeCat = header;
+        }
+      }
+    }
+  });
+}, {rootMargin: '-8% 0px -75% 0px'});
+cards.forEach(function(c) { observer.observe(c); });
+</script>
+</body>
+</html>

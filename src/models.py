@@ -151,6 +151,7 @@ class RedditSubredditConfig(BaseModel):
     )
     fetch_limit: int = 25
     min_score: int = 10
+    prefer_rss: bool = False  # skip JSON and use RSS directly (avoids 403 block)
 
 
 class RedditUserConfig(BaseModel):

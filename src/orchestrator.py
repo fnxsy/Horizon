@@ -25,6 +25,7 @@ from .scrapers.ossinsight import OSSInsightScraper
 from .ai.client import create_ai_client
 from .ai.analyzer import ContentAnalyzer
 from .ai.summarizer import DailySummarizer
+from .ai.html_renderer import HTMLRenderer
 from .ai.enricher import ContentEnricher
 from .ai.tokens import get_usage_snapshot
 
@@ -149,9 +150,17 @@ class HorizonOrchestrator:
                 summarizer = DailySummarizer()
                 summary = await summarizer.generate_summary(important_items, today, len(all_items), language=lang)
 
-                # Save to data/summaries/
+                # Save Markdown to data/summaries/
                 summary_path = self.storage.save_daily_summary(today, summary, language=lang)
-                self.console.print(f"💾 Saved {lang.upper()} summary to: {summary_path}\n")
+                self.console.print(f"💾 Saved {lang.upper()} summary to: {summary_path}")
+
+                # Generate and save beautiful HTML report
+                html_renderer = HTMLRenderer()
+                html_content = html_renderer.render(
+                    important_items, today, len(all_items), language=lang
+                )
+                html_path = self.storage.save_daily_summary_html(today, html_content, language=lang)
+                self.console.print(f"🌐 Saved {lang.upper()} HTML to: {html_path}\n")
 
                 # Copy to docs/ for GitHub Pages
                 try:

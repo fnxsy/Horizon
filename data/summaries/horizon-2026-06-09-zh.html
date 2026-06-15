@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Horizon Daily — 2026-06-09</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;background:#f5f6fa;color:#2d3436;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(155deg,#0f0c29 0%,#1a1a3e 40%,#24243e 100%);color:#fff;padding:44px 32px 36px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(99,102,241,.25),transparent);pointer-events:none}
+.hero-badge{display:inline-block;padding:4px 14px;border-radius:20px;background:rgba(255,255,255,.12);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;backdrop-filter:blur(4px)}
+.hero h1{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:6px;position:relative}
+.hero-sub{font-size:.9rem;opacity:.6;margin-bottom:20px;position:relative}
+.hero-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;position:relative}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.08);font-size:.76rem;color:rgba(255,255,255,.75)}
+.hero-pill strong{color:#fff;font-weight:700}
+
+/* ── Content ── */
+.container{max-width:820px;margin:0 auto;padding:0 20px 60px}
+
+/* ── Category Sections ── */
+.cat-section{margin-top:28px}
+.cat-heading{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;color:#636e72;margin-bottom:14px;padding:0 4px}
+.cat-heading .cat-icon{font-size:1.1rem}
+.cat-heading .cat-n{font-size:.76rem;color:#b2bec3;font-weight:500;margin-left:auto}
+
+/* ── Cards ── */
+.item-card{background:#fff;border-radius:16px;padding:22px 26px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.03);transition:box-shadow .2s,transform .15s;border:1px solid #f1f3f5}
+.item-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);transform:translateY(-1px);border-color:#e9ecef}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.card-left{display:flex;align-items:flex-start;gap:10px;flex:1}
+.card-idx{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:#f1f3f5;color:#868e96;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.card-title a{color:#1a1a2e;text-decoration:none;font-size:1.02rem;font-weight:700;line-height:1.45}
+.card-title a:hover{color:#4c6ef5}
+.card-score{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.card-summary{font-size:.88rem;color:#495057;margin-bottom:8px;line-height:1.72}
+.card-source{font-size:.74rem;color:#adb5bd}
+
+.bg-block,.disc-block{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:.83rem;line-height:1.65}
+.bg-block{background:#f8f9fe;border-left:3px solid #748ffc}
+.disc-block{background:#fef9e7;border-left:3px solid #fcc419}
+.bg-block p,.disc-block p{margin-top:3px;color:#495057}
+.block-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#adb5bd}
+
+.refs-details{margin-top:12px;font-size:.8rem;color:#868e96}
+.refs-details summary{cursor:pointer;font-weight:600;color:#495057}
+.refs-list{margin-top:6px;padding-left:18px}
+.refs-list li{margin-bottom:3px}
+.refs-list a{color:#4c6ef5;text-decoration:none;font-size:.79rem}
+.refs-list a:hover{text-decoration:underline}
+
+.tags-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;padding:3px 10px;background:#edf2ff;color:#4c6ef5;border-radius:20px;font-size:.72rem;font-weight:500}
+
+/* ── Floating TOC (right side) ── */
+.floating-toc{position:fixed;top:20px;right:20px;width:270px;max-height:calc(100vh - 40px);background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);z-index:100;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s}
+.floating-toc.hidden{transform:translateX(320px);opacity:0;pointer-events:none}
+.ftoc-header{display:flex;align-items:center;gap:8px;padding:16px 16px 12px;border-bottom:1px solid #f1f3f5;flex-shrink:0}
+.ftoc-logo{font-size:1.1rem}
+.ftoc-title{font-size:.82rem;font-weight:700;color:#495057;flex:1}
+.ftoc-close{width:26px;height:26px;border-radius:8px;border:none;background:#f1f3f5;color:#868e96;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ftoc-close:hover{background:#e9ecef}
+.ftoc-nav{overflow-y:auto;padding:8px 12px 16px;flex:1}
+.ftoc-nav::-webkit-scrollbar{width:3px}
+.ftoc-nav::-webkit-scrollbar-thumb{background:#dee2e6;border-radius:4px}
+
+/* Category header in floating TOC */
+.ftoc-cat{display:flex;align-items:center;gap:8px;padding:10px 8px 6px;font-size:.76rem;font-weight:700;color:#636e72;cursor:pointer;user-select:none;border-radius:8px;transition:background .12s}
+.ftoc-cat:hover{background:#f8f9fa}
+.ftoc-cat-icon{font-size:.85rem}
+.ftoc-cat-name{flex:1}
+.ftoc-cat-n{font-size:.7rem;color:#adb5bd;font-weight:500}
+.ftoc-chevron{transition:transform .2s;flex-shrink:0;color:#adb5bd}
+.ftoc-cat.collapsed .ftoc-chevron{transform:rotate(-90deg)}
+.ftoc-links{overflow:hidden;transition:max-height .3s ease}
+.ftoc-cat.collapsed + .ftoc-links{max-height:0!important}
+
+.ftoc-link{display:flex;align-items:center;gap:8px;padding:5px 8px 5px 20px;border-radius:6px;text-decoration:none;color:#636e72;font-size:.76rem;line-height:1.35;transition:background .12s}
+.ftoc-link:hover{background:#f8f9fa}
+.ftoc-link.active{background:#edf2ff;color:#4c6ef5}
+.ftoc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:#ced4da}
+.ftoc-dot.s9{background:#e03131}
+.ftoc-dot.s8{background:#f08c00}
+.ftoc-dot.s7{background:#2f9e44}
+.ftoc-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* TOC toggle FAB */
+.toc-fab{display:none;position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:1.2rem;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;align-items:center;justify-content:center}
+.toc-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(0,0,0,.3)}
+
+.footer{text-align:center;padding:40px 16px;color:#b2bec3;font-size:.74rem}
+.footer a{color:#868e96;text-decoration:none}
+.footer a:hover{color:#636e72}
+
+/* ── Responsive ── */
+@media (max-width:1100px){
+  .floating-toc{width:250px;right:10px;top:10px;max-height:calc(100vh - 20px)}
+}
+@media (max-width:900px){
+  .floating-toc{display:none}
+  .floating-toc.open-mobile{display:flex;position:fixed;top:10px;right:10px;bottom:10px;left:10px;width:auto;max-height:none;z-index:300;border-radius:16px}
+  .toc-fab{display:flex}
+  .container{padding:0 14px 60px}
+  .hero{padding:36px 16px 28px}
+  .hero h1{font-size:1.5rem}
+  .item-card{padding:18px 16px}
+}
+@media (min-width:901px){
+  .floating-toc{display:flex}
+  .toc-fab{display:none}
+}
+</style>
+</head>
+<body>
+<aside class="floating-toc" id="toc">
+    <div class="ftoc-header">
+      <span class="ftoc-logo">🌅</span>
+      <span class="ftoc-title">目录</span>
+      <button class="ftoc-close" onclick="toggleToc()" title="关闭">×</button>
+    </div>
+    <nav class="ftoc-nav"><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🤖</span><span class="ftoc-cat-name">AI/ML</span><span class="ftoc-cat-n">18</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-1" class="ftoc-link" data-idx="1"><span class="ftoc-dot s9"></span><span class="ftoc-text">小米 MiMo-v2.5-Pro-Ultra…</span></a><a href="#item-2" class="ftoc-link" data-idx="2"><span class="ftoc-dot s9"></span><span class="ftoc-text">Luce Spark：无需卸载惩罚，35B …</span></a><a href="#item-3" class="ftoc-link" data-idx="3"><span class="ftoc-dot s9"></span><span class="ftoc-text">OpenAI 全面改造 ChatGPT，宣称…</span></a><a href="#item-4" class="ftoc-link" data-idx="4"><span class="ftoc-dot s8"></span><span class="ftoc-text">开源图像生成模型在基准测试中媲美闭源质量</span></a><a href="#item-5" class="ftoc-link" data-idx="5"><span class="ftoc-dot s8"></span><span class="ftoc-text">BM25 在工具选择上优于语义嵌入</span></a><a href="#item-6" class="ftoc-link" data-idx="6"><span class="ftoc-dot s8"></span><span class="ftoc-text">Qwen3.6-35B-A3B 工具调用基准…</span></a><a href="#item-7" class="ftoc-link" data-idx="7"><span class="ftoc-dot s8"></span><span class="ftoc-text">llama.cpp 中的流水线并行可能浪费显…</span></a><a href="#item-8" class="ftoc-link" data-idx="8"><span class="ftoc-dot s8"></span><span class="ftoc-text">llama.cpp 通过避免 KV 缓存复制…</span></a><a href="#item-9" class="ftoc-link" data-idx="9"><span class="ftoc-dot s8"></span><span class="ftoc-text">Gemma 4 在 RTX 3090 上通过…</span></a><a href="#item-10" class="ftoc-link" data-idx="10"><span class="ftoc-dot s8"></span><span class="ftoc-text">用户为 Ideogram 4 搭建自定义 C…</span></a><a href="#item-11" class="ftoc-link" data-idx="11"><span class="ftoc-dot s8"></span><span class="ftoc-text">社区成员发布 Stable Diffusio…</span></a><a href="#item-12" class="ftoc-link" data-idx="12"><span class="ftoc-dot s8"></span><span class="ftoc-text">arXiv 将对提交 AI 垃圾论文的研究者…</span></a><a href="#item-13" class="ftoc-link" data-idx="13"><span class="ftoc-dot s8"></span><span class="ftoc-text">AI 编码助手写代码能力提升，但理解代码库仍困难</span></a><a href="#item-14" class="ftoc-link" data-idx="14"><span class="ftoc-dot s8"></span><span class="ftoc-text">6 个开源仓库将 Claude Code 令…</span></a><a href="#item-15" class="ftoc-link" data-idx="15"><span class="ftoc-dot s8"></span><span class="ftoc-text">FrontierCode：Cognition…</span></a><a href="#item-16" class="ftoc-link" data-idx="16"><span class="ftoc-dot s8"></span><span class="ftoc-text">本地大语言模型驱动 Unity 游戏中的无剧…</span></a><a href="#item-17" class="ftoc-link" data-idx="17"><span class="ftoc-dot s8"></span><span class="ftoc-text">OpenAI 官方插件仓库热度上升</span></a><a href="#item-18" class="ftoc-link" data-idx="18"><span class="ftoc-dot s8"></span><span class="ftoc-text">HeyGen 开源 HyperFrames：…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">💻</span><span class="ftoc-cat-name">开源/编程</span><span class="ftoc-cat-n">3</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-19" class="ftoc-link" data-idx="19"><span class="ftoc-dot s8"></span><span class="ftoc-text">Fil-C v0.679 发布：为 C/C+…</span></a><a href="#item-20" class="ftoc-link" data-idx="20"><span class="ftoc-dot s8"></span><span class="ftoc-text">BugBuster：面向 AI 代理的开源硬…</span></a><a href="#item-21" class="ftoc-link" data-idx="21"><span class="ftoc-dot s8"></span><span class="ftoc-text">阿里巴巴开源混合架构代码审查工具</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔒</span><span class="ftoc-cat-name">安全/隐私</span><span class="ftoc-cat-n">5</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-22" class="ftoc-link" data-idx="22"><span class="ftoc-dot s9"></span><span class="ftoc-text">通过 npm 在 Claude Code 中…</span></a><a href="#item-23" class="ftoc-link" data-idx="23"><span class="ftoc-dot s8"></span><span class="ftoc-text">objdump -g 中存在任意代码执行漏洞</span></a><a href="#item-24" class="ftoc-link" data-idx="24"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta 因 WhatsApp 钓鱼攻击起诉…</span></a><a href="#item-25" class="ftoc-link" data-idx="25"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta 在 WIRED 报道后移除智能眼镜…</span></a><a href="#item-26" class="ftoc-link" data-idx="26"><span class="ftoc-dot s8"></span><span class="ftoc-text">Anthropic 隐私政策变更：无需法院命…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🌍</span><span class="ftoc-cat-name">时政/地缘</span><span class="ftoc-cat-n">42</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-27" class="ftoc-link" data-idx="27"><span class="ftoc-dot s9"></span><span class="ftoc-text">伊朗与以色列激烈交锋后缓和局势</span></a><a href="#item-28" class="ftoc-link" data-idx="28"><span class="ftoc-dot s9"></span><span class="ftoc-text">德黑兰发生爆炸，伊朗与以色列冲突升级</span></a><a href="#item-29" class="ftoc-link" data-idx="29"><span class="ftoc-dot s9"></span><span class="ftoc-text">伊朗、以色列、黎巴嫩冲突最新动态</span></a><a href="#item-30" class="ftoc-link" data-idx="30"><span class="ftoc-dot s9"></span><span class="ftoc-text">伊朗对以色列袭击石化厂进行报复，向海法发射导弹</span></a><a href="#item-31" class="ftoc-link" data-idx="31"><span class="ftoc-dot s9"></span><span class="ftoc-text">伊朗或因霍尔木兹海峡封锁升级退出停火谈判</span></a><a href="#item-32" class="ftoc-link" data-idx="32"><span class="ftoc-dot s9"></span><span class="ftoc-text">以伊导弹互射引发地区升级担忧</span></a><a href="#item-33" class="ftoc-link" data-idx="33"><span class="ftoc-dot s9"></span><span class="ftoc-text">以色列打击伊朗西部和中部军事目标</span></a><a href="#item-34" class="ftoc-link" data-idx="34"><span class="ftoc-dot s9"></span><span class="ftoc-text">俄罗斯在伊朗领导人遇刺后暂停人工智能监控</span></a><a href="#item-35" class="ftoc-link" data-idx="35"><span class="ftoc-dot s8"></span><span class="ftoc-text">Signal 反对英国监控计划，呼吁停止威胁加密</span></a><a href="#item-36" class="ftoc-link" data-idx="36"><span class="ftoc-dot s8"></span><span class="ftoc-text">马萨诸塞州新隐私法案禁止出售精确位置数据</span></a><a href="#item-37" class="ftoc-link" data-idx="37"><span class="ftoc-dot s8"></span><span class="ftoc-text">亚美尼亚亲西方政党在俄罗斯压力下赢得选举</span></a><a href="#item-38" class="ftoc-link" data-idx="38"><span class="ftoc-dot s8"></span><span class="ftoc-text">伊朗袭击以色列显示其信心增强</span></a><a href="#item-39" class="ftoc-link" data-idx="39"><span class="ftoc-dot s8"></span><span class="ftoc-text">习近平罕见访问朝鲜旨在重塑影响力</span></a><a href="#item-40" class="ftoc-link" data-idx="40"><span class="ftoc-dot s8"></span><span class="ftoc-text">以色列与伊朗互射导弹</span></a><a href="#item-41" class="ftoc-link" data-idx="41"><span class="ftoc-dot s8"></span><span class="ftoc-text">五角大楼将阿里巴巴、百度、比亚迪、宇树科技列…</span></a><a href="#item-42" class="ftoc-link" data-idx="42"><span class="ftoc-dot s8"></span><span class="ftoc-text">欧洲加速摆脱美国技术的趋势</span></a><a href="#item-43" class="ftoc-link" data-idx="43"><span class="ftoc-dot s8"></span><span class="ftoc-text">以色列在伊朗和真主党之间的战略困境</span></a><a href="#item-44" class="ftoc-link" data-idx="44"><span class="ftoc-dot s8"></span><span class="ftoc-text">万斯将英国刺伤案归咎于移民，英方官员反击</span></a><a href="#item-45" class="ftoc-link" data-idx="45"><span class="ftoc-dot s8"></span><span class="ftoc-text">中国商家在社交媒体上推广朝鲜劳工</span></a><a href="#item-46" class="ftoc-link" data-idx="46"><span class="ftoc-dot s8"></span><span class="ftoc-text">伊朗战争迫使能源进口国优先发展国内能源</span></a><a href="#item-47" class="ftoc-link" data-idx="47"><span class="ftoc-dot s8"></span><span class="ftoc-text">伊朗以色列导弹冲突实时更新</span></a><a href="#item-48" class="ftoc-link" data-idx="48"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰转向欧洲，美国退出调解角色</span></a><a href="#item-49" class="ftoc-link" data-idx="49"><span class="ftoc-dot s8"></span><span class="ftoc-text">法德放弃联合战斗机项目</span></a><a href="#item-50" class="ftoc-link" data-idx="50"><span class="ftoc-dot s8"></span><span class="ftoc-text">特朗普与内塔尼亚胡分歧破坏中东停火</span></a><a href="#item-51" class="ftoc-link" data-idx="51"><span class="ftoc-dot s8"></span><span class="ftoc-text">ICC 首席检察官因性侵指控被停职</span></a><a href="#item-52" class="ftoc-link" data-idx="52"><span class="ftoc-dot s8"></span><span class="ftoc-text">特朗普提名前律师托德·布兰奇出任司法部长</span></a><a href="#item-53" class="ftoc-link" data-idx="53"><span class="ftoc-dot s8"></span><span class="ftoc-text">霍尔木兹海峡关闭可能开创危险先例</span></a><a href="#item-54" class="ftoc-link" data-idx="54"><span class="ftoc-dot s8"></span><span class="ftoc-text">法官裁定特朗普的 H-1B 签证 10 万美…</span></a><a href="#item-55" class="ftoc-link" data-idx="55"><span class="ftoc-dot s8"></span><span class="ftoc-text">特朗普警告内塔尼亚胡不要重启伊朗战争</span></a><a href="#item-56" class="ftoc-link" data-idx="56"><span class="ftoc-dot s8"></span><span class="ftoc-text">以色列打击伊朗以增强和谈筹码</span></a><a href="#item-57" class="ftoc-link" data-idx="57"><span class="ftoc-dot s8"></span><span class="ftoc-text">胡塞武装威胁红海航运或影响石油市场</span></a><a href="#item-58" class="ftoc-link" data-idx="58"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰军方称 2026 年收复 600 多平…</span></a><a href="#item-59" class="ftoc-link" data-idx="59"><span class="ftoc-dot s8"></span><span class="ftoc-text">伊朗指责美国介入与以色列的冲突</span></a><a href="#item-60" class="ftoc-link" data-idx="60"><span class="ftoc-dot s8"></span><span class="ftoc-text">巴控克什米尔冲突致 11 人死亡</span></a><a href="#item-61" class="ftoc-link" data-idx="61"><span class="ftoc-dot s8"></span><span class="ftoc-text">台科技展期间中国军队在附近活动</span></a><a href="#item-62" class="ftoc-link" data-idx="62"><span class="ftoc-dot s8"></span><span class="ftoc-text">共和党参议员警告监控项目或因特朗普情报人选争…</span></a><a href="#item-63" class="ftoc-link" data-idx="63"><span class="ftoc-dot s8"></span><span class="ftoc-text">Facebook 付费海外账号推动阿尔伯塔分…</span></a><a href="#item-64" class="ftoc-link" data-idx="64"><span class="ftoc-dot s8"></span><span class="ftoc-text">墨西哥实施全面劳动改革</span></a><a href="#item-65" class="ftoc-link" data-idx="65"><span class="ftoc-dot s8"></span><span class="ftoc-text">俄罗斯拒绝和平倡议，坚持战场决定战争</span></a><a href="#item-66" class="ftoc-link" data-idx="66"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰在深度打击行动中摧毁俄防空系统</span></a><a href="#item-67" class="ftoc-link" data-idx="67"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国民众对军事干预的看法分析</span></a><a href="#item-68" class="ftoc-link" data-idx="68"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国军事力量在古巴的有限效用</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">📊</span><span class="ftoc-cat-name">行业/商业</span><span class="ftoc-cat-n">16</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-69" class="ftoc-link" data-idx="69"><span class="ftoc-dot s9"></span><span class="ftoc-text">OpenAI 秘密提交 IPO 申请</span></a><a href="#item-70" class="ftoc-link" data-idx="70"><span class="ftoc-dot s9"></span><span class="ftoc-text">苹果在开发者大会上推出 AI 驱动的 Siri</span></a><a href="#item-71" class="ftoc-link" data-idx="71"><span class="ftoc-dot s9"></span><span class="ftoc-text">英伟达宣布在韩国建设千兆瓦级 AI 工厂</span></a><a href="#item-72" class="ftoc-link" data-idx="72"><span class="ftoc-dot s8"></span><span class="ftoc-text">xAI 更像是数据中心 REIT 而非前沿 …</span></a><a href="#item-73" class="ftoc-link" data-idx="73"><span class="ftoc-dot s8"></span><span class="ftoc-text">赛默飞抗体数据造假曝光</span></a><a href="#item-74" class="ftoc-link" data-idx="74"><span class="ftoc-dot s8"></span><span class="ftoc-text">OpenAI 的通用人工智能全民受益计划</span></a><a href="#item-75" class="ftoc-link" data-idx="75"><span class="ftoc-dot s8"></span><span class="ftoc-text">SpaceX IPO：马斯克最大的赌注？</span></a><a href="#item-76" class="ftoc-link" data-idx="76"><span class="ftoc-dot s8"></span><span class="ftoc-text">Waymo 以 2.2 亿美元收购苹果自动驾…</span></a><a href="#item-77" class="ftoc-link" data-idx="77"><span class="ftoc-dot s8"></span><span class="ftoc-text">英杰华识别 2.3 亿英镑虚假索赔，AI 欺…</span></a><a href="#item-78" class="ftoc-link" data-idx="78"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta 资助 AI 数据中心技工培训项目</span></a><a href="#item-79" class="ftoc-link" data-idx="79"><span class="ftoc-dot s8"></span><span class="ftoc-text">KOSPI 暴跌逾 8%，美联储担忧引发科技…</span></a><a href="#item-80" class="ftoc-link" data-idx="80"><span class="ftoc-dot s8"></span><span class="ftoc-text">AI 芯片巨头重塑亚洲选股格局</span></a><a href="#item-81" class="ftoc-link" data-idx="81"><span class="ftoc-dot s8"></span><span class="ftoc-text">英伟达与 LG 合作开发人形机器人和数据中心</span></a><a href="#item-82" class="ftoc-link" data-idx="82"><span class="ftoc-dot s8"></span><span class="ftoc-text">英伟达与 SK 海力士签署多年 AI 内存协议</span></a><a href="#item-83" class="ftoc-link" data-idx="83"><span class="ftoc-dot s8"></span><span class="ftoc-text">SpaceX 公布首款 AI 卫星设计</span></a><a href="#item-84" class="ftoc-link" data-idx="84"><span class="ftoc-dot s8"></span><span class="ftoc-text">数据中心支出超过政府交通投资</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">📋</span><span class="ftoc-cat-name">其他</span><span class="ftoc-cat-n">1</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-85" class="ftoc-link" data-idx="85"><span class="ftoc-dot s8"></span><span class="ftoc-text">菲律宾 7.8 级地震致 35 人死亡，引发海啸</span></a></div></nav>
+  </aside>
+  <button class="toc-fab" id="tocFab" onclick="toggleToc()" title="目录">☰</button>
+<div class="container">
+
+    <header class="hero">
+      <div class="hero-badge">2026-06-09</div>
+      <h1>🌅 Horizon 每日速递</h1>
+      <p class="hero-sub">从 549 条内容中精选 85 条</p>
+      <div class="hero-pills"><span class="hero-pill">🤖 AI/ML <strong>18</strong></span><span class="hero-pill">💻 开源/编程 <strong>3</strong></span><span class="hero-pill">🔒 安全/隐私 <strong>5</strong></span><span class="hero-pill">🌍 时政/地缘 <strong>42</strong></span><span class="hero-pill">📊 行业/商业 <strong>16</strong></span><span class="hero-pill">📋 其他 <strong>1</strong></span></div>
+    </header>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🤖</span>AI/ML<span class="cat-n">18 条</span></div>
+  <article class="item-card" id="item-1">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">1</span>
+        <h2 class="card-title"><a href="https://mimo.xiaomi.com/blog/mimo-tilert-1000tps" target="_blank">小米 MiMo-v2.5-Pro-UltraSpeed：1 万亿参数模型每秒 1000 tokens</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">小米发布了 MiMo-v2.5-Pro-UltraSpeed，这是一个拥有 1 万亿参数的混合专家模型，输出速度超过每秒 1000 个 tokens。 这一速度突破使大规模 AI 推理变得极其快速且更经济，可能重塑 AI 应用的生产力和成本格局。 该模型基于 MiMo-V2.5-Pro 基础模型，采用混合专家架构。超速版本的定价据说为普通 MiMo 速度的三倍，但依然具有竞争力。</p>
+      <p class="card-source">gainsurier · 6月8日 15:27</p>
+<div class="bg-block"><span class="block-label">背景</span><p>MiMo 是小米的大型语言模型系列，V2.5-Pro 版本以强大的代理编程性能著称。新的 UltraSpeed 变体将 1 万亿参数模型的推理速度提升至每秒 1000 个 tokens，远超常规速度。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区评论观点不一：有些人认为快速 AI 令人兴奋但让人不安，还有些人质疑对受薪员工的生产力提升。也有讨论指出中国供应商在价格和速度上的优化正在挑战美国竞争对手。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://mimo.xiaomi.com/mimo-v2-pro" target="_blank">MiMo-V2-Pro | Xiaomi</a></li><li><a href="https://mimo.mi.com/" target="_blank">Xiaomi MiMo Home</a></li></ul></details><div class="tags-row"><span class="tag">MiMo</span> <span class="tag">Xiaomi</span> <span class="tag">LLM</span> <span class="tag">speed</span> <span class="tag">1T model</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-2">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">2</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u0b3cu/luce_spark_a_35b_moe_on_a_16_gb_gpu_without_the/" target="_blank">Luce Spark：无需卸载惩罚，35B MoE 模型畅跑 16GB GPU</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Luce Spark 引入了一种自调优缓存系统，将活跃专家保留在 GPU 上，使得 Qwen3.6 35B-A3B 等 35B 参数的 MoE 模型能够在 16 GB 显存的显卡上运行，且无朴素卸载带来的性能损失。它通过实时学习专家路由模式，将热门专家预取到有限 GPU 缓存中，使 Qwen 模型的显存占用从约 20.5 GiB 降至 13.3 GiB。 该技术大幅降低了本地运行大型 MoE 模型的硬件门槛，让使用消费级 GPU（如 RTX 4060 Ti 16GB）的用户也能运行此前需要 24 GB 或更高显存的模型。这可能加速开源 MoE 模型在个人 AI 应用和边缘设备中的普及。 该系统采用融合图（fused graph），将整个 token 作为单个操作运行，在 60% 专家驻留率下达到约 100 tok/s（比朴素卸载快 1.5 倍）。自调优配置文件通过实时路由学习并在重启后持久化，无需离线校准。目前仅支持 dflash_server 后端，适配 Laguna 和 Qwen35moe 模型。</p>
+      <p class="card-source">r/LocalLLaMA · /u/sandropuppo · 6月8日 15:24</p>
+<div class="bg-block"><span class="block-label">背景</span><p>混合专家模型（MoE）每个 token 仅激活部分参数，通过路由网络从众多专家中选择子集。这使得模型总参数量（如 35B）可以很大，但活跃计算量却较低。然而，将所有专家存储在显存中成本高昂；朴素地卸载到 CPU 内存会因 PCIe 传输而产生速度惩罚（“卸载税”）。Luce Spark 通过将最常使用的专家缓存在 GPU 上，并使交换与计算重叠来解决这一问题。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://arxiv.org/abs/2509.02753" target="_blank">LExI: Layer-Adaptive Active Experts for Efficient MoE Model ... The Rise of MoE: Comparing 2025’s Leading Mixture-of-Experts ... Mixture of Experts Explained - Hugging Face MoE Expert Activation Analysis Tool - GitHub Understanding Mixture of Experts (MoE) Neural Networks What Is Mixture of Experts (MoE)? How It Works (2026) A Visual Guide to Mixture of Experts (MoE)</a></li><li><a href="https://link.springer.com/chapter/10.1007/978-3-031-99872-0_2" target="_blank">Cache Management for Mixture-of-Experts LLMs - Springer</a></li><li><a href="https://openreview.net/forum?id=ul4W26KEKz" target="_blank">Mixture of Cache-Conditional Experts for Efficient Mobile ...</a></li></ul></details><div class="tags-row"><span class="tag">MoE</span> <span class="tag">inference optimization</span> <span class="tag">local LLM</span> <span class="tag">GPU memory</span> <span class="tag">open source</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-3">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">3</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/singularity/comments/1u09t2y/chat_is_dead_openai_preps_overhaul_of_chatgpt/" target="_blank">OpenAI 全面改造 ChatGPT，宣称“聊天已死”</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI 正在准备对 ChatGPT 进行重大改造，超越传统的聊天界面。 这标志着用户与 AI 交互方式的转变，可能使 ChatGPT 更加多功能并融入各种工作流程。 这次改造意味着聊天界面可能被替换或大幅增强，但具体功能尚未披露。</p>
+      <p class="card-source">r/singularity · /u/JackFisherBooks · 6月8日 14:38</p>
+<div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">ChatGPT</span> <span class="tag">AI overhaul</span> <span class="tag">LLM</span> <span class="tag">user interface</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-4">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">4</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/MachineLearning/comments/1u0119r/open_image_generation_models_are_closer_to/" target="_blank">开源图像生成模型在基准测试中媲美闭源质量</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位 Reddit 用户的基准测试显示，开源图像生成模型在组合准确性、文本渲染和生成速度方面几乎已与专有系统持平，挑战了关于其劣势的普遍看法。 这表明开源模型正成为生产管道的可行替代方案，可能减少对昂贵的 API 服务的依赖，并加速 AI 图像生成的民主化。 基准测试强调，现代开源检查点处理多对象空间关系的可靠性堪比付费接口，短字符串的文本渲染准确率达到 70-80%，而在单张消费级 GPU 上生成 2MP 图像只需不到两分钟。</p>
+      <p class="card-source">r/MachineLearning · /u/ProfessionalAnt7436 · 6月8日 07:35</p>
+<div class="bg-block"><span class="block-label">背景</span><p>图像生成模型可分为开源（公开权重和代码）和闭源（专有 API，如 DALL-E 或 Midjourney）两类。历史上，开源模型在组合准确性（在复杂场景中正确放置对象）和文本渲染（在图像中生成清晰文本）方面落后。近年来，稳定扩散等架构的进步和微调方法已提升了这些能力。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://firethering.com/best-open-source-ai-image-text-rendering-models/" target="_blank">4 Open Source AI Models That Actually Get Text Right in Generated Images - Firethering</a></li><li><a href="https://arxiv.org/html/2505.11178v1" target="_blank">CompAlign: Improving Compositional Text-to-Image Generation ...</a></li></ul></details><div class="tags-row"><span class="tag">open source</span> <span class="tag">image generation</span> <span class="tag">AI models</span> <span class="tag">benchmarks</span> <span class="tag">generative AI</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-5">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">5</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/MachineLearning/comments/1u07tlm/why_i_stopped_using_semantic_embeddings_for_tool/" target="_blank">BM25 在工具选择上优于语义嵌入</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位开发者发现，在生产级代理中，BM25 在工具选择上优于语义嵌入（text-embedding-3-small），在 200 个查询-工具对上达到 81%的 top-1 准确率，而语义嵌入仅为 64%。 这挑战了语义搜索在所有检索任务中都更优的常见假设，表明对于短小、关键词密集的工具描述，BM25 更精确、更可靠。 混合方法（0.7 语义+0.3 BM25）得分为 78%，低于纯 BM25，而索引模式字段（如属性名）进一步提升了 BM25 的性能。</p>
+      <p class="card-source">r/MachineLearning · /u/AbjectBug5885 · 6月8日 13:24</p>
+<div class="bg-block"><span class="block-label">背景</span><p>BM25（最佳匹配 25）是一种基于词袋的排序算法，广泛用于信息检索，根据查询词项频率和逆文档频率对文档评分。模型上下文协议（MCP）是 Anthropic 提出的开放标准，用于连接 AI 代理与外部工具和数据源。MCP 中的工具描述通常很短（不到 50 个 token）且依赖关键词，使其与长文档的数据形态不同。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Okapi_BM25" target="_blank">Okapi BM25 - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" target="_blank">Model Context Protocol - Wikipedia</a></li><li><a href="https://www.geeksforgeeks.org/nlp/what-is-bm25-best-matching-25-algorithm/" target="_blank">What is BM25 (Best Matching 25) Algorithm - GeeksforGeeks</a></li></ul></details><div class="tags-row"><span class="tag">tool selection</span> <span class="tag">semantic embeddings</span> <span class="tag">BM25</span> <span class="tag">agents</span> <span class="tag">MCP</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-6">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">6</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u0isbo/qwen3635ba3b_tool_calling_benchmark_byteshape_vs/" target="_blank">Qwen3.6-35B-A3B 工具调用基准测试：ByteShape 对比 Unsloth</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一项针对 Qwen3.6-35B-A3B 的详细基准测试，使用 tool-eval-bench 比较了 ByteShape 与 Unsloth 的 GGUF 量化、KV 缓存量化设置及长上下文性能。结果显示 ByteShape 与 Unsloth 之间没有明显赢家，但 q8_0 KV 缓存几乎无损，而 q4_0 会降低性能，并且长上下文在所有配置下均显著降低工具调用准确率。 这项基准测试为本地部署大语言模型提供了实用见解，特别是对于依赖准确输出的工具调用代理。它帮助从业者在量化方法（ByteShape 与 Unsloth）和 KV 缓存设置之间做出选择，以平衡模型大小、速度和质量。 该基准测试使用了 8 种不同的 GGUF 量化、三种 KV 缓存量化（f16、q8_0、q4_0）和两种上下文压力水平（5k token 与 122k token），在 V100 GPU 上共进行了 144 次运行。作者发现 ByteShape 量化并未持续优于 Unsloth 量化（与 ByteShape 的宣传相反），且 q8_0 KV 缓存提供了免费午餐，而 q4_0 会显著降低质量。</p>
+      <p class="card-source">r/LocalLLaMA · /u/OsmanthusBloom · 6月8日 19:52</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Qwen3.6-35B-A3B 是一个 350 亿参数的 MoE 模型，激活参数为 36 亿。量化可以减小模型大小并加快推理速度，但会损失一些准确性。ByteShape 使用专有的 ShapeLearn 算法进行动态精度分配，而 Unsloth 则通过其 2.0 方法提供动态量化。KV 缓存量化可减少长序列的内存占用，但可能影响输出质量。tool-eval-bench 是一个用于评估工具调用能力的开源基准测试。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://byteshape.com/" target="_blank">ByteShape - AI Acceleration Technology</a></li><li><a href="https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs" target="_blank">Unsloth Dynamic 2.0 GGUFs | Unsloth Documentation</a></li><li><a href="https://github.com/SeraphimSerapis/tool-eval-bench" target="_blank">GitHub - SeraphimSerapis/ tool - eval - bench · GitHub</a></li></ul></details><div class="tags-row"><span class="tag">Qwen</span> <span class="tag">quantization</span> <span class="tag">LLM benchmarking</span> <span class="tag">KV cache</span> <span class="tag">tool calling</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-7">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">7</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u0p3b2/pipeline_parallelism_in_llamacpp_may_be_wasting/" target="_blank">llama.cpp 中的流水线并行可能浪费显存，已有修复方法</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位用户发现，llama.cpp 默认启用的流水线并行不仅没有提升速度，反而浪费显存，通过编译时添加 -DGGML_SCHED_MAX_COPIES=1 即可修复。 这一发现为在多 GPU 上运行 llama.cpp 的用户节省了大量显存，能够在性能不损失的情况下支持更大的上下文或模型。 默认设置会在启用流水线并行时分配四个 sched 副本，在启用了上下文缓存量化的情况下会额外消耗最多 1.5 GB 显存；将 GGML_SCHED_MAX_COPIES=1 可消除这种浪费。</p>
+      <p class="card-source">r/LocalLLaMA · /u/Warrenio · 6月8日 23:58</p>
+<div class="bg-block"><span class="block-label">背景</span><p>llama.cpp 中的流水线并行将模型层拆分到多个 GPU 上处理请求。'sched 副本'是预分配的调度计算缓冲区；多个副本本意是为并行请求处理设计，但对单个请求会造成浪费。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者指出流水线并行在并行请求场景下可能有益，建议用户根据自身负载进行测试；原帖作者认可这一点并建议单独评估。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://github.com/ggml-org/llama.cpp/discussions/20252" target="_blank">Does llama.cpp ACTUALLY support pipeline parallelism? - GitHub</a></li><li><a href="https://www.ahmadosman.com/blog/do-not-use-llama-cpp-or-ollama-on-multi-gpus-setups-use-vllm-or-exllamav2/" target="_blank">Stop Wasting Your Multi-GPU Setup With llama.cpp</a></li></ul></details><div class="tags-row"><span class="tag">llama.cpp</span> <span class="tag">pipeline parallelism</span> <span class="tag">VRAM</span> <span class="tag">inference optimization</span> <span class="tag">open source</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-8">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">8</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u06jel/kvcache_avoid_kv_cells_copies_by_ggerganov_pull/" target="_blank">llama.cpp 通过避免 KV 缓存复制提升 MTP 性能</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">ggerganov 提交的一个拉取请求已合并到 llama.cpp 中，通过避免 KV 缓存的单元格复制来优化其性能，从而提升了 Gemma-4 等模型的多令牌预测（MTP）性能。该更改从版本 b9551 起生效。 此优化减少了 MTP 推理的内存开销和延迟，直接让运行 Gemma-4 或类似模型的 llama.cpp 用户受益。它展示了开源 LLM 推理框架的持续改进，使得在消费级硬件上部署更加高效。 该 PR 避免了复制已经存在的 KV 缓存单元，这对于同时预测多个令牌的 MTP 场景尤其有利。该更改针对 llama.cpp 中的 KV 缓存处理逻辑，并由项目首席开发者合并。</p>
+      <p class="card-source">r/LocalLLaMA · /u/pmttyji · 6月8日 12:31</p>
+<div class="bg-block"><span class="block-label">背景</span><p>KV 缓存是 Transformer 架构大语言模型中的一项技术，它存储先前计算出的键值对，以避免在自回归解码过程中进行重复计算。多令牌预测（MTP）是一种让模型在单次前向传播中预测多个未来令牌的方法，可以加速推理，但通常需要仔细处理缓存。Gemma-4 是 Google DeepMind 推出的一系列开放多模态模型，提供多种尺寸和架构，包括密集型和混合专家模型。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://github.com/Xiaohao-Liu/Awesome-Multi-Token-Prediction" target="_blank">Awesome Multi-Token Prediction (MTP!) - GitHub</a></li><li><a href="https://ai.google.dev/gemma/docs/core/model_card_4" target="_blank">Gemma 4 model card | Google AI for Developers</a></li><li><a href="https://huggingface.co/blog/not-lain/kv-caching" target="_blank">KV Caching Explained: Optimizing Transformer Inference Efficiency</a></li></ul></details><div class="tags-row"><span class="tag">llama.cpp</span> <span class="tag">kv-cache</span> <span class="tag">MTP</span> <span class="tag">Gemma-4</span> <span class="tag">performance optimization</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-9">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">9</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/LocalLLaMA/comments/1u08zhx/3090_gemma4_qat_mtp_quick_tps_numbers_tldr_1218x/" target="_blank">Gemma 4 在 RTX 3090 上通过 QAT 和 MTP 实现 1.2-1.8 倍速度提升</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">有用户报告称，通过结合量化感知训练（QAT）和多令牌预测（MTP），Gemma 4 模型（12B 和 26B）在 RTX 3090 上实现了 1.2 到 1.8 倍的推理速度提升，12B 模型达到了每秒 80 个令牌。 这表明，在拥有 24GB 显存的消费级 GPU 上实现高性能大语言模型推理已成为可能，这可能使强大模型的访问更加民主化，并减少对昂贵云硬件的依赖。 对于 26B 模型，将 MTP 的 n-max 设为 1 时获得了最佳加速比（1.26 倍）；更大的 n-max 值收益递减。基准测试使用了 11 个多样化请求，平均提示长度为 280 个令牌，每轮输出限制为 192 个令牌。</p>
+      <p class="card-source">r/LocalLLaMA · /u/LeatherRub7248 · 6月8日 14:07</p>
+<div class="bg-block"><span class="block-label">背景</span><p>量化感知训练（QAT）将权重精度降低集成到训练过程中，以最小化精度损失，这与训练后量化不同。多令牌预测（MTP）是一种技术，模型经过训练可同时预测多个未来令牌，从而无需单独的草稿模型即可实现推测性解码，从而加速推理。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://arxiv.org/abs/2601.14888" target="_blank">[2601.14888] What Makes Low-Bit Quantization-Aware Training ... What is Quantization Aware Training? | IBM Quantization Aware Training | NVIDIA/TensorRT-Model-Optimizer ... GitHub - NVIDIA/Model-Optimizer: A unified library of SOTA ... Quantization-Aware Training (QAT): A step-by-step guide with ...</a></li><li><a href="https://johnpaulwile.substack.com/p/multi-token-prediction-mtp-in-llamacpp" target="_blank">Multi-Token Prediction MTP in llama.cpp How It Works and How ...</a></li><li><a href="https://wwucla.github.io/llm/inference+optimization/2026/04/09/inference-2026-mtp-deep-dive.html" target="_blank">MTP & MTP-D Deep Dive: Beyond Next-Token Prediction</a></li></ul></details><div class="tags-row"><span class="tag">Gemma 4</span> <span class="tag">QAT</span> <span class="tag">MTP</span> <span class="tag">LLM inference</span> <span class="tag">RTX 3090</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-10">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">10</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/StableDiffusion/comments/1u0m7hw/some_ideogram_4_results/" target="_blank">用户为 Ideogram 4 搭建自定义 ComfyUI 流程</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位 Reddit 用户分享了在本地运行 Ideogram 4 模型并结合 ComfyUI 及自定义节点进行图像生成的惊人结果，声称其质量和控制能力可媲美 GPT-Image。该工作流使用 Qwen3.6-27B 或 Gemma4-31B 等大语言模型将简单的提示词增强为结构化 JSON，然后再生成图像。 这表明 Ideogram 4 作为开放权重模型，可以与本地大语言模型和 ComfyUI 结合，在家中实现高质量、可控的图像生成，可能对 GPT-Image 等专有系统构成竞争。它降低了艺术家和开发者使用前沿级图像合成并完全自定义的门槛。 用户报告称，在质量预设下生成一张图像大约需要 3 分钟，包括大语言模型进行提示增强的阶段。该流程使用了官方的 ComfyUI 工作流，以及他们自己创建的用于处理 JSON 部分的自定义节点，并推荐将 Ideogram 4 与 Qwen3.6-27B 或 Gemma4-31B 搭配使用以获得最佳效果。</p>
+      <p class="card-source">r/StableDiffusion · /u/iChrist · 6月8日 21:59</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Ideogram 4 是 Ideogram 公司发布的一个开放权重图像生成模型，以其密集文本渲染、边界框控制和 2K 输出质量而著称。它在基准测试中可媲美 GPT-Image，且根据内部评估是最佳开放权重模型。ComfyUI 是一个流行的基于节点的界面，用于运行 Stable Diffusion 及其他扩散模型，允许用户构建自定义工作流。该用户的流水线集成了一个大型语言模型（如 Qwen3.6-27B 或 Gemma4-31B），用于自动将简单的提示词扩展为结构化指令，从而提高图像保真度和控制能力。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://github.com/ideogram-oss/ideogram4" target="_blank">GitHub - ideogram-oss/ideogram4: Ideogram 4: Open image model ...</a></li><li><a href="https://ideogram.ai/models/4.0/" target="_blank">Ideogram 4.0 | Ideogram</a></li></ul></details><div class="tags-row"><span class="tag">Ideogram4</span> <span class="tag">AI image generation</span> <span class="tag">StableDiffusion</span> <span class="tag">ComfyUI</span> <span class="tag">open source</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-11">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">11</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/StableDiffusion/comments/1u0lc5g/ideogram_4_80s_anime_lora/" target="_blank">社区成员发布 Stable Diffusion 的 80 年代动漫 LoRA 模型</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Reddit 用户 kingroka 发布了一个定制 LoRA 模型，用于 Stable Diffusion 生成 80 年代动漫风格的图像，并分享了使用 AI Toolkit、约 50 张图像和 3000 步的训练细节。 该模型为生成怀旧 80 年代动漫美学提供了易于获取的社区资源，展示了 LoRA 如何以最少数据实现高效微调。它降低了艺术家和爱好者创建特定风格的门槛，无需训练完整模型。 该模型可在 CivitAI 和 Patreon 上下载，并附带 Ideogram 的工作流。训练者使用了约 50 张图像和 3000 步训练，突出了 LoRA 的高效性。</p>
+      <p class="card-source">r/StableDiffusion · /u/kingroka · 6月8日 21:25</p>
+<div class="bg-block"><span class="block-label">背景</span><p>LoRA（低秩适配）是一种针对 Stable Diffusion 等大型模型的轻量级微调技术，允许用户通过训练少量参数（通常几 MB）来添加新风格或主题。与完整模型微调不同，LoRA 速度快、内存需求低，且生成的文件便携易分享。CivitAI 是托管和发现这类社区模型的热门平台。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://civitai.com/articles/2099/lora-models-and-how-to-use-them-with-stable-diffusion-by-thinkdiffusion" target="_blank">Lora models and how to use them with Stable Diffusion (by ...</a></li><li><a href="https://huggingface.co/blog/lora" target="_blank">Using LoRA for Efficient Stable Diffusion Fine-Tuning Lora - Stable Diffusion Wiki Using LoRA in Stable Diffusion - MachineLearningMastery.com How to Install & Use LoRA Models in Stable Diffusion GitHub - cloneofsimo/lora: Using Low-rank adaptation to ...</a></li><li><a href="https://github.com/ostris/ai-toolkit/" target="_blank">GitHub - ostris/ai-toolkit: The ultimate training toolkit for ...</a></li></ul></details><div class="tags-row"><span class="tag">Stable Diffusion</span> <span class="tag">LoRA</span> <span class="tag">动漫风格</span> <span class="tag">模型训练</span> <span class="tag">开源</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-12">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">12</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u0bptw/arxiv_to_ban_researchers_for_a_year_if_they/" target="_blank">arXiv 将对提交 AI 垃圾论文的研究者禁一年</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">ArXiv 宣布了一项新政策，如果研究者提交由 AI 生成的低质量“垃圾”论文，将被禁言一年，旨在遏制大量低质量提交的涌入。 该政策针对日趋严重的自动生成论文问题，这一问题威胁到预印本库的可信度和实用性，可能重塑学术出版和 AI 在研究中的应用规范。 禁令适用于任何被视为 AI 垃圾的提交，包括人类贡献极少或包含无意义 AI 生成内容的论文；禁言期自违规之日起为期一年。</p>
+      <p class="card-source">r/artificial · /u/ThereWas · 6月8日 15:47</p>
+<div class="bg-block"><span class="block-label">背景</span><p>ArXiv 是一个广泛使用的科学论文预印本库，尤其用于物理学、数学和计算机科学领域。近期，由大型语言模型生成的低质量提交（常被称为“AI 垃圾”）激增，堵塞了系统并浪费了审稿人的时间。</p></div><div class="tags-row"><span class="tag">arXiv</span> <span class="tag">AI slop</span> <span class="tag">academic integrity</span> <span class="tag">preprint</span> <span class="tag">policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-13">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">13</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u0m4pi/ai_coding_agents_are_getting_better_at_writing/" target="_blank">AI 编码助手写代码能力提升，但理解代码库仍困难</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位开发者指出，像 Claude Code 和 Cursor 这样的 AI 编码助手在生成代码方面日益熟练，但仍无法理解大型代码库中的关键上下文，如历史决策、未记录的关系和所有权边界。该帖子介绍了 RepoWise，一个旨在提升 AI 辅助工程中代码库智能的开源工具。 这揭示了 AI 辅助软件开发的一个根本瓶颈：如果没有深入的代码库理解，智能体可能引入错误、违反架构约束或遗漏协同变更依赖。解决这一问题有望使 AI 智能体在更大规模的实际项目中可靠使用。 作者指出，仅靠更大的上下文窗口可能不够；智能体可能需要更好的代码库表示，例如捕获架构决策和模式的结构化上下文文件。RepoWise 旨在通过 MCP 提供代码健康评分、自动文档、Git 分析、死代码检测和架构决策。</p>
+      <p class="card-source">r/artificial · /u/Icy-Roll-4044 · 6月8日 21:56</p>
+<div class="bg-block"><span class="block-label">背景</span><p>大型语言模型（LLM）以称为 token 的块处理文本，受上下文窗口限制，该窗口定义了模型一次能考虑的信息量。尽管最近的模型支持越来越长的上下文窗口，但理解代码库不仅仅是读取所有文件——还需要了解历史背景、团队惯例和隐含的关系，这些通常不会仅通过代码记录下来。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://github.com/repowise-dev/repowise" target="_blank">GitHub - repowise-dev/repowise: Codebase intelligence for AI ...</a></li><li><a href="https://www.ibm.com/think/topics/context-window" target="_blank">What is a context window? - IBM</a></li><li><a href="https://www.geeksforgeeks.org/artificial-intelligence/tokens-and-context-windows-in-llms/" target="_blank">Tokens and Context Windows in LLMs - GeeksforGeeks</a></li></ul></details><div class="tags-row"><span class="tag">AI coding agents</span> <span class="tag">codebase understanding</span> <span class="tag">context windows</span> <span class="tag">software engineering</span> <span class="tag">LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-14">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">14</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u0m6q8/6_free_open_source_repos_that_cut_my_claude_code/" target="_blank">6 个开源仓库将 Claude Code 令牌成本降低 90%</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位 Reddit 用户分享了六个免费的开源仓库，这些仓库共同将 Claude Code 的令牌使用量减少了多达 90%，包括用于令牌监控、命令输出压缩、极简响应风格、知识图谱和基于技能上下文管理的工具。 令牌成本是像 Claude Code 这样的 AI 编程助手重度用户的主要开销；这套工具展示了通过开源优化可以在不牺牲功能的情况下实现显著节省，可能使 AI 辅助对个人开发者和小团队更具可及性。 这些仓库包括：ccusage 用于令牌使用分解，RTK 用于压缩 bash 输出（声称减少 60-90%），Caveman Claude 用于极简响应（每次回复节省约 75%），Karpathy 的技能仓库减少来回交互，Graphify 用于本地代码库知识图谱，以及 Obsidian 技能用于笔记上下文。Caveman Claude 最让作者惊讶，起初感觉像噱头但实际很有效。</p>
+      <p class="card-source">r/ClaudeAI · /u/Drogoff1489 · 6月8日 21:58</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Claude Code 是一款基于令牌使用收费的 AI 编程助手，令牌是模型处理的文本单位。频繁使用冗长回复、重复命令输出或重新读取整个代码库会迅速消耗令牌，推高成本。开源工具通过监控令牌消耗、压缩不必要的文本或提供结构化记忆，帮助开发者优化工作流并降低费用。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://github.com/ryoppippi/ccusage" target="_blank">GitHub - ryoppippi/ccusage: Analyze coding (agent) CLI token ...</a></li><li><a href="https://github.com/JuliusBrussee/caveman" target="_blank">GitHub - JuliusBrussee/caveman: why use many token when few ...</a></li></ul></details><div class="tags-row"><span class="tag">Claude Code</span> <span class="tag">open source</span> <span class="tag">token optimization</span> <span class="tag">AI cost reduction</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-15">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">15</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/singularity/comments/1u0k192/frontiercode_a_coding_eval_that_raises_the_bar/" target="_blank">FrontierCode：Cognition AI 推出的高难度编码基准</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Devin 的创造者 Cognition AI 推出了 FrontierCode，这是一个评估 AI 代码生成的新基准，它超越了简单的正确性，而是评估代码能否合并到真实生产代码库中。 FrontierCode 为编码评估设立了更高的难度标准，可能推动基于 LLM 的代码生成技术进步，并更真实地反映实际软件工程的质量。 该基准包含三个嵌套子集：Extended（150 个任务）、Main（100 个）和 Diamond（50 个最难的任务），并且从多 PR 链和自由请求中手工挑选问题，覆盖的语言数量是 SWE-Bench Pro 的三倍。</p>
+      <p class="card-source">r/singularity · /u/acoolrandomusername · 6月8日 20:37</p>
+<div class="bg-block"><span class="block-label">背景</span><p>现有的 AI 编码基准（如 SWE-Bench）主要测试模型能否为孤立问题生成正确的代码，但往往缺乏真实世界的复杂性。FrontierCode 通过要求模型生成人类维护者实际会合并到生产代码库中的代码，考虑了代码风格、文档以及与现有代码的集成等方面，从而解决了这一问题。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://cognition.ai/blog/frontier-code" target="_blank">Introducing FrontierCode | Cognition</a></li><li><a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/frontiercode-ai-coding-benchmark-goes-beyond-correctness" target="_blank">FrontierCode: AI Coding Benchmark Goes Beyond Correctness</a></li></ul></details><div class="tags-row"><span class="tag">AI/ML</span> <span class="tag">coding eval</span> <span class="tag">benchmark</span> <span class="tag">FrontierCode</span> <span class="tag">LLM evaluation</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-16">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">16</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/singularity/comments/1u0cs3l/i_bundled_a_fully_local_llm_inside_my_unity_game/" target="_blank">本地大语言模型驱动 Unity 游戏中的无剧本 NPC 对话</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位开发者将完全本地的 LLM 集成到 Unity 游戏《Simulation Simulator》中，实现了无需互联网或云端的全无脚本 NPC 对话。 这一集成展示了 AI 在游戏中的创新应用，NPC 对话变得有机且每次游戏都独一无二，可能彻底改变叙事驱动型游戏和互动故事叙述。 该游戏根据玩家的自然互动提供五种结局，包括浪漫结局；开发者指出，加入文本转语音或自动翻译每次交互会增加 10-20 秒的延迟，破坏游戏流畅性。</p>
+      <p class="card-source">r/singularity · /u/MorphLand · 6月8日 16:24</p>
+<div class="bg-block"><span class="block-label">背景</span><p>大型语言模型（如 GPT-4）通常通过云端 API 访问，需要互联网连接。在本地运行 LLM 意味着模型完全在用户硬件上运行，保护隐私并支持离线使用。由于计算需求高，这具有挑战性。Unity 是一款流行的游戏引擎，用于 2D 和 3D 游戏开发。将本地 LLM 捆绑到 Unity 游戏中是一项新兴技术，允许 NPC 即时生成回应，无需预定义脚本。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.goodai.com/ai-people-now-with-local-llm/" target="_blank">AI People: Now with Local LLM - GoodAI</a></li><li><a href="https://www.reddit.com/r/LocalLLaMA/comments/1hfg1ro/any_actual_game_based_on_llm/" target="_blank">Any actual game based on LLM? : r/LocalLLaMA - Reddit</a></li></ul></details><div class="tags-row"><span class="tag">local LLM</span> <span class="tag">game development</span> <span class="tag">Unity</span> <span class="tag">NPC dialogue</span> <span class="tag">AI in gaming</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-17">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">17</span>
+        <h2 class="card-title"><a href="https://github.com/openai/plugins" target="_blank">OpenAI 官方插件仓库热度上升</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI 的官方 ChatGPT 插件 GitHub 仓库 openai/plugins 在 24 小时内获得了 31 颗星，表明社区对通过第三方集成扩展 ChatGPT 功能的兴趣日益增长。 这个插件系统使 ChatGPT 能够与外部服务交互，将其从独立的聊天机器人扩展为一个可以访问实时数据、执行操作并与各种应用程序集成的平台，有可能重塑人工智能工具领域的格局。 该仓库使用 Python 编写，在过去一天内获得了 31 颗星和 2 个分支，虽未在可用内容中明确插件数量或发布时间线。</p>
+      <p class="card-source">openai · 6月9日 01:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>插件是为大型应用程序添加特定功能的软件组件。在 ChatGPT 的背景下，插件允许人工智能访问外部 API、数据库或服务，从而实现预订航班、获取实时新闻或与生产力工具交互等任务。这代表了从封闭模型向开放生态系统的转变。</p></div><div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">plugins</span> <span class="tag">ChatGPT</span> <span class="tag">AI</span> <span class="tag">LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-18">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">18</span>
+        <h2 class="card-title"><a href="https://github.com/heygen-com/hyperframes" target="_blank">HeyGen 开源 HyperFrames：将 HTML 转换为视频，专为 AI 代理设计</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">HeyGen 公司开源了 HyperFrames 框架，该框架可将 HTML、CSS 和 JavaScript 转换为确定的 MP4 视频，专为 AI 代理程序化生成视频内容而构建。 该工具弥合了 AI 代理生成结构化内容（HTML）与视频输出需求之间的差距，使代理能够直接从代码创建丰富的动画视频。这可能会加速代理驱动的视频制作工作流程的开发。 HyperFrames 采用 Apache 2.0 许可证开源，可通过 CLI 使用，也可作为 AI 编码代理的技能使用，或作为托管创作工作流的渲染核心。它支持将 URL、数据和文章转换为像素完美的 MP4 视频，包括动画图表和基于网页的解释器。</p>
+      <p class="card-source">heygen-com · 6月9日 01:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>HyperFrames 源自知名 AI 公司 HeyGen，该公司以其 AI 视频生成平台而闻名。该框架允许开发者使用标准网络技术（HTML、CSS、JS）定义视频内容，并将其渲染为视频文件，使其适用于可以输出代码的 AI 代理。这种方法利用了现有的网络动画和布局生态系统，提供确定的输出。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://hyperframes.heygen.com/" target="_blank">HyperFrames — Edit Videos By Vibe-Coding</a></li><li><a href="https://github.com/heygen-com/hyperframes" target="_blank">GitHub - heygen-com/hyperframes: Write HTML. Render video ...</a></li></ul></details><div class="tags-row"><span class="tag">AI agents</span> <span class="tag">video generation</span> <span class="tag">open source</span> <span class="tag">HTML to video</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">💻</span>开源/编程<span class="cat-n">3 条</span></div>
+  <article class="item-card" id="item-19">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">19</span>
+        <h2 class="card-title"><a href="https://github.com/pizlonator/fil-c/releases/tag/v0.679" target="_blank">Fil-C v0.679 发布：为 C/C++ 提供内存安全</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Fil-C 的 0.679 版本已发布，适用于 Linux x86_64，这是一种基于 capability 的内存安全 C 和 C++ 实现。此版本延续了该项目的使命，即以最小改动为现有代码提供完整的内存安全。 C 和 C++ 中的内存安全漏洞是造成大量安全问题的原因。Fil-C 提供了一种实用的途径，在保持与现有代码库兼容的同时消除这些漏洞，有望显著提升系统软件的安全性。 Fil-C 结合了并发垃圾回收和隐式能力（invisible capabilities）技术，将所有内存安全错误捕获为 panic。v0.679 版本专门针对 Linux x86_64，无需硬件改动，因为能力机制在软件层面实施。</p>
+      <p class="card-source">Lobsters · 6月8日 13:13</p>
+<div class="bg-block"><span class="block-label">背景</span><p>内存安全是 C 和 C++ 等系统编程语言中的一个已知挑战，常见漏洞包括缓冲区溢出和释放后使用等。基于能力（capability）的内存安全（如 CHERI 和 Fil-C 所探索的）通过能力而非原始地址来限制指针访问。Fil-C 完全在软件中实现这一概念，旨在与现有 C 和 C++ 代码保持广泛兼容。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://fil-c.org/" target="_blank">Fil-C</a></li><li><a href="https://github.com/pizlonator/fil-c/" target="_blank">GitHub - pizlonator/fil-c: Fil-C: completely compatible memory safety for C and C++ · GitHub</a></li><li><a href="https://en.wikipedia.org/wiki/Capability_Hardware_Enhanced_RISC_Instructions" target="_blank">Capability Hardware Enhanced RISC Instructions - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">Fil-C</span> <span class="tag">memory safety</span> <span class="tag">C</span> <span class="tag">systems programming</span> <span class="tag">open source</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-20">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">20</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u0oigm/plug_claude_into_whatever_you_are_working_on/" target="_blank">BugBuster：面向 AI 代理的开源硬件调试器</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位独立开发者发布了 BugBuster，这是一个开源硬件调试器，允许像 Claude 这样的 AI 代理通过包含 59 个工具的 MCP 服务器直接控制嵌入式系统。它结合了 ESP32-S3 主板和带逻辑分析仪与 SWD 调试探头的 RP2040 HAT。 BugBuster 打通了 AI 与真实硬件之间的闭环，实现了嵌入式系统的自动化调试与测试。这有望大幅加速开发流程，并使复杂的调试工具对更广泛的用户群体变得可及。 硬件包含 AD74416H 四通道 ADC/DAC、支持最高 20V 的 USB-PD，以及一个最高 100 MHz 的 4 通道逻辑分析仪。软件栈提供了 61 条命令的自定义线协议、REST API、桌面应用（Tauri/Leptos）、Python 库，以及一个带有防护机制（防止 AI 设置不安全电压）的 MCP 服务器。</p>
+      <p class="card-source">r/ClaudeAI · /u/lollokara · 6月8日 23:33</p>
+<div class="bg-block"><span class="block-label">背景</span><p>MCP（模型上下文协议）允许 AI 代理以标准化方式与工具和数据源交互。传统的嵌入式调试需要手动干预或自定义脚本；BugBuster 通过一个开源模块化平台赋予 AI 直接硬件访问权限，从而实现了自动化。该项目利用 ESP32-S3 和 RP2040 等常见嵌入式组件以实现广泛兼容性。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.analog.com/en/products/ad74416h.html" target="_blank">AD74416H Datasheet and Product Info | Analog Devices</a></li><li><a href="https://en.hynetek.com/2421.html" target="_blank">Hynetek-HUSB238</a></li></ul></details><div class="tags-row"><span class="tag">AI debugger</span> <span class="tag">open source hardware</span> <span class="tag">embedded systems</span> <span class="tag">Claude integration</span> <span class="tag">ESP32</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-21">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">21</span>
+        <h2 class="card-title"><a href="https://github.com/alibaba/open-code-review" target="_blank">阿里巴巴开源混合架构代码审查工具</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">阿里巴巴开源了 Open Code Review，这是一个混合架构的代码审查工具，结合了确定性管道和 LLM 代理，能够提供精确的行级评论。该工具已在阿里巴巴内部规模化使用了两年。 此次开源将企业级、AI 增强的代码审查能力带给更广泛的开发者社区，有助于提升各种规模项目的代码质量和安全性。同时，它展示了一种兼顾确定性检查与 LLM 灵活性的实用混合架构。 该工具内置了针对常见问题（如空指针异常、线程安全、XSS 和 SQL 注入）的微调规则集。它兼容 OpenAI 和 Anthropic 的 LLM，并使用 Go 语言编写。</p>
+      <p class="card-source">alibaba · 6月9日 01:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>代码审查是维护代码质量的关键实践，但人工审查耗时且容易出错。基于 LLM 的代码审查工具可以自动检测问题，而确定性管道则针对已知模式应用固定规则。结合这两种方法旨在提供更准确且具备上下文感知的反馈。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://github.com/alibaba/open-code-review" target="_blank">GitHub - alibaba/open-code-review: Open-source & free ...</a></li><li><a href="https://abit.ee/en/artificial-intelligence/alibaba-open-code-review-code-review-llm-open-source-artificial-intelligence-github-en" target="_blank">Alibaba open-sources its internal AI code review tool with ...</a></li></ul></details><div class="tags-row"><span class="tag">code review</span> <span class="tag">AI</span> <span class="tag">open source</span> <span class="tag">Go</span> <span class="tag">Alibaba</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔒</span>安全/隐私<span class="cat-n">5 条</span></div>
+  <article class="item-card" id="item-22">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">22</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u05t5e/an_active_attack_is_planting_backdoors_inside/" target="_blank">通过 npm 在 Claude Code 中植入后门的活跃攻击</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一场活跃的恶意软件活动通过入侵@redhat-cloud-services 下的 32 个 npm 包，在 Claude Code 和 VS Code 中植入后门，第二轮又影响了 57 个包，总计超过 64.7 万月下载量。 该攻击针对软件供应链，窃取主要云平台的凭证，并在卸载恶意包后仍然持续存在，可能危及数十万开发者和组织。 恶意软件通过修改~/.claude/settings.json 和.vscode/tasks.json 实现持久化，每次编辑器启动时执行，如果攻击者的访问被撤销，它可以擦除家目录。两波攻击共推送了 90 多个恶意版本，部分仍活跃在 npm 上。</p>
+      <p class="card-source">r/ClaudeAI · /u/johnypita · 6月8日 11:59</p>
+<div class="bg-block"><span class="block-label">背景</span><p>供应链攻击利用 npm 等可信包注册表分发恶意软件。此次攻击背后的 TeamPCP 组织此前已入侵 GitHub、Mistral AI、OpenAI 等。攻击者利用一名 Red Hat 员工被盗的 GitHub 令牌，通过 Red Hat 自己的构建管道发布恶意包，绕过了安全扫描。</p></div><details class="refs-details"><summary>参考链接 (1)</summary><ul class="refs-list"><li><a href="https://www.microsoft.com/en-us/security/blog/2026/06/02/preinstall-persistence-inside-red-hat-npm-miasma-credential-stealing-campaign/" target="_blank">Preinstall to persistence: Inside the Red Hat npm Miasma ...</a></li></ul></details><div class="tags-row"><span class="tag">security</span> <span class="tag">npm</span> <span class="tag">malware</span> <span class="tag">backdoor</span> <span class="tag">claude code</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-23">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">23</span>
+        <h2 class="card-title"><a href="https://blog.calif.io/p/oobdump-relocation-oriented-programming" target="_blank">objdump -g 中存在任意代码执行漏洞</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">当使用 -g 参数调用 objdump 工具时，一个漏洞允许通过精心构造的 FR30 目标文件执行任意代码，利用的是 FR30 重定位处理程序中缺失的边界检查。 该漏洞影响 GNU Binutils 套件中广泛使用的工具，可能使攻击者在代码审查或恶意软件分析等安全敏感环境中执行任意代码。 该漏洞是 FR30 重定位处理程序中缺失的边界检查，利用通过重定位导向编程实现，这是一种类似于返回导向编程但使用重定位条目的技术。</p>
+      <p class="card-source">Lobsters · 6月8日 22:13</p>
+<div class="bg-block"><span class="block-label">背景</span><p>objdump 是 GNU Binutils 中的一个命令行程序，用于显示目标文件的信息。-g 参数用于显示调试信息（stabs 或 DWARF）。重定位条目用于在链接目标文件时调整地址；缺失边界检查可能允许攻击者控制程序执行流。</p></div><details class="refs-details"><summary>参考链接 (1)</summary><ul class="refs-list"><li><a href="https://blog.calif.io/p/oobdump-relocation-oriented-programming" target="_blank">OOBdump: Relocation Oriented Programming - Calif</a></li></ul></details><div class="tags-row"><span class="tag">security</span> <span class="tag">vulnerability</span> <span class="tag">objdump</span> <span class="tag">arbitrary code execution</span> <span class="tag">exploitation</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-24">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">24</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxPWlo3bW5iaGsxMlBic090Q25vcEVTYmdiWmJyQlBKc3B6YThib0FlT0F2b0Fza2pkR3lTMzVBY1RwMjc2RGJsd0JaNHAzTkZLZkppUkRTVzc3R1hMOVJhMmhVdXpJVDJ6cDJlM0FKZ3p6ZEFvNGRUMnZWTFE4WEZyX3ZBWXpJV0hxRzdvdXhKZElQZ3ZGY3VuYnZLYXdUeGpXOEpyNGlnQ05xdVVESHd0YmJBcFFjZw?oc=5" target="_blank">Meta 因 WhatsApp 钓鱼攻击起诉 NSO Group</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Meta 宣布将对以色列间谍软件公司 NSO Group 提起法律诉讼，指控其针对 WhatsApp 用户进行钓鱼攻击，并称已成功挫败这些黑客尝试。 这一法律行动凸显了大型科技公司与间谍软件供应商之间的持续斗争，并对用户隐私和网络安全产生重大影响。如果成功，可能开创先例，追究间谍软件公司针对通信平台的责任。 这些钓鱼攻击与 NSO Group 的 Pegasus 间谍软件有关，该软件能够进行远程零点击监控。据《纽约时报》报道，Meta 的法律行动可能违反了联邦法院对该公司的禁令。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 10:43</p>
+<div class="bg-block"><span class="block-label">背景</span><p>NSO Group 是一家以色列网络情报公司，以开发 Pegasus 间谍软件而闻名，该软件可秘密入侵智能手机，提取信息、通话和位置数据。Pegasus 曾被政府用于监视记者、活动人士和异见者，引发了严重的人权担忧。Meta 旗下的 WhatsApp 消息服务此前曾成为 NSO 攻击的目标，导致 2019 年的一起诉讼。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/NSO_Group" target="_blank">NSO Group - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Pegasus_(spyware)" target="_blank">Pegasus (spyware)</a></li><li><a href="https://www.nytimes.com/2026/06/08/us/politics/whatsapp-nso-group-phishing.html" target="_blank">Meta Says Israeli Spyware Firm NSO Group Targeted WhatsApp ...</a></li></ul></details><div class="tags-row"><span class="tag">cybersecurity</span> <span class="tag">privacy</span> <span class="tag">spyware</span> <span class="tag">Meta</span> <span class="tag">NSO</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-25">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">25</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u0hase/meta_deletes_facerecognition_system_from_its/" target="_blank">Meta 在 WIRED 报道后移除智能眼镜应用的人脸识别代码</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Meta 已经从智能眼镜的配套应用 Meta AI 中移除了人脸识别代码，此前 WIRED 的报道揭露了这些未激活的代码。该公司未说明该功能未来是否会恢复。 这一事件凸显了可穿戴技术中创新与隐私之间的持续紧张关系，Meta 的迅速反应表明其对公众反弹的高度敏感。这可能为其他科技公司处理智能眼镜等隐私敏感功能树立先例。 人脸识别代码位于代码库中但未激活，表明这是一个正在开发中的未来功能。Meta 从最新版本的应用中移除了该代码，但拒绝就决定或未来计划置评。</p>
+      <p class="card-source">r/technology · /u/Plastic_Ninja_9014 · 6月8日 19:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Meta 与雷朋合作开发的智能眼镜配备集成摄像头，并通过 Meta AI 应用提供 AI 助手。人脸识别技术因隐私和偏见问题面临广泛批评，导致许多公司限制其使用。Meta 本身在 2021 年因在 Facebook 上使用人脸识别而达成诉讼和解。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.wired.com/story/meta-removes-face-recognition-code-meta-ai-app-smart-glasses/" target="_blank">Meta Deletes Face-Recognition System From Its Smart Glasses ...</a></li><li><a href="https://mashable.com/tech/meta-smart-glasses-facial-recognition" target="_blank">Meta quietly added facial recognition code for smart glasses to its app | Mashable</a></li><li><a href="https://www.socialmediatoday.com/news/meta-walks-back-facial-recognition-in-meta-ai-app/822316/" target="_blank">Meta walks back facial recognition in Meta AI app | Social Media Today</a></li></ul></details><div class="tags-row"><span class="tag">face recognition</span> <span class="tag">privacy</span> <span class="tag">Meta</span> <span class="tag">smart glasses</span> <span class="tag">WIRED</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-26">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">26</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/ClaudeAI/comments/1u0kq84/anthropic_changed_their_privacy_policy_today_and/" target="_blank">Anthropic 隐私政策变更：无需法院命令即可共享数据</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">2026 年 6 月 8 日，Anthropic 发布了新版隐私政策，将于 2026 年 7 月 8 日生效，取消了在与执法部门共享用户对话前需获得法院命令的要求，允许基于其内部的“善意确信”进行披露。 这一政策变更显著削弱了对所有 Claude 用户的数据保护，Anthropic 可在没有独立监督的情况下主动分享对话，尤其因自动化分类器的误报而威胁到创意写作者和敏感话题讨论者。 政策中未定义“善意确信”一词，没有明确标准、阈值或独立检查，用户不会被告知披露信息，也没有可用的上诉程序。</p>
+      <p class="card-source">r/ClaudeAI · /u/lukozaid · 6月8日 21:02</p>
+<div class="bg-block"><span class="block-label">背景</span><p>隐私政策规定了公司如何处理用户数据。法院命令是由法官签发的法律文件，强制要求披露；取消该要求消除了一项关键保障。自动化分类器扫描文本模式但缺乏上下文，难以区分虚构与现实威胁，增加了误报风险。</p></div><div class="tags-row"><span class="tag">Anthropic</span> <span class="tag">privacy policy</span> <span class="tag">Claude AI</span> <span class="tag">data protection</span> <span class="tag">AI ethics</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🌍</span>时政/地缘<span class="cat-n">42 条</span></div>
+  <article class="item-card" id="item-27">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">27</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/middleeast/iran-israel-strikes-ceasefire-hezbollah.html" target="_blank">伊朗与以色列激烈交锋后缓和局势</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗和以色列均宣布暂停对彼此的军事打击，此前双方进行了激烈交火。以色列总理内塔尼亚胡表示，在与特朗普总统通电话后，以色列“目前”暂停开火。 此次缓和标志着从可能引发多方卷入的重大地区升级中迈出的重要但脆弱的一步；然而，以色列与伊朗支持的民兵组织真主党之间的持续冲突仍在使中东的和平努力复杂化。 双方均警告称，如果条件未得到满足，他们准备恢复攻击；此次导弹交换标志着本已紧张的地区出现重大升级；真主党冲突仍然是持久和平的一个独立但相互交织的障碍。</p>
+      <p class="card-source">New York Times World · 6月8日 21:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗和以色列长期处于影子战争状态，以色列据称对伊朗核设施和军事设施发动攻击，而伊朗则支持黎巴嫩真主党等代理人。真主党是一个强大的什叶派武装组织，曾与以色列发生多次战争，被以色列政府视为重大威胁。此次伊朗与以色列之间的直接攻击交换是前所未有的，有可能引发更大规模的冲突。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">Hezbollah</span> <span class="tag">Middle East</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-28">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">28</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/middleeast/iran-tehran-israel-attacks.html" target="_blank">德黑兰发生爆炸，伊朗与以色列冲突升级</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">2026 年 6 月 8 日，德黑兰传出爆炸声，伊朗与以色列冲突重启，居民惊慌失措，疯狂查看手机以确认是否再次遭到袭击。 此次对伊朗首都的袭击标志着伊以长期影子战争的重大升级，对地区稳定及更广泛的中东地缘政治格局具有直接影响。 爆炸发生在伊朗首都德黑兰，居民们查看手机和社交媒体以确认是否遭到袭击，这表明民众的恐慌和不安。</p>
+      <p class="card-source">New York Times World · 6月8日 13:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗与以色列多年来一直处于秘密冲突中，涉及网络攻击、代理民兵和暗杀。如果此次对德黑兰的直接袭击得到确认，将标志着以往间接对抗模式的重大转变。</p></div><div class="tags-row"><span class="tag">Iran-Israel conflict</span> <span class="tag">geopolitical tensions</span> <span class="tag">Middle East</span> <span class="tag">breaking news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-29">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">29</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/live/2026/06/08/world/iran-israel-lebanon-attacks/heres-the-latest" target="_blank">伊朗、以色列、黎巴嫩冲突最新动态</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《纽约时报》正在提供关于伊朗、以色列和黎巴嫩之间持续攻击的最新实时更新（截至 2026 年 6 月 8 日）。 这场冲突涉及主要地区大国，可能升级为更广泛的战争，影响全球石油市场和国际安全。 该新闻条目是一个得分 9.0 的实时博客，表明其作为突发新闻的高度重要性，但摘要中未提供关于伤亡或目标的具体细节。</p>
+      <p class="card-source">New York Times World · 6月8日 20:18</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗和以色列有着长期的代理人冲突和直接对抗历史，经常涉及黎巴嫩的真主党。紧张局势不时升级为跨境攻击，当前局势代表了重大升级。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">Lebanon</span> <span class="tag">geopolitics</span> <span class="tag">conflict</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-30">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">30</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/live/2026/jun/08/iran-israel-news-live-updates-strikes-attacks-intensify-trump-netanyahu" target="_blank">伊朗对以色列袭击石化厂进行报复，向海法发射导弹</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗向以色列海法的一座石化厂发射导弹，以报复以色列对伊朗马赫沙赫尔市卡伦石化厂的袭击。伊朗革命卫队确认了这次报复行动，而伊朗媒体报道称，以色列最初的袭击未造成即时人员伤亡。 伊朗与以色列之间的直接军事交锋标志着中东冲突的重大升级，增加了爆发更广泛地区战争的风险。此事直接影响全球能源市场和安全格局，特别是涉及石化基础设施。 以色列袭击了卡伦石化厂，未报告人员伤亡；伊朗的报复则针对海法的一座类似工厂。这一事件凸显了两国之间持续的以牙还牙的攻击，有可能进一步升级。</p>
+      <p class="card-source">The Guardian World · 6月8日 22:04</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗和以色列多年来一直通过代理人或秘密行动进行影子战争。最近几个月，直接对抗有所增加，包括导弹和无人机袭击。卡伦石化厂是伊朗能源领域的关键工业资产，因此成为战略目标。</p></div><div class="tags-row"><span class="tag">中东冲突</span> <span class="tag">伊朗-以色列</span> <span class="tag">地缘政治</span> <span class="tag">军事打击</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-31">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">31</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/08/iran-ceasefire-talks-us-israel-strait-of-hormuz-blockade-houthis-yemen" target="_blank">伊朗或因霍尔木兹海峡封锁升级退出停火谈判</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据报道，随着霍尔木兹海峡封锁和与以色列的军事对抗升级，伊朗正考虑放弃与美国的停火谈判，并将胡塞武装重新卷入冲突。 这一进展可能标志着中东冲突进入不可逆转的阶段，由于霍尔木兹海峡封锁危及全球石油供应，且涉及以色列、伊朗、真主党和胡塞武装的更广泛区域战争正在扩大。 一些伊朗强硬派因认为取得了军事成功并控制了海峡而备受鼓舞，主张放弃谈判并升级与以色列的冲突。胡塞武装的重新介入带来了难以估量的后果。</p>
+      <p class="card-source">The Guardian World · 6月8日 14:04</p>
+<div class="bg-block"><span class="block-label">背景</span><p>霍尔木兹海峡是至关重要的石油运输咽喉。冲突始于 2026 年 2 月以色列对真主党的袭击，伊朗将其视为直接宣战理由。也门胡塞武装此前已参与冲突，但曾减少介入。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">Strait of Hormuz</span> <span class="tag">Houthis</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-32">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">32</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/international/article/2026/06/08/israel-iran-missile-exchanges-raise-fears-of-fresh-regional-escalation_6754248_4.html" target="_blank">以伊导弹互射引发地区升级担忧</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗为报复以色列对贝鲁特南郊的空袭，向以色列发射弹道导弹，随后以色列对伊朗领土发动打击。 此次以色列与伊朗之间的直接导弹交锋标志着局势显著且危险升级，可能引发更广泛的地区战争，涉及多国并破坏中东稳定。 伊朗导弹袭击是对以色列此前空袭贝鲁特的回应，以色列随即打击伊朗境内目标作为报复。</p>
+      <p class="card-source">Le Monde English - International · 6月8日 10:28</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以色列与伊朗长期进行影子战争，但直接对对方领土发动军事打击极为罕见，标志着重大升级。以色列对贝鲁特的空袭针对的是伊朗支持的真主党，而伊朗的弹道导弹直接威胁以色列人口中心。</p></div><div class="tags-row"><span class="tag">Israel-Iran conflict</span> <span class="tag">missile strikes</span> <span class="tag">Middle East escalation</span> <span class="tag">geopolitics</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-33">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">33</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxQamkxU3JDUHZmTU8tdE05NUJXUFNyNm5WaWZJNFlLLUYxWjhyVXg1XzI2ZnRkZTFKV0IwVXBzR1JKdmVmX3BySVktZnlmVW5SeTE1Y0RaZW1rV2tuX3M4ZkMwVlA2SWcxck9ObkdPLTQweHNvRW53dnZhZlAwMHlvMGIwMHM0UG00UUxXdThMektUUHNBdFFlZXl1bjFNUGYyNmhzeS1mY04tZ25oMFAzM1l0eWE?oc=5" target="_blank">以色列打击伊朗西部和中部军事目标</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">以色列军方证实对伊朗西部和中部军事目标发动了空袭，这是以色列对伊朗领土采取的重大直接军事行动。 这一升级可能引发更广泛的地区冲突，可能牵涉其他大国，并对全球能源市场和中东安全格局产生影响。 空袭针对特定军事地点，但伤亡或破坏的具体细节尚不清楚。此次行动是以色列与伊朗近年最严重的直接对抗之一。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 02:19</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以色列和伊朗长期处于暗战状态，包括网络攻击、代理人和秘密行动。此次公开军事打击背离了以往的秘密接触方式，可能改变地区战略格局。</p></div><div class="tags-row"><span class="tag">以色列</span> <span class="tag">伊朗</span> <span class="tag">军事冲突</span> <span class="tag">中东局势</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-34">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">34</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/singularity/comments/1u0o767/financial_times_new_ai_espionage_powers_trigger/" target="_blank">俄罗斯在伊朗领导人遇刺后暂停人工智能监控</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">俄罗斯在伊朗最高领袖遇刺后暂停了其监控系统，此次刺杀事件展示了人工智能如何通过分析闭路电视数据来定位敌人。 这一事件凸显了人工智能驱动的监控带来的地缘政治风险，各国开始重新审视此类技术的安全隐患。 据称，被暂停的系统利用人工智能处理闭路电视录像以实现实时威胁检测，而此次刺杀事件暴露了此类能力可能被利用的方式。</p>
+      <p class="card-source">r/singularity · /u/SnoozeDoggyDog · 6月8日 23:20</p>
+<div class="bg-block"><span class="block-label">背景</span><p>人工智能驱动的监控系统利用机器学习分析视频流，识别感兴趣的个人或物体。伊朗最高领袖遇刺可能涉及此类技术，促使俄罗斯重新评估其自身系统。这些系统引发了隐私和伦理方面的担忧，尤其是在用于定点清除行动时。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://hai.stanford.edu/news/re-imagining-espionage-era-artificial-intelligence" target="_blank">Re-Imagining Espionage in the Era of Artificial Intelligence</a></li><li><a href="https://impulsecctv.com/blog/deep-learning-in-cctv-ai-video-surveillance/" target="_blank">Deep Learning in CCTV: How AI Is Transforming Video ...</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">surveillance</span> <span class="tag">geopolitics</span> <span class="tag">Russia</span> <span class="tag">Iran</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-35">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">35</span>
+        <h2 class="card-title"><a href="https://signal.org/blog/pdfs/2026-06-08-uk-surveillance-is-not-safety.pdf" target="_blank">Signal 反对英国监控计划，呼吁停止威胁加密</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Signal 发布了一份题为《监控不等于安全》的声明，反对英国政府最新提出的、会破坏端到端加密的监控方案。 此事意义重大，因为英国推动的客户端扫描可能成为全球先例，威胁所有互联网用户的隐私和安全。若实施，将迫使科技公司在加密前扫描消息，实质上创造了后门。 该声明是 Signal 博客上发布的一份 PDF 文件，针对英国的《在线安全法案》及后续要求扫描私人消息以查找非法内容的监管提案。Signal 认为这种监控措施与真正的隐私和安全不相容。</p>
+      <p class="card-source">g0xA52A2A · 6月8日 19:42</p>
+<div class="bg-block"><span class="block-label">背景</span><p>英国 2023 年《在线安全法案》要求平台保护用户免受非法内容侵害。政府现在正在考虑“客户端扫描”，即在用户设备上对内容进行加密前扫描，作为削弱加密的替代方案。批评者认为这破坏了加密的根本目的，并为大规模监控打开了大门。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>Signal 博客上的评论者表达担忧，认为这种监控将不可避免地超出其既定目的，并将其与 1990 年代的 Clipper Chip 提案相比较。一些人指出，推动该法案的首相曾提拔一名已知恋童癖者的亲密朋友，具有讽刺意味。其他人则敦促 Signal 采取更强烈的公开立场。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.bbc.co.uk/news/technology-65301510" target="_blank">WhatsApp and other messaging apps oppose 'surveillance' - BBC</a></li><li><a href="https://www.internetsociety.org/resources/doc/2020/fact-sheet-client-side-scanning/" target="_blank">Fact Sheet: Client-Side Scanning - Internet Society</a></li><li><a href="https://proton.me/blog/why-client-side-scanning-isnt-the-answer" target="_blank">Why client-side scanning isn’t the answer - Proton ELi5: How does "client-side scanning" work and why would it ... Client-Side Scanning: The End of Privacy A Comprehensive Technical and Policy Analysis of Client-Side ... EU Chat Control: What Client-Side Scanning Actually Means for ...</a></li></ul></details><div class="tags-row"><span class="tag">surveillance</span> <span class="tag">privacy</span> <span class="tag">UK</span> <span class="tag">encryption</span> <span class="tag">digital rights</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-36">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">36</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/08/massachusetts-votes-to-pass-new-privacy-rights-bill-that-bans-sale-of-precise-location-data/" target="_blank">马萨诸塞州新隐私法案禁止出售精确位置数据</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">马萨诸塞州通过了一项法案，禁止出售精确位置数据，这标志着隐私权的重要进展。该法案于 2026 年 6 月通过。 该法案为位置隐私树立了强有力的先例，可能影响其他州采取类似措施。它限制公司未经同意将用户的精确位置数据货币化，保护消费者免受监视和数据滥用的侵害。 该禁令明确禁止'出售'精确位置数据，这可能留下漏洞，例如通过数据交换或传输而不直接出售。该法案还包括其他隐私保护措施，但执行机制尚不明确。</p>
+      <p class="card-source">01-_- · 6月8日 17:07</p>
+<div class="bg-block"><span class="block-label">背景</span><p>精确位置数据是指通过 GPS 等手段收集的关于个人或设备位置的高精度信息，通常可以精确到 1,000 米以内。此类数据在 CPRA 等隐私法律中被视为敏感信息，要求选择同意才能收集。马萨诸塞州的法案与加州 AB-1542 等行动一致，反映了州级层面对位置数据监管的增强。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区评论呈现复杂反应：一些人赞扬进展，但担心'出售'一词可能存在漏洞，建议用'交换'或'传输'更佳。其他人指出相关进展，如加州 AB-1542 和通用汽车因出售 OnStar 数据被罚款 1275 万美元。还有人担心车辆数据和 Cellebrite 软件的使用，认为如果执法部门仍可访问，保护精确位置数据可能是徒劳的。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://webserv.io/glossary/precise-location-data/" target="_blank">What Is Precise Location Data? | Digital Marketing Glossary</a></li><li><a href="https://www.ecfr.gov/current/title-28/chapter-I/part-202/subpart-B/section-202.242" target="_blank">eCFR :: 28 CFR 202.242 -- Precise geolocation data.</a></li><li><a href="https://codigoalpha.blog/precise-geolocation-sensitive-data-compliance/" target="_blank">Location Data Classification as Sensitive Personal Information</a></li></ul></details><div class="tags-row"><span class="tag">privacy</span> <span class="tag">location data</span> <span class="tag">Massachusetts</span> <span class="tag">legislation</span> <span class="tag">data protection</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-37">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">37</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cvgel990n51o?at_medium=RSS&at_campaign=rss" target="_blank">亚美尼亚亲西方政党在俄罗斯压力下赢得选举</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">总理尼科尔·帕希尼扬领导的公民契约党在亚美尼亚议会选举中获得近 50%的选票，顶住了俄罗斯的压力，赢得授权推进由特朗普总统斡旋的和平谈判。 此次选举结果标志着亚美尼亚可能从亲俄转向亲西方，对高加索地区的地缘政治紧张局势以及纳戈尔诺-卡拉巴赫和平进程产生影响。 选举中，公民契约党以明显优势领先其他竞争者，帕希尼扬的授权很可能推进特朗普总统帮助促成的亚美尼亚与阿塞拜疆和平谈判。</p>
+      <p class="card-source">BBC World · 6月8日 10:28</p>
+<div class="bg-block"><span class="block-label">背景</span><p>亚美尼亚历史上是俄罗斯的亲密盟友，设有俄罗斯军事基地。然而，在帕希尼扬领导下，紧张局势加剧，他寻求与西方加强联系，并批评莫斯科在纳戈尔诺-卡拉巴赫冲突中的角色。选举结果反映了尽管俄罗斯施加压力以维持影响力，但公众渴望变革。</p></div><div class="tags-row"><span class="tag">Armenia</span> <span class="tag">election</span> <span class="tag">geopolitics</span> <span class="tag">Russia</span> <span class="tag">West</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-38">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">38</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cly72ryrd1jo?at_medium=RSS&at_campaign=rss" target="_blank">伊朗袭击以色列显示其信心增强</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗对以色列发动了导弹袭击，BBC 分析认为此举反映了德黑兰对其地区地位的信心日益增强。 此次升级使正在进行的和谈复杂化，并表明伊朗更加强硬，可能进一步破坏中东稳定。 此次袭击冒着破坏和谈的风险，凸显出伊朗领导人认为自身当前战略地位有利。</p>
+      <p class="card-source">BBC World · 6月8日 14:11</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗和以色列长期存在代理冲突和敌对言论。近年来，伊朗提升了导弹和无人机能力，而以色列则对叙利亚境内与伊朗相关的目标进行打击。报道中的袭击表明双方进入了直接对抗，而非间接接触。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">geopolitics</span> <span class="tag">armed conflict</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-39">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">39</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cdep497r256o?at_medium=RSS&at_campaign=rss" target="_blank">习近平罕见访问朝鲜旨在重塑影响力</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">习近平抵达朝鲜进行为期两天的国事访问，这是他七年来首次访朝，旨在重振双边关系并重申中国对该盟友的影响力。 此次访问意义重大，凸显中国试图抗衡朝鲜与俄罗斯日益密切的关系，并重申北京在同盟中的主导地位。 中国新华社发布的画面显示习近平及夫人抵达平壤顺安国际机场；此行被视为向平壤和华盛顿发出的信号。</p>
+      <p class="card-source">BBC World · 6月8日 14:22</p>
+<div class="bg-block"><span class="block-label">背景</span><p>朝鲜是中国重要但难以预测的盟友。近期，平壤加强与俄罗斯的关系，导致中朝关系紧张。习近平此访旨在提醒金正恩中国在同盟中的主导地位，并重振双边合作。</p></div><div class="tags-row"><span class="tag">Xi Jinping</span> <span class="tag">North Korea</span> <span class="tag">China</span> <span class="tag">geopolitics</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-40">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">40</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/videos/ckg8nke01g5o?at_medium=RSS&at_campaign=rss" target="_blank">以色列与伊朗互射导弹</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">两个月来，以色列与伊朗首次直接互射导弹，打破了脆弱的停火局面。 此次升级可能引发更广泛的地区战争，并可能将美国等其他行为体卷入，破坏任何外交努力。 此次导弹袭击发生在两个月停火之后，表明关系严重恶化。目前尚无人员伤亡或损失报告。</p>
+      <p class="card-source">BBC World · 6月8日 19:44</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以色列与伊朗长期敌对，以色列反对伊朗核计划及其对激进组织的支持。此前的停火协议本就脆弱，这次互射导弹标志着两国之间的直接军事对抗。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Israel</span> <span class="tag">Iran</span> <span class="tag">missile strikes</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-41">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">41</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/08/pentagon-says-alibaba-baidu-byd-and-unitree-support-chinas-military/" target="_blank">五角大楼将阿里巴巴、百度、比亚迪、宇树科技列入中国军方清单</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">五角大楼于 2026 年 6 月 8 日更新了其第 1260H 条中国军事公司清单，新增了阿里巴巴、百度、比亚迪和宇树科技。该清单最初在四个月前由特朗普政府发布，但随后被迅速撤回，未作解释。 这一认定可能限制这些公司在美国的经营能力，并标志着美中在技术和军事关联方面的紧张局势升级。将清单扩大至知名科技和机器人公司，超出了传统防务承包商的范畴。 该清单根据 2021 财年《国防授权法》第 1260H 条发布。被指定为“中国军事公司”的企业将面临更严格的审查，并可能被禁止获得美国政府合同和技术出口。</p>
+      <p class="card-source">TechCrunch · 6月8日 18:57</p>
+<div class="bg-block"><span class="block-label">背景</span><p>第 1260H 条清单列出了美国国防部认为与中国军方或国防工业基地有关联的中国公司。列入清单并不要求有直接支持的证据，而是基于所有权或合作关系等因素。公司可能被添加或移除；过去的更新曾包括华为和小米等企业。这一认定可能损害公司的全球声誉和商业关系。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.war.gov/News/Releases/Release/Article/4023145/dod-releases-list-of-chinese-military-companies-in-accordance-with-section-1260/" target="_blank">DOD Releases List of Chinese Military Companies in Accordance ...</a></li><li><a href="https://media.defense.gov/2026/Jun/08/2003945537/-1/-1/1/ENTITIES-IDENTIFIED-AS-CHINESE-MILITARY-COMPANIES-OPERATING-IN-THE-UNITED-STATES-IN-ACCORDANCE-WITH-SECTION-1260H.PDF" target="_blank">Entities-Identified-as-Chinese-Military-Companies-Operating ...</a></li><li><a href="https://www.cnbc.com/2026/06/09/alibaba-baidu-byd-named-on-pentagons-china-military-list-.html" target="_blank">Alibaba, Baidu, BYD named on Pentagon's China military list</a></li></ul></details><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">China</span> <span class="tag">military</span> <span class="tag">regulation</span> <span class="tag">tech companies</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-42">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">42</span>
+        <h2 class="card-title"><a href="https://www.wired.com/story/all-the-ways-europe-is-ditching-american-technology/" target="_blank">欧洲加速摆脱美国技术的趋势</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《连线》杂志发布的时间线记录了数十个欧洲政府、企业和组织正在计划或积极摆脱对美国大型科技公司的服务和基础设施的依赖。 这一趋势威胁到美国科技巨头在欧洲的主导地位，可能通过促进欧洲数字主权和减少跨大西洋依赖来重塑全球数字市场。 诸如 Gaia-X 云项目和欧盟 2026 年技术主权计划等举措旨在建立欧洲替代方案，以取代美国的云、数据和人工智能服务。</p>
+      <p class="card-source">Wired · 6月8日 06:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>欧洲数字主权指欧洲通过开发和控制关键技术、数据和基础设施，在数字世界独立行动的能力。多年来，欧洲对美国云服务商、社交媒体和软件的依赖引发了对数据隐私、安全和地缘政治影响力的担忧。在贸易紧张局势和欧盟与美国科技巨头的监管冲突中，争取主权的努力变得更加紧迫。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://digital-strategy.ec.europa.eu/en/policies/eu-tech-sovereignty" target="_blank">Strengthening Europe’s Tech Sovereignty | Shaping Europe’s ...</a></li><li><a href="https://www.cnbc.com/2026/06/03/europe-tech-sovereignty-us-tech-reliance.html" target="_blank">Europe unveils tech sovereignty package amid U.S. tech ... - CNBC</a></li><li><a href="https://www.atlanticcouncil.org/in-depth-research-reports/report/digital-sovereignty-europes-declaration-of-independence/" target="_blank">Digital sovereignty: Europe’s declaration of independence?</a></li></ul></details><div class="tags-row"><span class="tag">Europe</span> <span class="tag">US Big Tech</span> <span class="tag">technology sovereignty</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-43">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">43</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/middleeast/israel-netanyahu-iran-trump-lebanon.html" target="_blank">以色列在伊朗和真主党之间的战略困境</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">以色列现在意识到，如果对真主党的袭击做出强力回应，伊朗可能会用导弹袭击以色列，而以色列正在为可能的美伊和平协议做准备。 这揭示了一种战略困境，可能限制以色列的军事选择并改变地区力量格局，进而影响美国政策和中东稳定。 文章强调，以色列在威慑真主党和避免与伊朗爆发更大规模战争之间面临权衡，尤其是在美伊谈判期间。</p>
+      <p class="card-source">New York Times World · 6月8日 16:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>真主党是一个总部设在黎巴嫩、由伊朗支持的武装组织，曾与以色列发生多次冲突。伊朗和以色列长期敌对，伊朗支持反以色列力量。潜在的美伊和平协议可能重塑地区联盟，并改变以色列的战略考量。</p></div><div class="tags-row"><span class="tag">Israel</span> <span class="tag">Iran</span> <span class="tag">Hezbollah</span> <span class="tag">Middle East</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-44">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">44</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/europe/vance-uk-stabbing-migrants.html" target="_blank">万斯将英国刺伤案归咎于移民，英方官员反击</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国副总统 JD·万斯将英国亨利·诺瓦克谋杀案归咎于移民“入侵”，英国官员指责他试图挑起分裂。 这一事件凸显了美英关系的紧张以及移民言论的两极化性质，可能影响两国在边境政策上的双边讨论。 亨利·诺瓦克的凶手上周被判终身监禁，万斯的评论是针对此案而发，遭到英国官员的强烈批评。</p>
+      <p class="card-source">New York Times World · 6月8日 20:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>亨利·诺瓦克谋杀案发生在英国，凶手是移民，万斯以此为由主张更严格的移民管控。英国官员拒绝将移民描述为“入侵”，并认为这种言论具有分裂性。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">immigration</span> <span class="tag">US-UK relations</span> <span class="tag">policy</span> <span class="tag">international news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-45">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">45</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/world/asia/chinese-businesses-north-korea.html" target="_blank">中国商家在社交媒体上推广朝鲜劳工</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">随着中朝跨境贸易复苏，中国企业家在社交媒体上推广廉价朝鲜劳工。 这凸显了潜在的劳工剥削和地缘政治紧张，因为朝鲜工人常受国际制裁和恶劣工作条件的影响。 视频显示商家兜售朝鲜劳工，标志着两国在边境关闭后贸易复苏。</p>
+      <p class="card-source">New York Times World · 6月8日 20:45</p>
+<div class="bg-block"><span class="block-label">背景</span><p>朝鲜长期派遣工人出国以赚取硬通货，但国际制裁限制了此类劳工输出。中国是为数不多与朝鲜保持经济联系的国家之一，因疫情边境关闭，跨境贸易一度放缓。</p></div><div class="tags-row"><span class="tag">North Korea</span> <span class="tag">China</span> <span class="tag">labor</span> <span class="tag">geopolitics</span> <span class="tag">business</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-46">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">46</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/business/energy-environment/iran-war-energy-oil.html" target="_blank">伊朗战争迫使能源进口国优先发展国内能源</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">持续的伊朗战争正促使能源进口国将重心转向国内能源生产，以对冲动荡的全球石油和天然气市场。 这种内向转向可能重塑全球能源贸易格局，并加速对可再生能源和国内能源的投资，减少对中东石油的依赖。 文章指出，战争对石油和天然气供应的破坏正迫使欧洲和亚洲等地区国家加速推行促进能源独立的政策。</p>
+      <p class="card-source">New York Times World · 6月8日 17:56</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗战争是一场重大的地缘政治冲突，破坏了中东这一关键产油地区的稳定。能源进口国严重依赖稳定的国际能源市场，但战争导致价格飙升和供应不确定性，促使它们寻求自给自足。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">energy</span> <span class="tag">geopolitics</span> <span class="tag">oil</span> <span class="tag">policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-47">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">47</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/live/2026/06/07/world/iran-israel-missiles/heres-the-latest" target="_blank">伊朗以色列导弹冲突实时更新</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《纽约时报》正在实时更新伊朗与以色列之间持续的导弹局势，报道最新动态。 这一突发地缘政治事件对地区稳定和全球安全具有直接影响，并影响国际关系和能源市场。 实时更新包括导弹发射、拦截和外交回应的报道，但可用摘要中具体细节有限。</p>
+      <p class="card-source">New York Times World · 6月8日 05:06</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗和以色列长期存在紧张关系，通常涉及代理人冲突和核问题。2026 年 6 月，局势升级为直接导弹交锋，引发国际关注。该实时报道提供了对迅速演变的危机的逐分钟覆盖。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">missiles</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-48">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">48</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/07/world/europe/ukraine-europe-russia-us-peace-talks.html" target="_blank">乌克兰转向欧洲，美国退出调解角色</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">乌克兰总统泽连斯基在伦敦与英、德、法领导人会晤，探讨由欧洲斡旋与俄罗斯的和平谈判，与此同时美国退出调解角色。 这标志着重大地缘政治转变，可能削弱美国在欧洲安全事务中的影响力，并赋予欧盟主导角色。其结果可能重塑跨大西洋关系及冲突解决进程。 泽连斯基提议由欧洲领导人担任谈判方，但具体条款及俄罗斯是否愿意接受欧洲调解尚不明确。会晤包括与英国首相基尔·斯塔默、德国总理奥拉夫·朔尔茨和法国总统埃马纽埃尔·马克龙的双边会谈。</p>
+      <p class="card-source">New York Times World · 6月8日 12:17</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2022 年俄罗斯全面入侵乌克兰以来，美国一直是关键的调解方和军事支持者。然而，近期的政治变化导致美国退出直接调解角色。欧洲国家历来扮演次要角色，如今面临主导的压力。</p></div><div class="tags-row"><span class="tag">乌克兰</span> <span class="tag">欧洲</span> <span class="tag">和平谈判</span> <span class="tag">地缘政治</span> <span class="tag">国际关系</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-49">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">49</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/08/france-and-germany-abandon-joint-project-to-build-european-fighter-jet" target="_blank">法德放弃联合战斗机项目</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">法国和德国正式放弃联合未来空中作战系统（FCAS）项目，理由是达索航空与空客这两家参与公司之间存在不可调和的分歧。 FCAS 的瓦解对欧洲防务一体化和战略自主造成严重打击，该项目旨在减少对美国制造战斗机的依赖并加强欧洲集体安全。 法国总统马克龙和德国总理默茨达成这一决定，此前他们认定达索航空与空客在工作分配、知识产权和技术规格上无法达成一致。</p>
+      <p class="card-source">The Guardian World · 6月8日 17:32</p>
+<div class="bg-block"><span class="block-label">背景</span><p>未来空中作战系统（FCAS）是一个法德西联合项目，计划在 2040 年左右开发新一代战斗机和配套无人机集群。它旨在取代现役的欧洲台风战斗机和达索阵风战斗机，被视为欧洲防务合作的旗舰项目。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Future_Combat_Air_System" target="_blank">Future Combat Air System - Wikipedia</a></li><li><a href="https://www.airbus.com/en/products-services/defence/future-combat-air-system-fcas" target="_blank">Future Combat Air System (FCAS) - Airbus</a></li></ul></details><div class="tags-row"><span class="tag">法国</span> <span class="tag">德国</span> <span class="tag">战斗机</span> <span class="tag">欧洲防务</span> <span class="tag">地缘政治</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-50">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">50</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/us-news/2026/jun/08/complex-relationship-between-trump-and-netanyahu-continues-to-undermine-middle-east-ceasefire" target="_blank">特朗普与内塔尼亚胡分歧破坏中东停火</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">最近伊朗和以色列之间的导弹交锋凸显了美国总统特朗普与以色列总理内塔尼亚胡的分歧，威胁到脆弱的停火协议。 两位领导人之间的持续紧张关系可能决定中东停火的命运，并有可能导致更广泛的地区冲突。 特朗普声称他在中东拥有最终发言权，但内塔尼亚胡已表现出独立行动的意愿，最新导弹交锋就证明了这一点。</p>
+      <p class="card-source">The Guardian World · 6月8日 18:23</p>
+<div class="bg-block"><span class="block-label">背景</span><p>中东一直处于战争与和平之间的脆弱状态，此前达成的停火协议现在受到威胁。美国与以色列历来是亲密盟友，但特朗普与内塔尼亚胡的个人关系复杂，常被称为‘亦敌亦友’。这种动态使维持稳定的努力复杂化。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Middle East</span> <span class="tag">US foreign policy</span> <span class="tag">Israel</span> <span class="tag">Iran</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-51">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">51</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/law/2026/jun/09/icc-chief-prosecutor-karim-khan-suspended-international-criminal-court" target="_blank">ICC 首席检察官因性侵指控被停职</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">国际刑事法院首席检察官卡里姆·汗（Karim Khan）于 2026 年 6 月 9 日因性侵指控的纪律程序被停职，这些指控最早于 2024 年出现。 此次停职触动了国际刑事法院最高领导层，可能削弱该法院的信誉及其正在进行的全球战争罪和暴行调查。 国际刑事法院理事机构投票决定将纪律程序提交成员国特别会议，以决定卡里姆·汗的未来。汗一再否认这些指控。</p>
+      <p class="card-source">The Guardian World · 6月9日 00:34</p>
+<div class="bg-block"><span class="block-label">背景</span><p>国际刑事法院（ICC）是一个常设法庭，对犯有种族灭绝罪、危害人类罪、战争罪和侵略罪的个人进行起诉。其首席检察官负责领导和执行调查与起诉。ICC 设有纪律程序处理不当行为，该程序在其规约和规则中有明确规定。暂停现任首席检察官的职务是前所未有的，引发了关于该法院治理的疑问。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.icc-cpi.int/get-involved/disciplinary-procedure" target="_blank">Disciplinary procedure - International Criminal Court</a></li><li><a href="https://opiniojuris.org/2026/06/08/institutional-design-and-disciplinary-legality-at-the-international-criminal-court/" target="_blank">Institutional Design and Disciplinary Legality at the ...</a></li><li><a href="https://ihl-databases.icrc.org/en/ihl-treaties/icc-statute-1998/article-47" target="_blank">IHL Treaties - Statute of the International Criminal Court ...</a></li></ul></details><div class="tags-row"><span class="tag">ICC</span> <span class="tag">Karim Khan</span> <span class="tag">sexual misconduct</span> <span class="tag">international law</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-52">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">52</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/us-news/2026/jun/08/trump-nominates-todd-blanche-attorney-general" target="_blank">特朗普提名前律师托德·布兰奇出任司法部长</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">周一，美国总统唐纳德·特朗普正式提名其前私人律师托德·布兰奇担任司法部长，布兰奇自 4 月以来一直以代理身份履职。 这项提名让特朗普的亲密盟友执掌司法部，可能影响正在进行的调查及司法部的独立性。参议院的确认程序将考验下一届选举前的政治格局。 布兰奇自 4 月起担任代理司法部长，此前特朗普解雇了帕姆·邦迪。他的提名需要参议院确认，鉴于他与特朗普的密切关系，这一过程预计将充满争议。</p>
+      <p class="card-source">The Guardian World · 6月9日 00:27</p>
+<div class="bg-block"><span class="block-label">背景</span><p>托德·布兰奇曾是唐纳德·特朗普的私人律师，在包括封口费案在内的法律事务中代表特朗普。司法部长是美国司法部的负责人，监督联邦执法和法律事务。代理提名允许个人在未经参议院确认的情况下临时任职，但永久任命需要确认。</p></div><div class="tags-row"><span class="tag">Trump</span> <span class="tag">attorney general</span> <span class="tag">nomination</span> <span class="tag">politics</span> <span class="tag">US news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-53">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">53</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/08/nx-s1-5848001/the-strait-of-hormuzs-3-month-closure-could-set-a-dangerous-precedent-experts-worry" target="_blank">霍尔木兹海峡关闭可能开创危险先例</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">专家担心，霍尔木兹海峡——全球关键的石油咽喉——关闭三个月可能为国际航道的脆弱性树立一个危险的先例。 如果开创此先例，其他国家或团体可能出于地缘政治目的封锁战略水道，威胁全球能源供应和海上贸易稳定。 关闭持续了三个月，但文章标题暗示持续时间本身是关键细节；不过摘要中未提供关闭的具体原因和确切日期。</p>
+      <p class="card-source">NPR World · 6月8日 20:50</p>
+<div class="bg-block"><span class="block-label">背景</span><p>霍尔木兹海峡是伊朗和阿曼之间的一条狭窄水道，全球约 20%的石油通过这里。它是一个战略咽喉，曾出现紧张局势，尤其涉及伊朗。如此长时间的关闭前所未有，引发了对全球航道安全的担忧。</p></div><div class="tags-row"><span class="tag">Strait of Hormuz</span> <span class="tag">geopolitics</span> <span class="tag">international shipping</span> <span class="tag">precedent</span> <span class="tag">maritime security</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-54">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">54</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxOcVBoemRaNEE1ZGlfVTRPeHZTMUpURHpITzJmVmZ4azg4cXB4M2pfOTBCM1lfd2lMcVNmOURTMThMV3c1VHRKSFp0MlROX1VTOS1KNGhBT1FmZF91ZXhPaGlyV002bzI5ZkpwOGZQRlhhWUo2RDJLeERBcDh4cmtudmFrNFY1ak9SaU1oT0F1ZVV3d05wMENQQndZMXE?oc=5" target="_blank">法官裁定特朗普的 H-1B 签证 10 万美元费用违法</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国联邦法官裁定，特朗普政府对 H-1B 签证申请征收 10 万美元费用的政策违法，该政策已被废除。 这一裁决消除了企业雇佣外国技术工人的重大财务障碍，可能缓解科技行业的人才短缺问题。 该费用于 2020 年根据特朗普旨在优先考虑美国工人的行政令引入。法官认为国土安全部在征收费用时超越了其权限。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 22:59</p>
+<div class="bg-block"><span class="block-label">背景</span><p>H-1B 签证允许美国公司在专业职业中雇佣外国工人，尤其是在技术领域。特朗普政府对这些签证征收额外费用并施加限制，认为这是保护美国就业所必需的。批评者认为这些费用具有惩罚性，损害了企业吸引全球人才的能力。</p></div><div class="tags-row"><span class="tag">H-1B</span> <span class="tag">immigration</span> <span class="tag">policy</span> <span class="tag">US</span> <span class="tag">technology</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-55">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">55</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQdEppbGtCYUg1d2g4cVR1d3pxTDZVNFJKTV9sSm5xbEl0V19VQVVvMlZIYXFQeXRtbkZ5SnRVUjRmb19mdEg3bjMwNXZmMjJnT3pmODRIMGZkNGZyenhoYjQ3STlyeVZpNkNvODNoS25YM2pXd1JXaHpxaFNkeUQzWkU5aTMwR2JkanlfcXl0RkNnVVNpV1NkQS1IN2ZGWHBMX0FaeVY0YmJYUWF3ZEUxRWZqb01uUQ?oc=5" target="_blank">特朗普警告内塔尼亚胡不要重启伊朗战争</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据 Axios 和路透社报道，前总统唐纳德·特朗普警告以色列总理本雅明·内塔尼亚胡不要对伊朗发动新一轮战争，敦促其在紧张局势升级时保持克制。 这位美国前总统的介入可能影响以色列的决策，并影响中东微妙的地缘政治平衡，对美国外交政策和地区稳定具有重大意义。 报道援引了熟悉谈话的匿名消息来源；警告的具体时间和背景尚未披露，但正值伊朗与以色列之间言论升级之际。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 20:16</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国、以色列和伊朗之间长期存在紧张关系，尤其是在伊朗核计划问题上。特朗普此前退出了伊朗核协议，并下令杀死一名伊朗高级将领。内塔尼亚胡经常主张对伊朗核设施采取军事行动。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">Trump</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-56">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">56</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxQTmtRMjRxTjh5TTVpTlNkblM0VlFZemNDUHlvR01vT0lYYVd1M3JWTWVlVy1BZFVhTHNtdjY1cjM3WjBIanNzR1l5eGhEMnhFbTR0WlRDdmxyZzYwTjJxNmVxNkxQYU0zQzdzN0FDRUxiMUZYNFgxM3RxTHpqQkhMS0JrVkJmV2huRTI0LV9TTDZ0VUdUVTZzVVBPem1UR3JmR1U4MXN6aWhHWU9kOWFlVldzaUZPVXRaT2ZMUHY1V1pENm11aWViTFpYQVZRQQ?oc=5" target="_blank">以色列打击伊朗以增强和谈筹码</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">以色列对伊朗进行了短暂的针对性军事行动，违抗了前总统特朗普的做法，以加强其在正在进行的和平谈判中的地位。 此举可能重塑中东和谈的格局，因为以色列表明愿意在特朗普时期的美国政策之外独立行动，可能影响地区联盟和伊朗核谈判。 据报道，此次行动短暂且范围有限，表明这是一种经过校准的升级，旨在避免全面战争同时传递明确信息。以色列意在利用这一武力展示作为其在安全关切讨论中的筹码。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 21:01</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以色列和伊朗多年来一直进行影子战争，包括网络攻击、代理冲突和定点打击。特朗普时期的美国外交政策明显亲以反伊，包括退出《伊朗核协议》。以色列的最新行动似乎表明其不再完全依赖美国支持，而是通过自己的军事策略来影响谈判，特别是围绕伊朗核计划和地区影响力。</p></div><div class="tags-row"><span class="tag">Israel</span> <span class="tag">Iran</span> <span class="tag">geopolitics</span> <span class="tag">peace talks</span> <span class="tag">Trump</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-57">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">57</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOZndSZ05Ec0xibk5xQ0JPWjFrM2ZzOGhyTDgtR01HOVhuY3J6THhKMVU3UXZxbnlKOUJma041dUJmcTlTNlJ2Q19PREcxWmc3b2pyV2dXVGFNSTJ5aXVTMG9RdDVEUk5CU0luTE9Hc19ESnBBMm5KWVZOblR6NzU0ejdJX1JPSzNQS0tlUzZLYXh3c1FRMjdYbUZ2dmJ5ajE0UU16eTBtYW9vQm9pQXJvM213RWVhLWpURkxPSDNkd1lmUEE1TXc?oc=5" target="_blank">胡塞武装威胁红海航运或影响石油市场</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">与伊朗结盟的胡塞武装正在升级对红海航运的威胁，包括可能攻击位于曼德海峡这一关键石油咽喉要道的船只。与以往事件相比，这一新的威胁可能对全球石油市场产生更重大的影响。 曼德海峡处理着全球约 10%的海运石油贸易，任何干扰都可能急剧推高油价和能源供应风险。在伊朗支持下，这一胡塞武装的威胁出现在中东紧张局势加剧之际，可能影响全球能源安全。 胡塞武装此前曾使用伊朗提供的无人机和导弹袭击沙特石油设施及红海船只。曼德海峡最窄处仅约 29 公里，易受封锁或攻击。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 14:33</p>
+<div class="bg-block"><span class="block-label">背景</span><p>胡塞武装，正式名称为安萨尔安拉，是 20 世纪 90 年代兴起的也门反叛组织，自 2014 年以来一直参与内战。他们控制着也门大片地区，包括首都萨那，并得到伊朗支持。曼德海峡是连接红海与亚丁湾的战略水道，对全球石油和天然气运输至关重要。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Houthis" target="_blank">Houthis - Wikipedia</a></li><li><a href="https://en.wikipedia.org/wiki/Bab-el-Mandeb" target="_blank">Bab-el-Mandeb - Wikipedia</a></li><li><a href="https://www.bbc.com/news/world-middle-east-67614911" target="_blank">Who are the Houthis and why is the US targeting them? - BBC</a></li></ul></details><div class="tags-row"><span class="tag">Houthis</span> <span class="tag">Red Sea</span> <span class="tag">oil market</span> <span class="tag">geopolitics</span> <span class="tag">Iran</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-58">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">58</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX1QwQzAzUXV1MlgwUV9NOWNYa2YyU1pISkF6SGVtM1VjcGNta1cyS2lpaGlzWnhOS3dPMFl6YllNX0VLMUI3MW0yQ1JaRl9SYTJGaHhuMVQxUV9HVlhRaGI0TEtwUm5PMUt4VV9ldFRMTEcwMEZ6NUp0dWdiblVrUjNkTEhNNGRRNjdmeUhTZmwwalk3aTFzalZJa2ppYzhLWTdVY2hWdnFRTkhyT0Z3enhqWDE1TlVCQ1Nr?oc=5" target="_blank">乌克兰军方称 2026 年收复 600 多平方公里领土</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">乌克兰军方负责人宣布，乌军在 2026 年收复了超过 600 平方公里的领土，这是一项重大的战场成就。 此次领土收复可能改变俄乌战争的态势，提振乌克兰士气，并可能影响战略平衡。这也凸显了乌克兰在长期冲突中仍具备发动进攻行动的能力。 该声明由乌克兰军方负责人通过路透社发布，但未透露 2026 年内的具体区域或时间点。600 平方公里的面积相当于一座小型城市的规模。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 15:14</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2022 年 2 月俄罗斯全面入侵以来，乌克兰在反攻中收复了领土，如 2022 年的哈尔科夫地区和 2023 年的赫尔松。2026 年的新进展表明抵抗仍在持续且取得战术成功，尽管战争仍高度动态。收复 600 多平方公里是冲突近期阶段宣布的较大领土收益之一。</p></div><div class="tags-row"><span class="tag">Ukraine</span> <span class="tag">Russia</span> <span class="tag">geopolitics</span> <span class="tag">military conflict</span> <span class="tag">war</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-59">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">59</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNZWhTUXlxMHY0ZC1tTERXbkpUZ2NWUlRjSDVWQlBtVEw3SHV5S2RhV2sxakpIUWUzNzVZZnpBcUhaWjVvVnNZWXQtaFBkNXBSVldCNG9OTW5DdHo0c2tKR0VLWlVTbTJ0dHVZbzVLa0VMR2dha0ZDc0pLQkY0UWtMMnVoM29raUI4ZURlLUh3b1ZkN0xxZVQ1WGFxN1dhWFMzZHNiZQ?oc=5" target="_blank">伊朗指责美国介入与以色列的冲突</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗公开指责美国参与了与以色列的最新军事交火，指控华盛顿直接介入了敌对行动。 此次升级增加了涉及大国的更广泛区域冲突的风险，可能进一步破坏中东稳定并影响全球安全格局。 这一指控是在伊朗与以色列紧张局势持续之际提出的，伊朗声称美国支持以色列的行动；目前尚未报道美国立即的回应。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 08:59</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗和以色列长期以来存在代理冲突和直接对抗，经常涉及对军事资产和核设施的攻击。美国传统上是以色列的坚定盟友，提供军事和外交支持。伊朗的指控表明其认为美国是以色列军事行动的同谋。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Israel</span> <span class="tag">US</span> <span class="tag">geopolitics</span> <span class="tag">conflict</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-60">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">60</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNaGlLa2tOYTZabzcxY2dySFoxUHlrVzF0TWk3c2tSdENWbDNackR4R2pDeVZmRmt1VGZiYVQwZ3pXUXFtUGI0bXV6cGU4a2RScFl6NWYxNU8wcUpRWldEV3ZHczQ5eTlQLVhmTEpER3pMSlVkSDFuZ3pJMW1JRTQ4c0Q3YUd6VjJUVFh4eldiN2ZCellnNU9hSlp3WWJpYUxURzcyUC1wdWMxUDNfUU9LeUQwQzk?oc=5" target="_blank">巴控克什米尔冲突致 11 人死亡</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据路透社报道，巴控克什米尔地区在计划中的抗议活动前夕发生冲突，至少 11 人死亡。 这一暴力事件凸显了克什米尔争议地区的动荡局势，印度和巴基斯坦均声称对该地区拥有主权，可能进一步加剧紧张局势。 冲突发生在计划中的抗议活动之前，但具体诱因和受害者身份尚未披露。该地区历史上曾出现动荡和军事存在。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 08:41</p>
+<div class="bg-block"><span class="block-label">背景</span><p>克什米尔是印度和巴基斯坦之间的争议领土，两国均声称拥有全部主权，但仅控制部分地区。巴控克什米尔（也称自由克什米尔）曾因政治权利和自治问题发生周期性抗议和冲突。</p></div><div class="tags-row"><span class="tag">Pakistan</span> <span class="tag">Kashmir</span> <span class="tag">protests</span> <span class="tag">conflict</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-61">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">61</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNRllHUTlfM3g0OERTazg1OFFOTmljeHdmVGgtY0NVQWxlZ3pjdVRUeVgxUHlsZndGbGx2dXQ0WUhxSUI5a1lGaUpZNTlvRkItRGNNQlRtQ0ViZmo5eWdrMjlIMGY4a2puYjloTkJaR01SMEZQSV95WDdEVXE2TE8xRXlySDI1UFNuazBxYkR6eGNoVnBSQjNkSC1ENjZfZnVqdHB5ZDNaTThhaFNWb1RJUjNabjMtQ2RCZ0xHeUlsNA?oc=5" target="_blank">台科技展期间中国军队在附近活动</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据路透社报道，全球高管参加台湾大型科技展期间，中国军队的飞机和舰艇在台湾附近活动。 这一事件突显了中国与台湾之间紧张的地缘政治局势，可能影响科技行业的供应链和投资决策。 具体数量和类型的军事资产尚未明确，但这一时间点恰逢台湾重要的科技展会 Computex 举行。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 06:02</p>
+<div class="bg-block"><span class="block-label">背景</span><p>台湾是一个自治岛屿，中国声称其为其领土的一部分。中国经常在台湾附近进行军事演习以宣示主权，这常引起国际关注。</p></div><div class="tags-row"><span class="tag">China</span> <span class="tag">Taiwan</span> <span class="tag">geopolitics</span> <span class="tag">tech industry</span> <span class="tag">Reuters</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-62">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">62</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxPSmNSR0xJYUN6QmMxUy1zZ1F2Uk5UbDE1dmpvSGhTRnpnSFBRdlJTOGV2ZUZidnFyVUd1R0E3ZEx1a1lZX1hCR0FJLXc3QmhBYW1mekxDWEVUOTRnX0lGZ0N1SXFodWxEdE1mb3JRSnlaXzRWc1Z5S0hvQi1KRFdJY2ptMWl3TVBqQVdJ?oc=5" target="_blank">共和党参议员警告监控项目或因特朗普情报人选争议而失效</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">共和党参议员警告称，由于特朗普总统提名图尔西·加巴德（Tulsi Gabbard）担任国家情报总监引发的反弹，《外国情报监视法》第 702 条的监控项目可能被允许到期失效。 这将终结一个用于在美国境内收集外国通信的关键情报收集工具，若该计划未能续期而失效，可能会削弱国家安全。 第 702 条项目原定于 2026 年 4 月底到期，国会曾给予 45 天延期；如今，因特朗普情报人选引发争议，立法者在其重新授权问题上产生分歧。</p>
+      <p class="card-source">Google News - AP News · 6月8日 23:13</p>
+<div class="bg-block"><span class="block-label">背景</span><p>《外国情报监视法》第 702 条允许美国政府收集位于美国境外、使用美国电子通信服务的外国目标的通信。该项目因隐私问题遭到两党批评，但被视为反恐和外国情报收集的关键工具。该计划于 2026 年 4 月获得 45 天延期，以便有更多时间进行重新授权谈判。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.intel.gov/foreign-intelligence-surveillance-act/fisa-section-702" target="_blank">FISA Section 702 - INTEL</a></li><li><a href="https://www.cnbc.com/2026/04/30/fisa-section-702-congress-extension.html" target="_blank">FISA Section 702: Congress passes extension of surveillance ...</a></li></ul></details><div class="tags-row"><span class="tag">surveillance</span> <span class="tag">politics</span> <span class="tag">national security</span> <span class="tag">Trump</span> <span class="tag">US news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-63">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">63</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/technology/comments/1u01pqy/facebook_is_paying_people_overseas_promoting/" target="_blank">Facebook 付费海外账号推动阿尔伯塔分离主义</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">CBC 调查发现，来自印度、巴基斯坦和印度尼西亚的 14 个 Facebook 账号在热门阿尔伯塔分离主义群组中发帖，这些账号由 Facebook 付费。 这揭示了通过 Facebook 平台对加拿大政治话语的外国干预，突显了社交媒体在地缘政治目的下被操纵的脆弱性。 这些账号是 Facebook 内容变现计划的一部分，其帖子积极宣传阿尔伯塔分离主义，即主张该省脱离加拿大的运动。</p>
+      <p class="card-source">r/technology · /u/Immediate-Link490 · 6月8日 08:16</p>
+<div class="bg-block"><span class="block-label">背景</span><p>阿尔伯塔分离主义是一场寻求阿尔伯塔省脱离加拿大独立的政治运动，常因对联邦能源政策的不满而推动。外国干预加拿大选举和政治辩论日益引发关注，社交媒体平台被用作传播虚假信息的工具。</p></div><div class="tags-row"><span class="tag">Facebook</span> <span class="tag">disinformation</span> <span class="tag">geopolitics</span> <span class="tag">Canada</span> <span class="tag">social media manipulation</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-64">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">64</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u04vkk/mexico_cuts_workweek_bans_afterhours_contact_and/" target="_blank">墨西哥实施全面劳动改革</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">墨西哥通过了一项重大劳动改革，缩短标准工作周，禁止雇主在下班后联系工人，并保证任何工人不会遭遇减薪。 这是一代人中最重大的劳动改革，可能为其他国家树立先例，并显著改善数百万墨西哥工人的工作与生活平衡。 该改革特别将工作周从 48 小时缩短至 40 小时，规定加班费，并对违规者处以罚款，同时维持现有工资水平。</p>
+      <p class="card-source">r/worldnews · /u/BaIeb · 6月8日 11:14</p>
+<div class="bg-block"><span class="block-label">背景</span><p>历史上，墨西哥实行 48 小时工作周，且对下班后联系工人的限制有限。此次改革回应了长期存在的改善工作与生活平衡的诉求，并使墨西哥与国际劳动标准接轨。</p></div><div class="tags-row"><span class="tag">labor reform</span> <span class="tag">Mexico</span> <span class="tag">policy</span> <span class="tag">workweek</span> <span class="tag">worker rights</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-65">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">65</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u05whr/russia_rejects_ukrainian_european_peace/" target="_blank">俄罗斯拒绝和平倡议，坚持战场决定战争</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">俄罗斯正式拒绝了乌克兰和欧洲提出的和平倡议，声称战争的结局将由战场决定。 这一拒绝表明俄罗斯立场更加强硬，降低了外交解决的可能性，延长了冲突，对全球稳定产生重大影响。 该消息未说明被拒绝的是哪些倡议，但突显出俄罗斯目前不愿进行有意义的谈判。</p>
+      <p class="card-source">r/worldnews · /u/timiswho · 6月8日 12:03</p>
+<div class="tags-row"><span class="tag">Russia-Ukraine war</span> <span class="tag">geopolitics</span> <span class="tag">peace negotiations</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-66">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">66</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/worldnews/comments/1u07atm/ukraine_destroys_russian_air_defenses_military/" target="_blank">乌克兰在深度打击行动中摧毁俄防空系统</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">乌克兰公布的视频显示，其正在进行的深度打击行动摧毁了俄军防空系统和军事基础设施，展示了打击敌后纵深目标的能力。 这表明乌克兰有能力破坏俄军在占领区纵深的军事行动和后勤，可能通过削弱俄军防空覆盖和指挥节点来改变战略平衡。 视频可能证实使用了无人机或远程精确弹药，但报道中未明确具体武器系统和目标位置，这反映了行动保密要求。</p>
+      <p class="card-source">r/worldnews · /u/AdSpecialist6598 · 6月8日 13:03</p>
+<div class="bg-block"><span class="block-label">背景</span><p>深度打击是一种打击敌纵深高价值目标的军事战术，旨在破坏敌方行动与士气。乌克兰越来越多地使用国产无人机和西方援助导弹实施此类打击，使得源自苏联大纵深战役理论的概念重新焕发生机。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Deep_operation" target="_blank">Deep operation - Wikipedia</a></li><li><a href="https://engelsbergideas.com/notebook/ukraines-deep-strike/" target="_blank">Ukraine's deep strike - Engelsberg ideas</a></li><li><a href="https://complexdiscovery.com/deep-strike-ukraines-drone-offensive-shakes-russias-strategic-core/" target="_blank">Deep Strike: Ukraine’s Drone Offensive Shakes Russia’s ...</a></li></ul></details><div class="tags-row"><span class="tag">Ukraine</span> <span class="tag">Russia</span> <span class="tag">war</span> <span class="tag">military</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-67">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">67</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/geopolitics/comments/1u0gjjo/greeted_as_liberators_how_americans_think_about/" target="_blank">美国民众对军事干预的看法分析</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Janina Dill 的文章通过一个假设性的美国军事干预伊朗案例，论证美国公众舆论常常与精英辩护存在分歧，挑战了美军被视为解放者的假设。 这一分析突显了决策者言辞与公众情绪之间的关键差距，可能影响未来的外交政策决策及军事干预的合法性。 文章以特朗普对伊朗人的承诺及随后的假设性攻击为例，质疑伊朗人是否真的渴望美国干预，尽管他们反对自己的政权。</p>
+      <p class="card-source">r/geopolitics · /u/ForeignAffairsMag · 6月8日 18:34</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国的军事干预常以人道主义或民主言辞为理由，但公众支持并非自动而来。这篇文章为关于“解放者”叙事及公众舆论在外交政策中角色的辩论提供了见解。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">US foreign policy</span> <span class="tag">military intervention</span> <span class="tag">public opinion</span> <span class="tag">Iran</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-68">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">68</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/geopolitics/comments/1u0gijk/the_day_after_in_cuba_what_american_military/" target="_blank">美国军事力量在古巴的有限效用</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位前美国外交官撰文指出，美国在古巴的军事力量效果有限，外交接触更为有效，并提及特朗普总统目前的威胁。 这一分析挑战了军事干预能解决古巴问题的观点，强调需要细致的外交手段。在特朗普威胁军事行动并实施近乎全面的石油禁运之际，此分析具有现实意义。 作者里卡多·祖尼加曾担任奥巴马的美洲事务顾问，并参与了与古巴的外交开放。他指出特朗普已两次攻击美国对手，而古巴因制裁和管理不善面临经济灾难。</p>
+      <p class="card-source">r/geopolitics · /u/ForeignAffairsMag · 6月8日 18:33</p>
+<div class="bg-block"><span class="block-label">背景</span><p>文章提及 1961 年的猪湾入侵以及随后古巴建造的用于预警美国袭击的瞭望塔。冷战后，古巴在地缘政治上变得边缘化，但特朗普近期的威胁重新加剧了紧张局势。美国长期维持禁运并实施制裁。</p></div><div class="tags-row"><span class="tag">U.S.-Cuba relations</span> <span class="tag">geopolitics</span> <span class="tag">foreign policy</span> <span class="tag">Latin America</span> <span class="tag">military force</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">📊</span>行业/商业<span class="cat-n">16 条</span></div>
+  <article class="item-card" id="item-69">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">69</span>
+        <h2 class="card-title"><a href="https://www.engadget.com/2190079/openai-files-sec-paperwork-to-go-public/" target="_blank">OpenAI 秘密提交 IPO 申请</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI 周一宣布已向 SEC 秘密提交 Form S-1，启动了首次公开募股（IPO）流程。这一提交仅在其竞争对手 Anthropic 采取相同步骤一周后发生。 此次 IPO 可能成为历史上最大的公开市场首秀之一，为 OpenAI 释放数十亿资本，并可能重塑 AI 行业。此举标志着领先 AI 公司从私有向公共状态的重大转变，对投资者和更广泛的科技格局具有深远影响。 秘密提交允许 OpenAI 在早期准备阶段保持详细的财务信息和商业风险的私密性。OpenAI 表示尚未决定 IPO 时间，指出可能还需要一段时间，因为某些目标作为私有公司更容易实现。</p>
+      <p class="card-source">Engadget · 6月8日 21:51</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Form S-1 是美国公司上市的标准注册表格，要求披露详细的财务和风险信息。根据 JOBS 法案，新兴成长公司可以进行秘密提交，从而在最初 SEC 审查期间避免公众监督。OpenAI 和 Anthropic 这两家领先的 AI 初创公司正在竞相进入公开市场，反映了该行业的快速增长和对资本的需求。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>一些评论者表示怀疑，将这些 AI IPO 的时机与互联网泡沫或 2008 年前抵押贷款公司的繁荣相提并论。其他人则质疑像 OpenAI 这样的非营利组织如何转型为营利性 IPO，凸显了潜在的结构性矛盾。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://techcrunch.com/2026/06/08/following-anthropic-openai-files-confidentially-for-ipo/" target="_blank">OpenAI files confidentially for IPO, following Anthropic</a></li><li><a href="https://www.cnbc.com/2026/06/08/openai-confidentially-files-for-ipo-prepping-wall-street-for-ai-debut.html" target="_blank">OpenAI confidentially files for IPO, prepping Wall Street for ...</a></li><li><a href="https://www.investopedia.com/terms/s/sec-form-s-1.asp" target="_blank">investopedia.com/terms/s/ sec - form - s - 1 .asp</a></li></ul></details><div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">IPO</span> <span class="tag">SEC</span> <span class="tag">AI industry</span> <span class="tag">corporate news</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-70">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">70</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/08/technology/apple-ai-siri.html" target="_blank">苹果在开发者大会上推出 AI 驱动的 Siri</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">苹果在其全球开发者大会（WWDC）上宣布了全新 AI 驱动的 Siri 版本，展示了增强的对话能力和上下文感知功能。此次活动也是蒂姆·库克作为 CEO 的最后一次亮相。 这是消费级 AI 集成的重要一步，苹果利用其庞大的用户群和硬件生态系统与其它 AI 助手竞争。新 Siri 可能重新定义用户与设备的交互方式，使 AI 成为 iPhone 体验的核心部分。 底层模型似乎是设备端基础模型，注重隐私和本地处理。演示中 Siri 更像一个上下文助手，集成到系统菜单中，能够执行复杂任务。</p>
+      <p class="card-source">New York Times Technology · 6月8日 20:46</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Siri 在 2011 年推出时是最早的语音助手之一，但在 AI 能力上落后于 Google Assistant 和 Amazon Alexa 等竞争对手。苹果对设备端 AI 和隐私的重视限制了其对云端模型的使用。此次更新似乎通过将高级 AI 功能直接引入设备来缩小差距。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区反应不一：一些人对设备端 AI 和 Siri 新上下文菜单集成感到兴奋，而另一些人则认为这些更新只是兑现了过去的承诺。还有人担心欧盟 DMA 法规会影响第三方 AI 集成，并推测苹果可能通过分发和硬件赢得消费级 AI 市场，尽管在应用层落后。</p></div><div class="tags-row"><span class="tag">AI</span> <span class="tag">Apple</span> <span class="tag">Siri</span> <span class="tag">voice assistant</span> <span class="tag">technology</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-71">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">71</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u03kby/nvidia_announces_another_fullstack_ai_factory/" target="_blank">英伟达宣布在韩国建设千兆瓦级 AI 工厂</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英伟达宣布在韩国达成一项全栈 AI 工厂协议，计划实现千兆瓦级运营，这是其 AI 基础设施的最新扩张。 该协议标志着对 AI 计算能力的巨额投资，可能加速韩国 AI 应用，并影响全球数据中心能源趋势。 全栈方法意味着英伟达提供从硬件、软件、网络到服务的端到端解决方案；千兆瓦级表示数据中心综合体的用电量相当于一个大城市。</p>
+      <p class="card-source">r/artificial · /u/Tiny-Independent273 · 6月8日 10:04</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 工厂是一种专门的计算基础设施，通过管理从数据摄取到训练、微调和大规模推理的整个 AI 生命周期，从数据中创造价值。全栈 AI 基础设施意味着拥有或控制从数据管道到 GPU 工作负载的所有组件，确保可观测性和可控性。英伟达一直在全球建设此类工厂，包括此前在其他国家的协议。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.nvidia.com/en-us/glossary/ai-factory/" target="_blank">What is an AI Factory? | NVIDIA Glossary</a></li><li><a href="https://www.ig1.com/fullstack-ai-platform-why/" target="_blank">Full Stack AI Why</a></li><li><a href="https://www.ibm.com/think/topics/ai-stack" target="_blank">What is an AI Stack? | IBM</a></li></ul></details><div class="tags-row"><span class="tag">Nvidia</span> <span class="tag">AI factory</span> <span class="tag">Korea</span> <span class="tag">infrastructure</span> <span class="tag">data center</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-72">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">72</span>
+        <h2 class="card-title"><a href="https://martinalderson.com/posts/xais-new-rental-business/" target="_blank">xAI 更像是数据中心 REIT 而非前沿 AI 实验室</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一篇文章指出，xAI 的主要业务是出租 GPU 算力而非开发前沿 AI 模型，通过谷歌和 Anthropic 的合约每年产生约 260 亿美元收入。这些循环交易还在 SpaceX 潜在 IPO 前抬高了其估值。 这一分析挑战了将 xAI 视为纯粹 AI 实验室的看法，并揭示了循环交易可能扭曲 AI 行业的市场信号。如果属实，可能表明一种投机泡沫，基础设施支出由人为估值而非真实需求驱动。 文章指出，xAI 的 Colossus 集群依赖现场燃气轮机供电，年度燃料成本仅约 9000 万美元，从而维持高利润率。作为 SpaceX 主要股东，谷歌有动力通过此类交易抬高 SpaceX 估值，若估值达 1.77 万亿美元，其持股价值可达 1060 亿美元。</p>
+      <p class="card-source">martinald · 6月8日 15:13</p>
+<div class="bg-block"><span class="block-label">背景</span><p>数据中心 REIT（房地产投资信托基金）拥有租赁空间、电力和冷却设施给计算设备的物业，并通过租金产生收入。金融中的循环交易指资金在公司间流动，这些公司同时也相互买卖，可能人为抬高收入并误导投资者。AI 行业日益担忧此类循环性，类似于互联网泡沫时期的情况。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者观点不一：部分人对循环交易和谷歌的动机表示怀疑，另一些人则指责文章存在动机推理。关于 GPU 租赁成本和发电技术的细节也引发了讨论，有评论指出 xAI 确实开发了 LLM，但质量存疑。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.pon.harvard.edu/daily/dealmaking-daily/what-are-circular-deals/" target="_blank">What Are Circular Deals? - Program on Negotiation at Harvard Law School</a></li><li><a href="https://www.noahpinion.blog/p/should-we-worry-about-ais-circular" target="_blank">Should we worry about AI's circular deals? - Noahpinion</a></li><li><a href="https://www.fool.com/investing/stock-market/market-sectors/real-estate-investing/reit/data-center-reit/" target="_blank">Best Data Center REITs for 2026 and How to Invest | The ...</a></li></ul></details><div class="tags-row"><span class="tag">xAI</span> <span class="tag">GPU rental</span> <span class="tag">AI infrastructure</span> <span class="tag">SpaceX</span> <span class="tag">valuation</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-73">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">73</span>
+        <h2 class="card-title"><a href="https://reeserichardson.blog/2026/05/28/how-much-of-thermo-fishers-antibody-data-has-been-manipulated/" target="_blank">赛默飞抗体数据造假曝光</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Sholto David 的一项调查发现，赛默飞世尔科技的抗体产品验证数据存在广泛的篡改，揭示了其众多商业抗体的系统性欺诈行为。 这一发现严重损害了研究的可重复性，因为科学家依赖抗体验证数据来选择可靠的试剂；欺诈行为浪费了时间和金钱，并可能使众多研究结果无效。 篡改行为在 Western blot 及其他验证图像中被识别，存在拼接和重复的痕迹；尽管抗体本身可能仍有效，但缺乏可信的验证数据使研究人员无从判断。</p>
+      <p class="card-source">mhrmsn · 6月8日 06:56</p>
+<div class="bg-block"><span class="block-label">背景</span><p>抗体是生物医学研究中检测蛋白质的重要工具。供应商提供的可靠验证数据对于科学家选择有效抗体至关重要。科学界的‘可重复性危机’凸显了复制结果的困难，常因试剂质量问题所致。此事件加剧了人们对生物技术行业数据诚信的担忧。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者表示，这种欺诈行为明显且让人想起早期的扫描仪篡改案例，称赞 Sholto David 的坚持，并指出有经验的实验室早就认为赛默飞的抗体不可靠，并已避开使用。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://reeserichardson.blog/2026/05/28/how-much-of-thermo-fishers-antibody-data-has-been-manipulated/" target="_blank">How much of Thermo Fisher’s antibody data has been ...</a></li><li><a href="https://news.stanford.edu/stories/2026/06/science-reproducibility-sporr-cores" target="_blank">Stanford centers focus on making science more reliable</a></li><li><a href="https://www.nationalacademies.org/projects/DBASSE-BBCSS-17-03/publication/25303" target="_blank">Reproducibility and Replicability in Science</a></li></ul></details><div class="tags-row"><span class="tag">antibody fraud</span> <span class="tag">scientific integrity</span> <span class="tag">biotech</span> <span class="tag">Thermo Fisher</span> <span class="tag">research reproducibility</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-74">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">74</span>
+        <h2 class="card-title"><a href="https://openai.com/index/built-to-benefit-everyone-our-plan" target="_blank">OpenAI 的通用人工智能全民受益计划</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">OpenAI 发布了一份名为《为造福所有人而建：我们的计划》的战略文件，概述了其确保通用人工智能（AGI）在开发过程中考虑广泛接入、安全措施和共享经济繁荣的愿景。 该计划表明 OpenAI 致力于包容且安全的 AGI 开发，可能塑造行业标准和公共政策。它直接回应了关于 AI 权力集中和经济颠覆的担忧。 该计划强调三大支柱：广泛享有 AGI 带来的好处、严格的安全协议以及财富再分配等共享繁荣机制。然而，它缺乏具体的技术路线图或时间表。</p>
+      <p class="card-source">OpenAI Blog · 6月8日 01:30</p>
+<div class="bg-block"><span class="block-label">背景</span><p>通用人工智能（AGI）指的是在大多数有经济价值的工作上超越人类的高度自主系统。OpenAI 最初以非营利形式成立，使命是确保 AGI 造福全人类，后来转变为利润上限模式以吸引资金同时维持其使命。</p></div><div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">AGI</span> <span class="tag">AI safety</span> <span class="tag">AI for good</span> <span class="tag">vision</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-75">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">75</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cy8d9e4lzv1o?at_medium=RSS&at_campaign=rss" target="_blank">SpaceX IPO：马斯克最大的赌注？</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据报道，SpaceX 正准备进行首次公开募股（IPO），这可能是史上最受期待的市场首秀之一，可能改变公司的估值和埃隆·马斯克的财富。 SpaceX 的 IPO 将对航天工业和金融市场产生重大影响，可能为太空探索解锁巨额资本，并使 SpaceX 的估值位居全球前列。 根据私人市场估值，此次 IPO 可能使 SpaceX 估值超过 1500 亿美元，但马斯克此前因火星殖民所需的长期专注而抵制上市。</p>
+      <p class="card-source">BBC World · 6月8日 23:22</p>
+<div class="bg-block"><span class="block-label">背景</span><p>SpaceX 由埃隆·马斯克于 2002 年创立，是一家私人航天制造商和太空运输公司，以猎鹰 9 号火箭和龙飞船闻名。首次公开募股（IPO）允许私人公司在证券交易所向公众出售股票，从而筹集资金，但也使公司面临季度盈利压力和市场审视。</p></div><div class="tags-row"><span class="tag">SpaceX</span> <span class="tag">IPO</span> <span class="tag">Elon Musk</span> <span class="tag">space industry</span> <span class="tag">stock market</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-76">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">76</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/08/waymo-bought-apples-self-driving-car-proving-ground-for-220m/" target="_blank">Waymo 以 2.2 亿美元收购苹果自动驾驶测试场</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Waymo 以 2.2 亿美元从苹果手中收购了位于亚利桑那州占地 5500 英亩的自动驾驶汽车测试场，该交易由马里科帕县的文件披露。 该测试场此前由与苹果有关的空壳公司 Route 14 Investment Partners LLC 持有，交易金额高达 2.2 亿美元。</p>
+      <p class="card-source">TechCrunch · 6月8日 20:50</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Waymo 是 Alphabet 的子公司，研发自动驾驶技术已超过十年。苹果的自动驾驶汽车项目（代号 Titan）据报道已被缩减，出售该测试场标志着一次显著的资产剥离。</p></div><div class="tags-row"><span class="tag">Waymo</span> <span class="tag">Apple</span> <span class="tag">self-driving cars</span> <span class="tag">acquisition</span> <span class="tag">autonomous driving</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-77">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">77</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/business/2026/jun/08/aviva-ai-bogus-insurance-claims-rocket" target="_blank">英杰华识别 2.3 亿英镑虚假索赔，AI 欺诈上升</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英杰华在 2025 年识别出创纪录的 2.3 亿英镑虚假保险索赔，诈骗者越来越多地使用 AI 伪造事故现场和文件。 这凸显了 AI 在保险欺诈中滥用的日益威胁，影响行业成本和消费者信任，并强调了先进检测技术的必要性。 英杰华在其旗下品牌（包括最近收购的 Direct Line）中识别出 18,400 起可疑索赔，诈骗者使用 AI 生成虚假图像和文件。</p>
+      <p class="card-source">The Guardian Technology · 6月8日 05:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>保险欺诈涉及为获取经济利益而提出虚假索赔。生成式 AI 现在使诈骗者能够创建令人信服的深度伪造图像、视频和文件，使欺诈检测更具挑战性。保险公司越来越多地部署 AI 驱动的工具来应对这些复杂手段。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.milliman.com/en/insight/accidents-that-never-happened-genai-motor-fraud" target="_blank">Accidents that never happened: Generative AI and fraud in ...</a></li><li><a href="https://www.swissre.com/institute/research/sonar/sonar2025/how-deepfakes-disinformation-ai-amplify-insurance-fraud.html" target="_blank">How deepfakes, disinformation and AI amplify insurance fraud</a></li></ul></details><div class="tags-row"><span class="tag">fraud</span> <span class="tag">AI misuse</span> <span class="tag">insurance</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-78">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">78</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQWTdiRzZ4djNxVkJLOUVKTW9sMzR5MjVxQ2dIakk2X0d2Tjh5a0RnMEh1NmU0QW9nWW4yVTZtelhBb1d3Q1RnMkRLVUFLV3lRUG0teldiTm1rY3NOa3VITU1TbmlHZmZZWW5CNnJYQWMwQmNoWFhzeGFJQ3gwS0hGa3ZWbzVYTm1FeWw5MTJnSS0xMjJRcFJvTmRZLXd6QUlVSzhHdVlONlFuY0k?oc=5" target="_blank">Meta 资助 AI 数据中心技工培训项目</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Meta 宣布资助一个技工培训项目，用以支持其 AI 数据中心的建设。 这项投资凸显了 Meta 对培养大规模 AI 基础设施所需劳动力的承诺，这对行业发展至关重要。 该项目专注于电工、焊工等技术工种，以应对数据中心建设中的劳动力短缺问题。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 21:21</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 数据中心比传统数据中心需要更多资源，包括电力、冷却和专业技能。随着科技巨头竞相扩展 AI 能力，他们面临足够熟练工人的短缺。Meta 的项目旨在通过培训工人来弥补这一缺口。</p></div><details class="refs-details"><summary>参考链接 (1)</summary><ul class="refs-list"><li><a href="https://www.linkedin.com/posts/datacenterfrontier_how-ai-is-reshaping-data-center-design-as-activity-7404856258891055104-rNIP" target="_blank">How AI is Reshaping Data Center Design | Rich Miller - LinkedIn</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">data center</span> <span class="tag">Meta</span> <span class="tag">jobs</span> <span class="tag">infrastructure</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-79">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">79</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNWZ0RzhBbm0tcXBHRU5kb2VfM3FTOTBWOGpxbmdZMVZBajRJUG1kSzJnTEtMR2RRR3RqdDY4Nk1QWkJGUEpET0ZIWkVMOFZ2Tl9BU3AtS1owLVpvTUdWSGh6YjI1czZRTFlWeDRBN3pMQnFpSng0VjExeHh5NkcxaHdSZ3FQbFFERWpsY0czdXp3T3JpZVFBYU1uVGNhYURaMGZhYzR6VUY5X2JwUlZJT1NlZkd1UkxQd2w4?oc=5" target="_blank">KOSPI 暴跌逾 8%，美联储担忧引发科技股抛售</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">韩国基准 KOSPI 指数暴跌逾 8%，市场担忧美联储紧缩政策可能引发全球科技股抛售。 此次暴跌表明投资者对美联储货币政策及其对全球科技市场影响的担忧加剧，可能对亚洲及其他经济体产生连锁反应。 KOSPI 指数单日跌幅超过 8%，创多年来最差表现之一，科技股领跌，市场担忧利率长期维持高位。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 06:32</p>
+<div class="bg-block"><span class="block-label">背景</span><p>KOSPI 是韩国主要股票市场指数，包含三星、SK 海力士等科技巨头在内的大盘股。美联储的利率决策严重影响全球资本流动和投资者情绪，尤其是对成长型科技股。利率上升通常会降低未来收益的现值，使科技股更容易遭到抛售。</p></div><div class="tags-row"><span class="tag">South Korea</span> <span class="tag">KOSPI</span> <span class="tag">stock market crash</span> <span class="tag">Federal Reserve</span> <span class="tag">tech rout</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-80">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">80</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYmNiMTlqYkhPWFM0SnV6Wkd3d3l5cmJfU19MeVUtNUJQdmFHd052SEF2eGZvdXpoME14dmhFRUU0eXdYbWMzRHB6RXBFNVdVYlMyUXpPdW5YUHZWWmxRck9lcUhGQW5vSnJzanMzOE5rb3Mwak5zTFltLUZXMjBwazJvd0dBc3dFR3p4UmV0cEV6b3RId1kyOURrZWFnandoTEtJTnFhdjVRdkE?oc=5" target="_blank">AI 芯片巨头重塑亚洲选股格局</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">路透社报道，少数 AI 芯片公司的主导地位正在重塑亚洲的选股策略，改变了投资者的市场评估方式。 这很重要，因为它突显了英伟达等 AI 硬件巨头如何日益影响金融市场，可能导致亚洲出现集中投资风险和市场新动态。 文章讨论了少数 AI 芯片制造商的大影响力如何扭曲传统选股方法，迫使投资者适应技术驱动的市场环境。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 04:27</p>
+<div class="tags-row"><span class="tag">AI chips</span> <span class="tag">stock market</span> <span class="tag">Asia</span> <span class="tag">finance</span> <span class="tag">industry</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-81">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">81</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXVndmFsWlJzb2t1OHZmYk9LOHMzOWRNWkZ6WUw0V2ExUzRmdEdNQ3p6YTZkNG5yQ3lMcFNZT3VvVnotRFJJS3czTVpvWTU5dmhPQ1JJeWpXdDIxZm4zdThuTnBRSk9pUmE5aVVBNDhhR2cteGpYQWNrX1NqR01TLXJuY08yYzFfN2RtRlNSVTZKak14NENES2ZMQ3k0UjI2ZXc1UnlTYUREMmd6ZC0zUUJCVFQ5ZlhKTW5MVlNQNXJrbEdX?oc=5" target="_blank">英伟达与 LG 合作开发人形机器人和数据中心</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英伟达 CEO 黄仁勋宣布，英伟达正与 LG 合作开发人形机器人和数据中心解决方案。该合作旨在利用英伟达的 AI 平台和 LG 的消费电子专业知识。 此次合作标志着两家公司向人形机器人领域迈出重要一步，结合了英伟达的 AI 计算能力与 LG 的制造和消费者覆盖能力。这可能加速人形机器人的商业化以及面向 AI 工作负载的先进数据中心技术。 合作涵盖硬件和软件，包括英伟达用于机器人开发的 Jetson 和 Omniverse 平台，以及 LG 的机器人部门。公告中未披露具体产品时间表或财务条款。</p>
+      <p class="card-source">Google News - Reuters · 6月8日 02:37</p>
+<div class="bg-block"><span class="block-label">背景</span><p>英伟达是一家领先的 AI 计算公司，其芯片和软件广泛用于机器人、自动驾驶汽车和数据中心。LG 拥有不断增长的机器人业务，包括服务机器人和智能家居设备，并运营大型数据中心。人形机器人是一个新兴领域，旨在创造能在各种环境中执行类人任务的机器人。</p></div><div class="tags-row"><span class="tag">Nvidia</span> <span class="tag">LG</span> <span class="tag">humanoid robots</span> <span class="tag">data centers</span> <span class="tag">AI</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-82">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">82</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/artificial/comments/1u0fce1/nvidia_and_sk_hynix_sign_multiyear_ai_deal_ahead/" target="_blank">英伟达与 SK 海力士签署多年 AI 内存协议</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英伟达和 SK 海力士签署了一项多年协议，涉及 AI 相关内存产品，该协议在英伟达即将推出的 Vera Rubin 芯片之前达成。 这笔交易为英伟达的下一代 AI 芯片确保了先进内存的长期供应，这对于满足日益增长的 AI 计算需求和确保供应链稳定至关重要。 该协议很可能涵盖高带宽内存（HBM）产品，这些产品对于训练大型 AI 模型至关重要，并标志着英伟达向 Vera Rubin 架构过渡时的紧密合作。</p>
+      <p class="card-source">r/artificial · /u/andix3 · 6月8日 17:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>英伟达的 Vera Rubin 是 2024 年发布的新一代 GPU 微架构，旨在驱动 AI 超级计算机。它由 Rubin GPU 和 Vera CPU 组成，需要如 HBM 这样的先进内存。SK 海力士是 AI 加速器中使用的高带宽内存的领先供应商。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Rubin_(microarchitecture)" target="_blank">Rubin (microarchitecture) - Wikipedia</a></li><li><a href="https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/" target="_blank">NVIDIA Vera Rubin NVL72 | Co-Designed Infrastructure for Agentic AI</a></li></ul></details><div class="tags-row"><span class="tag">Nvidia</span> <span class="tag">SK Hynix</span> <span class="tag">AI hardware</span> <span class="tag">memory</span> <span class="tag">supply chain</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-83">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">83</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/singularity/comments/1u0qc5r/spacex_has_just_revealed_its_first_ai_satellite/" target="_blank">SpaceX 公布首款 AI 卫星设计</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">SpaceX 公开了其首款人工智能卫星设计，标志着将先进的在轨 AI 处理能力集成到其卫星群中的重大进展。 这一公告标志着向自主智能卫星的转变，此类卫星能够不依赖地面站进行实时数据处理，可大幅降低地球观测和通信等应用的延迟和带宽需求。 该设计可能集成了用于在轨推理的专用 AI 加速器，并且可能是 SpaceX 更广泛计划的一部分——据福布斯报道，计划发射多达一百万颗 AI 卫星，每颗成本约 200 万美元。</p>
+      <p class="card-source">r/singularity · /u/truecakesnake · 6月9日 00:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>传统卫星将原始数据发送到地面站处理，因下行链路窗口有限而产生延迟。AI 卫星（或称轨道边缘计算）使用专用硬件在卫星上执行数据分析，从而实现近乎实时的决策。SpaceX 以其 Starlink 互联网星座而闻名，现在正将其能力扩展到轨道 AI 基础设施。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.nvidia.com/en-us/edge-computing/space-computing/" target="_blank">Space Computing: On-Orbit AI & Accelerated Computing | NVIDIA</a></li><li><a href="https://www.forbes.com/sites/kevinholdenplatt/2026/05/31/spacex-vow-to-loft-1-million-ai-satellites-could-spark-doomsday-dive/" target="_blank">SpaceX Vow To Loft 1 Million AI Satellites Could Spark Doomsday ...</a></li></ul></details><div class="tags-row"><span class="tag">SpaceX</span> <span class="tag">AI</span> <span class="tag">satellite</span> <span class="tag">aerospace</span> <span class="tag">innovation</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-84">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">84</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/Futurology/comments/1tzz1ha/its_official_more_money_is_now_spent_building/" target="_blank">数据中心支出超过政府交通投资</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">数据中心建设的资本支出已正式超过政府在交通基础设施上的支出，标志着投资优先级的重大转变。 这标志着由人工智能和云计算驱动的数字基础设施经济重要性上升，可能重塑国家经济优先事项和资源分配。 据《金融时报》报道，这一里程碑表明，在几个主要经济体中，数据中心投资占 GDP 的比重已超过交通投资。</p>
+      <p class="card-source">r/Futurology · /u/EchoOfOppenheimer · 6月8日 05:41</p>
+<div class="bg-block"><span class="block-label">背景</span><p>数据中心对于运行云服务和训练人工智能模型至关重要，需要巨大的前期资本投入。政府交通支出包括公路、桥梁和公共交通。这种比较凸显了数字基础设施正变得与物理基础设施同等重要。</p></div><div class="tags-row"><span class="tag">data centers</span> <span class="tag">infrastructure investment</span> <span class="tag">AI infrastructure</span> <span class="tag">capital expenditure</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">📋</span>其他<span class="cat-n">1 条</span></div>
+  <article class="item-card" id="item-85">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">85</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOdVh5VVRZSGpzVXdrUm9YQzByekhmZVRZZzcwZ3dhLU56RjBPTldPSW5ETEd5QTF6RFR5N2NpZThnX21GV1ZGbV95TVBxSmtRbmVkSV9EUWN5TE1ZRWtSZUgyb0ZSSWhPQ3RYaW5ScHVnWkVxWjAxeVY2LWpqU09Qd1RjcEFHLVVzSzROZTFJSTl3QkhnTnc?oc=5" target="_blank">菲律宾 7.8 级地震致 35 人死亡，引发海啸</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">菲律宾发生 7.8 级地震，造成至少 35 人死亡，建筑物倒塌，并引发了海啸警报。 这是一场重大自然灾害，造成重大人员伤亡和大范围破坏，凸显了该地区在地震事件中的脆弱性。 地震震级为 7.8 级，导致建筑物倒塌并触发海啸警报。随着救援工作的继续，死亡人数预计还会上升。</p>
+      <p class="card-source">Google News - AP News · 6月8日 22:45</p>
+<div class="bg-block"><span class="block-label">背景</span><p>菲律宾位于太平洋火环上，该地区以频繁的地震和火山活动而闻名。大地震后常发布海啸警报，因为海底地震可能引发巨大水体位移。</p></div><div class="tags-row"><span class="tag">earthquake</span> <span class="tag">Philippines</span> <span class="tag">natural disaster</span> <span class="tag">tsunami</span> <span class="tag">casualties</span></div>
+    </div>
+  </article></section>
+<footer class="footer">
+  <p>Generated by <a href="https://github.com/jinghuazhao/Horizon" target="_blank">Horizon</a> · AI-Driven Information Aggregation · 2026-06-09</p>
+</footer>
+</div>
+<script>
+// Toggle floating panel visibility
+var tocVisible = window.innerWidth > 900;
+function updateTocVisibility() {
+  var toc = document.getElementById('toc');
+  var fab = document.getElementById('tocFab');
+  if (window.innerWidth > 900) {
+    toc.classList.remove('hidden','open-mobile');
+    tocVisible = true;
+    fab.style.display = 'none';
+  } else {
+    toc.classList.add('hidden');
+    toc.classList.remove('open-mobile');
+    tocVisible = false;
+    fab.style.display = 'flex';
+  }
+}
+window.addEventListener('resize', updateTocVisibility);
+
+function toggleToc() {
+  var toc = document.getElementById('toc');
+  if (window.innerWidth <= 900) {
+    toc.classList.toggle('open-mobile');
+    toc.classList.remove('hidden');
+  } else {
+    tocVisible = !tocVisible;
+    if (tocVisible) toc.classList.remove('hidden');
+    else toc.classList.add('hidden');
+  }
+}
+
+// Collapsible category drawers (collapsed by default)
+function toggleCat(el) {
+  el.classList.toggle('collapsed');
+  var links = el.nextElementSibling;
+  if (!links || !links.classList.contains('ftoc-links')) return;
+  if (el.classList.contains('collapsed')) {
+    links.style.maxHeight = '0px';
+  } else {
+    links.style.maxHeight = links.scrollHeight + 'px';
+  }
+}
+
+// Initialize: collapse all, set heights
+document.addEventListener('DOMContentLoaded', function() {
+  var cats = document.querySelectorAll('.ftoc-cat');
+  cats.forEach(function(cat) {
+    cat.classList.add('collapsed');
+    var links = cat.nextElementSibling;
+    if (links && links.classList.contains('ftoc-links')) {
+      links.style.maxHeight = '0px';
+      // Store natural height
+      links._naturalHeight = links.scrollHeight;
+    }
+  });
+  // First category expanded by default
+  if (cats.length > 0) {
+    cats[0].classList.remove('collapsed');
+    var firstLinks = cats[0].nextElementSibling;
+    if (firstLinks && firstLinks.classList.contains('ftoc-links')) {
+      firstLinks.style.maxHeight = firstLinks.scrollHeight + 'px';
+    }
+  }
+});
+
+// Scroll highlight
+var links = document.querySelectorAll('.ftoc-link');
+var cards = document.querySelectorAll('.item-card');
+var activeCat = null;
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    var idx = e.target.id.replace('item-','');
+    var link = document.querySelector('.ftoc-link[data-idx="'+idx+'"]');
+    if (e.isIntersecting && link) {
+      links.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+      // Expand current category, collapse the previously expanded one
+      var cat = link.closest('.ftoc-links');
+      if (cat) {
+        var header = cat.previousElementSibling;
+        if (header && header.classList.contains('ftoc-cat')) {
+          if (activeCat && activeCat !== header) {
+            activeCat.classList.add('collapsed');
+            activeCat.nextElementSibling.style.maxHeight = '0px';
+          }
+          if (header.classList.contains('collapsed')) {
+            header.classList.remove('collapsed');
+            cat.style.maxHeight = cat.scrollHeight + 'px';
+          }
+          activeCat = header;
+        }
+      }
+    }
+  });
+}, {rootMargin: '-8% 0px -75% 0px'});
+cards.forEach(function(c) { observer.observe(c); });
+</script>
+</body>
+</html>

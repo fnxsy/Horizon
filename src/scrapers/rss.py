@@ -1,5 +1,6 @@
 """RSS feed scraper implementation."""
 
+import asyncio
 import calendar
 import hashlib
 import logging
@@ -30,7 +31,7 @@ class RSSScraper(BaseScraper):
         super().__init__({"sources": sources}, http_client)
 
     async def fetch(self, since: datetime) -> List[ContentItem]:
-        """Fetch RSS feed items.
+        """Fetch RSS feed items in parallel.
 
         Args:
             since: Only fetch items published after this time
@@ -38,16 +39,22 @@ class RSSScraper(BaseScraper):
         Returns:
             List[ContentItem]: Fetched content items
         """
+        sources = [s for s in self.config["sources"] if s.enabled]
+
+        # Limit concurrent RSS fetches to avoid overwhelming small servers
+        sem = asyncio.Semaphore(15)
+
+        async def _fetch_one(source: RSSSourceConfig) -> List[ContentItem]:
+            async with sem:
+                try:
+                    return await self._fetch_feed(source, since)
+                except Exception:
+                    return []
+
+        results = await asyncio.gather(*[_fetch_one(s) for s in sources])
         items = []
-        sources = self.config["sources"]
-
-        for source in sources:
-            if not source.enabled:
-                continue
-
-            feed_items = await self._fetch_feed(source, since)
-            items.extend(feed_items)
-
+        for r in results:
+            items.extend(r)
         return items
 
     async def _fetch_feed(

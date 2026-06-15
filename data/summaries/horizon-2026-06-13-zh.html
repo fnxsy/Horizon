@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Horizon Daily — 2026-06-13</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;background:#f5f6fa;color:#2d3436;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(155deg,#0f0c29 0%,#1a1a3e 40%,#24243e 100%);color:#fff;padding:44px 32px 36px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(99,102,241,.25),transparent);pointer-events:none}
+.hero-badge{display:inline-block;padding:4px 14px;border-radius:20px;background:rgba(255,255,255,.12);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;backdrop-filter:blur(4px)}
+.hero h1{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:6px;position:relative}
+.hero-sub{font-size:.9rem;opacity:.6;margin-bottom:20px;position:relative}
+.hero-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;position:relative}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.08);font-size:.76rem;color:rgba(255,255,255,.75)}
+.hero-pill strong{color:#fff;font-weight:700}
+
+/* ── Content ── */
+.container{max-width:820px;margin:0 auto;padding:0 20px 60px}
+
+/* ── Category Sections ── */
+.cat-section{margin-top:28px}
+.cat-heading{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;color:#636e72;margin-bottom:14px;padding:0 4px}
+.cat-heading .cat-icon{font-size:1.1rem}
+.cat-heading .cat-n{font-size:.76rem;color:#b2bec3;font-weight:500;margin-left:auto}
+
+/* ── Cards ── */
+.item-card{background:#fff;border-radius:16px;padding:22px 26px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.03);transition:box-shadow .2s,transform .15s;border:1px solid #f1f3f5}
+.item-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);transform:translateY(-1px);border-color:#e9ecef}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.card-left{display:flex;align-items:flex-start;gap:10px;flex:1}
+.card-idx{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:#f1f3f5;color:#868e96;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.card-title a{color:#1a1a2e;text-decoration:none;font-size:1.02rem;font-weight:700;line-height:1.45}
+.card-title a:hover{color:#4c6ef5}
+.card-score{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.card-summary{font-size:.88rem;color:#495057;margin-bottom:8px;line-height:1.72}
+.card-source{font-size:.74rem;color:#adb5bd}
+
+.bg-block,.disc-block{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:.83rem;line-height:1.65}
+.bg-block{background:#f8f9fe;border-left:3px solid #748ffc}
+.disc-block{background:#fef9e7;border-left:3px solid #fcc419}
+.bg-block p,.disc-block p{margin-top:3px;color:#495057}
+.block-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#adb5bd}
+
+.refs-details{margin-top:12px;font-size:.8rem;color:#868e96}
+.refs-details summary{cursor:pointer;font-weight:600;color:#495057}
+.refs-list{margin-top:6px;padding-left:18px}
+.refs-list li{margin-bottom:3px}
+.refs-list a{color:#4c6ef5;text-decoration:none;font-size:.79rem}
+.refs-list a:hover{text-decoration:underline}
+
+.tags-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;padding:3px 10px;background:#edf2ff;color:#4c6ef5;border-radius:20px;font-size:.72rem;font-weight:500}
+
+/* ── Floating TOC (right side) ── */
+.floating-toc{position:fixed;top:20px;right:20px;width:270px;max-height:calc(100vh - 40px);background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);z-index:100;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s}
+.floating-toc.hidden{transform:translateX(320px);opacity:0;pointer-events:none}
+.ftoc-header{display:flex;align-items:center;gap:8px;padding:16px 16px 12px;border-bottom:1px solid #f1f3f5;flex-shrink:0}
+.ftoc-logo{font-size:1.1rem}
+.ftoc-title{font-size:.82rem;font-weight:700;color:#495057;flex:1}
+.ftoc-close{width:26px;height:26px;border-radius:8px;border:none;background:#f1f3f5;color:#868e96;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ftoc-close:hover{background:#e9ecef}
+.ftoc-nav{overflow-y:auto;padding:8px 12px 16px;flex:1}
+.ftoc-nav::-webkit-scrollbar{width:3px}
+.ftoc-nav::-webkit-scrollbar-thumb{background:#dee2e6;border-radius:4px}
+
+/* Category header in floating TOC */
+.ftoc-cat{display:flex;align-items:center;gap:8px;padding:10px 8px 6px;font-size:.76rem;font-weight:700;color:#636e72;cursor:pointer;user-select:none;border-radius:8px;transition:background .12s}
+.ftoc-cat:hover{background:#f8f9fa}
+.ftoc-cat-icon{font-size:.85rem}
+.ftoc-cat-name{flex:1}
+.ftoc-cat-n{font-size:.7rem;color:#adb5bd;font-weight:500}
+.ftoc-chevron{transition:transform .2s;flex-shrink:0;color:#adb5bd}
+.ftoc-cat.collapsed .ftoc-chevron{transform:rotate(-90deg)}
+.ftoc-links{overflow:hidden;transition:max-height .3s ease}
+.ftoc-cat.collapsed + .ftoc-links{max-height:0!important}
+
+.ftoc-link{display:flex;align-items:center;gap:8px;padding:5px 8px 5px 20px;border-radius:6px;text-decoration:none;color:#636e72;font-size:.76rem;line-height:1.35;transition:background .12s}
+.ftoc-link:hover{background:#f8f9fa}
+.ftoc-link.active{background:#edf2ff;color:#4c6ef5}
+.ftoc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:#ced4da}
+.ftoc-dot.s9{background:#e03131}
+.ftoc-dot.s8{background:#f08c00}
+.ftoc-dot.s7{background:#2f9e44}
+.ftoc-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* TOC toggle FAB */
+.toc-fab{display:none;position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:1.2rem;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;align-items:center;justify-content:center}
+.toc-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(0,0,0,.3)}
+
+.footer{text-align:center;padding:40px 16px;color:#b2bec3;font-size:.74rem}
+.footer a{color:#868e96;text-decoration:none}
+.footer a:hover{color:#636e72}
+
+/* ── Responsive ── */
+@media (max-width:1100px){
+  .floating-toc{width:250px;right:10px;top:10px;max-height:calc(100vh - 20px)}
+}
+@media (max-width:900px){
+  .floating-toc{display:none}
+  .floating-toc.open-mobile{display:flex;position:fixed;top:10px;right:10px;bottom:10px;left:10px;width:auto;max-height:none;z-index:300;border-radius:16px}
+  .toc-fab{display:flex}
+  .container{padding:0 14px 60px}
+  .hero{padding:36px 16px 28px}
+  .hero h1{font-size:1.5rem}
+  .item-card{padding:18px 16px}
+}
+@media (min-width:901px){
+  .floating-toc{display:flex}
+  .toc-fab{display:none}
+}
+</style>
+</head>
+<body>
+<aside class="floating-toc" id="toc">
+    <div class="ftoc-header">
+      <span class="ftoc-logo">🌅</span>
+      <span class="ftoc-title">目录</span>
+      <button class="ftoc-close" onclick="toggleToc()" title="关闭">×</button>
+    </div>
+    <nav class="ftoc-nav"><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🤖</span><span class="ftoc-cat-name">AI/ML</span><span class="ftoc-cat-n">5</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-1" class="ftoc-link" data-idx="1"><span class="ftoc-dot s9"></span><span class="ftoc-text">贝佐斯的 Prometheus 融资 120…</span></a><a href="#item-2" class="ftoc-link" data-idx="2"><span class="ftoc-dot s8"></span><span class="ftoc-text">Loopcraft：人工智能开发中的循环堆叠艺术</span></a><a href="#item-3" class="ftoc-link" data-idx="3"><span class="ftoc-dot s8"></span><span class="ftoc-text">Olmo-eval：简化大语言模型开发的评估…</span></a><a href="#item-4" class="ftoc-link" data-idx="4"><span class="ftoc-dot s8"></span><span class="ftoc-text">提出基于 Rust/WASM 的 LLM 边…</span></a><a href="#item-5" class="ftoc-link" data-idx="5"><span class="ftoc-dot s8"></span><span class="ftoc-text">Headroom：压缩 LLM 输入，节省 …</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">💻</span><span class="ftoc-cat-name">开源/编程</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-6" class="ftoc-link" data-idx="6"><span class="ftoc-dot s8"></span><span class="ftoc-text">作者哀叹 AI 生成的 PR 垃圾信息损害开…</span></a><a href="#item-7" class="ftoc-link" data-idx="7"><span class="ftoc-dot s8"></span><span class="ftoc-text">WASI 0.3 发布，WebAssembl…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">⚙️</span><span class="ftoc-cat-name">系统/硬件</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-8" class="ftoc-link" data-idx="8"><span class="ftoc-dot s8"></span><span class="ftoc-text">苹果将 TrueType 提示解释器迁移到 …</span></a><a href="#item-9" class="ftoc-link" data-idx="9"><span class="ftoc-dot s8"></span><span class="ftoc-text">自制 60 帧电子墨水屏显示器：Modos …</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔒</span><span class="ftoc-cat-name">安全/隐私</span><span class="ftoc-cat-n">1</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-10" class="ftoc-link" data-idx="10"><span class="ftoc-dot s8"></span><span class="ftoc-text">谷歌起诉利用 AI 诈骗数十万人的中国网络犯…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🌍</span><span class="ftoc-cat-name">时政/地缘</span><span class="ftoc-cat-n">14</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-11" class="ftoc-link" data-idx="11"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国监控法 702 条款即将失效，国会拒绝特…</span></a><a href="#item-12" class="ftoc-link" data-idx="12"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国计划撤走三分之一驻欧北约战斗机</span></a><a href="#item-13" class="ftoc-link" data-idx="13"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国和伊朗就措辞达成一致，伊朗协议接近达成</span></a><a href="#item-14" class="ftoc-link" data-idx="14"><span class="ftoc-dot s9"></span><span class="ftoc-text">中国以间谍罪逮捕美国学者 Min Zin</span></a><a href="#item-15" class="ftoc-link" data-idx="15"><span class="ftoc-dot s9"></span><span class="ftoc-text">韩国前总统尹锡悦因无人机飞行判 30 年</span></a><a href="#item-16" class="ftoc-link" data-idx="16"><span class="ftoc-dot s8"></span><span class="ftoc-text">《Pokémon Go》数据用于训练军用无人…</span></a><a href="#item-17" class="ftoc-link" data-idx="17"><span class="ftoc-dot s8"></span><span class="ftoc-text">阿富汗人举行罕见抗议反对塔利班统治</span></a><a href="#item-18" class="ftoc-link" data-idx="18"><span class="ftoc-dot s8"></span><span class="ftoc-text">南极西海岸缺失法国面积的海冰</span></a><a href="#item-19" class="ftoc-link" data-idx="19"><span class="ftoc-dot s8"></span><span class="ftoc-text">民调显示欧洲人对美国信任度创历史新低</span></a><a href="#item-20" class="ftoc-link" data-idx="20"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰寻求盟友 200 亿美元以保持战争势头</span></a><a href="#item-21" class="ftoc-link" data-idx="21"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国银行监管机构加强对 AI 使用的审查</span></a><a href="#item-22" class="ftoc-link" data-idx="22"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰提高军人薪资，寻求更多外籍士兵</span></a><a href="#item-23" class="ftoc-link" data-idx="23"><span class="ftoc-dot s8"></span><span class="ftoc-text">日本央行拟加息至 31 年高点，鸽派信号增强</span></a><a href="#item-24" class="ftoc-link" data-idx="24"><span class="ftoc-dot s8"></span><span class="ftoc-text">乌克兰打击克里米亚燃料库，引发危机</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔬</span><span class="ftoc-cat-name">科学/研究</span><span class="ftoc-cat-n">1</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-25" class="ftoc-link" data-idx="25"><span class="ftoc-dot s9"></span><span class="ftoc-text">CRISPR 技术选择性摧毁癌细胞，包括“不…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">📊</span><span class="ftoc-cat-name">行业/商业</span><span class="ftoc-cat-n">6</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-26" class="ftoc-link" data-idx="26"><span class="ftoc-dot s9"></span><span class="ftoc-text">SpaceX IPO 使埃隆·马斯克成为首位…</span></a><a href="#item-27" class="ftoc-link" data-idx="27"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国司法部批准派拉蒙-华纳兄弟 1110 亿…</span></a><a href="#item-28" class="ftoc-link" data-idx="28"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta AI 部门员工反抗，称工作环境为‘…</span></a><a href="#item-29" class="ftoc-link" data-idx="29"><span class="ftoc-dot s8"></span><span class="ftoc-text">Mistral 被曝融资 30 亿欧元，估值…</span></a><a href="#item-30" class="ftoc-link" data-idx="30"><span class="ftoc-dot s8"></span><span class="ftoc-text">韩国对 Coupang 处以创纪录的 4.0…</span></a><a href="#item-31" class="ftoc-link" data-idx="31"><span class="ftoc-dot s8"></span><span class="ftoc-text">英伟达开始向中国客户推销 Vera CPU</span></a></div></nav>
+  </aside>
+  <button class="toc-fab" id="tocFab" onclick="toggleToc()" title="目录">☰</button>
+<div class="container">
+
+    <header class="hero">
+      <div class="hero-badge">2026-06-13</div>
+      <h1>🌅 Horizon 每日速递</h1>
+      <p class="hero-sub">从 367 条内容中精选 31 条</p>
+      <div class="hero-pills"><span class="hero-pill">🤖 AI/ML <strong>5</strong></span><span class="hero-pill">💻 开源/编程 <strong>2</strong></span><span class="hero-pill">⚙️ 系统/硬件 <strong>2</strong></span><span class="hero-pill">🔒 安全/隐私 <strong>1</strong></span><span class="hero-pill">🌍 时政/地缘 <strong>14</strong></span><span class="hero-pill">🔬 科学/研究 <strong>1</strong></span><span class="hero-pill">📊 行业/商业 <strong>6</strong></span></div>
+    </header>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🤖</span>AI/ML<span class="cat-n">5 条</span></div>
+  <article class="item-card" id="item-1">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">1</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/" target="_blank">贝佐斯的 Prometheus 融资 120 亿美元打造'通用工程师'</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">杰夫·贝佐斯的物理 AI 初创公司 Prometheus 宣布获得 120 亿美元融资，用于开发能够自动化重型工程和药物设计的“人工通用工程师”，公司估值达 410 亿美元。 这笔巨额投资标志着向能够自主设计和制造实体产品的 AI 系统迈出的重要一步，可能变革航空、建筑和制药等行业。它可能加速面向物理世界的通用 AI 发展，类似于工程领域的 AGI。 Prometheus 计划利用与聊天机器人等 AI 类似的技术，创建能够改进从计算机到喷气发动机等设备设计和制造的工程工具。“人工通用工程师”概念意味着一个能够跨工程领域泛化知识的 AI。</p>
+      <p class="card-source">TechCrunch · 6月12日 01:04</p>
+<div class="bg-block"><span class="block-label">背景</span><p>人工通用智能（AGI）指能够执行人类任何智力任务的 AI，而物理 AI 则与物理世界交互。Prometheus 旨在结合两者，构建不仅能理解工程原理，还能将其应用于解决现实问题（如设计药物或重型机械）的 AI。这不同于局限于特定任务的狭义 AI 系统。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.nytimes.com/2026/06/11/technology/bezos-prometheus-ai-engineer.html" target="_blank">Jeff Bezos Wants to Build an ‘Artificial General Engineer’ - The New York Times</a></li><li><a href="https://en.wikipedia.org/wiki/Artificial_general_intelligence" target="_blank">Artificial general intelligence - Wikipedia</a></li><li><a href="https://news.northeastern.edu/2026/05/22/physical-ai-explained-robotics/" target="_blank">Physical AI Is Already Here. But What Is It?</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">physical AI</span> <span class="tag">engineering</span> <span class="tag">drug design</span> <span class="tag">funding</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-2">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">2</span>
+        <h2 class="card-title"><a href="https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking" target="_blank">Loopcraft：人工智能开发中的循环堆叠艺术</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">该文章介绍了由 Peter Steinberger、Boris Cherny 和 Andrej Karpathy 等专家提出的“Loopcraft”概念，即堆叠循环进行人工智能开发，倡导设计循环来提示 AI 代理，而不是使用单次提示。 这种方法可能显著提高 AI 代理的效率和自主性，将范式从手动提示转变为基于循环的自动化系统，影响开发者构建和部署 AI 应用的方式。 Anthropic 公司 Claude Code 负责人 Boris Cherny 表示他不再直接提示 Claude，而是编写循环，这种做法被称为“harness engineering”。Peter Steinberger 强调设计能提示代理的循环，该模式由 Google 工程师 Addy Osmani 命名。</p>
+      <p class="card-source">Latent Space · 6月12日 05:34</p>
+<div class="bg-block"><span class="block-label">背景</span><p>循环工程和堆叠循环指的是迭代模式，其中 AI 系统在循环中被反复提示以优化输出，从而实现更自主的行为。这与单次提示形成对比，后者每个请求都是独立的。该概念借鉴了 CI/CD 等软件工程实践中的反馈循环，并由 Anthropic 和 Google 的领导者推广。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.latent.space/p/ainews-loopcraft-the-art-of-stacking" target="_blank">[AINews] Loopcraft: The Art of Stacking Loops - latent.space</a></li><li><a href="https://explainx.ai/blog/anthropic-engineer-loops-prompts-ai-coding-harness-engineering-2026" target="_blank">Anthropic Engineer: Build Loops That Prompt AI, Not Single ...</a></li><li><a href="https://thenewstack.io/loop-engineering/" target="_blank">The Anthropic leader who built Claude Code says he ditched ...</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">ML</span> <span class="tag">loop architectures</span> <span class="tag">concept</span> <span class="tag">research</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-3">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">3</span>
+        <h2 class="card-title"><a href="https://huggingface.co/blog/allenai/olmo-eval" target="_blank">Olmo-eval：简化大语言模型开发的评估工作台</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Allen AI 发布了 olmo-eval，这是一个开源的评估工作台，旨在简化像 OLMo 这样的大语言模型在迭代开发循环中的模型评估过程。 该工具解决了 LLM 开发中高效、标准化评估的关键需求，使得迭代周期更快、研究更具可复现性。 Olmo-eval 与 OLMo 模型框架集成，但设计上可扩展到其他 LLM，提供统一的接口来运行基准测试并跟踪指标。</p>
+      <p class="card-source">Hugging Face Blog · 6月12日 15:56</p>
+<div class="bg-block"><span class="block-label">背景</span><p>训练像 OLMo 这样的大语言模型涉及预训练、微调和评估的紧密开发循环。在每个迭代中评估模型性能至关重要，但由于工具和指标分散，往往很繁琐。Olmo-eval 旨在标准化这一过程，使研究人员更容易比较模型和跟踪进展。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://arxiv.org/abs/2402.00838" target="_blank">[2402.00838] OLMo: Accelerating the Science of Language Models</a></li><li><a href="https://allenai.org/olmo" target="_blank">Olmo from Ai2</a></li></ul></details><div class="tags-row"><span class="tag">AI/ML</span> <span class="tag">evaluation</span> <span class="tag">LLM</span> <span class="tag">open source</span> <span class="tag">workbench</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-4">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">4</span>
+        <h2 class="card-title"><a href="https://www.reddit.com/r/MachineLearning/comments/1u3quwk/building_an_open_source_edge_semantic_cache_for/" target="_blank">提出基于 Rust/WASM 的 LLM 边缘语义缓存方案</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位开发者提出了一种基于 Rust 和 WebAssembly 构建的开源边缘语义缓存方案，旨在运行于 Cloudflare Workers 等 CDN 边缘节点上。该缓存拦截提示词，使用轻量模型生成嵌入向量，在边缘向量数据库中检查相似度，命中时可在约 5 毫秒内返回缓存响应，避免调用 LLM API。 该方法可显著降低生产环境中 LLM 工作负载的延迟和 API 成本，尤其适用于客服或 RAG 系统中的重复查询。通过将缓存移至边缘，它消除了跨区域网络开销，并实现了无垃圾回收暂停的亚毫秒级代理执行。 该系统使用边缘原生嵌入模型（如 bge-small-en-v1.5）生成向量，采用余弦相似度且阈值设为 0.88 判定缓存命中，并将响应存储在边缘 KV 存储中。Rust 和 WASM 保证了零依赖执行和极小的内存占用，适应边缘运行时限制。</p>
+      <p class="card-source">r/MachineLearning · /u/Real-Huckleberry-934 · 6月12日 09:53</p>
+<div class="bg-block"><span class="block-label">背景</span><p>LLM 语义缓存基于含义而非精确匹配来存储响应，利用向量嵌入和相似性搜索从缓存中提供相似查询，从而降低成本与延迟。现有方案如 GPTCache 基于 Python 且集中部署，引入了不适合实时边缘环境开销。WebAssembly（WASM）使编译后的代码（如 Rust 代码）能在 CDN 边缘贴近用户运行，具有接近原生的性能且无垃圾回收。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://learn.microsoft.com/en-us/azure/cosmos-db/gen-ai/semantic-cache" target="_blank">Semantic Cache for Large Language Models - Azure Cosmos DB</a></li><li><a href="https://github.com/zilliztech/gptcache" target="_blank">GitHub - zilliztech/GPTCache: Semantic cache for LLMs. Fully ... What is semantic caching? Guide to faster, smarter LLM apps Semantic Caching for Low-Cost LLM Serving: From Offline ... Semantic Caching for LLMs: FastAPI, Redis, and Embeddings What Is Semantic Caching and Why It Matters for LLMs LLM Caching Strategies: Reduce Response Times by 80-95% ...</a></li><li><a href="https://medium.com/@sergey.lunev_27518/why-edge-ai-needs-lightweight-semantic-caches-and-what-makes-them-hard-to-build-75124519a746" target="_blank">Why Edge AI Needs Lightweight Semantic Caches — and... | Medium</a></li></ul></details><div class="tags-row"><span class="tag">semantic cache</span> <span class="tag">LLM</span> <span class="tag">Rust</span> <span class="tag">WASM</span> <span class="tag">edge computing</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-5">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">5</span>
+        <h2 class="card-title"><a href="https://github.com/chopratejas/headroom" target="_blank">Headroom：压缩 LLM 输入，节省 60-95%的 Token</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Headroom 是一个新的开源 Python 工具，它能够将工具输出、日志、文件以及 RAG 分块压缩 60-95%，然后再发送给 LLM，同时保持答案质量。 这能显著降低 LLM API 的成本和延迟，使 LLM 应用更高效、更易用，尤其适用于需要大量上下文的场景，如 RAG 和智能体工作流。 Headroom 提供三种模式：Python 库、代理服务和 MCP 服务器。它采用多层处理流水线，包括 CacheAligner 和 ContentRouter，实现无损结构性压缩。</p>
+      <p class="card-source">chopratejas · 6月13日 00:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>LLM 处理的是文本单元（Token）。日志或文档等输入可能包含大量 Token，导致成本高昂、响应缓慢。RAG（检索增强生成）系统会将文档拆分为分块以便检索。MCP（模型上下文协议）服务器为 LLM 提供上下文。Headroom 能够高效地压缩这些输入。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://andrew.ooo/posts/headroom-context-compression-llm-agents-review/" target="_blank">Headroom Review: 60-95% LLM Token Compression ... — andrew.ooo</a></li><li><a href="https://dashen-tech.com/en/dev-tools/headroom-llm-compression-guide/" target="_blank">Getting Started with Headroom : AI Agent Context Compression Layer...</a></li></ul></details><div class="tags-row"><span class="tag">compression</span> <span class="tag">LLM</span> <span class="tag">tokens</span> <span class="tag">open source</span> <span class="tag">Python</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">💻</span>开源/编程<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-6">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">6</span>
+        <h2 class="card-title"><a href="https://blog.miguelgrinberg.com/post/i-am-not-a-reverse-centaur" target="_blank">作者哀叹 AI 生成的 PR 垃圾信息损害开源健康</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">著名开源维护者 Miguel Grinberg 发表博客文章《我不是反向半人马》，表达对越来越多低质量、AI 生成的拉取请求（PR）破坏维护者体验的不满。 这表明开源可持续性正面临日益严重的危机：志愿者维护者因 AI 生成的垃圾信息而承受越来越大的负担，可能因此放弃贡献，进而损害整个生态系统。 博客标题中的‘反向半人马’概念指的是人类成为 AI 的助手而非相反，凸显了典型人机协作关系的颠倒。作者认为，社区迫切需要建立新规范来过滤和管理 AI 辅助的贡献。</p>
+      <p class="card-source">ibobev · 6月12日 17:53</p>
+<div class="bg-block"><span class="block-label">背景</span><p>开源项目依赖志愿者维护者来审查和整合来自社区的贡献（拉取请求）。随着 GPT-4 等大型语言模型（LLMs）的兴起，生成代码和提交 PR 变得极其容易，导致大量低质量、常含有错误的提交涌入，浪费维护者的时间并削弱其动力。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者普遍同情作者，描述了自己项目中类似的转变——收到 PR 通知时从兴奋变为恐惧。有人提议建立新的社会契约或非正统软件生态系统，以便在不加重维护者负担的情况下接纳 AI 辅助的贡献；还有人回忆起作者过去的贡献（如 Flask 教程），这些贡献在社区中建立了信任。</p></div><div class="tags-row"><span class="tag">AI</span> <span class="tag">open source</span> <span class="tag">pull requests</span> <span class="tag">software engineering</span> <span class="tag">LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-7">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">7</span>
+        <h2 class="card-title"><a href="https://bytecodealliance.org/articles/WASI-0.3" target="_blank">WASI 0.3 发布，WebAssembly 系统接口重大更新</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">WASI 0.3 对 WebAssembly 系统接口进行了重大更新，推进了组件模型并明确了与 WASI 0.2 的区别。 这一里程碑式的版本塑造了浏览器外可移植、安全的 WebAssembly 应用的未来，影响了在边缘计算、云计算和嵌入式系统上开发的开发者。 该版本包含新的 .wit 接口文件，并强调组件模型，该模型允许可组合、多语言互操作的 Wasm 模块，并采用基于能力的安全机制。</p>
+      <p class="card-source">Lobsters · 6月12日 13:51</p>
+<div class="bg-block"><span class="block-label">背景</span><p>WASI（WebAssembly 系统接口）为 WebAssembly 模块提供了一套标准化的 API，用于访问文件、网络套接字和时钟等系统资源。组件模型是一种用于构建可互操作的 Wasm 组件的架构，支持跨语言的安全、可移植组合。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区反应不一：一些人对其进展速度和方向表示怀疑，认为 WASI 应保持像 Unix 风格 API 一样的简单稳定，而另一些人则赞赏在组件模型方面的进展。怀疑者认为组件模型过于复杂化。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://github.com/WebAssembly/WASI" target="_blank">GitHub - WebAssembly/WASI: WebAssembly System Interface WebAssembly Explained: Complete Wasm & WASI Guide for ... WASI Preview 2 2026: The WebAssembly System Interface ... WebAssembly System Interface (WASI) and Component Model WASI Guide 2026: WebAssembly System Interface Tutorial WASI: What Is WebAssembly System Interface & Why It Matters</a></li><li><a href="https://wasi.dev/" target="_blank">Introduction · WASI.dev</a></li></ul></details><div class="tags-row"><span class="tag">WASI</span> <span class="tag">WebAssembly</span> <span class="tag">component model</span> <span class="tag">system interfaces</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">⚙️</span>系统/硬件<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-8">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">8</span>
+        <h2 class="card-title"><a href="https://www.swift.org/blog/migrating-truetype-hinting-to-swift/" target="_blank">苹果将 TrueType 提示解释器迁移到 Swift</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">苹果已将 TrueType 提示解释器从 C/C++迁移至 Swift，这是提升 Swift 在 macOS 系统组件中采用率的更大努力的一部分。 此次迁移表明 Swift 在传统由 C/C++主导的低级系统编程中的能力日益增强，并可能带来安全性和性能方面的好处。这也标志着苹果致力于在核心操作系统组件中使用 Swift。 迁移涉及重写负责字体提示的 TrueType 字节码解释器，这是文本渲染的关键组件。该项目采用 MIT 许可证发布，值得注意的是苹果通常使用 Apache 2 许可证。</p>
+      <p class="card-source">Lobsters · 6月12日 19:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>TrueType 提示是一种使用数学指令调整轮廓字体显示以使其与像素网格对齐的技术，可确保小尺寸和低分辨率下文本清晰。提示解释器是处理这些指令的系统软件。通过用 Swift 重写，苹果旨在利用 Swift 的内存安全性和性能特性，同时减少对 C/C++的依赖。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区评论对这次迁移表达了兴趣，一些人注意到 MIT 许可证的选择，并将其与微软在 Rust 中的类似努力进行比较。评论者对共享的源代码以及 Swift 在 macOS 中更广泛的采用趋势表示赞赏。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Font_hinting" target="_blank">Font hinting - Wikipedia</a></li><li><a href="https://learn.microsoft.com/en-us/typography/truetype/hinting" target="_blank">TrueType hinting - Typography | Microsoft Learn</a></li></ul></details><div class="tags-row"><span class="tag">Swift</span> <span class="tag">TrueType</span> <span class="tag">Apple</span> <span class="tag">systems programming</span> <span class="tag">font rendering</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-9">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">9</span>
+        <h2 class="card-title"><a href="https://youtu.be/nHbA2-_qzH4" target="_blank">自制 60 帧电子墨水屏显示器：Modos Flow</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一位创作者记录了自己制作名为 Modos Flow 的 60fps 电子墨水屏显示器的过程，突破了电子纸显示屏通常刷新率低的限制。 这一成就表明电子墨水屏可以驱动到 60Hz，实现更流畅的视频或游戏画面，有望将电子墨水屏的应用扩展到静态文本之外。 Modos Flow 是一款 13.3 英寸便携式电子墨水屏显示器，分辨率为 3200x2400，采用 FPGA 驱动的架构实现 60Hz 刷新率并消除残影，支持黑白和彩色模式。</p>
+      <p class="card-source">Lobsters · 6月12日 05:39</p>
+<div class="bg-block"><span class="block-label">背景</span><p>电子墨水屏传统上因颜料颗粒的物理运动而刷新率极低（15-30Hz），不适合动态内容。Modos Flow 采用定制 FPGA 控制器和独立像素更新技术，实现了 60Hz 的流畅体验，这是一次重大飞跃。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.androidauthority.com/modos-flow-e-ink-paper-60hz-display-3677057/" target="_blank">Someone made a portable 60Hz E-Ink display that you can game on</a></li><li><a href="https://en.shiftdelete.net/modos-flow-e-ink-monitor-delivers-60hz-performance/" target="_blank">Modos Flow E-Ink Monitor Delivers 60Hz Performance</a></li><li><a href="https://liliputing.com/dasung-launches-a-10-3-inch-portable-e-ink-monitor-with-a-60-hz-refresh-rate/" target="_blank">Dasung launches a 10.3 inch portable E Ink monitor with a 60 ...</a></li></ul></details><div class="tags-row"><span class="tag">e-ink</span> <span class="tag">display technology</span> <span class="tag">hardware hacking</span> <span class="tag">DIY</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔒</span>安全/隐私<span class="cat-n">1 条</span></div>
+  <article class="item-card" id="item-10">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">10</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/12/chinese-cybercrime-operation-that-used-ai-to-scam-hundreds-of-thousands-of-victims-sued-by-google/" target="_blank">谷歌起诉利用 AI 诈骗数十万人的中国网络犯罪团伙</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">谷歌对名为‘外来企业’的中国网络犯罪团伙提起诉讼，该团伙利用 AI 在两周内发送了 250 万条诈骗短信，诈骗了数十万受害者。 此案凸显了 AI 驱动的网络犯罪以空前规模增长的威胁，并表明科技巨头正在采取重大法律行动。它强调了针对 AI 生成的诈骗（越来越难以检测）加强防御的必要性。 该团伙在短短两周内发送了 250 万条短信，利用 AI 制作令人信服的钓鱼信息。谷歌的诉讼旨在打击该行动并寻求赔偿，但具体使用的 AI 技术尚未公开。</p>
+      <p class="card-source">TechCrunch · 6月12日 20:38</p>
+<div class="bg-block"><span class="block-label">背景</span><p>短信钓鱼（Smishing）是一种常见的网络攻击，诈骗者发送欺诈性短信诱骗受害者泄露个人信息。最近，攻击者开始使用生成式 AI 创建更可信的消息，绕过语言障碍并迅速扩大操作规模。谷歌一直在增强其 Android 设备上的 AI 诈骗检测功能以应对此类威胁。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.brside.com/blog/the-2026-guide-to-phishing-smishing-and-vishing-simulations" target="_blank">Multi‑Vector Security Awareness Training: The 2026 Guide to Phishing, Smishing, and Vishing Simulations | Brightside AI Blog</a></li><li><a href="https://www.lookout.com/blog/ai-smishing-protection" target="_blank">Protecting the Human Layer: Lookout Smishing AI Takes on Next-Gen Social Engineering Threats</a></li><li><a href="https://www.lemon-web.net/lemon-blog/mobile-development/how-ai-is-helping-protect-users-from-call-and-text-scams" target="_blank">Lemon Web Solutions - Blog - Mobile Developments - How AI is ...</a></li></ul></details><div class="tags-row"><span class="tag">AI-powered scams</span> <span class="tag">cybercrime</span> <span class="tag">Google lawsuit</span> <span class="tag">Chinese cybercrime</span> <span class="tag">AI misuse</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🌍</span>时政/地缘<span class="cat-n">14 条</span></div>
+  <article class="item-card" id="item-11">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">11</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/12/us-spy-law-to-expire-for-first-time-after-lawmakers-reject-trumps-controversial-pick-to-lead-spy-agencies/" target="_blank">美国监控法 702 条款即将失效，国会拒绝特朗普的国家情报总监人选</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《外国情报监视法》第 702 条预计将于 2026 年 6 月 12 日（周五）首次失效，此前国会否决了特朗普总统提名比尔·普尔特（Bill Pulte）领导情报界。 这是隐私和监控领域的一个里程碑事件，标志着一项重大无证监控计划首次失效，可能会限制 NSA 和 FBI 收集外国情报的能力，并影响美国国家安全行动。 国会宁愿让 702 条款失效，也不愿授权特朗普任命的代理国家情报总监比尔·普尔特。该法律授权针对海外非美国人的监控，但因未经授权收集美国公民通讯而受到批评。</p>
+      <p class="card-source">TechCrunch · 6月12日 11:43</p>
+<div class="bg-block"><span class="block-label">背景</span><p>《外国情报监视法》第 702 条于 2008 年颁布，已多次重新授权，最近一次是在 2024 年。它允许政府对海外外国人进行无证电子监控，但也会附带收集美国公民的通讯。批评者认为它侵犯了隐私权和第四修正案。该计划由外国情报监视法院（FISC）监督。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.congress.gov/crs_external_products/R/PDF/R48592/R48592.1.pdf" target="_blank">FISA Section 702 and the 2024 Reforming Intelligence and ...</a></li><li><a href="https://www.brennancenter.org/our-work/research-reports/section-702-foreign-intelligence-surveillance-act" target="_blank">Section 702 of the Foreign Intelligence Surveillance Act ...</a></li><li><a href="https://en.wikipedia.org/wiki/Bill_Pulte" target="_blank">Bill Pulte</a></li></ul></details><div class="tags-row"><span class="tag">surveillance</span> <span class="tag">Section 702</span> <span class="tag">privacy</span> <span class="tag">US politics</span> <span class="tag">NSA</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-12">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">12</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/12/world/europe/us-nato-cuts-drawdown-jets.html" target="_blank">美国计划撤走三分之一驻欧北约战斗机</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据官员和一份书面文件透露，美国计划撤回其在欧洲北约行动中部署的大约三分之一战斗机。 此次削减标志着美国对欧洲防御承诺的重大转变，可能削弱北约的威慑态势，并改变该地区的权力平衡。 该计划罕见地明确了特朗普政府意图削减北约承诺的程度，但具体数字和时间表尚未公布。</p>
+      <p class="card-source">New York Times World · 6月12日 04:01</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自冷战以来，美国作为北约集体防御的一部分，在欧洲部署了大量空中力量。如此规模的削减在近几十年将是前所未有的，引发了对联盟战备状态的质疑。</p></div><div class="tags-row"><span class="tag">NATO</span> <span class="tag">US foreign policy</span> <span class="tag">Europe</span> <span class="tag">defense</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-13">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">13</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/live/2026/06/11/world/iran-war-trump-us-israel/heres-the-latest" target="_blank">美国和伊朗就措辞达成一致，伊朗协议接近达成</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">巴基斯坦总理宣布，美国和伊朗已就结束战争的协议措辞达成一致。美国和伊朗官员确认最终细节正在敲定，特朗普总统和伊朗外长均表示协议接近达成。 这项潜在协议可能结束涉及伊朗、美国和以色列的重大地缘政治冲突，降低地区紧张局势，并影响全球石油市场，特别是关于战略要道霍尔木兹海峡。 伊朗坚称不会放弃对霍尔木兹海峡的控制权，且美国在未来管理中不会扮演任何角色。据报道，阿联酋将作为协议的一部分解冻数十亿美元资金给伊朗。</p>
+      <p class="card-source">New York Times World · 6月12日 04:27</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自两个月前名义停火以来，伊朗与美国-以色列联盟的战争一直处于低强度暴力状态。霍尔木兹海峡是一条战略水道，全球相当一部分石油通过该海峡运输。伊朗核计划仍是谈判中的争议问题。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">war</span> <span class="tag">geopolitics</span> <span class="tag">US foreign policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-14">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">14</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/12/china-arrests-us-academic-min-zin-espionage" target="_blank">中国以间谍罪逮捕美国学者 Min Zin</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">中国外交部于 2026 年 6 月 12 日宣布，逮捕了美国学者 Min Zin，指控其从事危害中国国家安全的间谍活动。该逮捕发生在特朗普总统访问北京后不久。 这一事件标志着中美紧张关系的重大升级，因为是在一次高级别外交会晤后不久，一名美国公民因间谍指控被拘留。这可能会进一步恶化双边关系，并影响两国之间的学术交流。 Min Zin 是一个专注于缅甸的智库主任，并在加州大学伯克利分校完成了研究生学业。中国外交部发言人林剑表示，Min Zin 涉嫌“从事危害中国国家安全的间谍活动”。</p>
+      <p class="card-source">The Guardian World · 6月12日 10:27</p>
+<div class="bg-block"><span class="block-label">背景</span><p>间谍指控常被政府用于地缘政治争端中，中国此前也曾以类似罪名拘留外国学者。中美关系一直波动，在贸易、技术和影响力方面竞争不断。Min Zin 被捕发生在特朗普与习近平会晤仅一个月后，增加了外交复杂性。</p></div><div class="tags-row"><span class="tag">时政</span> <span class="tag">地缘政治</span> <span class="tag">国际新闻</span> <span class="tag">中国</span> <span class="tag">美国</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-15">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">15</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/12/nx-s1-5856122/ousted-south-korean-president-yoon-prison-drone-flights-pyongyang" target="_blank">韩国前总统尹锡悦因无人机飞行判 30 年</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">2026 年 6 月 12 日，韩国法院判处被罢免的总统尹锡悦及其前国防部长 30 年监禁，罪名是 2024 年下令无人机飞越平壤，以加剧紧张局势并为戒严令提供理由。 对前国家元首的这一前所未有的判决凸显了韩国民主制度的脆弱性，并可能进一步加剧朝韩关系紧张，为政治问责树立了一个令人担忧的先例。 法院裁定尹锡悦试图制造不稳定以证明其威权统治的合理性；无人机入侵发生在 2024 年，涉及飞越朝鲜首都平壤。</p>
+      <p class="card-source">NPR World · 6月12日 05:21</p>
+<div class="bg-block"><span class="block-label">背景</span><p>尹锡悦在 2024 年因与朝鲜关系紧张而宣布戒严后被弹劾。无人机飞行被指控为一种挑衅行为，旨在制造危机，以巩固其权力。此次审判是韩国对过去威权行为进行更广泛清算的一部分。</p></div><div class="tags-row"><span class="tag">South Korea</span> <span class="tag">geopolitics</span> <span class="tag">drone</span> <span class="tag">martial law</span> <span class="tag">Yoon Suk Yeol</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-16">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">16</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/technology/2026/jun/12/pokemon-go-data-trained-ai-that-could-assist-military-drones-in-war-zones" target="_blank">《Pokémon Go》数据用于训练军用无人机 AI</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《Pokémon Go》用户的位置数据被用于训练一个 AI 模型，该模型可能帮助军用无人机在 GPS 受限的战场进行导航。该模型由 Niantic 空间 AI 分支开发，处理视觉和空间输入以实现无人机定位。 这引发了重大的伦理和隐私担忧，因为原本为娱乐收集的游戏数据被重新用于军事用途。同时，这体现了增强现实数据与自主系统日益融合的趋势。 《Pokémon Go》到 2018 年全球下载量超过 8 亿次，提供了大量的真实世界位置扫描数据集。该 AI 利用了视觉 SLAM（同步定位与地图构建）技术，该技术常用于无人机导航。</p>
+      <p class="card-source">The Guardian Technology · 6月12日 07:06</p>
+<div class="bg-block"><span class="block-label">背景</span><p>视觉 SLAM 是一种技术，允许无人机和机器人在追踪自身位置的同时绘制未知环境地图，常用于 GPS 不可用的情况。《Pokémon Go》的开发商 Niantic 在被 Scopely 收购后成立了空间 AI 部门 Niantic Spatial。该部门专注于利用 AR 位置数据训练 AI 以理解空间环境。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.theguardian.com/technology/2026/jun/12/pokemon-go-data-trained-ai-that-could-assist-military-drones-in-war-zones" target="_blank">Pokémon Go data trained AI that could assist military ... | The Guardian</a></li><li><a href="https://www.mdpi.com/1424-8220/24/10/2980" target="_blank">Visual SLAM for Unmanned Aerial Vehicles: Localization and ...</a></li></ul></details><div class="tags-row"><span class="tag">Pokémon Go</span> <span class="tag">military AI</span> <span class="tag">drone</span> <span class="tag">data privacy</span> <span class="tag">augmented reality</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-17">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">17</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/12/world/asia/taliban-protests-afghanistan.html" target="_blank">阿富汗人举行罕见抗议反对塔利班统治</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">包括数十名妇女在内的阿富汗人举行了针对塔利班统治的罕见公开抗议，导致逮捕和两人死亡，引发联合国深切关注。 这些抗议意义重大，因为它们在高度压制的环境中挑战塔利班权威，国际社会对人权侵犯的关注可能加大对塔利班的压力。 联合国报告称，抗议期间有两人死亡，数十名妇女被捕。这些示威是塔利班重新掌权以来罕见的公众异议表现。</p>
+      <p class="card-source">New York Times World · 6月12日 22:56</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2021 年 8 月塔利班掌权以来，他们实施了严格的妇女权利限制，包括禁止女孩接受中学教育以及限制妇女就业。由于害怕报复，公开抗议极为罕见。联合国多次谴责塔利班的人权记录。</p></div><div class="tags-row"><span class="tag">Afghanistan</span> <span class="tag">Taliban</span> <span class="tag">protests</span> <span class="tag">human rights</span> <span class="tag">UN</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-18">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">18</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/13/antarcticas-west-coast-missing-an-area-of-sea-ice-the-size-of-france-as-temperatures-peak-20c-above-average" target="_blank">南极西海岸缺失法国面积的海冰</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">南极西海岸的别林斯高晋海缺失了相当于法国面积的冬季海冰，同时该地区气温比平均水平高出 20°C 以上，最近的热浪期间最高达 15.4°C。 这次前所未有的海冰缺失威胁着依赖冰层繁殖和觅食的企鹅群落及其他海洋生物，并可能通过使冰架暴露于更温暖的水域而加剧全球海平面上升。 缺失海冰的区域位于别林斯高晋海，冰层未能形成可能加剧了热浪，该热浪导致白天气温比平均高出 20°C。</p>
+      <p class="card-source">The Guardian World · 6月12日 15:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>海冰在南极周围季节性形成和融化，为野生动物提供关键栖息地，并反射阳光以保持地球凉爽。冬季海冰的消失可能加速变暖和冰架崩塌，导致海平面上升。</p></div><div class="tags-row"><span class="tag">climate change</span> <span class="tag">Antarctica</span> <span class="tag">sea ice</span> <span class="tag">heatwave</span> <span class="tag">environment</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-19">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">19</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/international/article/2026/06/12/europeans-trust-in-the-us-hits-historic-low-poll-finds_6754415_4.html" target="_blank">民调显示欧洲人对美国信任度创历史新低</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">欧洲对外关系委员会在七国集团会议前一周发布的一项泛欧调查显示，欧洲人对美国的信任度降至历史最低点，他们倾向于在保持北约关系的同时加强自身安全自主。 这一转变表明跨大西洋关系发生根本性变化，可能重塑北约格局，迫使美国重新评估其在欧洲防务中的角色。这也凸显了地缘政治紧张局势下欧洲在安全政策上日益团结。 该调查由智库欧洲对外关系委员会进行，涵盖多个欧洲国家。欧洲人表达了更多自主的意愿，但并未主张退出北约，这表明他们在联盟内倾向于一种微妙的战略自主。</p>
+      <p class="card-source">Le Monde English - International · 6月12日 19:55</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以北约为中心的跨大西洋联盟自冷战以来一直是西方安全的基石。然而，近年来美国不同政府的政策变动以及欧洲构建战略自主的努力导致了日益紧张的关系。这项民调捕捉了这些政治趋势背后的公众情绪。</p></div><div class="tags-row"><span class="tag">current affairs</span> <span class="tag">geopolitics</span> <span class="tag">Europe</span> <span class="tag">US</span> <span class="tag">NATO</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-20">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">20</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMivAFBVV95cUxORTVfeV9OaGpKaks5QkFZSlZzN0V5dmtXWmNFM0QzVmxHZDliX1BNdVJJT2ZSN1VrLVN4MVRhMFNrNFJVY19PMmtSWkVRSWtFUGZuTi1yMllhek4xM0Nfa0JwVkc2N3RlYkE2MmJpS1BWVEI1a1ZoeWVfQXQ5ckdfRE1fQi0yaFFSMl9JdjNqMmlOTTFlYlN0bjFnV0ZsS1R1cVBqQ19sVklfYVJ1ZTVKbWhpeXJsTFNGOVNNbg?oc=5" target="_blank">乌克兰寻求盟友 200 亿美元以保持战争势头</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据路透社消息人士透露，乌克兰计划向盟国请求 200 亿美元，以维持对俄罗斯的军事行动。 这一重大财务请求可能影响冲突的下一阶段，改变军事战略和国际援助格局。这笔资金对于乌克兰保持对俄军的压力、防止领土丧失至关重要。 据报道，200 亿美元计划用于满足军事、经济和人道主义需求，具体分配尚未明确。这一请求凸显了乌克兰在战争持续两年多后对西方支持的依赖。</p>
+      <p class="card-source">Google News - Reuters · 6月12日 11:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2022 年 2 月俄罗斯全面入侵以来，乌克兰严重依赖西方的军事和财政援助进行自卫。先前美国、欧盟等提供的援助总额已达数百亿美元，但保持势头需要持续资金。此次请求正值乌克兰面临弹药供应和军队士气挑战之际。</p></div><div class="tags-row"><span class="tag">Ukraine</span> <span class="tag">Russia</span> <span class="tag">military aid</span> <span class="tag">geopolitics</span> <span class="tag">finance</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-21">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">21</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitgFBVV95cUxOR3pVUi0zQTJkVzRYRlFXY2tjdTExalR4UGxNZ2ZBOVRrYkg4eGdDajZmTzdLdUdNRHpKSDhmOUUtcTVrMjBSZGN4OUdSLUpiT0lnLWY3QWNsWmNkdWJ6bWtEcTNOX2dRNXdWM3BfblEyQlgxTUJsUURPaHRBeWFrTk02eDVGVzJuZTNFVUJDR0pycVgzbGpiLUpaMk1DR200Z2N3WGVYZHVxU0tKX2ttUlRVZERJdw?oc=5" target="_blank">美国银行监管机构加强对 AI 使用的审查</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国银行监管机构正在加强对金融公司使用人工智能的监督，可能带来新的合规要求。 这标志着对金融领域 AI 采取了更积极的监管立场，影响银行在信用评分、欺诈检测和客户服务中部署 AI 的方式，并可能为其他行业树立先例。 审查涵盖模型风险管理、公平性和可解释性，监管机构可能要求在部署前对 AI 系统进行更多文档记录和测试。</p>
+      <p class="card-source">Google News - Reuters · 6月12日 16:53</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国银行监管机构，如美联储、OCC 和 FDIC，长期以来要求定量模型进行风险管理，但 AI 模型因复杂性和不透明性带来新挑战。此举正式确立了 AI 治理的期望，旨在解决偏见、歧视和系统性风险等问题。</p></div><div class="tags-row"><span class="tag">AI regulation</span> <span class="tag">financial services</span> <span class="tag">US policy</span> <span class="tag">banking</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-22">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">22</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOcXc2SWN6VW1sWHg3Zkg2OVpKRkZMQ2dwVmtycHF6X2diWWR6aWF6QVQxZ2VYdGpjSU01VHlQOHdhWXp6LU93VTVwYkk3enJ0cGowUlJZOWlTVWxwQWRGT2EtUHdxb1lMaC1EaDVRRUJaVUhuUDdRUURfOG8zMzV0QThnc3dQR25uRGNJQWtrVU5sczVhWHhuMU1sWjl4c2hudFhDTkdrbHZEQS1SaTFaRA?oc=5" target="_blank">乌克兰提高军人薪资，寻求更多外籍士兵</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">泽连斯基总统宣布，乌克兰将提高军人薪资，并积极招募更多外籍士兵以增强其武装力量。 此举表明乌克兰在与俄罗斯的持续战争中急需人力，可能改变战场态势和国际参与程度。 加薪和招募外籍士兵是维持乌克兰防御能力的更广泛努力的一部分，但具体金额或目标尚未披露。</p>
+      <p class="card-source">Google News - Reuters · 6月12日 14:09</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2022 年 2 月以来，乌克兰一直在抵御俄罗斯的全面入侵。该国已有国际军团招募外籍志愿者，此次公告进一步扩展该计划，以应对日益增长的军事人员需求。</p></div><div class="tags-row"><span class="tag">Ukraine</span> <span class="tag">military</span> <span class="tag">geopolitics</span> <span class="tag">war</span> <span class="tag">foreign fighters</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-23">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">23</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPWEJpSnJwbDhJNzRjVXVOdThMckZNZTBvbURMNHJtcFppdWVQNnNpX0FSaVZRQnhYVlpqZDVHVjNTUWJCYUJ0aUpqZnJKRzlzSGpqZGhRZEJqMWZkTGN4RTlqTy1MNHlRQlB0YnIyZGhWdGJmbXFaSFlEQTFpcWVDWl9kMjk3cTF2cWM5TWZBQjQtUWJseEVIaUlubWViaTB0OXlVSG5rNnBpYUxjZW54VExB?oc=5" target="_blank">日本央行拟加息至 31 年高点，鸽派信号增强</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据路透社报道，日本央行计划将关键利率上调至 31 年高点，同时减少关于未来政策收紧的鹰派信号。 这一政策举措标志着日本极度宽松货币政策立场的重大转变，可能影响全球债券市场、套利交易和日元汇率，进而波及全球投资者和经济体。 具体利率水平尚未明确，但 31 年高点将使政策利率超过 0.5%。减少鹰派信号意味着日本央行可能不再承诺进一步加息，转而强调依赖数据。</p>
+      <p class="card-source">Google News - Reuters · 6月12日 10:44</p>
+<div class="bg-block"><span class="block-label">背景</span><p>鹰派货币政策是指央行通过加息和收紧条件来控制通胀的立场；鸽派政策则优先考虑低利率以促进增长。多年来，日本央行维持超宽松政策以对抗通缩，但通胀上升迫使其转向正常化。央行的沟通策略很重要，因为它影响市场对未来行动的预期。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://fxopen.com/blog/en/how-do-dovish-and-hawkish-monetary-policies-affect-markets/" target="_blank">How Do Dovish and Hawkish Monetary Policies Affect Markets?</a></li><li><a href="https://www.equiti.com/sc-en/news/trading-ideas/hawkish-meaning-in-trading-definition-signals-and-market-impact/" target="_blank">Hawkish explained: what it means for traders and markets</a></li></ul></details><div class="tags-row"><span class="tag">Bank of Japan</span> <span class="tag">interest rates</span> <span class="tag">monetary policy</span> <span class="tag">finance</span> <span class="tag">Japan economy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-24">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">24</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPcEo5VXJZa05yR3I1Yjd1SE9HdnUwb3dzeUhwWlFTWVlhT2lPT0ItU2JLOXVaZGxORVpsNS1ZeDhGeVMtaHJWUWlHX08yWHVIUTFRVnNPTElucUliQ3dfcDZLVk1aV0E3emkzUER2Z0pSbWM0cjczU3dSVV8xTHlnMmdlQk5rT0tHVmRXYkZfb013UEtzVUNaTkxoQktxNWZwcXc?oc=5" target="_blank">乌克兰打击克里米亚燃料库，引发危机</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">乌克兰对克里米亚境内俄军的燃料供应路线和仓库发动打击，导致该半岛出现燃料短缺。 这扰乱了俄军在乌克兰南部的后勤补给，可能削弱其防御能力，从而改变战场态势。 打击行动针对关键燃料基础设施，包括储存设施和运输线路，导致克里米亚加油站排起长队。</p>
+      <p class="card-source">Google News - AP News · 6月12日 15:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>克里米亚于 2014 年被俄罗斯吞并，是俄军在乌克兰南部行动的关键后勤枢纽。燃料主要通过刻赤大桥或从俄罗斯本土海路运输。中断这些供应可瘫痪军事行动并影响平民生活。</p></div><div class="tags-row"><span class="tag">Ukraine</span> <span class="tag">Crimea</span> <span class="tag">fuel crisis</span> <span class="tag">geopolitics</span> <span class="tag">war</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔬</span>科学/研究<span class="cat-n">1 条</span></div>
+  <article class="item-card" id="item-25">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">25</span>
+        <h2 class="card-title"><a href="https://innovativegenomics.org/news/crispr-technique-selectively-shreds-cancer-cells/" target="_blank">CRISPR 技术选择性摧毁癌细胞，包括“不可成药”癌症</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一项使用 Cas12a2 的新型 CRISPR 技术能够选择性摧毁癌细胞，包括以前被认为“不可成药”的癌症类型，该成果于 2026 年 5 月发表在《自然》期刊上。 该技术为靶向对常规药物耐药的癌症提供了新方法，可能扩展治疗选择。它利用了比以往 CRISPR 方法更具破坏性的机制，有望带来更有效的疗法。 该技术使用 Cas12a2，它在被激活后会摧毁细胞内的染色质，这与 Cas9 仅切割靶点 DNA 不同。预印本已在 bioRxiv 上发布，《自然》论文提供了更多细节。</p>
+      <p class="card-source">gmays · 6月12日 15:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>CRISPR-Cas 是一种源自细菌免疫系统的基因编辑工具。Cas12a2 是其中一个变体，当被特定 RNA 序列触发时，会释放非特异性 DNase 活性，降解染色质，导致细胞死亡。“不可成药”癌症指的是由难以用小分子靶向的蛋白质驱动的癌症。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区评论包括要求列出癌症治疗方法的全面清单、提供预印本链接、对 Cas9 和 Cas12a2 的技术比较、关于遗传病的希望之词，以及认为病毒载体比 CRISPR 更有前景的怀疑观点。整体情绪复杂，兴奋之余也有对耐药性和过度炒作的担忧。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.nature.com/articles/s41586-026-10466-y" target="_blank">RNA-triggered cell killing with CRISPR–Cas12a2 - Nature</a></li><li><a href="https://en.wikipedia.org/wiki/Cas12a" target="_blank">Cas12a</a></li></ul></details><div class="tags-row"><span class="tag">CRISPR</span> <span class="tag">cancer</span> <span class="tag">gene editing</span> <span class="tag">biotechnology</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">📊</span>行业/商业<span class="cat-n">6 条</span></div>
+  <article class="item-card" id="item-26">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">26</span>
+        <h2 class="card-title"><a href="https://www.theverge.com/business/948996/spacex-ipo-elon-musk" target="_blank">SpaceX IPO 使埃隆·马斯克成为首位万亿富翁</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">SpaceX 于 2026 年 6 月 12 日在纳斯达克上市，IPO 发行价为每股 135 美元，募集约 750 亿美元，估值突破 2 万亿美元，使埃隆·马斯克成为全球首位万亿富翁。 这一历史性 IPO 成为史上最大规模的股市首秀，马斯克的万亿富翁地位凸显了航天和人工智能领域创造的巨大财富。它也可能为 OpenAI 和 Anthropic 等其他大型科技公司的 IPO 铺平道路。 该 IPO 以每股 150 美元的价格开始交易，迅速上涨两位数，SpaceX 售出超过 5.55 亿股。公司估值超过 2 万亿美元，其使命仍然是“让人类成为多行星物种”。</p>
+      <p class="card-source">The Verge · 6月12日 14:35</p>
+<div class="bg-block"><span class="block-label">背景</span><p>SpaceX 成立于 2002 年，在本次 IPO 前保持了近 25 年的私有状态。它以可重复使用火箭以及 Starlink 和 Starship 等雄心勃勃的项目而闻名，其业务现在结合了火箭技术与人工智能和社交媒体。</p></div><div class="tags-row"><span class="tag">SpaceX</span> <span class="tag">IPO</span> <span class="tag">Elon Musk</span> <span class="tag">Trillionaire</span> <span class="tag">Space</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-27">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">27</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/us-news/2026/jun/12/paramount-warner-bros-merger" target="_blank">美国司法部批准派拉蒙-华纳兄弟 1110 亿美元合并</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国司法部批准了派拉蒙天舞公司（Paramount Skydance）与华纳兄弟探索公司（Warner Bros Discovery）价值 1110 亿美元的合并，该交易得到了亿万富翁拉里·埃里森的支持。该合并仍需接受英国监管审查，并可能面临州总检察长的诉讼。 此次合并将大幅整合媒体行业，减少大型制片厂的数量，并可能合并 CBS 新闻和 CNN，从而损害竞争。这对特朗普的盟友来说是一次重大胜利，并可能导致好莱坞进一步裁员。 该交易价值 1110 亿美元，涉及埃里森家族控制的派拉蒙天舞公司和拥有 HBO 及 CNN 的华纳兄弟探索公司。该交易已通过美国反垄断审查，但仍面临英国的新调查以及州总检察长可能的诉讼。</p>
+      <p class="card-source">The Guardian World · 6月12日 22:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>派拉蒙天舞是一家媒体实体，由大卫·埃里森创立的 Skydance Media 与派拉蒙合并后形成。华纳兄弟探索公司于 2022 年由华纳媒体与探索公司合并而成。特朗普总统领导下的美国司法部对大额合并采取了更为宽松的立场，但反垄断担忧依然存在。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Skydance_Media" target="_blank">Skydance Media - Wikipedia</a></li><li><a href="https://skydance.com/" target="_blank">Skydance Media</a></li></ul></details><div class="tags-row"><span class="tag">merger</span> <span class="tag">media</span> <span class="tag">antitrust</span> <span class="tag">Paramount</span> <span class="tag">Warner Bros</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-28">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">28</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/12/metas-months-old-ai-unit-is-a-soul-crushing-gulag-say-the-engineers-stuck-inside-it/" target="_blank">Meta AI 部门员工反抗，称工作环境为‘古拉格’</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一份报告显示，Meta 的 AI 部门（拥有 6500 名员工）濒临反抗，工程师称工作环境是“令人灵魂折磨的古拉格”。 这种内部动荡可能削弱 Meta 在 AI 领域（公司未来的关键领域）的竞争力，并反映出大型科技公司员工士气方面的更广泛问题。 该部门成立仅数月就已面临广泛不满，据一份新报告称，其 6500 名员工中已有反抗的讨论。</p>
+      <p class="card-source">TechCrunch · 6月12日 23:00</p>
+<div class="tags-row"><span class="tag">Meta</span> <span class="tag">AI</span> <span class="tag">employee morale</span> <span class="tag">tech industry</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-29">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">29</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/12/mistral-is-rumored-to-be-raising-e3b-at-e20-valuation/" target="_blank">Mistral 被曝融资 30 亿欧元，估值 200 亿欧元</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">法国 AI 初创公司 Mistral AI 据传正在融资 30 亿欧元，估值达 200 亿欧元，几乎是其 C 轮估值 117 亿欧元的两倍。 这一重大融资传闻凸显了市场对 Mistral 作为欧洲领先 AI 初创公司的强烈信心，筹集的资金可能加速其大语言模型的开发，并加剧全球 AI 领域的竞争。 传闻中 200 亿欧元的估值约为 231.5 亿美元，该公司开发开放权重和专有的大语言模型，包括聊天机器人 Le Chat。</p>
+      <p class="card-source">TechCrunch · 6月12日 17:38</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Mistral AI 是一家成立于 2023 年的法国人工智能公司，以其开源和专有的大语言模型而闻名。它被广泛视为 OpenAI 和其他主要 AI 玩家的重要竞争对手，截至 2025 年估值已迅速超过 140 亿美元。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Mistral_AI" target="_blank">Mistral AI - Wikipedia</a></li><li><a href="https://techcrunch.com/2025/09/09/what-is-mistral-ai-everything-to-know-about-the-openai-competitor/" target="_blank">What is Mistral AI? Everything to know about the OpenAI ...</a></li></ul></details><div class="tags-row"><span class="tag">Mistral</span> <span class="tag">funding</span> <span class="tag">AI startup</span> <span class="tag">valuation</span> <span class="tag">LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-30">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">30</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/11/world/asia/south-korea-coupang-fine.html" target="_blank">韩国对 Coupang 处以创纪录的 4.09 亿美元罚款</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">韩国监管机构对被称为“韩国亚马逊”的电商巨头 Coupang 进行调查，并处以创纪录的 4.09 亿美元罚款，导致首尔与华盛顿之间的外交紧张局势升级。 这一创纪录罚款凸显了对全球运营的美国注册科技公司的监管趋严，可能为跨境监管行动树立先例，影响投资者信心和外交关系。 Coupang 在美国注册，但主要业务在韩国；罚款涉及涉嫌违反反垄断法或不公平贸易行为，但新闻未披露具体细节。</p>
+      <p class="card-source">New York Times World · 6月12日 02:25</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Coupang 是韩国最大的电商平台，因其市场主导地位和物流网络常被比作亚马逊。该公司在美国注册，这使管辖权问题复杂化。此次罚款是韩国监管机构对外资公司开出的最大罚单，反映出监管大型科技公司的力度日益增强。</p></div><div class="tags-row"><span class="tag">Coupang</span> <span class="tag">fine</span> <span class="tag">South Korea</span> <span class="tag">regulatory</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-31">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">31</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPR2Z6dFV3WHhOamNSbFQ1VmxlNk5iNHR4bjJDdWE1d28tM3VEX01aOVVWMkNRYlZ3aUlQWXgxNi1VbGdtQ3FoNkY2MEZLSzZKZHBLcHFfNlhSTlhlYm5CbFNoaHdyOFM4UUVjQzIyU0o4VmNuaHo1cTg0cFgwSGdMdFctdGZCQnVwamdHZEdRQkJ5Umw0U1ZPTldxZ2ZRWE9Yc05xM2EtNFlwb1l5alBV?oc=5" target="_blank">英伟达开始向中国客户推销 Vera CPU</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英伟达已开始向中国客户推销其新款 Vera CPU，消息人士称最早可能在 2026 年 8 月接受订单。 此举意义重大，因为 Vera CPU 专为 AI 数据中心工作负载设计，在美中芯片限制背景下可能挑战英特尔和 AMD 在关键市场的地位。 Vera CPU 拥有 88 个核心，专为处理代理型 AI、强化学习和数据管道而设计，既可作为加速系统的主机 CPU，也可作为独立处理器使用。</p>
+      <p class="card-source">Google News - Reuters · 6月12日 06:19</p>
+<div class="bg-block"><span class="block-label">背景</span><p>英伟达传统上以 GPU 闻名，现在正通过 Vera 扩展至 CPU 市场，瞄准日益增长的 AI 基础设施需求。Vera CPU 被定位为高性能、节能的处理器，专为 AI 工厂工作负载优化。此次在中国市场的销售推广正值美国对先进芯片实施出口管制之际，使得英伟达的战略格外引人注目。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.reuters.com/world/china/nvidia-begins-vera-cpu-sales-pitch-chinese-clients-sources-say-2026-06-12/" target="_blank">Exclusive: Nvidia begins Vera CPU sales pitch to Chinese ...</a></li><li><a href="https://www.nvidia.com/en-us/data-center/vera-cpu/" target="_blank">Next Gen Data Center CPU | NVIDIA Vera CPU</a></li></ul></details><div class="tags-row"><span class="tag">Nvidia</span> <span class="tag">Vera CPU</span> <span class="tag">China</span> <span class="tag">semiconductor</span> <span class="tag">sales</span></div>
+    </div>
+  </article></section>
+<footer class="footer">
+  <p>Generated by <a href="https://github.com/jinghuazhao/Horizon" target="_blank">Horizon</a> · AI-Driven Information Aggregation · 2026-06-13</p>
+</footer>
+</div>
+<script>
+// Toggle floating panel visibility
+var tocVisible = window.innerWidth > 900;
+function updateTocVisibility() {
+  var toc = document.getElementById('toc');
+  var fab = document.getElementById('tocFab');
+  if (window.innerWidth > 900) {
+    toc.classList.remove('hidden','open-mobile');
+    tocVisible = true;
+    fab.style.display = 'none';
+  } else {
+    toc.classList.add('hidden');
+    toc.classList.remove('open-mobile');
+    tocVisible = false;
+    fab.style.display = 'flex';
+  }
+}
+window.addEventListener('resize', updateTocVisibility);
+
+function toggleToc() {
+  var toc = document.getElementById('toc');
+  if (window.innerWidth <= 900) {
+    toc.classList.toggle('open-mobile');
+    toc.classList.remove('hidden');
+  } else {
+    tocVisible = !tocVisible;
+    if (tocVisible) toc.classList.remove('hidden');
+    else toc.classList.add('hidden');
+  }
+}
+
+// Collapsible category drawers (collapsed by default)
+function toggleCat(el) {
+  el.classList.toggle('collapsed');
+  var links = el.nextElementSibling;
+  if (!links || !links.classList.contains('ftoc-links')) return;
+  if (el.classList.contains('collapsed')) {
+    links.style.maxHeight = '0px';
+  } else {
+    links.style.maxHeight = links.scrollHeight + 'px';
+  }
+}
+
+// Initialize: collapse all, set heights
+document.addEventListener('DOMContentLoaded', function() {
+  var cats = document.querySelectorAll('.ftoc-cat');
+  cats.forEach(function(cat) {
+    cat.classList.add('collapsed');
+    var links = cat.nextElementSibling;
+    if (links && links.classList.contains('ftoc-links')) {
+      links.style.maxHeight = '0px';
+      // Store natural height
+      links._naturalHeight = links.scrollHeight;
+    }
+  });
+  // First category expanded by default
+  if (cats.length > 0) {
+    cats[0].classList.remove('collapsed');
+    var firstLinks = cats[0].nextElementSibling;
+    if (firstLinks && firstLinks.classList.contains('ftoc-links')) {
+      firstLinks.style.maxHeight = firstLinks.scrollHeight + 'px';
+    }
+  }
+});
+
+// Scroll highlight
+var links = document.querySelectorAll('.ftoc-link');
+var cards = document.querySelectorAll('.item-card');
+var activeCat = null;
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    var idx = e.target.id.replace('item-','');
+    var link = document.querySelector('.ftoc-link[data-idx="'+idx+'"]');
+    if (e.isIntersecting && link) {
+      links.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+      // Expand current category, collapse the previously expanded one
+      var cat = link.closest('.ftoc-links');
+      if (cat) {
+        var header = cat.previousElementSibling;
+        if (header && header.classList.contains('ftoc-cat')) {
+          if (activeCat && activeCat !== header) {
+            activeCat.classList.add('collapsed');
+            activeCat.nextElementSibling.style.maxHeight = '0px';
+          }
+          if (header.classList.contains('collapsed')) {
+            header.classList.remove('collapsed');
+            cat.style.maxHeight = cat.scrollHeight + 'px';
+          }
+          activeCat = header;
+        }
+      }
+    }
+  });
+}, {rootMargin: '-8% 0px -75% 0px'});
+cards.forEach(function(c) { observer.observe(c); });
+</script>
+</body>
+</html>

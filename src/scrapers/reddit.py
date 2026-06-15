@@ -80,6 +80,10 @@ class RedditScraper(BaseScraper):
         if cfg.sort in ("top", "controversial"):
             params["t"] = cfg.time_filter
 
+        # Prefer RSS when JSON is known to be blocked (saves a failed request)
+        if getattr(cfg, "prefer_rss", False):
+            return await self._fetch_subreddit_rss(cfg, since)
+
         url = f"{REDDIT_BASE}/r/{cfg.subreddit}/{cfg.sort}.json"
         try:
             data = await self._reddit_get(url, params)

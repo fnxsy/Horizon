@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Horizon Daily — 2026-06-14</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;background:#f5f6fa;color:#2d3436;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(155deg,#0f0c29 0%,#1a1a3e 40%,#24243e 100%);color:#fff;padding:44px 32px 36px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(99,102,241,.25),transparent);pointer-events:none}
+.hero-badge{display:inline-block;padding:4px 14px;border-radius:20px;background:rgba(255,255,255,.12);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;backdrop-filter:blur(4px)}
+.hero h1{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:6px;position:relative}
+.hero-sub{font-size:.9rem;opacity:.6;margin-bottom:20px;position:relative}
+.hero-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;position:relative}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.08);font-size:.76rem;color:rgba(255,255,255,.75)}
+.hero-pill strong{color:#fff;font-weight:700}
+
+/* ── Content ── */
+.container{max-width:820px;margin:0 auto;padding:0 20px 60px}
+
+/* ── Category Sections ── */
+.cat-section{margin-top:28px}
+.cat-heading{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;color:#636e72;margin-bottom:14px;padding:0 4px}
+.cat-heading .cat-icon{font-size:1.1rem}
+.cat-heading .cat-n{font-size:.76rem;color:#b2bec3;font-weight:500;margin-left:auto}
+
+/* ── Cards ── */
+.item-card{background:#fff;border-radius:16px;padding:22px 26px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.03);transition:box-shadow .2s,transform .15s;border:1px solid #f1f3f5}
+.item-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);transform:translateY(-1px);border-color:#e9ecef}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.card-left{display:flex;align-items:flex-start;gap:10px;flex:1}
+.card-idx{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:#f1f3f5;color:#868e96;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.card-title a{color:#1a1a2e;text-decoration:none;font-size:1.02rem;font-weight:700;line-height:1.45}
+.card-title a:hover{color:#4c6ef5}
+.card-score{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.card-summary{font-size:.88rem;color:#495057;margin-bottom:8px;line-height:1.72}
+.card-source{font-size:.74rem;color:#adb5bd}
+
+.bg-block,.disc-block{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:.83rem;line-height:1.65}
+.bg-block{background:#f8f9fe;border-left:3px solid #748ffc}
+.disc-block{background:#fef9e7;border-left:3px solid #fcc419}
+.bg-block p,.disc-block p{margin-top:3px;color:#495057}
+.block-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#adb5bd}
+
+.refs-details{margin-top:12px;font-size:.8rem;color:#868e96}
+.refs-details summary{cursor:pointer;font-weight:600;color:#495057}
+.refs-list{margin-top:6px;padding-left:18px}
+.refs-list li{margin-bottom:3px}
+.refs-list a{color:#4c6ef5;text-decoration:none;font-size:.79rem}
+.refs-list a:hover{text-decoration:underline}
+
+.tags-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;padding:3px 10px;background:#edf2ff;color:#4c6ef5;border-radius:20px;font-size:.72rem;font-weight:500}
+
+/* ── Floating TOC (right side) ── */
+.floating-toc{position:fixed;top:20px;right:20px;width:270px;max-height:calc(100vh - 40px);background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);z-index:100;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s}
+.floating-toc.hidden{transform:translateX(320px);opacity:0;pointer-events:none}
+.ftoc-header{display:flex;align-items:center;gap:8px;padding:16px 16px 12px;border-bottom:1px solid #f1f3f5;flex-shrink:0}
+.ftoc-logo{font-size:1.1rem}
+.ftoc-title{font-size:.82rem;font-weight:700;color:#495057;flex:1}
+.ftoc-close{width:26px;height:26px;border-radius:8px;border:none;background:#f1f3f5;color:#868e96;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ftoc-close:hover{background:#e9ecef}
+.ftoc-nav{overflow-y:auto;padding:8px 12px 16px;flex:1}
+.ftoc-nav::-webkit-scrollbar{width:3px}
+.ftoc-nav::-webkit-scrollbar-thumb{background:#dee2e6;border-radius:4px}
+
+/* Category header in floating TOC */
+.ftoc-cat{display:flex;align-items:center;gap:8px;padding:10px 8px 6px;font-size:.76rem;font-weight:700;color:#636e72;cursor:pointer;user-select:none;border-radius:8px;transition:background .12s}
+.ftoc-cat:hover{background:#f8f9fa}
+.ftoc-cat-icon{font-size:.85rem}
+.ftoc-cat-name{flex:1}
+.ftoc-cat-n{font-size:.7rem;color:#adb5bd;font-weight:500}
+.ftoc-chevron{transition:transform .2s;flex-shrink:0;color:#adb5bd}
+.ftoc-cat.collapsed .ftoc-chevron{transform:rotate(-90deg)}
+.ftoc-links{overflow:hidden;transition:max-height .3s ease}
+.ftoc-cat.collapsed + .ftoc-links{max-height:0!important}
+
+.ftoc-link{display:flex;align-items:center;gap:8px;padding:5px 8px 5px 20px;border-radius:6px;text-decoration:none;color:#636e72;font-size:.76rem;line-height:1.35;transition:background .12s}
+.ftoc-link:hover{background:#f8f9fa}
+.ftoc-link.active{background:#edf2ff;color:#4c6ef5}
+.ftoc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:#ced4da}
+.ftoc-dot.s9{background:#e03131}
+.ftoc-dot.s8{background:#f08c00}
+.ftoc-dot.s7{background:#2f9e44}
+.ftoc-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* TOC toggle FAB */
+.toc-fab{display:none;position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:1.2rem;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;align-items:center;justify-content:center}
+.toc-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(0,0,0,.3)}
+
+.footer{text-align:center;padding:40px 16px;color:#b2bec3;font-size:.74rem}
+.footer a{color:#868e96;text-decoration:none}
+.footer a:hover{color:#636e72}
+
+/* ── Responsive ── */
+@media (max-width:1100px){
+  .floating-toc{width:250px;right:10px;top:10px;max-height:calc(100vh - 20px)}
+}
+@media (max-width:900px){
+  .floating-toc{display:none}
+  .floating-toc.open-mobile{display:flex;position:fixed;top:10px;right:10px;bottom:10px;left:10px;width:auto;max-height:none;z-index:300;border-radius:16px}
+  .toc-fab{display:flex}
+  .container{padding:0 14px 60px}
+  .hero{padding:36px 16px 28px}
+  .hero h1{font-size:1.5rem}
+  .item-card{padding:18px 16px}
+}
+@media (min-width:901px){
+  .floating-toc{display:flex}
+  .toc-fab{display:none}
+}
+</style>
+</head>
+<body>
+<aside class="floating-toc" id="toc">
+    <div class="ftoc-header">
+      <span class="ftoc-logo">🌅</span>
+      <span class="ftoc-title">目录</span>
+      <button class="ftoc-close" onclick="toggleToc()" title="关闭">×</button>
+    </div>
+    <nav class="ftoc-nav"><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🤖</span><span class="ftoc-cat-name">AI/ML</span><span class="ftoc-cat-n">4</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-1" class="ftoc-link" data-idx="1"><span class="ftoc-dot s9"></span><span class="ftoc-text">GLM 5.2 在美国 AI 限制下发布</span></a><a href="#item-2" class="ftoc-link" data-idx="2"><span class="ftoc-dot s8"></span><span class="ftoc-text">RTX 5080 和 RTX 3090 组合…</span></a><a href="#item-3" class="ftoc-link" data-idx="3"><span class="ftoc-dot s8"></span><span class="ftoc-text">在家低成本 AI 编程：自托管开源模型</span></a><a href="#item-4" class="ftoc-link" data-idx="4"><span class="ftoc-dot s8"></span><span class="ftoc-text">华为 SpaceMind 以 70.6 分登…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔒</span><span class="ftoc-cat-name">安全/隐私</span><span class="ftoc-cat-n">1</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-5" class="ftoc-link" data-idx="5"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国人口普查局禁止在统计产品中使用噪声注入</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🌍</span><span class="ftoc-cat-name">时政/地缘</span><span class="ftoc-cat-n">12</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-6" class="ftoc-link" data-idx="6"><span class="ftoc-dot s9"></span><span class="ftoc-text">美国政府下令暂停 Anthropic 的 F…</span></a><a href="#item-7" class="ftoc-link" data-idx="7"><span class="ftoc-dot s9"></span><span class="ftoc-text">美伊以紧张局势：潜在战争实时更新</span></a><a href="#item-8" class="ftoc-link" data-idx="8"><span class="ftoc-dot s9"></span><span class="ftoc-text">伊朗公布最高领袖哈梅内伊葬礼日期</span></a><a href="#item-9" class="ftoc-link" data-idx="9"><span class="ftoc-dot s9"></span><span class="ftoc-text">美军击落伊朗攻击型无人机</span></a><a href="#item-10" class="ftoc-link" data-idx="10"><span class="ftoc-dot s9"></span><span class="ftoc-text">巴基斯坦总理称美伊已就协议措辞达成一致</span></a><a href="#item-11" class="ftoc-link" data-idx="11"><span class="ftoc-dot s8"></span><span class="ftoc-text">以色列公司 BlackCore 被疑干预纽约…</span></a><a href="#item-12" class="ftoc-link" data-idx="12"><span class="ftoc-dot s8"></span><span class="ftoc-text">OpenAI 遭多州检察长调查</span></a><a href="#item-13" class="ftoc-link" data-idx="13"><span class="ftoc-dot s8"></span><span class="ftoc-text">法院裁定谷歌对 AI 概览虚假陈述承担责任</span></a><a href="#item-14" class="ftoc-link" data-idx="14"><span class="ftoc-dot s8"></span><span class="ftoc-text">特朗普：美国在委内瑞拉帮助下击毙“阿拉瓜列车…</span></a><a href="#item-15" class="ftoc-link" data-idx="15"><span class="ftoc-dot s8"></span><span class="ftoc-text">英国与日本达成 180 亿英镑投资协议</span></a><a href="#item-16" class="ftoc-link" data-idx="16"><span class="ftoc-dot s8"></span><span class="ftoc-text">特朗普前往法国参加 G7 峰会，伊朗战争成焦点</span></a><a href="#item-17" class="ftoc-link" data-idx="17"><span class="ftoc-dot s8"></span><span class="ftoc-text">扎波罗热核电站重新接入电网，IAEA 斡旋停火后</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔬</span><span class="ftoc-cat-name">科学/研究</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-18" class="ftoc-link" data-idx="18"><span class="ftoc-dot s8"></span><span class="ftoc-text">胰腺肿瘤研究或揭示癌症的‘主开关’</span></a><a href="#item-19" class="ftoc-link" data-idx="19"><span class="ftoc-dot s8"></span><span class="ftoc-text">科学家启动药物试验应对埃博拉疫情扩大</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">📊</span><span class="ftoc-cat-name">行业/商业</span><span class="ftoc-cat-n">1</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-20" class="ftoc-link" data-idx="20"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国司法部批准华纳兄弟 1110 亿美元出售…</span></a></div></nav>
+  </aside>
+  <button class="toc-fab" id="tocFab" onclick="toggleToc()" title="目录">☰</button>
+<div class="container">
+
+    <header class="hero">
+      <div class="hero-badge">2026-06-14</div>
+      <h1>🌅 Horizon 每日速递</h1>
+      <p class="hero-sub">从 203 条内容中精选 20 条</p>
+      <div class="hero-pills"><span class="hero-pill">🤖 AI/ML <strong>4</strong></span><span class="hero-pill">🔒 安全/隐私 <strong>1</strong></span><span class="hero-pill">🌍 时政/地缘 <strong>12</strong></span><span class="hero-pill">🔬 科学/研究 <strong>2</strong></span><span class="hero-pill">📊 行业/商业 <strong>1</strong></span></div>
+    </header>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🤖</span>AI/ML<span class="cat-n">4 条</span></div>
+  <article class="item-card" id="item-1">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">1</span>
+        <h2 class="card-title"><a href="https://twitter.com/jietang/status/2065784751345287314" target="_blank">GLM 5.2 在美国 AI 限制下发布</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Z.ai（原智谱 AI）发布了 GLM 5.2，这是一个完全开放的前沿 AI 模型，发布当天正值美国政府限制其他前沿模型。 此次发布凸显了开放科学与地缘政治控制之间的紧张关系，中国实验室继续发布开放模型，而美国模型则面临出口限制。 GLM 5.2 以开放许可发布，延续了 Z.ai 对开源 AI 的承诺，并且紧随其他中国发布如 MiniMaxM3 和 KimiK2.7 之后。</p>
+      <p class="card-source">aloknnikhil · 6月13日 16:18</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Z.ai 是一家中国 AI 公司，前身为智谱 AI，于 2025 年更名。其 GLM 系列大语言模型以 MIT 许可证发布。美国以国家安全为由对某些 AI 模型实施限制，引发了关于开放科学的讨论。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>社区对中国实验室的开放贡献表示感谢，并将其与美国审查制度进行对比。有人指出发布时机与美国对 Anthropic 的 Fable 模型的限制相吻合，并且期待基准测试结果以及可能用于本地编码的闪存版本。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Z.ai" target="_blank">Z.ai - Wikipedia</a></li><li><a href="https://z.ai/blog/glm-4.5" target="_blank">GLM-4.5: Reasoning, Coding, and Agentic Abililties - z.ai</a></li><li><a href="https://github.com/zai-org/GLM-5" target="_blank">GitHub - zai-org/GLM-5: GLM-5: From Vibe Coding to Agentic ...</a></li></ul></details><div class="tags-row"><span class="tag">GLM</span> <span class="tag">open source</span> <span class="tag">AI model</span> <span class="tag">China</span> <span class="tag">geopolitics</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-2">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">2</span>
+        <h2 class="card-title"><a href="https://imil.net/blog/posts/2026/rtx-5080-+-rtx-3090-setup-80+-tok-s-on-qwen-3.6-27b-q8/" target="_blank">RTX 5080 和 RTX 3090 组合在 Qwen 3.6 27B Q8 上实现 80+ tokens/秒</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一篇博客文章报道，使用 RTX 5080 和 RTX 3090 的双 GPU 设置，在 Q8 量化下运行 Qwen 3.6 27B 模型，实现了每秒超过 80 个 token 的速度。 这表明使用消费级多 GPU 配置可以实现高性能的本地 LLM 推理，可能减少在编程和写作等任务中对云 API 的依赖。 Qwen 3.6 27B 是一个稠密 27B 参数模型，在编程基准测试上表现优于更大模型，而 Q8 量化在速度和质量之间取得了平衡，质量损失极小。</p>
+      <p class="card-source">iMil · 6月13日 09:55</p>
+<div class="bg-block"><span class="block-label">背景</span><p>像 Qwen 3.6 这样的大语言模型需要大量 GPU 内存和算力。量化通过使用 8 位整数（Q8）代替 16 位浮点数来减小模型大小，大致将内存使用减半，同时保留大部分准确性。跨多个 GPU 运行模型可以分摊工作量，实现更快的推理。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者分享了 Qwen 3.6 的调参建议（例如`--temp 1.0 --top-p 0.95 --top-k 20`），并指出针对 Nvidia 硬件推荐的推测解码设置应使用`--spec-draft-n-max 2`而非 3。一些用户将性能与其他硬件（如 Tenstorrent 卡）进行了比较，另一些用户则指出加州电费成本使得本地设置在与云 API 竞争中不具优势。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://qwen.ai/blog?id=qwen3.6-27b" target="_blank">Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model</a></li><li><a href="https://mljourney.com/quantized-llms-explained-q4-vs-q8-vs-fp16/" target="_blank">Quantized LLMs Explained: Q4 vs Q8 vs FP16 - ML Journey</a></li><li><a href="https://huggingface.co/Qwen/Qwen3.6-27B" target="_blank">Qwen/Qwen3.6-27B · Hugging Face</a></li></ul></details><div class="tags-row"><span class="tag">LLM inference</span> <span class="tag">Qwen</span> <span class="tag">Nvidia GPU</span> <span class="tag">performance</span> <span class="tag">local AI</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-3">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">3</span>
+        <h2 class="card-title"><a href="https://stephen.bochinski.dev/blog/2026/06/13/ai-coding-at-home-without-going-broke/" target="_blank">在家低成本 AI 编程：自托管开源模型</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Stephen Bochinski 发布了一篇实用指南，介绍如何在家使用 AI 编程而不产生高昂的 API 费用，提倡在本地硬件上自托管开源模型。 该指南满足了人们对成本效益高的 AI 编程解决方案日益增长的需求，尤其是在开发者寻求昂贵订阅服务（如 Codex 和 Cursor）替代方案的情况下。它强调了自托管在隐私保护和长期节省方面的可行性。 文章承认自托管需要大量的硬件前期投资，且模型能力弱于前沿实验室，但指出对于有持续长时间任务的用户来说，这是值得的。社区评论还提到通过 Opencode 工具使用 Deepseek 的 API 作为低成本替代方案。</p>
+      <p class="card-source">sbochins · 6月13日 16:45</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 编程助手如 GitHub Copilot、Cursor 和 Codex 提供代码生成和补全功能，但通常按 token 或按月收费。自托管是指在本地 GPU 上运行开源 LLM（如 Qwen、CodeLlama），从而消除持续的 API 费用。最近的模型如 Qwen3-Coder-Next 可在单块 24GB GPU 上运行，并达到具有竞争力的基准测试成绩。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者分享了不同体验：有人认为每月 100 美元的 Codex 计划足够，而有人质疑用户如何在 Cursor 上花费那么多。一位评论者指出自托管并非完全免费，因为电费成本，但重视隐私溢价。另一位推荐通过 Opencode 使用 Deepseek 的 V4 flash 模型，几个月仅需 10 美元。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://overchat.ai/ai-hub/best-local-llm-for-coding" target="_blank">Best Local LLM for Coding in 2026: Developer's Guide | AI Hub</a></li><li><a href="https://tcal.net/blog/open-source-ai-coding-tools-self-hosted/" target="_blank">Best Open Source AI Coding Tools You Can Self-Host in 2026</a></li></ul></details><div class="tags-row"><span class="tag">AI coding</span> <span class="tag">self-hosting</span> <span class="tag">open source models</span> <span class="tag">cost optimization</span> <span class="tag">local LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-4">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">4</span>
+        <h2 class="card-title"><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247897320&idx=3&sn=07784c5d298edcd85f0796f1ddcca265" target="_blank">华为 SpaceMind 以 70.6 分登顶空间智能榜单</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">华为的 SpaceMind 纯 RGB 视觉语言模型，参数量仅 1B，在李飞飞团队构建的空间智能基准 VSI-Bench 上获得 70.6%的综合得分，刷新了榜单记录。 这一突破表明，纯 RGB 视觉语言模型无需依赖深度图或点云即可接近人类水平的空间推理能力，有望使空间 AI 在真实场景中更易于部署且更具效率。 SpaceMind 采用 Camera-Guided Modality Fusion（CGMF）模块，可即插即用地集成到 InternVL、Qwen-VL 等现有视觉语言模型架构中，无需改动主干，相关论文已被 CVPR 2026 接收。</p>
+      <p class="card-source">量子位 · 6月13日 07:55</p>
+<div class="bg-block"><span class="block-label">背景</span><p>空间智能指模型从视觉输入中理解并推理物理三维世界的能力。VSI-Bench 是李飞飞团队建立的评估空间智能的权威基准。与许多需要额外深度传感器或 3D 数据的方法不同，SpaceMind 仅基于标准 RGB 图像运行，大幅降低了硬件和数据需求。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.sohu.com/a/1036141639_610300" target="_blank">华为SpaceMind登顶空间智能权威榜：纯RGB视觉语言模型拿下70.6分，刷...</a></li><li><a href="https://www.10100.com/article/141768742" target="_blank">华为SpaceMind登顶空间智能权威榜：纯RGB视觉语言模型拿下70.6分，刷...</a></li><li><a href="https://www.x-techcon.com/article/152147.html" target="_blank">华为SpaceMind登顶空间智能权威榜：纯RGB视觉语言模型拿下70.6分，刷...</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">空间智能</span> <span class="tag">视觉语言模型</span> <span class="tag">华为</span> <span class="tag">李飞飞榜单</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔒</span>安全/隐私<span class="cat-n">1 条</span></div>
+  <article class="item-card" id="item-5">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">5</span>
+        <h2 class="card-title"><a href="https://desfontain.es/blog/banning-noise.html" target="_blank">美国人口普查局禁止在统计产品中使用噪声注入</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国人口普查局已禁止在其所有统计产品中使用噪声注入（即差分隐私），推翻了 2020 年人口普查采用的关键隐私保护措施。 这一政策变化可能削弱公众对政府数据收集的信任，并增加在已发布统计数据中重新识别个人的风险，影响依赖准确且隐私保护的人口普查数据的研究人员、政策制定者和公众。 该禁令适用于人口普查局发布的所有统计产品，而不仅仅是十年一次的人口普查。批评者认为，没有噪声注入，敏感信息可能从汇总统计中被重建，尤其是当与其他数据源结合时。</p>
+      <p class="card-source">nl · 6月13日 13:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>统计披露控制（SDC）包括防止从已发布数据中识别个人的技术。噪声注入是差分隐私的一种形式，通过添加随机噪声来掩盖个体贡献。人口普查局曾在 2020 年人口普查中实施差分隐私以解决隐私问题，但这一决定推翻了该做法。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者表达失望和担忧，强调对人口普查过程的信任本就不高，移除隐私保护可能导致数据滥用。一些人建议在分析阶段而非原始数据中添加噪声，另一些人则担心国家安全影响。</p></div><details class="refs-details"><summary>参考链接 (1)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Statistical_Disclosure_Control" target="_blank">Statistical disclosure control - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">differential privacy</span> <span class="tag">census</span> <span class="tag">data privacy</span> <span class="tag">US policy</span> <span class="tag">statistical disclosure</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🌍</span>时政/地缘<span class="cat-n">12 条</span></div>
+  <article class="item-card" id="item-6">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">6</span>
+        <h2 class="card-title"><a href="https://simonwillison.net/2026/Jun/13/us-government-directive-to-suspend-access/#atom-everything" target="_blank">美国政府下令暂停 Anthropic 的 Fable 5 和 Mythos 5</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">2026 年 6 月 12 日，美国政府发布出口管制指令，要求 Anthropic 立即暂停向任何外国国民提供其 Fable 5 和 Mythos 5 模型的访问权限，理由是国家安全担忧，涉及一种潜在的越狱方法。 这一前所未有的举措标志着基于国家安全的 AI 出口管制显著升级，影响全球客户，并为未来 AI 模型监管树立了先例。 该指令于东部时间下午 5:21 收到，未提供具体细节；Anthropic 声称所谓的越狱是一种简单的、非普遍的技术，其他模型如 OpenAI 的 GPT-5.5 也能实现，访问于太平洋时间 6 月 12 日下午 6:59 被切断。</p>
+      <p class="card-source">Simon Willison · 6月13日 01:01</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Fable 5 是向公众发布的带有防护栏的 Mythos 级模型，而 Mythos 5 是更先进的模型，仅在 Project Glasswing 下限制给选定的合作伙伴使用。AI 越狱是指通过提示注入等技术绕过 LLM 中的安全护栏。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>Topfi 质疑 Anthropic 为何向政府报告已知的 LLM 漏洞；eranation 提到亚马逊的投资和 Project Glasswing 的背景；himata4113 讨论了越狱方法，并声称 Fable 5 被训练为对利用不感兴趣。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5" target="_blank">Claude Fable 5 and Claude Mythos 5 \ Anthropic</a></li><li><a href="https://techcrunch.com/2026/06/09/anthropics-claude-fable-5-is-a-version-of-mythos-the-public-can-access-today/" target="_blank">Anthropic's Claude Fable 5 is a version of Mythos the public ...</a></li><li><a href="https://en.wikipedia.org/wiki/AI_jailbreaking" target="_blank">AI jailbreaking</a></li></ul></details><div class="tags-row"><span class="tag">AI regulation</span> <span class="tag">national security</span> <span class="tag">Anthropic</span> <span class="tag">export control</span> <span class="tag">AI policy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-7">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">7</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/live/2026/06/13/world/iran-war-trump-us-israel/heres-the-latest" target="_blank">美伊以紧张局势：潜在战争实时更新</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《纽约时报》正在实时报道伊朗、美国和以色列之间可能导致军事冲突的紧张局势升级。包括军事调动和外交声明在内的具体进展正在被追踪。 这场冲突有可能重塑中东地缘政治和全球能源市场。任何军事冲突都可能对国际安全和全球经济产生深远影响。 实时报道包括官员声明、军事调动报道以及为缓和局势所做的外交努力。局势仍在变化，尚未确认战争爆发。</p>
+      <p class="card-source">New York Times World · 6月13日 17:32</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国和以色列长期以来一直将伊朗的核计划视为威胁。近期，由于伊朗在核技术上的进展及其对地区代理势力的支持，紧张局势进一步升级。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">war</span> <span class="tag">geopolitics</span> <span class="tag">US</span> <span class="tag">Israel</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-8">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">8</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPWWljdFRvWXh3cEM0ODgyOFF1LUVuSTJFSklLNXlPVWxyZks4d0pKQmVVY1RBX0lNSHZ3Vzk1MlZOZHl0bTRRdFAteDEtLWptUnpiMEY2djh4cDNYZHFheFUwaFVCa0hpdU1YMWd4UDFwTnc1Z1kzcGZQNF9SUDVTZGI0VUE3VzRzQWM1OFU0RXJKQXBpMjQxZDNoMldScWNYQnlzaGE4aGtxaFo3RlY3RmJyMnJGdG4xTW9nSHJKM2tPZDN2UUZaX0QzYw?oc=5" target="_blank">伊朗公布最高领袖哈梅内伊葬礼日期</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗最高领袖去世是一个重大地缘政治事件，可能导致权力过渡以及伊朗国内和外交政策的转变，影响地区稳定和全球外交。 葬礼活动持续数天，从 7 月 4 日开始，最终于 7 月 9 日安葬，这表明伊朗将进入一段重要的全国哀悼期，并着手准备权力交接。</p>
+      <p class="card-source">Google News - Reuters · 6月13日 12:46</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗最高领袖是该国最高政治和宗教权威，对国家主要机构拥有最终控制权。阿亚图拉·阿里·哈梅内伊自 1989 年起担任此职，接替了伊斯兰共和国创始人阿亚图拉·鲁霍拉·霍梅尼。他的去世将触发复杂的继任者遴选程序，可能涉及专家会议。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Khamenei</span> <span class="tag">geopolitics</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-9">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">9</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxOLVpqblpRT0R6RGd1RUJmVjhfQi12S3JhbUJwM2dsM2hVSGRtMy02UkZYZTdseUI4YzRyMEFzOGpqNTdiRGkwdVB2R0oyX0otZDFQXzhENzYyVnpvMnNVUWZ4U0N5MzZETmp0OG5RcmdfWGV5elVlZktyeXVObThKNUlIa1N2dUtTdDUweGxwV0ZDeC1QeW9rd3p5RWhVVFRRRVdLYTJhQ2JxbnFt?oc=5" target="_blank">美军击落伊朗攻击型无人机</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据路透社消息人士称，美军已击落伊朗的攻击型无人机，这标志着两国之间的直接军事接触。 这一事件可能导致中东紧张局势升级，有可能使美国更深地卷入与伊朗的冲突，并影响地区稳定。 具体击落的无人机数量和交火地点尚未披露。这是一个正在发展中的事件。</p>
+      <p class="card-source">Google News - Reuters · 6月13日 00:40</p>
+<div class="bg-block"><span class="block-label">背景</span><p>伊朗过去曾使用攻击型无人机瞄准美军或地区盟友。美军在中东保持存在，此前也曾与伊朗无人机交火。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">military</span> <span class="tag">Iran</span> <span class="tag">US</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-10">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">10</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxONURwN19GREN0aGJfdmstQ0ZQc0w1eGNHRG5kYW9MWUhjRm55M0gweVdQeHQ0dWlVU2w5dWkxYXJhaW1yMzcxN2pfZnNWNm0xaURoVjAtdlY3SWVhN3lrWXV5STJVdExXTjdMM3pSb0paTUZoU2xBMHJMUVFGelFuQ0tycmlYWURDQVFjbmpjOER4SUp1SWNaeVd2MWFUUFNua1FqSi1XMl9UY2s?oc=5" target="_blank">巴基斯坦总理称美伊已就协议措辞达成一致</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">巴基斯坦总理宣布，美国和伊朗已就结束战争的协议措辞达成一致，而特朗普总统在 Truth Social 上声称该协议将于周日签署。 一项正式的美伊和平协议将解决长期冲突，可能稳定中东局势，重新开放霍尔木兹海峡，并阻止伊朗获得核武器。 存在矛盾：尽管特朗普发帖，伊朗此前表示该协议不会在周日签署。据报道，协议包括重新开放霍尔木兹海峡和核不扩散保证。</p>
+      <p class="card-source">Google News - AP News · 6月13日 02:01</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美伊紧张局势因伊朗核计划和地区冲突升级。霍尔木兹海峡是关键航运通道。巴基斯坦在此潜在突破中担任调解人。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://truthsocial.com/" target="_blank">Truth Social</a></li><li><a href="https://en.wikipedia.org/wiki/Truth_Social" target="_blank">Truth Social - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">US-Iran</span> <span class="tag">geopolitics</span> <span class="tag">peace deal</span> <span class="tag">international relations</span> <span class="tag">Pakistan</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-11">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">11</span>
+        <h2 class="card-title"><a href="https://www.reuters.com/world/israeli-firm-blackcore-also-suspected-meddling-nyc-scotland-votes-french-2026-06-11/" target="_blank">以色列公司 BlackCore 被疑干预纽约、苏格兰、法国选举</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">路透社 2026 年 6 月 11 日报道，以色列情报公司 BlackCore 涉嫌干预纽约市和苏格兰的选举，此外还介入法国 2026 年 3 月的市政选举，并在安哥拉和多哥开展活动。 这扩大了对一家私营公司涉嫌干预选举的范围，引发了对多个民主进程中外国影响力以及虚假信息活动全球影响的担忧。 该公司被指控针对左翼候选人发起抹黑运动，法国当局已要求以色列做出解释并协助调查。</p>
+      <p class="card-source">pera · 6月13日 07:45</p>
+<div class="bg-block"><span class="block-label">背景</span><p>BlackCore 是一家以色列私营情报公司，涉嫌从事反对派研究和虚假信息活动。这类公司常雇佣前情报人员开展抹黑运动，类似更知名的 Black Cube。私营实体干预选举已成为全球日益关注的问题。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者表达了怀疑，一位纽约人对此爆料并不惊讶，将其与网络上的反犹主义指控相提并论。另一位评论者区分了 BlackCore 与以肮脏手段闻名的另一家以色列公司 Black Cube。还有一位称赞法国政府在此事上的外交处理方式。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.reuters.com/world/israeli-firm-blackcore-also-suspected-meddling-nyc-scotland-votes-french-2026-06-11/" target="_blank">Israeli firm BlackCore suspected of meddling in New York and ...</a></li><li><a href="https://www.jpost.com/international/article-896109" target="_blank">French authorities probe Israeli firm BlackCore for alleged ...</a></li><li><a href="https://www.independent.co.uk/news/world/europe/france-elections-israel-blackcore-unbowed-b2975940.html" target="_blank">France investigates whether Israeli firm BlackCore interfered ...</a></li></ul></details><div class="tags-row"><span class="tag">election interference</span> <span class="tag">geopolitics</span> <span class="tag">disinformation</span> <span class="tag">Israel</span> <span class="tag">cybersecurity</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-12">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">12</span>
+        <h2 class="card-title"><a href="https://techcrunch.com/2026/06/13/openai-faces-investigation-from-state-attorneys-general/" target="_blank">OpenAI 遭多州检察长调查</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">多个州的检察长已对 OpenAI 展开调查，重点关注其广告政策、健康数据处理、用户数据实践以及未成年人安全等方面。 这标志着对领先 AI 公司的监管审查显著升级，可能为美国 AI 治理树立先例，并影响行业实践。 涉及的州尚未披露，但调查覆盖了包括广告政策和健康数据处理在内的广泛实践。</p>
+      <p class="card-source">TechCrunch · 6月13日 16:47</p>
+<div class="bg-block"><span class="block-label">背景</span><p>州检察长有权调查公司是否违反州消费者保护和隐私法律。OpenAI 作为 ChatGPT 的创建者，在数据隐私和 AI 安全方面面临越来越多的审视。此次调查增加了正在进行中的联邦和国际监管努力。</p></div><div class="tags-row"><span class="tag">OpenAI</span> <span class="tag">investigation</span> <span class="tag">regulation</span> <span class="tag">AI policy</span> <span class="tag">privacy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-13">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">13</span>
+        <h2 class="card-title"><a href="https://www.wired.com/story/a-court-has-ruled-that-google-is-liable-for-false-statements-generated-by-ai-overviews/" target="_blank">法院裁定谷歌对 AI 概览虚假陈述承担责任</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一家法院裁定，谷歌对其 AI 概览功能生成的虚假陈述承担法律责任，这标志着 AI 生成内容责任方面的里程碑式判决。 该裁决确立了一个关键先例，即设计、训练和管理 AI 系统的公司可能对其输出造成的损害负责，这可能会重塑 AI 在各行业的部署方式。 法院特别认定谷歌承担责任，因为它设计、训练、运营和管理着 AI 概览系统。该决定不涉及第三方内容，而是专注于公司自身 AI 生成的回复。</p>
+      <p class="card-source">Wired · 6月13日 09:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 概览是集成到谷歌搜索中的人工智能功能，它会生成由 AI 生成的搜索结果摘要。该功能因不准确而受到批评，例如声称巴黎 500 英里内最高建筑是一个短建筑。法院的裁决澄清，公司不能通过声称 AI 输出不可预测或超出其控制来逃避责任。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/AI_Overviews" target="_blank">AI Overviews - Wikipedia</a></li><li><a href="https://support.google.com/websearch/answer/14901683?hl=en&co=GENIE.Platform=Desktop" target="_blank">Find information in faster & easier ways with AI Overviews in ...</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">liability</span> <span class="tag">Google</span> <span class="tag">legal precedent</span> <span class="tag">regulation</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-14">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">14</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/us-news/2026/jun/12/trump-venezuela-tren-de-aragua-leader-killed" target="_blank">特朗普：美国在委内瑞拉帮助下击毙“阿拉瓜列车”头目</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">2026 年 6 月 12 日，美国总统唐纳德·特朗普宣布，美国南方司令部与委内瑞拉当局协调，发动军事打击，击毙了委内瑞拉黑帮“阿拉瓜列车”（Tren de Aragua）的头目埃克托·鲁斯滕福德·格雷罗·弗洛雷斯（别名“尼诺·格雷罗”）。 此次打击标志着美国与委内瑞拉在反恐方面的重要合作，针对的是一个已扩展到拉丁美洲和美国的跨国犯罪组织。其头目的被消灭可能扰乱“阿拉瓜列车”的行动，并表明美国对被列为恐怖组织的外国黑帮采取更强硬立场。 此次打击由美国南方司令部在特朗普总统指示下执行。“阿拉瓜列车”于 2025 年 2 月被美国列为外国恐怖组织，特朗普政府此前曾援引 1798 年《敌对外侨法》驱逐涉嫌成员。</p>
+      <p class="card-source">The Guardian World · 6月13日 01:51</p>
+<div class="bg-block"><span class="block-label">背景</span><p>“阿拉瓜列车”起源于委内瑞拉托科隆监狱的一个帮派，由“尼诺·格雷罗”领导，将其发展为跨国犯罪集团。该团伙在委内瑞拉难民危机期间扩张，成为美国移民执法的重点。2023 年 9 月，委内瑞拉安全部队突袭托科隆监狱，但格雷罗逃脱。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Tren_de_Aragua" target="_blank">Tren de Aragua</a></li><li><a href="https://insightcrime.org/venezuela-organized-crime-news/tren-de-aragua/" target="_blank">Tren de Aragua Explained - InSight Crime Tren de Aragua, a criminal organization with roots in ... - NPR Tren de Aragua | Venezuela, Criminal Organization, Drug ... Top Tren de Aragua leader killed in US military strike, Trump ... Tren de Aragua news & latest pictures from latintimes.com Crossing Borders: The Evolution and Impact of Tren de Aragua</a></li><li><a href="https://en.wikipedia.org/wiki/US_Southern_Command" target="_blank">US Southern Command</a></li></ul></details><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">US-Venezuela</span> <span class="tag">counterterrorism</span> <span class="tag">military strike</span> <span class="tag">Tren de Aragua</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-15">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">15</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/politics/2026/jun/13/uk-and-japan-set-to-agree-investment-deal-worth-18bn" target="_blank">英国与日本达成 180 亿英镑投资协议</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英国首相基尔·斯塔默与日本首相高市早苗即将达成一项 180 亿英镑的投资协议，预计将创造数万个就业岗位。该协议将在七国集团峰会前宣布。 该协议加强了英国与日本的经济联系，表明脱欧后的英国致力于全球合作伙伴关系。这笔投资可能推动关键行业发展，并提供显著的就业刺激。 180 亿英镑包括商业和政府协议。斯塔默与高市早苗的会晤将于周日在唐宁街举行，紧接着是七国集团峰会。</p>
+      <p class="card-source">The Guardian World · 6月13日 22:39</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自脱欧以来，英国一直在寻求深化与非欧盟国家的贸易和投资关系。日本是英国的主要投资国，在汽车、技术和金融服务等领域已有合作关系。七国集团峰会为这类高层协议提供了平台。</p></div><div class="tags-row"><span class="tag">UK</span> <span class="tag">Japan</span> <span class="tag">investment</span> <span class="tag">international relations</span> <span class="tag">economy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-16">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">16</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/13/nx-s1-5854957/trump-travels-to-france-for-the-52nd-g7-summit" target="_blank">特朗普前往法国参加 G7 峰会，伊朗战争成焦点</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">特朗普总统前往法国参加第 52 届七国集团峰会，持续的伊朗战争预计将成为世界领导人讨论的焦点。 此次峰会在伊朗战争升级的关键时刻召开，G7 的立场可能影响国际反应并塑造特朗普的外交政策遗产。 第 52 届 G7 峰会汇集了加拿大、法国、德国、意大利、日本、英国和美国的领导人；这是特朗普自伊朗冲突加剧以来的首次外访。</p>
+      <p class="card-source">NPR World · 6月13日 11:39</p>
+<div class="bg-block"><span class="block-label">背景</span><p>七国集团（G7）是一个由世界上最大发达经济体组成的政府间论坛。峰会为领导人协调全球事务提供了平台。今年早些时候开始的伊朗战争造成了重大地缘政治动荡和人道主义危机。</p></div><div class="tags-row"><span class="tag">G7 Summit</span> <span class="tag">geopolitics</span> <span class="tag">Trump</span> <span class="tag">Iran conflict</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-17">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">17</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPa2FyemxMMDZ5LWFNcXAtZTZxWU1IS2FBOEJXcnJVWGJOZHZtQ1FCX2ZncHJaV0NQY2QwRC1EN0NiYy1GbTFFYWZKNy11Mm92RXRjZThXbVJMTHBteHJKdnFfQkw3RDRhY0pWbnNiQ0o0MkNiaDZLc0Y3OXVva25ydUFYRTVtWkRucjdRVFNMQVB4QklhemQyaGJUTWUtNWliSTlOMUVYazZBVmlmY0FqNFBKV0pQUmZobll6b2JhNmxSQQ?oc=5" target="_blank">扎波罗热核电站重新接入电网，IAEA 斡旋停火后</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">乌克兰扎波罗热核电站在国际原子能机构（IAEA）斡旋的临时停火后重新接入国家电网。 此次重新接入避免了潜在的核灾难，并确保了对该地区的持续供电，凸显了 IAEA 外交在缓解冲突相关核风险中的关键作用。 该电站因该地区的炮击和战斗而断开电网；IAEA 的停火使得安全修复得以进行。</p>
+      <p class="card-source">Google News - Reuters · 6月13日 14:13</p>
+<div class="bg-block"><span class="block-label">背景</span><p>扎波罗热核电站是欧洲最大的核电站，自俄罗斯入侵乌克兰以来一直是安全关注的焦点。由于军事活动，它多次失去外部电力，引发对核事故的担忧。IAEA 一直致力于在电站周围建立安全区。</p></div><div class="tags-row"><span class="tag">nuclear</span> <span class="tag">Ukraine</span> <span class="tag">IAEA</span> <span class="tag">ceasefire</span> <span class="tag">energy</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔬</span>科学/研究<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-18">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">18</span>
+        <h2 class="card-title"><a href="https://economist.com/science-and-technology/2026/06/12/treating-pancreatic-tumours-may-have-revealed-cancers-master-switch" target="_blank">胰腺肿瘤研究或揭示癌症的‘主开关’</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一项关于胰腺肿瘤的新研究表明，可能发现了癌症的一个主开关，针对的是此前被认为不可成药的 KRAS 突变，该突变存在于约 20%的癌症中。 这一发现可能为 KRAS 驱动的癌症（包括胰腺癌、结直肠癌和肺癌）带来新疗法，从而克服药物开发中的一大障碍。 该研究适用于 20%的肿瘤，而 KRAS 因其平滑的蛋白质表面和缺乏结合位点，长期以来被视为不可成药靶点。</p>
+      <p class="card-source">andsoitis · 6月13日 13:34</p>
+<div class="bg-block"><span class="block-label">背景</span><p>KRAS 是一种原癌基因，突变后会锁定关键的促生长信号蛋白处于‘开启’状态，导致细胞不受控制地分裂。约 85%的胰腺癌、45%的结直肠癌和 30%的肺腺癌中存在 KRAS 突变。近年来生物制剂的进步开始使 KRAS 变得可成药。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者指出标题有些夸张，因为该发现仅适用于 20%的肿瘤，但他们仍然表示欢迎。一位评论者强调 KRAS 曾被视为不可成药，这一突破为未来治疗拓宽了视野。另一位则对美国科研经费表示担忧。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/KRAS" target="_blank">KRAS - Wikipedia</a></li><li><a href="https://www.nature.com/articles/s41392-021-00780-4" target="_blank">KRAS mutation: from undruggable to druggable in cancer - Nature</a></li><li><a href="https://scienceinsights.org/what-is-a-kras-mutation-and-how-does-it-drive-cancer/" target="_blank">What Is a KRAS Mutation and How Does It Drive Cancer?</a></li></ul></details><div class="tags-row"><span class="tag">pancreatic cancer</span> <span class="tag">KRAS</span> <span class="tag">oncology</span> <span class="tag">medical research</span> <span class="tag">cancer treatment</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-19">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">19</span>
+        <h2 class="card-title"><a href="https://www.nytimes.com/2026/06/12/health/ebola-treatment-bundibugyo-virus.html" target="_blank">科学家启动药物试验应对埃博拉疫情扩大</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">科学家们已开始针对本迪布焦病毒（Bundibugyo virus）进行多种药物的临床试验，这些药物在初步研究中显示出潜力，而当前的埃博拉疫情仍在持续扩大。 这很关键，因为本迪布焦病毒会引起严重的出血热且治疗选择有限，成功的药物试验可能带来首批有效疗法，从而改善疫情应对并拯救全球生命。 这些药物在实验室和动物研究中显示出有效性，但在人体中的安全性和有效性尚未得到证实。由于疫情扩大，试验正在加速进行，预计未来几个月内会有结果。</p>
+      <p class="card-source">New York Times World · 6月13日 19:11</p>
+<div class="bg-block"><span class="block-label">背景</span><p>本迪布焦埃博拉病毒是一种丝状病毒，可引起人类严重出血热，于 2007 年在乌干达首次发现，随后 2012 年在刚果民主共和国出现。当前疫情于 2026 年被世界卫生组织宣布为国际关注的突发公共卫生事件（PHEIC）。与更知名的扎伊尔埃博拉病毒不同，目前尚无针对本迪布焦病毒的获批疫苗或特定治疗方法，这使得这些试验尤为紧迫。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Bundibugyo_ebolavirus" target="_blank">Bundibugyo ebolavirus - Wikipedia</a></li><li><a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON602" target="_blank">Ebola disease caused by Bundibugyo virus, Democratic Republic ...</a></li><li><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(26)01037-8/fulltext" target="_blank">The PHEIC for Ebola disease caused by Bundibugyo virus: an ...</a></li></ul></details><div class="tags-row"><span class="tag">Ebola</span> <span class="tag">outbreak</span> <span class="tag">treatments</span> <span class="tag">clinical trials</span> <span class="tag">public health</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">📊</span>行业/商业<span class="cat-n">1 条</span></div>
+  <article class="item-card" id="item-20">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">20</span>
+        <h2 class="card-title"><a href="https://www.bbc.com/news/articles/cjwgled9jxwo?at_medium=RSS&at_campaign=rss" target="_blank">美国司法部批准华纳兄弟 1110 亿美元出售给派拉蒙</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国司法部已批准华纳兄弟以 1110 亿美元出售给派拉蒙，允许合并继续进行。 此次合并重塑了媒体格局，将 CNN 和 HBO 等主要工作室和网络整合在一个实体下，可能影响竞争和内容分发。 该交易对华纳兄弟的估值达 1110 亿美元，包括华纳兄弟工作室、CNN 和 HBO 等资产。司法部的批准是关键一步，但该交易可能仍面临其他司法管辖区的监管审查。</p>
+      <p class="card-source">BBC World · 6月13日 03:28</p>
+<div class="bg-block"><span class="block-label">背景</span><p>媒体行业出现了一波整合浪潮，各公司寻求规模以与 Netflix 和迪士尼等流媒体巨头竞争。华纳兄弟探索公司由华纳媒体和探索公司合并而成，拥有 CNN 和 HBO。派拉蒙全球拥有 CBS、尼克儿童频道和派拉蒙影业。此次拟议的合并将创建全球最大的媒体集团之一。</p></div><div class="tags-row"><span class="tag">media merger</span> <span class="tag">Warner Bros</span> <span class="tag">Paramount</span> <span class="tag">DOJ</span> <span class="tag">business</span></div>
+    </div>
+  </article></section>
+<footer class="footer">
+  <p>Generated by <a href="https://github.com/jinghuazhao/Horizon" target="_blank">Horizon</a> · AI-Driven Information Aggregation · 2026-06-14</p>
+</footer>
+</div>
+<script>
+// Toggle floating panel visibility
+var tocVisible = window.innerWidth > 900;
+function updateTocVisibility() {
+  var toc = document.getElementById('toc');
+  var fab = document.getElementById('tocFab');
+  if (window.innerWidth > 900) {
+    toc.classList.remove('hidden','open-mobile');
+    tocVisible = true;
+    fab.style.display = 'none';
+  } else {
+    toc.classList.add('hidden');
+    toc.classList.remove('open-mobile');
+    tocVisible = false;
+    fab.style.display = 'flex';
+  }
+}
+window.addEventListener('resize', updateTocVisibility);
+
+function toggleToc() {
+  var toc = document.getElementById('toc');
+  if (window.innerWidth <= 900) {
+    toc.classList.toggle('open-mobile');
+    toc.classList.remove('hidden');
+  } else {
+    tocVisible = !tocVisible;
+    if (tocVisible) toc.classList.remove('hidden');
+    else toc.classList.add('hidden');
+  }
+}
+
+// Collapsible category drawers (collapsed by default)
+function toggleCat(el) {
+  el.classList.toggle('collapsed');
+  var links = el.nextElementSibling;
+  if (!links || !links.classList.contains('ftoc-links')) return;
+  if (el.classList.contains('collapsed')) {
+    links.style.maxHeight = '0px';
+  } else {
+    links.style.maxHeight = links.scrollHeight + 'px';
+  }
+}
+
+// Initialize: collapse all, set heights
+document.addEventListener('DOMContentLoaded', function() {
+  var cats = document.querySelectorAll('.ftoc-cat');
+  cats.forEach(function(cat) {
+    cat.classList.add('collapsed');
+    var links = cat.nextElementSibling;
+    if (links && links.classList.contains('ftoc-links')) {
+      links.style.maxHeight = '0px';
+      // Store natural height
+      links._naturalHeight = links.scrollHeight;
+    }
+  });
+  // First category expanded by default
+  if (cats.length > 0) {
+    cats[0].classList.remove('collapsed');
+    var firstLinks = cats[0].nextElementSibling;
+    if (firstLinks && firstLinks.classList.contains('ftoc-links')) {
+      firstLinks.style.maxHeight = firstLinks.scrollHeight + 'px';
+    }
+  }
+});
+
+// Scroll highlight
+var links = document.querySelectorAll('.ftoc-link');
+var cards = document.querySelectorAll('.item-card');
+var activeCat = null;
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    var idx = e.target.id.replace('item-','');
+    var link = document.querySelector('.ftoc-link[data-idx="'+idx+'"]');
+    if (e.isIntersecting && link) {
+      links.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+      // Expand current category, collapse the previously expanded one
+      var cat = link.closest('.ftoc-links');
+      if (cat) {
+        var header = cat.previousElementSibling;
+        if (header && header.classList.contains('ftoc-cat')) {
+          if (activeCat && activeCat !== header) {
+            activeCat.classList.add('collapsed');
+            activeCat.nextElementSibling.style.maxHeight = '0px';
+          }
+          if (header.classList.contains('collapsed')) {
+            header.classList.remove('collapsed');
+            cat.style.maxHeight = cat.scrollHeight + 'px';
+          }
+          activeCat = header;
+        }
+      }
+    }
+  });
+}, {rootMargin: '-8% 0px -75% 0px'});
+cards.forEach(function(c) { observer.observe(c); });
+</script>
+</body>
+</html>

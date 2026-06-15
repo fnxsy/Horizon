@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Horizon Daily — 2026-06-07</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans SC",sans-serif;background:#f5f6fa;color:#2d3436;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(155deg,#0f0c29 0%,#1a1a3e 40%,#24243e 100%);color:#fff;padding:44px 32px 36px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(99,102,241,.25),transparent);pointer-events:none}
+.hero-badge{display:inline-block;padding:4px 14px;border-radius:20px;background:rgba(255,255,255,.12);font-size:.78rem;letter-spacing:.06em;margin-bottom:12px;backdrop-filter:blur(4px)}
+.hero h1{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin-bottom:6px;position:relative}
+.hero-sub{font-size:.9rem;opacity:.6;margin-bottom:20px;position:relative}
+.hero-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;position:relative}
+.hero-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.08);font-size:.76rem;color:rgba(255,255,255,.75)}
+.hero-pill strong{color:#fff;font-weight:700}
+
+/* ── Content ── */
+.container{max-width:820px;margin:0 auto;padding:0 20px 60px}
+
+/* ── Category Sections ── */
+.cat-section{margin-top:28px}
+.cat-heading{display:flex;align-items:center;gap:10px;font-size:.95rem;font-weight:700;color:#636e72;margin-bottom:14px;padding:0 4px}
+.cat-heading .cat-icon{font-size:1.1rem}
+.cat-heading .cat-n{font-size:.76rem;color:#b2bec3;font-weight:500;margin-left:auto}
+
+/* ── Cards ── */
+.item-card{background:#fff;border-radius:16px;padding:22px 26px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.03);transition:box-shadow .2s,transform .15s;border:1px solid #f1f3f5}
+.item-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.07);transform:translateY(-1px);border-color:#e9ecef}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px}
+.card-left{display:flex;align-items:flex-start;gap:10px;flex:1}
+.card-idx{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:#f1f3f5;color:#868e96;font-size:.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.card-title a{color:#1a1a2e;text-decoration:none;font-size:1.02rem;font-weight:700;line-height:1.45}
+.card-title a:hover{color:#4c6ef5}
+.card-score{font-size:.74rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;flex-shrink:0}
+.card-summary{font-size:.88rem;color:#495057;margin-bottom:8px;line-height:1.72}
+.card-source{font-size:.74rem;color:#adb5bd}
+
+.bg-block,.disc-block{margin-top:12px;padding:12px 16px;border-radius:10px;font-size:.83rem;line-height:1.65}
+.bg-block{background:#f8f9fe;border-left:3px solid #748ffc}
+.disc-block{background:#fef9e7;border-left:3px solid #fcc419}
+.bg-block p,.disc-block p{margin-top:3px;color:#495057}
+.block-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#adb5bd}
+
+.refs-details{margin-top:12px;font-size:.8rem;color:#868e96}
+.refs-details summary{cursor:pointer;font-weight:600;color:#495057}
+.refs-list{margin-top:6px;padding-left:18px}
+.refs-list li{margin-bottom:3px}
+.refs-list a{color:#4c6ef5;text-decoration:none;font-size:.79rem}
+.refs-list a:hover{text-decoration:underline}
+
+.tags-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;padding:3px 10px;background:#edf2ff;color:#4c6ef5;border-radius:20px;font-size:.72rem;font-weight:500}
+
+/* ── Floating TOC (right side) ── */
+.floating-toc{position:fixed;top:20px;right:20px;width:270px;max-height:calc(100vh - 40px);background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.04);z-index:100;display:flex;flex-direction:column;overflow:hidden;transition:transform .25s cubic-bezier(.4,0,.2,1),opacity .25s}
+.floating-toc.hidden{transform:translateX(320px);opacity:0;pointer-events:none}
+.ftoc-header{display:flex;align-items:center;gap:8px;padding:16px 16px 12px;border-bottom:1px solid #f1f3f5;flex-shrink:0}
+.ftoc-logo{font-size:1.1rem}
+.ftoc-title{font-size:.82rem;font-weight:700;color:#495057;flex:1}
+.ftoc-close{width:26px;height:26px;border-radius:8px;border:none;background:#f1f3f5;color:#868e96;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.ftoc-close:hover{background:#e9ecef}
+.ftoc-nav{overflow-y:auto;padding:8px 12px 16px;flex:1}
+.ftoc-nav::-webkit-scrollbar{width:3px}
+.ftoc-nav::-webkit-scrollbar-thumb{background:#dee2e6;border-radius:4px}
+
+/* Category header in floating TOC */
+.ftoc-cat{display:flex;align-items:center;gap:8px;padding:10px 8px 6px;font-size:.76rem;font-weight:700;color:#636e72;cursor:pointer;user-select:none;border-radius:8px;transition:background .12s}
+.ftoc-cat:hover{background:#f8f9fa}
+.ftoc-cat-icon{font-size:.85rem}
+.ftoc-cat-name{flex:1}
+.ftoc-cat-n{font-size:.7rem;color:#adb5bd;font-weight:500}
+.ftoc-chevron{transition:transform .2s;flex-shrink:0;color:#adb5bd}
+.ftoc-cat.collapsed .ftoc-chevron{transform:rotate(-90deg)}
+.ftoc-links{overflow:hidden;transition:max-height .3s ease}
+.ftoc-cat.collapsed + .ftoc-links{max-height:0!important}
+
+.ftoc-link{display:flex;align-items:center;gap:8px;padding:5px 8px 5px 20px;border-radius:6px;text-decoration:none;color:#636e72;font-size:.76rem;line-height:1.35;transition:background .12s}
+.ftoc-link:hover{background:#f8f9fa}
+.ftoc-link.active{background:#edf2ff;color:#4c6ef5}
+.ftoc-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;background:#ced4da}
+.ftoc-dot.s9{background:#e03131}
+.ftoc-dot.s8{background:#f08c00}
+.ftoc-dot.s7{background:#2f9e44}
+.ftoc-text{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* TOC toggle FAB */
+.toc-fab{display:none;position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:#1a1a2e;color:#fff;border:none;font-size:1.2rem;cursor:pointer;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .15s,box-shadow .15s;align-items:center;justify-content:center}
+.toc-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(0,0,0,.3)}
+
+.footer{text-align:center;padding:40px 16px;color:#b2bec3;font-size:.74rem}
+.footer a{color:#868e96;text-decoration:none}
+.footer a:hover{color:#636e72}
+
+/* ── Responsive ── */
+@media (max-width:1100px){
+  .floating-toc{width:250px;right:10px;top:10px;max-height:calc(100vh - 20px)}
+}
+@media (max-width:900px){
+  .floating-toc{display:none}
+  .floating-toc.open-mobile{display:flex;position:fixed;top:10px;right:10px;bottom:10px;left:10px;width:auto;max-height:none;z-index:300;border-radius:16px}
+  .toc-fab{display:flex}
+  .container{padding:0 14px 60px}
+  .hero{padding:36px 16px 28px}
+  .hero h1{font-size:1.5rem}
+  .item-card{padding:18px 16px}
+}
+@media (min-width:901px){
+  .floating-toc{display:flex}
+  .toc-fab{display:none}
+}
+</style>
+</head>
+<body>
+<aside class="floating-toc" id="toc">
+    <div class="ftoc-header">
+      <span class="ftoc-logo">🌅</span>
+      <span class="ftoc-title">目录</span>
+      <button class="ftoc-close" onclick="toggleToc()" title="关闭">×</button>
+    </div>
+    <nav class="ftoc-nav"><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🤖</span><span class="ftoc-cat-name">AI/ML</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-1" class="ftoc-link" data-idx="1"><span class="ftoc-dot s8"></span><span class="ftoc-text">博士级数学基准测试挑战 LLM</span></a><a href="#item-2" class="ftoc-link" data-idx="2"><span class="ftoc-dot s8"></span><span class="ftoc-text">Headroom 压缩大模型输入，减少 60…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">⚙️</span><span class="ftoc-cat-name">系统/硬件</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-3" class="ftoc-link" data-idx="3"><span class="ftoc-dot s8"></span><span class="ftoc-text">超越 fork() + exec() 的进程…</span></a><a href="#item-4" class="ftoc-link" data-idx="4"><span class="ftoc-dot s8"></span><span class="ftoc-text">英伟达为 Windows PC 提出统一内存…</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🔒</span><span class="ftoc-cat-name">安全/隐私</span><span class="ftoc-cat-n">2</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-5" class="ftoc-link" data-idx="5"><span class="ftoc-dot s8"></span><span class="ftoc-text">Meta 证实数千 Instagram 账户…</span></a><a href="#item-6" class="ftoc-link" data-idx="6"><span class="ftoc-dot s8"></span><span class="ftoc-text">加密货币资助的中国肽实验室蓬勃发展</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">🌍</span><span class="ftoc-cat-name">时政/地缘</span><span class="ftoc-cat-n">15</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-7" class="ftoc-link" data-idx="7"><span class="ftoc-dot s9"></span><span class="ftoc-text">五角大楼将以色列间谍威胁提升至最高级别</span></a><a href="#item-8" class="ftoc-link" data-idx="8"><span class="ftoc-dot s9"></span><span class="ftoc-text">伊朗在美军攻击后打击科威特和巴林的美国基地</span></a><a href="#item-9" class="ftoc-link" data-idx="9"><span class="ftoc-dot s8"></span><span class="ftoc-text">亚美尼亚在俄罗斯压力和‘乌克兰剧本’担忧下举…</span></a><a href="#item-10" class="ftoc-link" data-idx="10"><span class="ftoc-dot s8"></span><span class="ftoc-text">巴勒斯坦婴儿遭以色列军队在西岸射杀</span></a><a href="#item-11" class="ftoc-link" data-idx="11"><span class="ftoc-dot s8"></span><span class="ftoc-text">以色列空袭致 9 人死亡，包括黎巴嫩军官</span></a><a href="#item-12" class="ftoc-link" data-idx="12"><span class="ftoc-dot s8"></span><span class="ftoc-text">美军拦截伊朗无人机，目标为海湾盟友</span></a><a href="#item-13" class="ftoc-link" data-idx="13"><span class="ftoc-dot s8"></span><span class="ftoc-text">法国法院调查加沙船队酷刑指控</span></a><a href="#item-14" class="ftoc-link" data-idx="14"><span class="ftoc-dot s8"></span><span class="ftoc-text">中国崛起：从工厂到技术对手，欧洲产业陷入困境</span></a><a href="#item-15" class="ftoc-link" data-idx="15"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国打击伊朗雷达站，伊朗报复</span></a><a href="#item-16" class="ftoc-link" data-idx="16"><span class="ftoc-dot s8"></span><span class="ftoc-text">朝鲜在中国主席访问前重申核地位</span></a><a href="#item-17" class="ftoc-link" data-idx="17"><span class="ftoc-dot s8"></span><span class="ftoc-text">法国及盟友拟通过国家措施施压以色列</span></a><a href="#item-18" class="ftoc-link" data-idx="18"><span class="ftoc-dot s8"></span><span class="ftoc-text">中国敦促基金经理支持创新，避免概念炒作</span></a><a href="#item-19" class="ftoc-link" data-idx="19"><span class="ftoc-dot s8"></span><span class="ftoc-text">美国检察官调查加州选举，派检察官赴洛杉矶</span></a><a href="#item-20" class="ftoc-link" data-idx="20"><span class="ftoc-dot s8"></span><span class="ftoc-text">海湾新一轮交火威胁伊朗停火</span></a><a href="#item-21" class="ftoc-link" data-idx="21"><span class="ftoc-dot s8"></span><span class="ftoc-text">两党与行业领袖讨论 AI 公有化</span></a></div><div class="ftoc-cat" onclick="toggleCat(this)"><span class="ftoc-cat-icon">📊</span><span class="ftoc-cat-name">行业/商业</span><span class="ftoc-cat-n">1</span><svg class="ftoc-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></div><div class="ftoc-links"><a href="#item-22" class="ftoc-link" data-idx="22"><span class="ftoc-dot s8"></span><span class="ftoc-text">标普 500 拒绝豁免 SpaceX、Ope…</span></a></div></nav>
+  </aside>
+  <button class="toc-fab" id="tocFab" onclick="toggleToc()" title="目录">☰</button>
+<div class="container">
+
+    <header class="hero">
+      <div class="hero-badge">2026-06-07</div>
+      <h1>🌅 Horizon 每日速递</h1>
+      <p class="hero-sub">从 133 条内容中精选 22 条</p>
+      <div class="hero-pills"><span class="hero-pill">🤖 AI/ML <strong>2</strong></span><span class="hero-pill">⚙️ 系统/硬件 <strong>2</strong></span><span class="hero-pill">🔒 安全/隐私 <strong>2</strong></span><span class="hero-pill">🌍 时政/地缘 <strong>15</strong></span><span class="hero-pill">📊 行业/商业 <strong>1</strong></span></div>
+    </header>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🤖</span>AI/ML<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-1">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">1</span>
+        <h2 class="card-title"><a href="https://arxiv.org/abs/2606.05818" target="_blank">博士级数学基准测试挑战 LLM</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一项名为“莱比锡基准”的新基准测试包含 49 位数学家整理的 100 道研究级数学问题，旨在测试 LLM 的博士级能力。评估显示当前 LLM 存在高性能变异性和非确定性。 该基准测试比现有数学基准困难得多，将 LLM 评估推向真正的研究级推理前沿。它突出了当前模型的关键缺陷，并强调需要下一代专注于证明生成和多步推理的基准测试。 多数问题是在德国莱比锡马普数学科学研究所为期 3 天的研讨会上创建的。这些问题有可从现有文献推断出的已知答案，但被描述为需要博士生花费数天到数周才能解决。</p>
+      <p class="card-source">root-parent · 6月6日 14:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>数学推理基准测试对于评估 LLM 的认知能力至关重要。现有基准如 GSM8K 或 MATH 测试的是中小学或竞赛级别的问题。莱比锡基准针对接近博士二年级学生水平的问题，远超典型考题，成为对深层理解和推理的更严格测试。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者指出了问题的极高难度，并强调问题有已知答案，因此测试的是类似回忆的推理而非新发现。一些人强调衡量错误答案对于评估可靠性的重要性，而另一些人则辩护说，鉴于前所未有的复杂性，模型表现已相当令人印象深刻。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://arxiv.org/abs/2606.05818v1" target="_blank">[2606.05818v1] Benchmarks in Leipzig - arXiv.org</a></li><li><a href="https://www.emergentmind.com/papers/2606.05818" target="_blank">Leipzig Benchmark for Mathematical LLM Evaluation</a></li><li><a href="https://math.sciencebench.ai/benchmarks/benchmarks-in-leipzig" target="_blank">ScienceBench|Benchmarks in Leipzig</a></li></ul></details><div class="tags-row"><span class="tag">AI evaluation</span> <span class="tag">mathematical reasoning</span> <span class="tag">benchmark</span> <span class="tag">LLMs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-2">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">2</span>
+        <h2 class="card-title"><a href="https://github.com/chopratejas/headroom" target="_blank">Headroom 压缩大模型输入，减少 60-95%的 token</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一款名为 Headroom 的新开源工具由 Chopratejas 开发，可在将日志、文件和 RAG 块等输入发送到大语言模型（LLM）之前进行压缩，减少 60%至 95%的 token 使用量，同时保持回答质量。它以 Python 库、代理和 MCP 服务器的形式在 GitHub 上提供，上线 24 小时内获得 70 颗星。 该工具通过大幅减少 token 数量，直接解决 LLM 推理的高成本和延迟问题，使 AI 应用更经济、更快速。对于 RAG 管道和大规模日志分析等 token 使用可能迅速变得高昂的场景尤为有价值。 Headroom 宣称在压缩 token 60%至 95%的同时仍能保持回答质量，并支持多种集成方式：作为库、代理或 MCP 服务器。MCP 服务器集成使其能够与任何支持模型上下文协议（Model Context Protocol）的 LLM 应用配合使用。</p>
+      <p class="card-source">chopratejas · 6月7日 01:02</p>
+<div class="bg-block"><span class="block-label">背景</span><p>Token 压缩是一种减少输入到 LLM 的提示中 token 数量的技术，可直接降低计算成本和延迟。LLM 有固定的 token 限制，而日志或 RAG 块等长输入可能迅速超出限制或变得昂贵。模型上下文协议（MCP）是一种将 LLM 与外部数据源和工具连接起来的开放标准，类似于语言服务器协议（LSP）但用于上下文管理。Headroom 利用这两个概念提供高效的压缩。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" target="_blank">Model Context Protocol - Wikipedia</a></li><li><a href="https://medium.com/@sahin.samia/prompt-compression-in-large-language-models-llms-making-every-token-count-078a2d1c7e03" target="_blank">Prompt Compression in Large Language Models ( LLMs )... | Medium</a></li></ul></details><div class="tags-row"><span class="tag">LLM</span> <span class="tag">token compression</span> <span class="tag">RAG</span> <span class="tag">efficiency</span> <span class="tag">open source</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">⚙️</span>系统/硬件<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-3">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">3</span>
+        <h2 class="card-title"><a href="https://lwn.net/SubscriberLink/1076018/16f01bbbb8e0d1f0/" target="_blank">超越 fork() + exec() 的进程创建方式</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一篇 LWN 文章探讨了替代传统 fork()+exec() 进程创建模型的方法，指出了其低效之处，并引发了社区关于取代这一数十年历史的 Unix 机制的可行性与优雅性的讨论。 这一讨论可能影响操作系统中进程创建的未来，有望带来更高效、更现代的设计，避免复制整个进程状态的开销。 即使有写时复制优化，fork() 的复杂度仍与进程大小成线性关系，因为需要复制页表项。posix_spawn() 和 clone() 等替代方案提供了更精确的进程创建方式，但缺乏 fork() 的灵活性。</p>
+      <p class="card-source">jwilk · 6月6日 14:34</p>
+<div class="bg-block"><span class="block-label">背景</span><p>fork()+exec() 模型是经典的 Unix 进程创建机制：fork() 复制调用进程，exec() 用新程序替换子进程映像。虽然这种设计在配置方面很优雅，但 fork() 会复制整个进程状态，其中大部分很快被 exec() 丢弃。写时复制（COW）被引入以降低开销，但仍需要 O(N) 的页表操作。posix_spawn() 和 Linux clone() 系统调用等替代方案为特定场景提供了更高效的路径。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者承认 fork() 在配置方面的优雅性，因为它允许在 fork 后使用所有标准 API。但他们也指出了其根本成本，引用了论文《A fork() in the road》，该论文认为 fork 已经过时。有人指出，无论是否使用 COW，fork() 的复杂度都与进程大小成线性关系，因为涉及页表操作。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://pubs.opengroup.org/onlinepubs/9699919799.2013edition/functions/waitpid.html" target="_blank">wait</a></li><li><a href="https://github.com/python/cpython/issues/113117" target="_blank">Add support for posix _ spawn call in subprocess.Popen with close_fds...</a></li><li><a href="https://en.wikipedia.org/wiki/File_descriptor" target="_blank">File descriptor - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">fork/exec</span> <span class="tag">operating systems</span> <span class="tag">Unix</span> <span class="tag">process creation</span> <span class="tag">systems design</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-4">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">4</span>
+        <h2 class="card-title"><a href="https://twitter.com/lemire/status/2062880075117113739" target="_blank">英伟达为 Windows PC 提出统一内存 CPU 方案</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">英伟达提出了一种针对 Windows PC 的新 CPU 架构，该架构集成了统一内存池，将 CPU 和 GPU 内存合并为一个共享池，以提升游戏和 AI 工作负载的性能。 这可能对本地 AI 推理和高端游戏产生重大影响，因为统一内存消除了 CPU 和 GPU 之间的数据传输瓶颈，从而能够更高效地处理大型 AI 模型和复杂游戏场景。 据报道，该提议的系统核心数量与英伟达 RTX 5070 移动 GPU 相同，但运行在三分之二的带宽和 TDP 下，可能导致 GPU 性能低于独立显卡。它基于 ARM 架构，类似于英伟达用于数据中心的 Grace CPU。</p>
+      <p class="card-source">tosh · 6月6日 12:52</p>
+<div class="bg-block"><span class="block-label">背景</span><p>统一内存架构是一种 CPU 和 GPU 共享单个内存池的设计，可实现无缝数据共享而无需复制。这在苹果的 M 系列芯片中很常见，被认为是本地高效运行大型语言模型的关键。英伟达已有用于服务器的 Grace CPU 超级芯片，但这将是其首次涉足消费级 Windows PC。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论观点不一：有人认为统一内存对本地 AI 和游戏是颠覆性的，而另一些人怀疑英伟达的芯片在 CPU 性能上能否匹敌高通的 Snapdragon X2 Elite，或苹果 M 系列能效。批评者还质疑在较低带宽和 TDP 下能否达到独立 GPU 的性能。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://www.emergentmind.com/topics/unified-memory-pool" target="_blank">Unified Memory Pool Overview - emergentmind.com</a></li><li><a href="https://www.nvidia.com/en-us/data-center/grace-cpu-superchip/" target="_blank">NVIDIA Grace CPU Superchip | NVIDIA</a></li><li><a href="https://www.anandtech.com/show/16610/nvidia-unveils-grace-a-highperformance-arm-server-cpu-for-use-in-ai-systems" target="_blank">NVIDIA Unveils Grace : A High-Performance Arm Server CPU For Use...</a></li></ul></details><div class="tags-row"><span class="tag">Nvidia</span> <span class="tag">CPU</span> <span class="tag">unified memory</span> <span class="tag">Windows PCs</span> <span class="tag">hardware</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🔒</span>安全/隐私<span class="cat-n">2 条</span></div>
+  <article class="item-card" id="item-5">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">5</span>
+        <h2 class="card-title"><a href="https://this.weekinsecurity.com/meta-confirms-thousands-of-instagram-accounts-were-hacked-by-abusing-its-ai-chatbot/" target="_blank">Meta 证实数千 Instagram 账户因 AI 聊天机器人滥用被黑</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Meta 确认，攻击者通过欺骗其 AI 支持聊天机器人更改账户关联邮箱，导致数千个 Instagram 账户被入侵。此次攻击至少影响 20,225 名用户，始于 2026 年 4 月 17 日左右。 该事件凸显了 AI 聊天机器人系统中的严重安全漏洞，表明提示注入攻击可绕过传统身份验证。它凸显了在敏感客户支持角色中部署大语言模型时，若缺乏强有力的防护措施会带来风险。 攻击者使用提示注入技术，指示聊天机器人将验证码发送到攻击者控制的邮箱，然后将验证码返还以重置密码。这使他们能够完全控制 Instagram 账户及任何关联的 Facebook 或 Meta 账户。</p>
+      <p class="card-source">speckx · 6月6日 18:35</p>
+<div class="bg-block"><span class="block-label">背景</span><p>提示注入攻击通过向大语言模型（LLM）输入伪装成合法提示的恶意指令来利用其漏洞。在此案例中，Meta AI 支持聊天机器人旨在协助账户恢复，但缺乏足够的身份验证检查，导致攻击者只需声称拥有账户所有权并请求更改邮箱即可得手。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者对该事件的影响范围感到震惊，有人指出 Meta 通知了超过 2 万名受影响用户。其他人对 Meta 的自动化系统在没有申诉途径的情况下禁用合法账户表示不满，一些人希望此事件能加速 Meta 的衰落。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://techcrunch.com/2026/06/01/hackers-hijacked-instagram-accounts-by-tricking-meta-ai-support-chatbot-into-granting-access/" target="_blank">Hackers hijacked Instagram accounts by tricking Meta AI support chatbot into granting access | TechCrunch</a></li><li><a href="https://arstechnica.com/ai/2026/06/meta-ai-support-chatbot-gave-hackers-access-to-notable-instagram-accounts/" target="_blank">Hackers duped Meta AI support chatbot to steal celebrity Instagram accounts - Ars Technica</a></li></ul></details><div class="tags-row"><span class="tag">security</span> <span class="tag">meta</span> <span class="tag">instagram</span> <span class="tag">AI chatbot</span> <span class="tag">hacking</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-6">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">6</span>
+        <h2 class="card-title"><a href="https://www.wired.com/story/security-news-this-week-crypto-funded-chinese-peptide-labs-are-booming/" target="_blank">加密货币资助的中国肽实验室蓬勃发展</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">Chainalysis 的一份新报告显示，加密货币资助的中国肽实验室已形成超过 1 亿美元的灰色市场，部分此前销售芬太尼前体的卖家现已转向生产肽类物质。 这一趋势凸显了加密货币、非法制造与“looksmaxxing”等健康潮流之间的交集，引发对不受监管物质及加密货币匿名性被滥用的担忧。 Chainalysis 发现，许多客户还向捷克实验室 Janoshik 付款以测试化学纯度，表明存在一个更广泛的测试和分销生态系统。</p>
+      <p class="card-source">Wired · 6月6日 10:30</p>
+<div class="bg-block"><span class="block-label">背景</span><p>肽是由氨基酸组成的短链，常用于补充剂和研究，但部分产品带有未经批准的医疗宣称。这些中国实验室在监管灰色地带运营，利用加密货币规避传统金融监管。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://www.wired.com/story/security-news-this-week-crypto-funded-chinese-peptide-labs-are-booming/" target="_blank">Security News This Week: Crypto-Funded Chinese Peptide Labs Are Booming</a></li><li><a href="https://fortune.com/2026/06/04/peptides-crypto-looksmaxxing-economy-chainalysis-report-100-million/" target="_blank">I bought peptides with crypto. How my purchase helped fuel a $100 million gray-market, ‘looksmaxxing’ economy | Fortune</a></li></ul></details><div class="tags-row"><span class="tag">crypto</span> <span class="tag">peptide labs</span> <span class="tag">China</span> <span class="tag">AI hacking</span> <span class="tag">security</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">🌍</span>时政/地缘<span class="cat-n">15 条</span></div>
+  <article class="item-card" id="item-7">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">7</span>
+        <h2 class="card-title"><a href="https://www.nbcnews.com/politics/national-security/pentagon-raised-threat-israeli-spying-us-highest-level-sources-say-rcna348565" target="_blank">五角大楼将以色列间谍威胁提升至最高级别</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据匿名消息人士透露，美国五角大楼已将以色列针对美国的间谍活动威胁等级提升至最高级别。 此次升级凸显了两个亲密盟友之间的严重不信任，可能影响情报共享和外交关系。 威胁等级提升表明对以色列针对美国利益的情报活动存在担忧，但具体事件未被披露。</p>
+      <p class="card-source">MilnerRoute · 6月6日 18:21</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国和以色列有着长期密切的情报合作历史，但关于以色列对美间谍活动的报道时有出现。五角大楼的威胁等级系统从低到临界，最高级别表示存在积极且可信的威胁。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者表达了怀疑，指出了以色列干预美国事务的历史模式。一些人强调同时存在的废除《国防授权法》第 224 条的企图，该条款将美国援助与以色列的人权记录挂钩。其他人则将以色列对美国政策的影响比作“附庸”关系。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Israel</span> <span class="tag">spying</span> <span class="tag">US foreign policy</span> <span class="tag">intelligence</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-8">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">8</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/06/us-says-iran-radar-sites-struck-and-drones-intercepted-in-latest-threat-to-fragile-ceasefire" target="_blank">伊朗在美军攻击后打击科威特和巴林的美国基地</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff5f5;color:#e03131">🔥 9.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗在美国打击伊朗雷达站并拦截无人机后不久，向科威特和巴林的美国基地发射了弹道导弹和无人机，导致海湾地区军事交锋升级。 伊朗与美国直接军事对峙并波及海湾国家，威胁脆弱的停火协议，可能引发更广泛的地区冲突，对全球经济和安全产生深远影响。 巴林响起空袭警报，民众被要求寻找安全地点；科威特军方称正在拦截来袭的无人机和导弹。</p>
+      <p class="card-source">The Guardian World · 6月6日 11:09</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国与伊朗长期关系紧张，尤其在伊朗核计划与地区影响力方面。海湾国家设有美军基地，常被卷入冲突。此前存在脆弱的停火协议，但近期打击行动可能使其破裂。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">US</span> <span class="tag">geopolitics</span> <span class="tag">military conflict</span> <span class="tag">Gulf states</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-9">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">9</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/06/russia-putin-armenia-election" target="_blank">亚美尼亚在俄罗斯压力和‘乌克兰剧本’担忧下举行选举</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">亚美尼亚正在举行议会选举，与此同时与俄罗斯的紧张关系升级，总理尼科尔·帕希尼扬面临莫斯科的指责，称其向西方靠拢并可能引发‘乌克兰剧本’——即类似于俄罗斯入侵乌克兰的冲突。 此次选举可能决定亚美尼亚是继续作为俄罗斯的关键盟友，还是转向西方，从而可能重塑南高加索的安全格局。这一转变将影响地区冲突、能源走廊以及俄罗斯在其传统势力范围的影响力。 文章以阿博维扬白兰地工厂为象征性背景，暗示亚美尼亚与俄罗斯的深厚经济联系，而帕希尼扬政府同时寻求与欧盟和北约建立更紧密的关系。</p>
+      <p class="card-source">The Guardian World · 6月6日 06:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>亚美尼亚长期以来一直是俄罗斯的亲密盟友，设有俄罗斯军事基地，并依赖莫斯科提供对抗邻国阿塞拜疆的安全保障。然而，在帕希尼扬领导下，埃里温推行民主改革并寻求与西方加强联系，导致关系紧张。‘乌克兰剧本’指的是俄罗斯 2022 年对乌克兰发起的全面入侵，许多人担心如果亚美尼亚放弃与俄罗斯的联盟，类似情况可能重演。</p></div><div class="tags-row"><span class="tag">Armenia</span> <span class="tag">Russia</span> <span class="tag">geopolitics</span> <span class="tag">elections</span> <span class="tag">Ukraine</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-10">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">10</span>
+        <h2 class="card-title"><a href="https://www.theguardian.com/world/2026/jun/06/palestinian-baby-shot-dead-israeli-troops-occupied-west-bank" target="_blank">巴勒斯坦婴儿遭以色列军队在西岸射杀</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">以色列军队在约旦河西岸占领区开枪射击一辆家庭汽车，导致一名七个月大的巴勒斯坦婴儿身亡。 这一事件凸显了占领区针对平民的持续暴力，可能加剧以巴冲突，引发国际关注。 婴儿萨姆·法赫德·阿布·海卡尔当时在母亲怀中，尽管车辆已遵从停车命令，士兵仍开枪。他被紧急送医，伤势危急，最终不治。</p>
+      <p class="card-source">The Guardian World · 6月6日 20:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以巴冲突是长期存在的关于土地和主权的争端，约旦河西岸是关键的占领区。希伯伦因以色列定居者和军事存在而频繁成为紧张局势的地点。</p></div><div class="tags-row"><span class="tag">Israeli-Palestinian conflict</span> <span class="tag">West Bank</span> <span class="tag">civilian casualties</span> <span class="tag">geopolitics</span> <span class="tag">Hebron</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-11">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">11</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/06/nx-s1-5848595/israeli-airstrikes-kill-lebanese-army-officers" target="_blank">以色列空袭致 9 人死亡，包括黎巴嫩军官</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">以色列在停火协议达成后发动空袭，造成包括黎巴嫩军队军官在内的九人死亡，黎巴嫩总统谴责此举侵犯主权。 这一事件威胁到以色列与黎巴嫩之间脆弱的停火协议，可能导致地区紧张局势升级，并破坏国际社会维持稳定的努力。 以色列军方确认击中一辆车辆，并表示正在审查该事件。黎巴嫩总统约瑟夫·奥恩称此次袭击是对黎巴嫩主权和国际法的公然侵犯。</p>
+      <p class="card-source">NPR World · 6月6日 10:54</p>
+<div class="bg-block"><span class="block-label">背景</span><p>以色列和黎巴嫩有长期的冲突历史，最近达成了停火协议以停止敌对行动。黎巴嫩军队并未直接参与与以色列的冲突，而是负责维护黎巴嫩国内安全。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Israel</span> <span class="tag">Lebanon</span> <span class="tag">ceasefire</span> <span class="tag">military conflict</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-12">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">12</span>
+        <h2 class="card-title"><a href="https://www.npr.org/2026/06/06/nx-s1-5848184/u-s-military-shot-down-iranian-drones" target="_blank">美军拦截伊朗无人机，目标为海湾盟友</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国军方宣布其击落了射向海湾盟友的伊朗无人机，此事发生在特朗普政府紧张局势升级之际。 这一事件凸显了中东地区地缘政治风险加剧，以及美伊直接军事对抗的可能性，影响地区稳定和全球石油市场。 拦截行动发生在全球石油运输关键通道霍尔木兹海峡附近，涉及多架无人机。据报道，没有美军或盟军人员伤亡。</p>
+      <p class="card-source">NPR World · 6月6日 04:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国与伊朗长期存在紧张关系，特朗普政府对德黑兰采取“极限施压”策略。沙特阿拉伯和阿联酋等海湾盟友是美国在该地区的重要伙伴，经常陷入美伊对抗的夹缝中。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">US military</span> <span class="tag">drones</span> <span class="tag">geopolitics</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-13">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">13</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/france/article/2026/06/07/no-one-was-prepared-for-what-was-about-to-happen-gaza-flotilla-activist-speaks-about-violence-she-suffered-in-israel_6754213_7.html" target="_blank">法国法院调查加沙船队酷刑指控</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">法国法院已启动调查，针对一名法国活动人士马利卡·巴乌亚指控以色列士兵在加沙船队事件中对她实施酷刑和战争罪行的指控。 此次调查凸显了国际社会对以色列针对人道主义船队行动日益增长的法律审查，可能为国际法下的问责开创先例，并影响法以关系。 此次调查源于法国外交部一份关于以色列对待船队中法国公民的报告，马利卡·巴乌亚的证词详细描述了据称遭到以色列士兵酷刑的情况。</p>
+      <p class="card-source">Le Monde English - International · 6月6日 22:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>加沙船队事件涉及活动团体试图突破以色列对加沙地带的海上封锁，经常导致以色列拦截和搜查。2010 年的首次重大船队事件中，以色列军队登船，导致致命冲突。此后，多支船队遭到类似拦截，引发国际批评和人权担忧。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://en.wikipedia.org/wiki/Gaza_flotilla_incident" target="_blank">Gaza flotilla incident</a></li><li><a href="https://en.wikipedia.org/wiki/Gaza_Freedom_Flotilla" target="_blank">Gaza Freedom Flotilla - Wikipedia</a></li></ul></details><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">human rights</span> <span class="tag">Israel-Palestine</span> <span class="tag">international law</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-14">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">14</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/economy/article/2026/06/06/over-three-decades-china-s-promise-became-a-trap-for-european-industry_6754199_19.html" target="_blank">中国崛起：从工厂到技术对手，欧洲产业陷入困境</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">《世界报》的分析指出，三十多年来，中国从制造中心转变为技术竞争对手，给欧洲工业制造了一个战略陷阱，欧洲低估了中国的创新能力。 这一分析凸显了中欧经济关系的根本性转变——曾经从中国市场获利的欧洲企业如今面临中国创新者的激烈竞争。它强调欧洲政策制定者和企业需要重新评估其战略，以应对中国的技术崛起。 该文章是《中国如何蚕食欧洲》系列的第一部分，详细描述了欧洲人曾希望从中国国内市场获利，却低估了其创新能力。</p>
+      <p class="card-source">Le Monde English - International · 6月6日 03:00</p>
+<div class="bg-block"><span class="block-label">背景</span><p>几十年来，中国充当世界工厂，以低成本和大市场吸引外资。欧洲企业在中国设厂，服务本地需求并全球出口。然而，中国此后大力投入研发和创新，培养出具有竞争力的科技公司，这些公司现在在中国乃至全球挑战欧洲工业。这一转变使欧洲企业陷入两难：既在国内失去市场份额，又在中国面临限制。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">China-Europe relations</span> <span class="tag">economic competition</span> <span class="tag">industrial policy</span> <span class="tag">technology rivalry</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-15">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">15</span>
+        <h2 class="card-title"><a href="https://www.lemonde.fr/en/international/article/2026/06/06/us-strikes-radar-installations-in-iran_6754196_4.html" target="_blank">美国打击伊朗雷达站，伊朗报复</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">美国军方打击了伊朗雷达设施，伊朗革命卫队则袭击了海湾地区的“敌方基地”作为报复，尽管脆弱的停火协议仍在，但局势升级。 此次直接军事交锋威胁到自 4 月 8 日以来的停火协议，可能导致更广泛的冲突，影响地区稳定和全球能源市场。 美国中央司令部宣布了对雷达站的打击，而伊朗革命卫队声称已击中敌方基地。美国和伊朗之间的停火协议一直脆弱，关于永久结束冲突的谈判未能成功。</p>
+      <p class="card-source">Le Monde English - International · 6月6日 00:43</p>
+<div class="bg-block"><span class="block-label">背景</span><p>自 2026 年 4 月 8 日以来，美国与伊朗之间一直存在停火协议，此前曾发生敌对行动。然而，随后为正式达成持久和平而进行的谈判未能成功，使得停火协议十分脆弱。最近的打击是迄今为止对停火协议最严重的违反。</p></div><div class="tags-row"><span class="tag">US</span> <span class="tag">Iran</span> <span class="tag">geopolitics</span> <span class="tag">military strikes</span> <span class="tag">Middle East</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-16">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">16</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOVjIxc3JQdWJBUHNieVRPZjF0RUlyZjBBdVJjSFNrdEVJRTEwakEydDJjaEtNc0d6WE5BY3JhbkE5ZXlvc3ZkYUxzVW8tQzhoSklGNE9jMmZEcnk3dU1lZ0prd3ZBc2VqUGMtdlN2eUNVVFlvSkd0OHR4RlBvb05oaE9DbkRFT2JMaGVjQzRoTWYtcmdIdWM5TEJ4c3NicFFzZG5YdjVzODFJeUZ1TDR2d1otbVF4YXM?oc=5" target="_blank">朝鲜在中国主席访问前重申核地位</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">朝鲜在中国国家主席习近平计划访问前夕发表声明，重申其核地位，表明其不放弃核威慑的立场。 此举突显了朝鲜不顾国际压力坚持核计划的决心，可能使中国作为地区安全关键调解人的外交努力复杂化。 这一重申发生在习近平访问前一天，此次访问被视为加强双边关系并可能讨论无核化问题。但朝鲜的声明表明它不会在核能力上妥协。</p>
+      <p class="card-source">Google News - Reuters · 6月6日 23:21</p>
+<div class="bg-block"><span class="block-label">背景</span><p>朝鲜长期以来一直将核武器视为政权安全和国际谈判筹码的保障。中国是朝鲜的主要盟友和经济命脉，但也支持联合国对其核活动的制裁。中国国家主席此次访问罕见，突显了两国关系的重要性。</p></div><div class="tags-row"><span class="tag">North Korea</span> <span class="tag">nuclear</span> <span class="tag">geopolitics</span> <span class="tag">China</span> <span class="tag">international relations</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-17">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">17</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOX1llRldYSEJqbHNldGlsTlg3WkFPY25fRG9sckxQR25PdFAtbWRIWkdDUXdIZXFrekF4TjVDeUF3NldFeDVuTG5YOGtWc3VVX0Z1SmZ2bTZJS0lOWVhEUEVqemNrVDlZbnUwNFFDMFVYTU1VajhZWGR2UUUxWTJUY0x3VlZtWlJkc0FJQVdueTZlcEE0RFN4MHJldC1LZzc4VlVxbjZLaTlna011QjZpaWN5aEFDMFBiNzNNQUtCUXRqOUt5ZmMwcWZUVmE0dw?oc=5" target="_blank">法国及盟友拟通过国家措施施压以色列</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">据外交人士透露，法国及其多个盟国正在探讨通过国家层面的措施，就以色列在约旦河西岸的活动向其施压。 这标志着从多边行动转向单边措施的可能，可能加剧外交紧张局势，并影响欧洲与以色列的关系。 具体考虑的措施尚未披露，但可能包括贸易限制或外交制裁。</p>
+      <p class="card-source">Google News - Reuters · 6月6日 18:35</p>
+<div class="bg-block"><span class="block-label">背景</span><p>约旦河西岸自 1967 年以来一直是以色列占领的争议领土，国际社会就定居点扩张问题持续向以色列施压。法国历来支持两国解决方案。</p></div><div class="tags-row"><span class="tag">geopolitics</span> <span class="tag">Israel</span> <span class="tag">West Bank</span> <span class="tag">France</span> <span class="tag">diplomacy</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-18">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">18</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN2VVRFp1QS14eTNTeElwd0NGTjRNa0xySDd5NjFlV2xadmhvWXc3SzRaS1FRU2dCRHNiczNGLUtYb3V2UEJQN2N2RlF3Z21hR3NGRzVCbDJseExrSnE3eDhXRGJUYUdOX2hHdGNnTDVPaHBtYXFCQkZiSTBKRzRBR05sZC1LM1ZRdXAzdmxlcmJqMENoZ3k1NkdIcERQemNoZHRuc0hUQnBfYUNYSnNUalljeEVKemdBZ0NXZ3Vycm5KZw?oc=5" target="_blank">中国敦促基金经理支持创新，避免概念炒作</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">中国金融监管机构指示基金经理积极投资于真正的创新，同时警告不要围绕热门概念进行投机炒作。 这一政策信号旨在引导资本流向可持续的技术进步，远离市场泡沫，可能重塑中国金融市场的投资优先级。 该指令强调了政府在促进创新以推动经济增长的同时，减轻可能导致市场不稳定的投机交易风险的双重关注点。</p>
+      <p class="card-source">Google News - Reuters · 6月6日 08:49</p>
+<div class="bg-block"><span class="block-label">背景</span><p>中国金融监管机构，如中国证券监督管理委员会，经常向基金经理发布指引，以规范市场行为与国家政策目标保持一致。“创新”的概念包括人工智能、半导体和绿色技术等领域。警告“概念炒作”反映了过去在区块链和元宇宙等领域出现投机泡沫的经验。</p></div><div class="tags-row"><span class="tag">China</span> <span class="tag">policy</span> <span class="tag">innovation</span> <span class="tag">fund managers</span> <span class="tag">finance</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-19">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">19</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNWGJrZjdlOW9CRTdmNnFVRXNrMjJKZ291aDRaN1UzellLQUMwcW9IU1M2UkRYVU5qM1dxQlJMR0tSN1J6b2ZpWHIwZkxXd0o3TjRVN19CWmI3bHp2b2NjbnRpSUs2aDU1Y1ZfTUNSUnNCa3VXU0syVUJZSlpuNDB4b0tXdHAtV2pRbF9qejBkQTZ6SFU5R0VOeEI2ZmlxM0Rxd0ZoZTBESG1MTE5oZ0puV2w3VE4?oc=5" target="_blank">美国检察官调查加州选举，派检察官赴洛杉矶</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">一名美国检察官已启动对加州选举程序的调查，并派遣一名检察官前往洛杉矶的一个投票中心。 这标志着联邦政府对州选举管理的重大干预，可能影响选民信心和未来选举的公正性。 调查由美国检察官办公室进行，派往洛杉矶投票中心的检察官将监督运营并收集证据。</p>
+      <p class="card-source">Google News - AP News · 6月6日 01:08</p>
+<div class="bg-block"><span class="block-label">背景</span><p>美国司法部根据联邦法律有权调查选举犯罪。加州因其投票程序（包括邮寄选票处理）一直受到审查。此举紧随全国范围内关于选举安全的更广泛辩论。</p></div><div class="tags-row"><span class="tag">US politics</span> <span class="tag">election investigation</span> <span class="tag">California</span> <span class="tag">DOJ</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-20">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">20</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNMXRGdWhrdkFIbnc1VXhoemMydUpyWURDQUNxbGxiX2JFVTVVY1RkZVlnampsNjJxVU9MMC03cmdTN0c4OF9QTTJ2bm0zVmZiWnR4UnFmYXE3NllqYXhKbGxOWnk5MENxNUZMTjAwNDRBaWNKNjhPdkNwRDJHWFk2RHRXdklkSURSTkV6aEVwMEE5aTByTGRkOUt6N1F4bzA?oc=5" target="_blank">海湾新一轮交火威胁伊朗停火</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">伊朗与海湾地区对立力量之间发生了新的交火，使此前脆弱的停火面临严重压力。 这一事件可能重新点燃更广泛的地区冲突，破坏维护中东稳定的外交努力。 具体地点和参与方尚未明确，但停火被违反引发了战火升级为全面敌对行动的担忧。</p>
+      <p class="card-source">Google News - AP News · 6月6日 22:15</p>
+<div class="bg-block"><span class="block-label">背景</span><p>海湾地区历史上存在伊朗与阿拉伯国家之间的紧张关系，代理冲突和核计划争端常使局势恶化。该地区的停火通常很脆弱，以往的违反行为曾导致公开冲突。</p></div><div class="tags-row"><span class="tag">Iran</span> <span class="tag">Gulf</span> <span class="tag">ceasefire</span> <span class="tag">geopolitics</span> <span class="tag">conflict</span></div>
+    </div>
+  </article>
+  <article class="item-card" id="item-21">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">21</span>
+        <h2 class="card-title"><a href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQak1pb1pkVTR1VGhJSXZKMjU1d0gwYVU3NnlsRFJvQnNOdXJhTDFjQzVCbFBkbWJPRGV3d0N5RFUybHJ0c0s1NGdkMl9rNE1yMmVrX3VBRmV6VUNvRzdOOHZ3VTVMSU1Pc2JaYlhhQTROYjlGVnllbGNDWWdwMVUzbWo4YlVLSkQ5WUl2eWFjOXlqTUFwenBTMkZoM2Z6RElubWF2YUdZblNZalVVX3Zfbw?oc=5" target="_blank">两党与行业领袖讨论 AI 公有化</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">前总统唐纳德·特朗普、参议员伯尼·桑德斯和 OpenAI CEO 山姆·奥特曼都公开讨论了人工智能公有化的模式，表明在 AI 治理上出现了罕见的跨党派和跨行业共识。 这标志着 AI 政策辩论从纯粹的技术监管转向所有权和控制权的基本问题。如果付诸实施，公有化可能通过确保更广泛的社会利益和防止私人权力集中来重塑 AI 行业。 伯尼·桑德斯具体提议公众应拥有大型 AI 公司的一半股份，而山姆·奥特曼则建议设立与 AI 驱动的经济增长相关的公共财富基金。Anthropic 也呼吁国家主权财富基金持有 AI 股权。</p>
+      <p class="card-source">Google News - AP News · 6月6日 04:02</p>
+<div class="bg-block"><span class="block-label">背景</span><p>AI 治理指的是确保 AI 系统安全、道德并符合人类价值观的框架和标准。公有化模式——即政府或公众持有 AI 公司股权——正在被探索作为一种将企业利益与社会福祉对齐的方式，而非纯粹的私有化或国有化。</p></div><details class="refs-details"><summary>参考链接 (2)</summary><ul class="refs-list"><li><a href="https://mashable.com/tech/bernie-sanders-nyt-op-ed-pubic-ai-ownership-argument" target="_blank">Bernie Sanders AI bill would give public half of the AI ... | Mashable</a></li><li><a href="https://www.ibm.com/think/topics/ai-governance" target="_blank">What is AI governance? - IBM</a></li></ul></details><div class="tags-row"><span class="tag">AI</span> <span class="tag">public ownership</span> <span class="tag">policy</span> <span class="tag">regulation</span> <span class="tag">current affairs</span></div>
+    </div>
+  </article></section>
+<section class="cat-section"><div class="cat-heading"><span class="cat-icon">📊</span>行业/商业<span class="cat-n">1 条</span></div>
+  <article class="item-card" id="item-22">
+    <div class="card-head">
+      <div class="card-left">
+        <span class="card-idx">22</span>
+        <h2 class="card-title"><a href="https://arstechnica.com/tech-policy/2026/06/sp-500-blocks-fast-spacex-entry-wont-waive-rule-for-unprofitable-ai-firms/" target="_blank">标普 500 拒绝豁免 SpaceX、OpenAI 和 Anthropic 的盈利能力规则</a></h2>
+      </div>
+      <span class="card-score" style="background:#fff9db;color:#f08c00">⭐ 8.0/10</span>
+    </div>
+    <div class="card-body">
+      <p class="card-summary">标普 500 指数委员会决定不豁免 SpaceX、OpenAI 和 Anthropic 的盈利要求，从而阻止了它们纳入该指数。 这一决定维护了标普 500 指数上市标准的完整性，阻止了未盈利的高知名度公司进入该基准指数，而被动投资者依赖该指数的一致规则。 SpaceX、OpenAI 和 Anthropic 尚未盈利，这是纳入标普 500 指数的关键标准。尽管这些公司估值高且市场影响力大，指数委员会并未给予特殊豁免。</p>
+      <p class="card-source">maltalex · 6月6日 04:38</p>
+<div class="bg-block"><span class="block-label">背景</span><p>标普 500 指数要求公司在过去四个季度实现盈利，此外还有市值和流动性等标准。这一盈利规则旨在确保指数稳定性。SpaceX、OpenAI 和 Anthropic 曾辩称，它们的快速增长和未来潜力应作为豁免理由，但委员会拒绝了。</p></div><div class="disc-block"><span class="block-label">💬 社区讨论</span><p>评论者普遍支持这一决定，许多人表示松了一口气，认为指数维持了其标准。一些人指出，例外情况可能会损害指数完整性，而且这些公司有替代方式让投资者获得敞口。</p></div><details class="refs-details"><summary>参考链接 (3)</summary><ul class="refs-list"><li><a href="https://legalclarity.org/what-are-the-sp-500-inclusion-criteria/" target="_blank">What Are the S&P 500 Inclusion Criteria? - LegalClarity</a></li><li><a href="https://fatfire.com/sp-500-requirements/" target="_blank">S&P 500 Requirements: Essential Criteria for Index Inclusion</a></li><li><a href="https://www.alphaexcapital.com/indices/equity-indices/major-stock-market-indices/how-companies-get-into-the-sandp-500" target="_blank">How Companies Get Into the S&P 500 | 2026 Entry Rules</a></li></ul></details><div class="tags-row"><span class="tag">S&P 500</span> <span class="tag">SpaceX</span> <span class="tag">OpenAI</span> <span class="tag">Anthropic</span> <span class="tag">index inclusion</span> <span class="tag">profitability</span></div>
+    </div>
+  </article></section>
+<footer class="footer">
+  <p>Generated by <a href="https://github.com/jinghuazhao/Horizon" target="_blank">Horizon</a> · AI-Driven Information Aggregation · 2026-06-07</p>
+</footer>
+</div>
+<script>
+// Toggle floating panel visibility
+var tocVisible = window.innerWidth > 900;
+function updateTocVisibility() {
+  var toc = document.getElementById('toc');
+  var fab = document.getElementById('tocFab');
+  if (window.innerWidth > 900) {
+    toc.classList.remove('hidden','open-mobile');
+    tocVisible = true;
+    fab.style.display = 'none';
+  } else {
+    toc.classList.add('hidden');
+    toc.classList.remove('open-mobile');
+    tocVisible = false;
+    fab.style.display = 'flex';
+  }
+}
+window.addEventListener('resize', updateTocVisibility);
+
+function toggleToc() {
+  var toc = document.getElementById('toc');
+  if (window.innerWidth <= 900) {
+    toc.classList.toggle('open-mobile');
+    toc.classList.remove('hidden');
+  } else {
+    tocVisible = !tocVisible;
+    if (tocVisible) toc.classList.remove('hidden');
+    else toc.classList.add('hidden');
+  }
+}
+
+// Collapsible category drawers (collapsed by default)
+function toggleCat(el) {
+  el.classList.toggle('collapsed');
+  var links = el.nextElementSibling;
+  if (!links || !links.classList.contains('ftoc-links')) return;
+  if (el.classList.contains('collapsed')) {
+    links.style.maxHeight = '0px';
+  } else {
+    links.style.maxHeight = links.scrollHeight + 'px';
+  }
+}
+
+// Initialize: collapse all, set heights
+document.addEventListener('DOMContentLoaded', function() {
+  var cats = document.querySelectorAll('.ftoc-cat');
+  cats.forEach(function(cat) {
+    cat.classList.add('collapsed');
+    var links = cat.nextElementSibling;
+    if (links && links.classList.contains('ftoc-links')) {
+      links.style.maxHeight = '0px';
+      // Store natural height
+      links._naturalHeight = links.scrollHeight;
+    }
+  });
+  // First category expanded by default
+  if (cats.length > 0) {
+    cats[0].classList.remove('collapsed');
+    var firstLinks = cats[0].nextElementSibling;
+    if (firstLinks && firstLinks.classList.contains('ftoc-links')) {
+      firstLinks.style.maxHeight = firstLinks.scrollHeight + 'px';
+    }
+  }
+});
+
+// Scroll highlight
+var links = document.querySelectorAll('.ftoc-link');
+var cards = document.querySelectorAll('.item-card');
+var activeCat = null;
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    var idx = e.target.id.replace('item-','');
+    var link = document.querySelector('.ftoc-link[data-idx="'+idx+'"]');
+    if (e.isIntersecting && link) {
+      links.forEach(function(l) { l.classList.remove('active'); });
+      link.classList.add('active');
+      // Expand current category, collapse the previously expanded one
+      var cat = link.closest('.ftoc-links');
+      if (cat) {
+        var header = cat.previousElementSibling;
+        if (header && header.classList.contains('ftoc-cat')) {
+          if (activeCat && activeCat !== header) {
+            activeCat.classList.add('collapsed');
+            activeCat.nextElementSibling.style.maxHeight = '0px';
+          }
+          if (header.classList.contains('collapsed')) {
+            header.classList.remove('collapsed');
+            cat.style.maxHeight = cat.scrollHeight + 'px';
+          }
+          activeCat = header;
+        }
+      }
+    }
+  });
+}, {rootMargin: '-8% 0px -75% 0px'});
+cards.forEach(function(c) { observer.observe(c); });
+</script>
+</body>
+</html>
